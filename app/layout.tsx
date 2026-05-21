@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
-import { Barlow_Semi_Condensed, Instrument_Sans } from "next/font/google";
-import localFont from "next/font/local";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Barlow_Semi_Condensed, Instrument_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
+import './globals.css';
 
 const barlowSemiCondensed = Barlow_Semi_Condensed({
-  variable: "--font-barlow-semi-condensed",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  variable: '--font-barlow-semi-condensed',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
 });
 
 // Instrument_Sans is a variable font so i do not need to specify the weights and styles i want but as you can see in the comment only some weights are availabe
 const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
-  subsets: ["latin"],
+  variable: '--font-instrument-sans',
+  subsets: ['latin'],
   // weight: ["400", "500", "600", "700"],
   // style: ["normal", "italic"],
 });
@@ -21,96 +21,96 @@ const instrumentSans = Instrument_Sans({
 const cooperHewitt = localFont({
   src: [
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-Thin.woff",
-      weight: "100",
-      style: "normal",
+      path: './fonts/cooper-hewitt/CooperHewitt-Thin.woff',
+      weight: '100',
+      style: 'normal',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-ThinItalic.woff",
-      weight: "100",
-      style: "italic",
+      path: './fonts/cooper-hewitt/CooperHewitt-ThinItalic.woff',
+      weight: '100',
+      style: 'italic',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-Light.woff",
-      weight: "300",
-      style: "normal",
+      path: './fonts/cooper-hewitt/CooperHewitt-Light.woff',
+      weight: '300',
+      style: 'normal',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-LightItalic.woff",
-      weight: "300",
-      style: "italic",
+      path: './fonts/cooper-hewitt/CooperHewitt-LightItalic.woff',
+      weight: '300',
+      style: 'italic',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-Book.woff",
-      weight: "400",
-      style: "normal",
+      path: './fonts/cooper-hewitt/CooperHewitt-Book.woff',
+      weight: '400',
+      style: 'normal',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-BookItalic.woff",
-      weight: "400",
-      style: "italic",
+      path: './fonts/cooper-hewitt/CooperHewitt-BookItalic.woff',
+      weight: '400',
+      style: 'italic',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-Medium.woff",
-      weight: "500",
-      style: "normal",
+      path: './fonts/cooper-hewitt/CooperHewitt-Medium.woff',
+      weight: '500',
+      style: 'normal',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-MediumItalic.woff",
-      weight: "500",
-      style: "italic",
+      path: './fonts/cooper-hewitt/CooperHewitt-MediumItalic.woff',
+      weight: '500',
+      style: 'italic',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-Semibold.woff",
-      weight: "600",
-      style: "normal",
+      path: './fonts/cooper-hewitt/CooperHewitt-Semibold.woff',
+      weight: '600',
+      style: 'normal',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-SemiboldItalic.woff",
-      weight: "600",
-      style: "italic",
+      path: './fonts/cooper-hewitt/CooperHewitt-SemiboldItalic.woff',
+      weight: '600',
+      style: 'italic',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-Bold.woff",
-      weight: "700",
-      style: "normal",
+      path: './fonts/cooper-hewitt/CooperHewitt-Bold.woff',
+      weight: '700',
+      style: 'normal',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-BoldItalic.woff",
-      weight: "700",
-      style: "italic",
+      path: './fonts/cooper-hewitt/CooperHewitt-BoldItalic.woff',
+      weight: '700',
+      style: 'italic',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-Heavy.woff",
-      weight: "800",
-      style: "normal",
+      path: './fonts/cooper-hewitt/CooperHewitt-Heavy.woff',
+      weight: '800',
+      style: 'normal',
     },
     {
-      path: "./fonts/cooper-hewitt/CooperHewitt-HeavyItalic.woff",
-      weight: "800",
-      style: "italic",
+      path: './fonts/cooper-hewitt/CooperHewitt-HeavyItalic.woff',
+      weight: '800',
+      style: 'italic',
     },
   ],
-  variable: "--font-cooper-hewitt",
+  variable: '--font-cooper-hewitt',
 });
 
 const sabon = localFont({
   src: [
-    { path: "./fonts/sabon/Sabon.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/sabon/SabonItalic.ttf", weight: "400", style: "italic" },
-    { path: "./fonts/sabon/SabonBold.ttf", weight: "700", style: "normal" },
+    { path: './fonts/sabon/Sabon.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/sabon/SabonItalic.ttf', weight: '400', style: 'italic' },
+    { path: './fonts/sabon/SabonBold.ttf', weight: '700', style: 'normal' },
     {
-      path: "./fonts/sabon/SabonBoldItalic.ttf",
-      weight: "700",
-      style: "italic",
+      path: './fonts/sabon/SabonBoldItalic.ttf',
+      weight: '700',
+      style: 'italic',
     },
   ],
-  variable: "--font-sabon",
+  variable: '--font-sabon',
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
-  description: "Generated by create next app",
+  title: 'Create Next App',
+  description: 'Generated by create next app',
 };
 
 export default function RootLayout({

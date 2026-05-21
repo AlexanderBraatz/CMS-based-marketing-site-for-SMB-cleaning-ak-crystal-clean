@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* colors are to be 
 1. named , on the root 
@@ -19,8 +19,7 @@
 
 @theme inline {
   --font-cooper-hewitt: var(--font-cooper-hewitt), system-ui, sans-serif;
-  --font-barlow-semi-condensed:
-    var(--font-barlow-semi-condensed), system-ui, sans-serif;
+  --font-barlow-semi-condensed: var(--font-barlow-semi-condensed), system-ui, sans-serif;
   --font-instrument-sans: var(--font-instrument-sans), system-ui, sans-serif;
   --font-sabon: var(--font-sabon), system-ui, sans-serif;
   --color-theme-background: var(--theme-background);
