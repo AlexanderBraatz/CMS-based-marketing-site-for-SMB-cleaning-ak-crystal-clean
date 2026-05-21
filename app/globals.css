@@ -1,22 +1,27 @@
 @import "tailwindcss";
 
+/* colors are to be 
+1. named 
+2. mapped to their semantic end use while respecting this guideline : background 60% , secondary 30%, primary 10% 
+3. any shades added
+4.mapped to tailwind utility classes 
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --palette-white: #ffffff;
+  --palette-purple-dark: #290d38;
+}
+
+.dark-purple-theme {
+  --theme-background: var(--palette-purple-dark);
+  --theme-text: var(--palette-white);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-theme-background: var(--theme-background);
+  --color-theme-text: var(--theme-text);
 }
 
 body {
