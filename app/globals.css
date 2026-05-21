@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* colors are to be 
-1. named 
+1. named , on the root 
 2. mapped to their semantic end use while respecting this guideline : background 60% , secondary 30%, primary 10% 
 3. any shades added
 4.mapped to tailwind utility classes 
@@ -18,8 +18,11 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-cooper-hewitt: var(--font-cooper-hewitt), system-ui, sans-serif;
+  --font-barlow-semi-condensed:
+    var(--font-barlow-semi-condensed), system-ui, sans-serif;
+  --font-instrument-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-sabon: var(--font-sabon), system-ui, sans-serif;
   --color-theme-background: var(--theme-background);
   --color-theme-text: var(--theme-text);
 }
