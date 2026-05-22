@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './utility-components/button';
 import Image from 'next/image';
 import wave from '@/public/wave-hero-figma-export.svg';
+import ImageWideHome from './utility-components/image-wide-home';
 
 export default function HeroHome() {
   return (
@@ -17,6 +18,9 @@ export default function HeroHome() {
           Höchste Qualität für Innen und Außen ohne Koordinationsaufwand.
         </p>
         <Button className="mt-9" text="KONTAKT" />
+      </div>
+      <div className="mt-[90px] pt-9">
+        <ImageWideHome />
       </div>
     </div>
   );
