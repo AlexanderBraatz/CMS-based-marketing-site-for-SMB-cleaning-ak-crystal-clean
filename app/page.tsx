@@ -1,4 +1,5 @@
 import HeroHome from './fonts/components/hero-home';
+import LogoBanner from './fonts/components/logo-banner';
 import Navbar from './fonts/components/navbar';
 import WaveBackground from './fonts/components/wave-background';
 import WidePictureAndText from './fonts/components/wide-picture-and-text';
@@ -11,6 +12,7 @@ export default function Home() {
         <WaveBackground />
         <div className="flex flex-col gap-[96px]">
           <HeroHome />
+          <LogoBanner />
           <WidePictureAndText />
         </div>
         <div className="h-200">scroll</div>
