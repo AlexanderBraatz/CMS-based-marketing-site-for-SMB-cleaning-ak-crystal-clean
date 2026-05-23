@@ -1,6 +1,7 @@
 import HeroHome from './fonts/components/hero-home';
 import LogoBanner from './fonts/components/logo-banner';
 import Navbar from './fonts/components/navbar';
+import TestimonialQuotes from './fonts/components/testimonial-quotes';
 import WaveBackground from './fonts/components/wave-background';
 import WidePictureAndText from './fonts/components/wide-picture-and-text';
 
@@ -14,6 +15,7 @@ export default function Home() {
           <HeroHome />
           <LogoBanner />
           <WidePictureAndText />
+          <TestimonialQuotes />
         </div>
         <div className="h-200">scroll</div>
       </main>
