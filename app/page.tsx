@@ -1,3 +1,4 @@
+import DoubleWidePictureAndText from './fonts/components/double-wide-picture-and-text';
 import HeroHome from './fonts/components/hero-home';
 import LogoBanner from './fonts/components/logo-banner';
 import Navbar from './fonts/components/navbar';
@@ -17,8 +18,11 @@ export default function Home() {
           <HeroHome />
           <LogoBanner />
           <WidePictureAndText />
-          <TestimonialQuotes />
-          <ValuesAndImages />
+          <div className="flex flex-col gap-[180px]">
+            <TestimonialQuotes />
+            <ValuesAndImages />
+            <DoubleWidePictureAndText />
+          </div>
         </div>
         <div className="h-200">scroll</div>
       </main>
