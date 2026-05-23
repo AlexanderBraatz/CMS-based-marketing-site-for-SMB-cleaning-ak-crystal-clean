@@ -6,7 +6,7 @@ import ImageWideHome from './utility-components/image-wide-home';
 
 export default function HeroHome() {
   return (
-    <div className="theme-dark-purple text-theme-text grid h-[340px] grid-cols-2 gap-5 px-[5%]">
+    <div className="theme-dark-purple text-theme-text grid grid-cols-2 gap-5 px-[5%]">
       <div className="z-10 mt-[90px] flex flex-col justify-items-start pt-10">
         <div>
           <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tighter">

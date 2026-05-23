@@ -21,12 +21,18 @@
 .theme-dark-purple {
   --theme-background: var(--tailwind-zinc-50);
   --theme-color-card-background: var(--palette-indigo-950);
-  --theme-text: var(--palette-white);
-  --theme-text: var(--palette-neutral-100);
+  --theme-color-text: var(--palette-neutral-100);
   --theme-border: var(--palette-indigo-700);
-  --theme-text-button: var(--palette-indigo-700);
+  --theme-color-text-button: var(--palette-indigo-700);
   --theme-color-button: var(--palette-pastelSnow-100);
   --theme-color-button-drop: var(--pallet-black);
+  --theme-color-image-border: var(--palette-indigo-700);
+  --theme-color-image-drop: var(--pallet-purple-950);
+}
+.theme-light-background {
+  --theme-background: var(--tailwind-zinc-50);
+  --theme-color-text: var(---pallet-black);
+  --theme-color-text-highlight: var(--pallet-purple-950);
   --theme-color-image-border: var(--palette-indigo-700);
   --theme-color-image-drop: var(--pallet-purple-950);
 }
@@ -39,8 +45,9 @@
   --font-sabon: var(--font-sabon), system-ui, sans-serif;
   --color-theme-background: var(--theme-background);
   --color-theme-card-background: var(--theme-color-card-background);
-  --color-theme-text: var(--theme-text);
-  --color-theme-text-button: var(--theme-text-button);
+  --color-theme-text: var(--theme-color-text);
+  --color-theme-text-highlight: var(--theme-color-text-highlight);
+  --color-theme-text-button: var(--theme-color-text-button);
   --color-theme-border: var(--theme-border);
   --color-theme-color-button: var(--theme-color-button);
   --color-theme-color-button-drop: var(--theme-color-button-drop);
