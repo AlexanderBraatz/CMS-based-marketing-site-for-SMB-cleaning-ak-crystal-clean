@@ -1,5 +1,6 @@
 import DoubleWidePictureAndText from './fonts/components/double-wide-picture-and-text';
 import HeroHome from './fonts/components/hero-home';
+import LinksToServices from './fonts/components/links-to-services';
 import LogoBanner from './fonts/components/logo-banner';
 import Navbar from './fonts/components/navbar';
 import TestimonialQuotes from './fonts/components/testimonial-quotes';
@@ -22,6 +23,7 @@ export default function Home() {
             <TestimonialQuotes />
             <ValuesAndImages />
             <DoubleWidePictureAndText />
+            <LinksToServices />
           </div>
         </div>
         <div className="h-200">scroll</div>

@@ -10,12 +10,14 @@
 :root {
   --tailwind-zinc-50: #fafafa;
   --palette-white: #ffffff;
+  --palette-white-2: #fefefe;
   --palette-neutral-100: #f4f4f4;
   --palette-indigo-950: #290d38;
   --pallet-purple-950: #410062;
   --palette-indigo-700: #552fc5;
   --palette-pastelSnow-100: #e4edf8;
   --pallet-black: #000000;
+  --pallet-pink: #ecd4f9;
 }
 
 .theme-dark-purple {
@@ -31,10 +33,13 @@
 }
 .theme-light-background {
   --theme-background: var(--tailwind-zinc-50);
+  --theme-color-large-link-background: var(--palette-white-2);
+  --theme-color-large-link-background-alternative: var(--pallet-pink);
   --theme-color-text: var(---pallet-black);
   --theme-color-text-highlight: var(--pallet-purple-950);
   --theme-color-image-border: var(--palette-indigo-700);
   --theme-color-image-drop: var(--pallet-purple-950);
+  --theme-color-button-drop: var(--pallet-black);
 }
 
 /* tailwind removes the prefix part --color --font  and makes the rest the utility class*/
@@ -53,6 +58,8 @@
   --color-theme-color-button-drop: var(--theme-color-button-drop);
   --color-theme-color-image-border: var(--theme-color-image-border);
   --color-theme-color-image-drop: var(--theme-color-image-drop);
+  --color-theme-color-large-link-background: var(--theme-color-large-link-background);
+  --color-theme-color-large-link-background-alternative: var(--theme-color-large-link-background-alternative);
 }
 
 body {
