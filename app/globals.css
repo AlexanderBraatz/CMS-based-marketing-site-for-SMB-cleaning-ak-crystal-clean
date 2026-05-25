@@ -45,6 +45,7 @@
   --theme-color-theme-gray: var(--pallet-gray);
   --theme-color-text-button: var(--pallet-purple-950);
   --theme-border: var(--pallet-purple-950);
+  --theme-color-text-highlight-2: var(--palette-indigo-700);
 }
 
 /* tailwind removes the prefix part --color --font  and makes the rest the utility class*/
@@ -57,6 +58,7 @@
   --color-theme-card-background: var(--theme-color-card-background);
   --color-theme-text: var(--theme-color-text);
   --color-theme-text-highlight: var(--theme-color-text-highlight);
+  --color-theme-text-highlight-2: var(--theme-color-text-highlight-2);
   --color-theme-text-button: var(--theme-color-text-button);
   --color-theme-border: var(--theme-border);
   --color-theme-color-button: var(--theme-color-button);

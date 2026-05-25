@@ -1,6 +1,7 @@
 import DoubleWidePictureAndText from './fonts/components/double-wide-picture-and-text';
 import FormWhitespace from './fonts/components/form-whitespace';
 import HeroHome from './fonts/components/hero-home';
+import KeyPoints from './fonts/components/key-points';
 import LinksToServices from './fonts/components/links-to-services';
 import LogoBanner from './fonts/components/logo-banner';
 import Map from './fonts/components/map';
@@ -28,6 +29,7 @@ export default function Home() {
             <LinksToServices />
             <FormWhitespace />
             <Map />
+            <KeyPoints />
           </div>
         </div>
         <div className="h-200">scroll</div>
