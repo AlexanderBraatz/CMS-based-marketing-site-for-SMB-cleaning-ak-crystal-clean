@@ -13,17 +13,22 @@
   --palette-white-2: #fefefe;
   --palette-neutral-100: #f4f4f4;
   --pallet-gray: #d9d9d9;
+  --pallet-gray2: #e8e8e8;
   --palette-indigo-950: #290d38;
   --pallet-purple-950: #410062;
   --palette-indigo-700: #552fc5;
   --palette-pastelSnow-100: #e4edf8;
   --pallet-black: #000000;
   --pallet-pink: #ecd4f9;
+  --pallet-slate-900: #1b032c;
+  --pallet-zinc-700: #3d254a;
 }
 
 .theme-dark-purple {
   --theme-background: var(--tailwind-zinc-50);
+  --theme-background-dark: var(--pallet-slate-900);
   --theme-color-card-background: var(--palette-indigo-950);
+  --theme-color-card-background-2: var(--pallet-zinc-700);
   --theme-color-text: var(--palette-neutral-100);
   --theme-border: var(--palette-indigo-700);
   --theme-color-text-button: var(--palette-indigo-700);
@@ -34,6 +39,7 @@
 }
 .theme-light-background {
   --theme-background: var(--tailwind-zinc-50);
+  --theme-background2: var(--pallet-gray2);
   --theme-color-large-link-background: var(--palette-white-2);
   --theme-color-large-link-background-alternative: var(--pallet-pink);
   --theme-color-text: var(---pallet-black);
@@ -55,7 +61,9 @@
   --font-instrument-sans: var(--font-instrument-sans), system-ui, sans-serif;
   --font-sabon: var(--font-sabon), system-ui, sans-serif;
   --color-theme-background: var(--theme-background);
+  --color-theme-background2: var(--theme-background2);
   --color-theme-card-background: var(--theme-color-card-background);
+  --color-theme-card-background-2: var(--theme-color-card-background-2);
   --color-theme-text: var(--theme-color-text);
   --color-theme-text-highlight: var(--theme-color-text-highlight);
   --color-theme-text-highlight-2: var(--theme-color-text-highlight-2);
@@ -68,7 +76,9 @@
   --color-theme-color-large-link-background: var(--theme-color-large-link-background);
   --color-theme-color-large-link-background-alternative: var(--theme-color-large-link-background-alternative);
   --color-theme-gray: var(--theme-color-theme-gray);
+  --color-theme-background-dark: var(--theme-background-dark);
 }
+
 body {
   background: var(--background);
   color: var(--foreground);
