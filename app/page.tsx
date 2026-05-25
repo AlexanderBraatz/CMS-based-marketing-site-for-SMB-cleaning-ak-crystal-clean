@@ -1,5 +1,6 @@
 import DoubleWidePictureAndText from './fonts/components/double-wide-picture-and-text';
 import FormWhitespace from './fonts/components/form-whitespace';
+import GrayGradientBackground from './fonts/components/gray-gradient-background';
 import HeroHome from './fonts/components/hero-home';
 import KeyPoints from './fonts/components/key-points';
 import LinksToServices from './fonts/components/links-to-services';
@@ -30,6 +31,7 @@ export default function Home() {
             <FormWhitespace />
             <Map />
             <KeyPoints />
+            <GrayGradientBackground />
           </div>
         </div>
         <div className="h-200">scroll</div>
