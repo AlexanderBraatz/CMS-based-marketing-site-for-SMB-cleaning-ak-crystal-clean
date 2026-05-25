@@ -1,4 +1,5 @@
 import DoubleWidePictureAndText from './fonts/components/double-wide-picture-and-text';
+import FormWhitespace from './fonts/components/form-whitespace';
 import HeroHome from './fonts/components/hero-home';
 import LinksToServices from './fonts/components/links-to-services';
 import LogoBanner from './fonts/components/logo-banner';
@@ -24,6 +25,7 @@ export default function Home() {
             <ValuesAndImages />
             <DoubleWidePictureAndText />
             <LinksToServices />
+            <FormWhitespace />
           </div>
         </div>
         <div className="h-200">scroll</div>

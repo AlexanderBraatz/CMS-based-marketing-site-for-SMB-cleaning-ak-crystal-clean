@@ -12,6 +12,7 @@
   --palette-white: #ffffff;
   --palette-white-2: #fefefe;
   --palette-neutral-100: #f4f4f4;
+  --pallet-gray: #d9d9d9;
   --palette-indigo-950: #290d38;
   --pallet-purple-950: #410062;
   --palette-indigo-700: #552fc5;
@@ -40,6 +41,10 @@
   --theme-color-image-border: var(--palette-indigo-700);
   --theme-color-image-drop: var(--pallet-purple-950);
   --theme-color-button-drop: var(--pallet-black);
+  --theme-color-button: var(--pallet-pink);
+  --theme-color-theme-gray: var(--pallet-gray);
+  --theme-color-text-button: var(--pallet-purple-950);
+  --theme-border: var(--pallet-purple-950);
 }
 
 /* tailwind removes the prefix part --color --font  and makes the rest the utility class*/
@@ -60,8 +65,8 @@
   --color-theme-color-image-drop: var(--theme-color-image-drop);
   --color-theme-color-large-link-background: var(--theme-color-large-link-background);
   --color-theme-color-large-link-background-alternative: var(--theme-color-large-link-background-alternative);
+  --color-theme-gray: var(--theme-color-theme-gray);
 }
-
 body {
   background: var(--background);
   color: var(--foreground);
