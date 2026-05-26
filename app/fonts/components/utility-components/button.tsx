@@ -4,12 +4,12 @@ export default function Button({
   text,
   className = '',
   size,
-  variant,
+  variant = '',
 }: {
   text: string;
   className?: string;
   size: string;
-  variant: string;
+  variant?: string;
 }) {
   return (
     <span className={`${className} relative z-0`}>
@@ -19,7 +19,7 @@ export default function Button({
         <div>{text}</div>
       </button>
       <span
-        className={`${size === 'small' ? 'w-36' : size === 'large' ? 'w-[308px]' : ''} bg-theme-color-button-drop absolute top-1 left-1 -z-20 h-10`}
+        className={`${size === 'small' ? 'w-36' : size === 'large' ? 'w-[308px]' : ''} ${variant === 'onWhite' ? 'bg-white' : 'bg-theme-color-button-drop'} absolute top-1 left-1 -z-20 h-10`}
       />
     </span>
   );
