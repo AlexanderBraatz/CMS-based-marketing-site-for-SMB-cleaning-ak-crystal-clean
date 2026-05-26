@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Barlow_Semi_Condensed, Instrument_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
+import Footer from './fonts/components/footer';
 
 const barlowSemiCondensed = Barlow_Semi_Condensed({
   variable: '--font-barlow-semi-condensed',
@@ -123,7 +124,10 @@ export default function RootLayout({
       lang="en"
       className={`${cooperHewitt.variable} ${sabon.variable} ${barlowSemiCondensed.variable} ${instrumentSans.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

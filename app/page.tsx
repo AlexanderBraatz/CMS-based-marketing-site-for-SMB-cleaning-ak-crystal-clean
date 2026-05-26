@@ -48,8 +48,6 @@ export default function Home() {
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnly />
         </div>
-
-        <div className="h-200">scroll</div>
       </main>
     </div>
   );
