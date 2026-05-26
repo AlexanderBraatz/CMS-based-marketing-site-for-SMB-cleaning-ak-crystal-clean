@@ -87,3 +87,22 @@ body {
 .gray-gradient-background {
   background: linear-gradient(to bottom, #fafafa, #e8e8e8);
 }
+
+/* Client preview: only show the site between 1020px and 1060px viewport width */
+.viewport-gate-content {
+  display: none;
+}
+
+.viewport-gate-disclaimer {
+  display: flex;
+}
+
+@media (min-width: 1020px) and (max-width: 1060px) {
+  .viewport-gate-content {
+    display: flex;
+  }
+
+  .viewport-gate-disclaimer {
+    display: none;
+  }
+}
