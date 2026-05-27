@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Footer from './fonts/components/footer';
 import ViewportGate from './viewport-gate';
+import Navbar from './fonts/components/navbar';
 
 const barlowSemiCondensed = Barlow_Semi_Condensed({
   variable: '--font-barlow-semi-condensed',
@@ -126,10 +127,11 @@ export default function RootLayout({
       className={`${cooperHewitt.variable} ${sabon.variable} ${barlowSemiCondensed.variable} ${instrumentSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
-        <ViewportGate>
-          {children}
-          <Footer />
-        </ViewportGate>
+        {/* <ViewportGate> */}
+        <Navbar />
+        {children}
+        <Footer />
+        {/* </ViewportGate> */}
       </body>
     </html>
   );

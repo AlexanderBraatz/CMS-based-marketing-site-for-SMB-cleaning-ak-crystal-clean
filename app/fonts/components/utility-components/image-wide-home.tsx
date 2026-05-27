@@ -1,8 +1,7 @@
-import Image from 'next/image';
 import React from 'react';
-import image from '@/public/images/video-placeholder2.jpg';
+import Image, { StaticImageData } from 'next/image';
 
-export default function ImageWideHome() {
+export default function ImageWideHome({ image }: { image: StaticImageData }) {
   return (
     <div className="flex justify-end">
       <div className="after:bg-theme-color-image-drop relative h-[300px] w-[441px] after:absolute after:top-2 after:left-2 after:-z-10 after:h-[300px] after:w-[441px] after:rounded-tl-[80px] after:rounded-br-[80px] after:content-['']">

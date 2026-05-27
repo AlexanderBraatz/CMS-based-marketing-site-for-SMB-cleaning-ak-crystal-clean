@@ -8,9 +8,8 @@ import LeftTextAndButton from './fonts/components/left-text-and-button';
 import LinksToServices from './fonts/components/links-to-services';
 import LogoBanner from './fonts/components/logo-banner';
 import Map from './fonts/components/map';
-import Navbar from './fonts/components/navbar';
 import TestimonialQuotes from './fonts/components/testimonial-quotes';
-import ImageWideSectionOnLeft from './fonts/components/utility-components/image-wide-section-on-left';
+
 import ValuesAndImages from './fonts/components/values-and-images';
 import WaveBackground from './fonts/components/wave-background';
 import WidePictureAndText from './fonts/components/wide-picture-and-text';
@@ -19,9 +18,8 @@ import FormMessageOnly from './fonts/components/form-message-only';
 export default function Home() {
   return (
     <div className="theme-light-background bg-theme-background w-full">
-      <main className="relative">
+      <main>
         <div className="relative z-10 mx-auto mb-50 w-[1060px]">
-          <Navbar />
           <WaveBackground />
           <div className="flex flex-col gap-[96px] pb-[96px]">
             <HeroHome />
