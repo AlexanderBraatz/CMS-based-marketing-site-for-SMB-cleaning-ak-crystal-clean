@@ -1,8 +1,7 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
-import image from '@/public/images/team-two-happy-green3.jpg';
 
-export default function ImageWideSectionOnLeft() {
+export default function ImageWideSectionOnLeft({ image }: { image: StaticImageData }) {
   return (
     <div className="flex justify-start">
       <div className="after:bg-theme-color-image-drop relative h-[354px] w-[441px] after:absolute after:top-1 after:right-1 after:-z-10 after:h-[354px] after:w-[441px] after:rounded-tr-[80px] after:rounded-bl-[80px] after:content-['']">

@@ -4,6 +4,8 @@ import HeroServices from '../fonts/components/hero-services';
 import DoubleWidePictureAndText from '../fonts/components/double-wide-picture-and-text';
 import imageLeft from '@/public/images/team-solo-man-2.jpg';
 import imageRight from '@/public/images/team-solo-woman-2.png';
+import WidePictureAndText from '../fonts/components/wide-picture-and-text';
+import image3 from '@/public/images/team-three-women.jpg';
 
 export default function jobs() {
   return (
@@ -20,6 +22,15 @@ export default function jobs() {
             }}
             imageLeft={imageLeft}
             imageRight={imageRight}
+          />
+          <WidePictureAndText
+            image={image3}
+            imageOnLeft={false}
+            text={{
+              caption: 'Was Uns Auszeichnet',
+              heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
+              body: ' Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. Das Ergebnis ist ein engagiertes, stolzes Team — das Ihre Räume so behandelt, als wären es die eigenen.',
+            }}
           />
         </div>
       </div>
