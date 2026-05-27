@@ -9,6 +9,8 @@ import LinksToServices from './fonts/components/links-to-services';
 import LogoBanner from './fonts/components/logo-banner';
 import Map from './fonts/components/map';
 import TestimonialQuotes from './fonts/components/testimonial-quotes';
+import imageLeft from '@/public/images/team-solo-man1.jpg';
+import imageRight from '@/public/images/team-solo-woman1.jpg';
 
 import ValuesAndImages from './fonts/components/values-and-images';
 import WaveBackground from './fonts/components/wave-background';
@@ -28,7 +30,15 @@ export default function Home() {
             <div className="flex flex-col gap-[180px]">
               <TestimonialQuotes />
               <ValuesAndImages />
-              <DoubleWidePictureAndText />
+              <DoubleWidePictureAndText
+                imageLeft={imageLeft}
+                imageRight={imageRight}
+                text={{
+                  caption: 'Was Uns Auszeichnet',
+                  heading: 'Ein Ansprechpartner für <br /> effiziente Betreuung',
+                  body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
+                }}
+              />
               <LinksToServices />
               <FormWhitespace />
               <Map />
