@@ -6,6 +6,11 @@ import imageLeft from '@/public/images/team-solo-man-2.jpg';
 import imageRight from '@/public/images/team-solo-woman-2.png';
 import WidePictureAndText from '../fonts/components/wide-picture-and-text';
 import image3 from '@/public/images/team-three-women.jpg';
+import BulletPoints from '../fonts/components/bullet-points';
+import icon1 from '@/public/images/icon-s-height.svg';
+import icon2 from '@/public/images/icon-s-spa.svg';
+import icon3 from '@/public/images/icon-s-electric_rickshaw.svg';
+import icon4 from '@/public/images/icon-s-wall-person.svg';
 
 export default function jobs() {
   return (
@@ -17,7 +22,7 @@ export default function jobs() {
           <DoubleWidePictureAndText
             text={{
               caption: 'Was Uns Auszeichnet',
-              heading: 'Werde Teil UnseresReinigungsteams',
+              heading: 'Werde Teil Unseres Reinigungsteams',
               body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
             }}
             imageLeft={imageLeft}
@@ -30,6 +35,33 @@ export default function jobs() {
               caption: 'Was Uns Auszeichnet',
               heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
               body: ' Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. Das Ergebnis ist ein engagiertes, stolzes Team — das Ihre Räume so behandelt, als wären es die eigenen.',
+            }}
+          />
+          <BulletPoints
+            bullets={[
+              {
+                point: 'Familiäres Arbeitsklima',
+                icon: icon1,
+                body: 'Bei uns erwartet Sie ein respektvolles und familiäres Arbeitsumfeld, in dem Teamarbeit und gegenseitige Unterstützung an erster Stelle stehen. Neue Mitarbeiter werden sorgfältig eingearbeitet und können sich jederzeit auf feste Ansprechpartner verlassen.\n\nDurch kurze Kommunikationswege und ein freundliches Miteinander schaffen wir eine angenehme Atmosphäre im Arbeitsalltag. Gemeinsam sorgen wir dafür, dass sich jeder im Team wertgeschätzt und wohlfühlt.\n\nRegelmäßiger Austausch und ein starker Zusammenhalt machen die Zusammenarbeit nicht nur effizient, sondern auch persönlich und motivierend.',
+              },
+              {
+                point: 'Abwechslungsreiche Aufgaben',
+                icon: icon2,
+                body: 'Unsere Mitarbeiter profitieren von vielseitigen Aufgabenbereichen in der Innen- und Außenreinigung sowie bei unterschiedlichen Kundenprojekten. Dadurch bleibt der Arbeitsalltag abwechslungsreich und bietet immer neue Herausforderungen.\n\nVon Bürogebäuden bis hin zu privaten Objekten sammeln Sie wertvolle Erfahrungen in verschiedenen Einsatzbereichen. So können Sie Ihre Fähigkeiten erweitern und neue Tätigkeiten kennenlernen.\n\nDurch die Vielfalt der Aufgaben entsteht ein spannender Arbeitsplatz mit abwechslungsreichen Einsätzen und interessanten Arbeitsumgebungen.',
+              },
+              {
+                point: 'Weiterbildungsmöglichkeiten',
+                icon: icon3,
+                body: 'Wir legen großen Wert auf die persönliche und berufliche Weiterentwicklung unserer Mitarbeiter. Deshalb unterstützen wir Sie mit regelmäßigen Schulungen und praxisnahen Weiterbildungsmöglichkeiten.\n\nDurch gezielte Einarbeitung und moderne Arbeitsmethoden können Sie Ihre Kenntnisse kontinuierlich ausbauen. So bleiben Sie fachlich immer auf dem neuesten Stand und entwickeln sich Schritt für Schritt weiter.\n\nUnser Ziel ist es, langfristige Perspektiven zu schaffen und engagierten Mitarbeitern echte Entwicklungsmöglichkeiten innerhalb des Unternehmens zu bieten.',
+              },
+              {
+                point: 'Regionale Einsätze',
+                icon: icon4,
+                body: 'Unsere Einsätze finden überwiegend in der Region statt, sodass lange Anfahrtswege vermieden werden können. Das sorgt für eine bessere Planbarkeit und mehr Zeit für Familie und Freizeit.\n\nDurch die regionale Betreuung unserer Kunden arbeiten Sie in vertrauten Einsatzgebieten und profitieren von geregelten Arbeitsabläufen. Gleichzeitig lernen Sie unterschiedliche Objekte und Kunden aus der Umgebung kennen.\n\nKurze Wege, feste Einsatzorte und eine zuverlässige Organisation machen den Arbeitsalltag effizienter und angenehmer für unser gesamtes Team.',
+              },
+            ]}
+            text={{
+              heading: 'Ihre Vorteile als Mitarbeiter bei AK Crystal Clean  ',
             }}
           />
         </div>
