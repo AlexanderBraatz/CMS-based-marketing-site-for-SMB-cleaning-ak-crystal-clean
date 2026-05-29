@@ -22,7 +22,7 @@ export default function WidePictureAndText({
       >
         <p className="font-barlow-semi-condensed text-theme-text-highlight font-bold">{text.caption}</p>
         <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
-          {text.caption}
+          {text.heading}
         </h3>
         <p className="font-instrument-sans leading-normal tracking-tighter">{text.body}</p>
       </div>

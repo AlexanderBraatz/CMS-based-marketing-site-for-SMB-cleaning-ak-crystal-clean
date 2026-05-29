@@ -12,9 +12,9 @@ const navLinks = [
 
 const serviceLinks = [
   { href: '/leistungen/glass-und-fassaden', label: 'Glas und Fassaden' },
-  { href: '/leistungen/unterhalts-reinigung', label: 'Unterhaltsreinigung' },
+  { href: '/leistungen/unterhaltsreinigung', label: 'Unterhaltsreinigung' },
   { href: '/leistungen/hausmeisterdienst', label: 'Hausmeisterdienst' },
-  { href: '/leistungen/', label: 'Alle Leistungen' },
+  { href: '/leistungen', label: 'Alle Leistungen' },
 ];
 
 export default function Footer() {

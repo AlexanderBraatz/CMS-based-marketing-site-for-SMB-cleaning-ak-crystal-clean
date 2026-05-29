@@ -339,4 +339,8 @@ export const SERVICE_OPTIONS = [
 ] as const;
 
 export type ServiceValue = (typeof SERVICE_OPTIONS)[number]['value'];
-export type TempFullService = (typeof SERVICE_OPTIONS)[0];
+export type TempFullService = (typeof SERVICE_OPTIONS)[number];
+
+export function getServiceByValue(value: ServiceValue): TempFullService | undefined {
+  return SERVICE_OPTIONS.find((service) => service.value === value);
+}

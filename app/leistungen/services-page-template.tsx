@@ -17,7 +17,7 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
       <div className="relative z-10 mx-auto w-[1060px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
-          <HeroServices />
+          <HeroServices heading={pageData.page.heading} subHeading={pageData.page.subHeading} />
           <DoubleWidePictureAndText
             text={{
               caption: pageData.page.section1.caption,
@@ -56,7 +56,7 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
-            heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
+            heading={`Jetzt ${pageData.label} kostenlos anfragen.`}
             showMulitChoice={true}
           />
         </div>
