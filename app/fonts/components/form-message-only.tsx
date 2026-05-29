@@ -44,11 +44,11 @@ export default function FormMessageOnlyOrMultiChoice({
         <div className="px-[82px]">
           <div className="bg-theme-card-background-2 grid w-full grid-cols-2 gap-5">
             <div className="flex h-full min-h-0 flex-col pt-8 pl-5">
-              <h5 className="font-cooper-hewitt text-theme-text mb-12 shrink-0 text-3xl font-semibold tracking-tighter">
-                Was können wir für sie tun ?
+              <h5 className="font-cooper-hewitt text-theme-text mb-6 shrink-0 text-3xl leading-tight font-semibold tracking-tight">
+                {heading}
               </h5>
               <form className="flex min-h-0 flex-1 flex-col pb-5">
-                <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-[auto_auto_1fr] gap-x-5 gap-y-3">
+                <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-[auto_auto_1fr] gap-x-5 gap-y-5">
                   <div className="col-span-2 row-start-1 flex w-full flex-col">
                     <label className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white">
                       Name

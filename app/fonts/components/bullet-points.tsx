@@ -7,9 +7,15 @@ import icon3 from '@/public/images/icon-s-electric_rickshaw.svg';
 import icon4 from '@/public/images/icon-s-wall-person.svg';
 import Button from './utility-components/button';
 
-type Bullet = { point: string; icon: StaticImageData; body: string };
+type Bullet = Readonly<{ point: string; icon: StaticImageData; body: string }>;
 
-export default function BulletPoints({ bullets, text }: { bullets: Bullet[]; text: { heading: string } }) {
+export default function BulletPoints({
+  bullets,
+  text,
+}: {
+  bullets: readonly Bullet[];
+  text: Readonly<{ heading: string }>;
+}) {
   const [isFocused, setIsFocused] = useState(0);
   return (
     <div className="px-[5%]">
@@ -35,7 +41,7 @@ export default function BulletPoints({ bullets, text }: { bullets: Bullet[]; tex
           {bullets.map((bullet, index) => (
             <p
               key={index}
-              className={` ${isFocused === index ? 'opacity-80' : 'opacity-0'} font-instrument-sans absolute leading-loose tracking-normal whitespace-pre-line transition-all duration-300 ease-out`}
+              className={` ${isFocused === index ? 'opacity-100' : 'opacity-0'} font-instrument-sans absolute leading-loose tracking-normal whitespace-pre-line transition-all duration-300 ease-out`}
             >
               {bullet.body}
             </p>

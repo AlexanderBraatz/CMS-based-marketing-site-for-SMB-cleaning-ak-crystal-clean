@@ -18,7 +18,7 @@ import GloveWipe from '../fonts/components/glvoe-wipe';
 import FormMessageOnly from '../fonts/components/form-message-only';
 import FormMessageOnlyOrMultiChoice from '../fonts/components/form-message-only';
 
-export default function jobs() {
+export default function Jobs() {
   return (
     <main className="theme-light-background bg-theme-background w-full">
       <div className="relative z-10 mx-auto w-[1060px]">
@@ -82,8 +82,7 @@ export default function jobs() {
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
-            heading="Jetzt Unterhaltsreinigung
-kostenlos anfragen."
+            heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
             showMulitChoice={true}
           />
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function KeyPoints() {
+export default function KeyPoints({ className }: { className?: string }) {
   const facts = [
     { heading: '30+ Jahre Erfahrung', subtext: 'Eigentümergeführt' },
     { heading: '2300 + Objekte', subtext: '25% Wachstum in 2025' },
@@ -8,7 +8,7 @@ export default function KeyPoints() {
   ];
   const styles = ['items-start', 'items-center', 'items-end'];
   return (
-    <div className="relative z-10 mb-6 px-[5%]">
+    <div className={`relative z-10 mb-6 px-[5%] ${className}`}>
       <div className="bg-theme-background absolute left-[50%] -z-10 h-[164px] w-[2000px] translate-x-[-50%] rotate-11"></div>
       <div className="relative -top-5 space-y-8">
         {facts.map((fact, index) => (

@@ -2,18 +2,7 @@
 
 import React, { useState } from 'react';
 import Button from './utility-components/button';
-
-const SERVICE_OPTIONS = [
-  { value: 'glass-und-fassaden', label: 'Glass und Fassaden' },
-  { value: 'unterhaltsreinigung', label: 'Unterhaltsreinigung' },
-  { value: 'hausmeisterdienst', label: 'Hausmeisterdienst' },
-  { value: 'pflasterstein-wege', label: 'Pflasterstein & Wege' },
-  { value: 'entruempelung', label: 'Entrümpelung' },
-  { value: 'solar-und-dach', label: 'Solar und Dach' },
-  { value: 'industrie', label: 'Industrie' },
-] as const;
-
-type ServiceValue = (typeof SERVICE_OPTIONS)[number]['value'];
+import { SERVICE_OPTIONS, ServiceValue } from '@/lib/data';
 
 export default function FormWhitespace() {
   const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(new Set());

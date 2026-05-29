@@ -17,6 +17,7 @@ import ValuesAndImages from './fonts/components/values-and-images';
 import WaveBackground from './fonts/components/wave-background';
 import WidePictureAndText from './fonts/components/wide-picture-and-text';
 import FormMessageOnly from './fonts/components/form-message-only';
+import FormMessageOnlyOrMultiChoice from './fonts/components/form-message-only';
 
 export default function Home() {
   return (
@@ -63,7 +64,7 @@ export default function Home() {
           </div>
         </div>
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
-          <FormMessageOnly />
+          <FormMessageOnlyOrMultiChoice heading="Was können wir für Sie tun ?" showMulitChoice={false} />
         </div>
       </main>
     </div>
