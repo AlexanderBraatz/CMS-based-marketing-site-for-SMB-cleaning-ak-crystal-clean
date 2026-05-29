@@ -6,7 +6,7 @@ import Button from './utility-components/button';
 import Link from 'next/link';
 export default function Navbar() {
   return (
-    <header className="theme-dark-purple border-b-theme-color-image-border bg-theme-card-background/70 text-theme-text sticky top-0 z-100 flex h-[90px] items-center justify-center border-b px-[5%]">
+    <header className="theme-dark-purple border-b-theme-color-image-border bg-theme-card-background/70 text-theme-text sticky top-0 z-100 flex h-[60px] items-center justify-center border-b px-[5%]">
       <div className="w-[1060px]">
         <div className="flex justify-between px-[5%]">
           <div className="flex items-baseline justify-center gap-2">

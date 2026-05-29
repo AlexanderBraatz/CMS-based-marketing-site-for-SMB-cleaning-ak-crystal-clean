@@ -24,7 +24,7 @@ export default function BulletPoints({ bullets, text }: { bullets: Bullet[]; tex
             <div
               onMouseOver={() => setIsFocused(index)}
               key={index}
-              className={` ${isFocused === index ? 'border-theme-color-image-border' : 'border-transparent'} flex h-15 flex-row items-center justify-start gap-5 border px-2 transition-all duration-300 ease-out`}
+              className={` ${isFocused === index ? 'border-theme-color-image-border' : 'border-transparent'} flex h-15 cursor-default flex-row items-center justify-start gap-5 border px-2 transition-all duration-300 ease-out`}
             >
               <Image src={bullet.icon} alt="icon" />
               <p className="font-instrument-sans text-xl font-semibold tracking-tight opacity-80">{bullet.point}</p>

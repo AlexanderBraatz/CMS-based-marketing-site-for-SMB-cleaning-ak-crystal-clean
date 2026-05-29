@@ -11,13 +11,19 @@ import icon1 from '@/public/images/icon-s-height.svg';
 import icon2 from '@/public/images/icon-s-spa.svg';
 import icon3 from '@/public/images/icon-s-electric_rickshaw.svg';
 import icon4 from '@/public/images/icon-s-wall-person.svg';
+import KeyPoints from '../fonts/components/key-points';
+import GrayGradientBackground from '../fonts/components/gray-gradient-background';
+import LeftTextAndButton from '../fonts/components/left-text-and-button';
+import GloveWipe from '../fonts/components/glvoe-wipe';
+import FormMessageOnly from '../fonts/components/form-message-only';
+import FormMessageOnlyOrMultiChoice from '../fonts/components/form-message-only';
 
 export default function jobs() {
   return (
     <main className="theme-light-background bg-theme-background w-full">
       <div className="relative z-10 mx-auto w-[1060px]">
         <WaveBackground />
-        <div className="flex flex-col gap-[96px] pb-[96px]">
+        <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <HeroServices />
           <DoubleWidePictureAndText
             text={{
@@ -63,6 +69,22 @@ export default function jobs() {
             text={{
               heading: 'Ihre Vorteile als Mitarbeiter bei AK Crystal Clean  ',
             }}
+          />
+        </div>
+      </div>
+      <div className="bg-theme-background2">
+        <div className="relative z-0 mx-auto w-[1060px] pb-25">
+          <KeyPoints />
+          <GrayGradientBackground />
+          <div className="h-[356px]"></div>
+          <GloveWipe />
+        </div>
+
+        <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
+          <FormMessageOnlyOrMultiChoice
+            heading="Jetzt Unterhaltsreinigung
+kostenlos anfragen."
+            showMulitChoice={true}
           />
         </div>
       </div>
