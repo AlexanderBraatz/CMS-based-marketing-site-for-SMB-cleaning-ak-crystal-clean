@@ -1,7 +1,10 @@
+'use client';
 import React from 'react';
 import ImageWideSectionOnLeft from './utility-components/image-wide-section-on-left';
 import { StaticImageData } from 'next/image';
 import ImageWideSectionOnRight from './image-wide-section-on-right';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 
 export default function WidePictureAndText({
   image,
@@ -15,7 +18,7 @@ export default function WidePictureAndText({
   liftTextForSlantedDesign?: boolean;
 }) {
   return (
-    <div className="theme-light-background text-theme-text grid grid-cols-2 px-[5%]">
+    <motion.div {...fadeInUp} className="theme-light-background text-theme-text grid grid-cols-2 px-[5%]">
       {imageOnLeft ? <ImageWideSectionOnLeft image={image} /> : <></>}
       <div
         className={`relative flex flex-col gap-5 ${liftTextForSlantedDesign ? 'top-[-100px]' : ''} ${imageOnLeft ? 'pl-[31px]' : 'pr-[31]'}`}
@@ -27,6 +30,6 @@ export default function WidePictureAndText({
         <p className="font-instrument-sans leading-normal tracking-tighter">{text.body}</p>
       </div>
       {imageOnLeft ? <></> : <ImageWideSectionOnRight image={image} />}
-    </div>
+    </motion.div>
   );
 }

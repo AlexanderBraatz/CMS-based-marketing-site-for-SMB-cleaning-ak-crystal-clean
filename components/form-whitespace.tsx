@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import Button from './utility-components/button';
 import { SERVICE_OPTIONS, ServiceValue } from '@/lib/data';
 
@@ -20,7 +22,7 @@ export default function FormWhitespace() {
   }
 
   return (
-    <div className="mx-auto flex w-[472px] flex-col items-center">
+    <motion.div {...fadeInUp} className="mx-auto flex w-[472px] flex-col items-center">
       <h3 className="font-instrument-sans w-[520px] pb-10 text-center text-[32px] leading-tight font-semibold tracking-tighter">
         Erhalten Sie ein kostenloses Angebot für Ihren Reinigungsbedarf
       </h3>
@@ -74,6 +76,6 @@ export default function FormWhitespace() {
         </div>
         <Button size="large" text="IHR PERSÖNLICHES ANGEBOT" />
       </form>
-    </div>
+    </motion.div>
   );
 }

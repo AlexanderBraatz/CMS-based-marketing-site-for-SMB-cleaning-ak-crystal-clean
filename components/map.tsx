@@ -1,11 +1,15 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import map from '@/public/images/map-image.jpg';
 import location from '@/public/images/grimmelshausen-twon.jpg';
 import icon from '@/public/images/location-pin.svg';
 
 export default function Map() {
   return (
-    <div className="px-[5%]">
+    <motion.div {...fadeInUp} className="px-[5%]">
       <h3 className="font-instrument-sans w-full pb-10 text-center text-[32px] leading-tight font-semibold tracking-tighter">
         Unsere Servicegebiete
       </h3>
@@ -35,6 +39,6 @@ export default function Map() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,4 +1,8 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import type { StaticImageData } from 'next/image';
 import ServiceLink from './utility-components/service-link';
 import { SERVICE_OPTIONS, type ServiceValue } from '@/lib/data';
@@ -24,7 +28,7 @@ const SERVICE_ICONS: Record<ServiceValue, StaticImageData> = {
 
 export default function LinksToServices() {
   return (
-    <div className="px-[5%]">
+    <motion.div {...fadeInUp} className="px-[5%]">
       <p className="font-barlow-semi-condensed text-theme-text-highlight pb-5 font-bold">Ihre Wahl</p>
       <h3 className="font-cooper-hewitt pb-10 text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
         Professionelle Gebäudereinigung für ihr Unternehmen
@@ -40,6 +44,6 @@ export default function LinksToServices() {
         ))}
         <ServiceLink href="/leistungen/" heading="Unser Leistungen >" image={image8} />
       </div>
-    </div>
+    </motion.div>
   );
 }

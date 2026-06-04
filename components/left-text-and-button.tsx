@@ -1,9 +1,13 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import Button from './utility-components/button';
 
 export default function LeftTextAndButton() {
   return (
-    <div className="px-[5%]">
+    <motion.div {...fadeInUp} className="px-[5%]">
       <div className="ml-[82px] flex w-[340px] flex-col gap-5">
         <p className="font-barlow-semi-condensed text-theme-text-highlight mb-2 font-bold">Unsere Überzeugung</p>
         <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
@@ -16,6 +20,6 @@ export default function LeftTextAndButton() {
         </p>
         <Button variant="ghost" size="small" text="KONTAKT" />
       </div>
-    </div>
+    </motion.div>
   );
 }

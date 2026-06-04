@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 import logo1 from '@/public/images/logos/logo-hoeffner.svg';
@@ -5,9 +6,11 @@ import logo1 from '@/public/images/logos/logo-hoeffner.svg';
 import logo2 from '@/public/images/logos/main-koerper-360.svg';
 import logo3 from '@/public/images/logos/logo-weber.svg';
 import Image from 'next/image';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 export default function TestimonialQuotes() {
   return (
-    <div className="flex gap-5 px-[5%]">
+    <motion.div {...fadeInUp} className="flex gap-5 px-[5%]">
       <div className="flex flex-col items-center text-center">
         <Image src={logo1} alt="logo" className="mb-7 h-8 opacity-60" />
         <p className="font-instrument-sans grow px-6 pb-4 text-base leading-tight tracking-tight opacity-80">
@@ -32,6 +35,6 @@ export default function TestimonialQuotes() {
         <p>WEBER GRILL</p>
         <p className="text-base opacity-50">Industrie Reinigung</p>
       </div>
-    </div>
+    </motion.div>
   );
 }

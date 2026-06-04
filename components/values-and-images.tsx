@@ -1,4 +1,8 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import image1 from '@/public/images/team-solo-dusting-tall.jpg';
 import image2 from '@/public/images/team-solo-window-cleaning-tall.jpg';
 import image3 from '@/public/images/team-solo-outside-house-cleaning.jpg';
@@ -12,7 +16,7 @@ import icon4 from '@/public/images/icon-shield_person.svg';
 
 export default function ValuesAndImages() {
   return (
-    <div className="grid grid-cols-4 gap-5 px-[5%] pt-8">
+    <motion.div {...fadeInUp} className="grid grid-cols-4 gap-5 px-[5%] pt-8">
       <TallImageDropLeft src={image1} />
       <TallTextBox
         icon={icon1}
@@ -40,6 +44,6 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
         text="Fokussierte Gebäudereinigung mit maßgeschneiderten Lösungen, die genau Ihren Anforderungen entsprechen."
       />
       <TallImageDropLeft src={image4} />
-    </div>
+    </motion.div>
   );
 }
