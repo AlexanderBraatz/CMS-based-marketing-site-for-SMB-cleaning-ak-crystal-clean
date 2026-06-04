@@ -9,10 +9,10 @@ export default function Navbar() {
     <header className="theme-dark-purple border-b-theme-color-image-border bg-theme-card-background/70 text-theme-text sticky top-0 z-100 flex h-[60px] items-center justify-center border-b px-[5%]">
       <div className="w-[1060px]">
         <div className="flex justify-between px-[5%]">
-          <div className="flex items-baseline justify-center gap-2">
+          <Link className="flex items-baseline justify-center gap-2" href="/">
             <Image src={logo} alt="logo" className="block h-[40px] w-auto" />
             <Image src={logoText} alt="logo" className="block h-[30px] w-auto" />
-          </div>
+          </Link>
           <div className="flex items-center justify-center gap-5">
             <nav>
               <ul className="font-barlow-semi-condensed flex items-center justify-between gap-5 text-base">
