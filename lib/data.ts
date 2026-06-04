@@ -291,7 +291,7 @@ export const SERVICE_OPTIONS = [
   },
   {
     value: 'industrie',
-    label: 'Industrie',
+    label: 'Industriereinigung',
     page: {
       heading: 'Industriereinigung',
       subHeading: 'Effizienz beginnt mit professioneller Reinigung.',

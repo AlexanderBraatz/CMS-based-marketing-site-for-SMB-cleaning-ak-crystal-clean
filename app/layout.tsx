@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Barlow_Semi_Condensed, Instrument_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import Footer from './fonts/components/footer';
+import Footer from '../components/footer';
 import ViewportGate from './viewport-gate';
-import Navbar from './fonts/components/navbar';
+import Navbar from '../components/navbar';
 
 const barlowSemiCondensed = Barlow_Semi_Condensed({
   variable: '--font-barlow-semi-condensed',

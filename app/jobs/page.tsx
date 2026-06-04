@@ -1,22 +1,22 @@
 import React from 'react';
-import WaveBackground from '../fonts/components/wave-background';
-import HeroServices from '../fonts/components/hero-services';
-import DoubleWidePictureAndText from '../fonts/components/double-wide-picture-and-text';
+import WaveBackground from '../../components/wave-background';
+import HeroServices from '../../components/hero-services';
+import DoubleWidePictureAndText from '../../components/double-wide-picture-and-text';
 import imageLeft from '@/public/images/team-solo-man-2.jpg';
 import imageRight from '@/public/images/team-solo-woman-2.png';
-import WidePictureAndText from '../fonts/components/wide-picture-and-text';
+import WidePictureAndText from '../../components/wide-picture-and-text';
 import image3 from '@/public/images/team-three-women.jpg';
-import BulletPoints from '../fonts/components/bullet-points';
+import BulletPoints from '../../components/bullet-points';
 import icon1 from '@/public/images/icon-s-height.svg';
 import icon2 from '@/public/images/icon-s-spa.svg';
 import icon3 from '@/public/images/icon-s-electric_rickshaw.svg';
 import icon4 from '@/public/images/icon-s-wall-person.svg';
-import KeyPoints from '../fonts/components/key-points';
-import GrayGradientBackground from '../fonts/components/gray-gradient-background';
-import LeftTextAndButton from '../fonts/components/left-text-and-button';
-import GloveWipe from '../fonts/components/glvoe-wipe';
-import FormMessageOnly from '../fonts/components/form-message-only';
-import FormMessageOnlyOrMultiChoice from '../fonts/components/form-message-only';
+import KeyPoints from '../../components/key-points';
+import GrayGradientBackground from '../../components/gray-gradient-background';
+import LeftTextAndButton from '../../components/left-text-and-button';
+import GloveWipe from '../../components/glvoe-wipe';
+import FormMessageOnly from '../../components/form-message-only';
+import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
 
 export default function Jobs() {
   return (

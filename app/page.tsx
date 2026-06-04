@@ -1,23 +1,23 @@
-import DoubleWidePictureAndText from './fonts/components/double-wide-picture-and-text';
-import FormWhitespace from './fonts/components/form-whitespace';
-import GloveWipe from './fonts/components/glvoe-wipe';
-import GrayGradientBackground from './fonts/components/gray-gradient-background';
-import HeroHome from './fonts/components/hero-home';
-import KeyPoints from './fonts/components/key-points';
-import LeftTextAndButton from './fonts/components/left-text-and-button';
-import LinksToServices from './fonts/components/links-to-services';
-import LogoBanner from './fonts/components/logo-banner';
-import Map from './fonts/components/map';
-import TestimonialQuotes from './fonts/components/testimonial-quotes';
+import DoubleWidePictureAndText from '../components/double-wide-picture-and-text';
+import FormWhitespace from '../components/form-whitespace';
+import GloveWipe from '../components/glvoe-wipe';
+import GrayGradientBackground from '../components/gray-gradient-background';
+import HeroHome from '../components/hero-home';
+import KeyPoints from '../components/key-points';
+import LeftTextAndButton from '../components/left-text-and-button';
+import LinksToServices from '../components/links-to-services';
+import LogoBanner from '../components/logo-banner';
+import Map from '../components/map';
+import TestimonialQuotes from '../components/testimonial-quotes';
 import imageLeft from '@/public/images/team-solo-man1.jpg';
 import imageRight from '@/public/images/team-solo-woman1.jpg';
 import image3 from '@/public/images/team-two-happy-green3.jpg';
 
-import ValuesAndImages from './fonts/components/values-and-images';
-import WaveBackground from './fonts/components/wave-background';
-import WidePictureAndText from './fonts/components/wide-picture-and-text';
-import FormMessageOnly from './fonts/components/form-message-only';
-import FormMessageOnlyOrMultiChoice from './fonts/components/form-message-only';
+import ValuesAndImages from '../components/values-and-images';
+import WaveBackground from '../components/wave-background';
+import WidePictureAndText from '../components/wide-picture-and-text';
+import FormMessageOnly from '../components/form-message-only';
+import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
 
 export default function Home() {
   return (

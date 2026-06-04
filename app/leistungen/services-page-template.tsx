@@ -1,15 +1,15 @@
 import { TempFullService } from '@/lib/data';
 import React from 'react';
-import WaveBackground from '../fonts/components/wave-background';
-import HeroServices from '../fonts/components/hero-services';
-import DoubleWidePictureAndText from '../fonts/components/double-wide-picture-and-text';
-import WidePictureAndText from '../fonts/components/wide-picture-and-text';
-import BulletPoints from '../fonts/components/bullet-points';
-import KeyPoints from '../fonts/components/key-points';
-import GrayGradientBackground from '../fonts/components/gray-gradient-background';
-import GloveWipe from '../fonts/components/glvoe-wipe';
-import FormMessageOnlyOrMultiChoice from '../fonts/components/form-message-only';
-import GrayGradientBackgroundExtended from '../fonts/components/gray-gradient-background-extended';
+import WaveBackground from '../../components/wave-background';
+import HeroServices from '../../components/hero-services';
+import DoubleWidePictureAndText from '../../components/double-wide-picture-and-text';
+import WidePictureAndText from '../../components/wide-picture-and-text';
+import BulletPoints from '../../components/bullet-points';
+import KeyPoints from '../../components/key-points';
+import GrayGradientBackground from '../../components/gray-gradient-background';
+import GloveWipe from '../../components/glvoe-wipe';
+import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
+import GrayGradientBackgroundExtended from '../../components/gray-gradient-background-extended';
 
 export default function ServicesPageTemplate({ pageData }: { pageData: TempFullService }) {
   return (

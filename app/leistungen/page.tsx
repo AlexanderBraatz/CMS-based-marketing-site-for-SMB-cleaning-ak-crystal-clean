@@ -1,7 +1,7 @@
-import WaveBackground from '../fonts/components/wave-background';
-import HeroServices from '../fonts/components/hero-services';
-import LinksToServices from '../fonts/components/links-to-services';
-import FormMessageOnlyOrMultiChoice from '../fonts/components/form-message-only';
+import WaveBackground from '../../components/wave-background';
+import HeroServices from '../../components/hero-services';
+import LinksToServices from '../../components/links-to-services';
+import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
 
 export default function Leistungen() {
   return (
