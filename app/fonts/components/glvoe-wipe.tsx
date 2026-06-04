@@ -24,12 +24,12 @@ export default function GloveWipe() {
 
   const xTravel = -size.width;
   const yTravel = Math.abs(xTravel) * Math.tan(radians);
-
-  const x = useTransform(scrollYProgress, [0, 1], [0, xTravel]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, yTravel]);
+  const easeIn = (t: number) => t * t;
+  const x = useTransform(scrollYProgress, (p) => easeIn(p) * xTravel);
+  const y = useTransform(scrollYProgress, (p) => easeIn(p) * yTravel);
 
   return (
-    <div ref={bigRef} className="relative -z-10 -mb-110 min-h-[500px]">
+    <div ref={bigRef} className="relative -z-10 -mb-120 min-h-[500px]">
       <div className="bg-theme-background absolute left-[50%] -mt-30 h-[164px] w-[2000px] translate-x-[-50%] -rotate-14"></div>
       <motion.div ref={gloveRef} style={{ x, y }} className="absolute left-[50%] -mt-62 flex translate-x-[-50%]">
         <div className="bg-theme-background2 -mr-15 h-[413px] w-[1200px]"></div>
