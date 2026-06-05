@@ -15,7 +15,7 @@ export default function Leistungen() {
           />
           <LinksToServices />
         </div>
-      </div>
+      </div> 
       <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
         <FormMessageOnlyOrMultiChoice heading="Was können wir für Sie tun?" showMulitChoice={false} />
       </div>

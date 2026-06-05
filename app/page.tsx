@@ -22,9 +22,9 @@ import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
 export default function Home() {
   return (
     <div className="theme-light-background bg-theme-background w-full">
-      <main>
+      <main className="relative">
+        <WaveBackground />
         <div className="relative z-10 mx-auto mb-50 w-[1060px]">
-          <WaveBackground />
           <div className="flex flex-col gap-[96px] pb-[96px]">
             <HeroHome />
             <LogoBanner />

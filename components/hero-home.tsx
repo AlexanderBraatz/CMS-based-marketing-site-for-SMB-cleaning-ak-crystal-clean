@@ -7,8 +7,8 @@ import image from '@/public/images/video-placeholder2.jpg';
 
 export default function HeroHome() {
   return (
-    <div className="theme-dark-purple text-theme-text grid grid-cols-2 gap-5 px-[5%]">
-      <div className="z-10 mt-[90px] flex flex-col justify-items-start pt-10">
+    <div className="theme-dark-purple text-theme-text mt-[40px] grid grid-cols-2 gap-5 px-[5%]">
+      <div className="z-10 flex flex-col justify-items-start pt-10">
         <div>
           <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tighter">
             Ein Partner Für Alles
@@ -20,7 +20,7 @@ export default function HeroHome() {
         </p>
         <Button size="small" className="mt-9" text="KONTAKT" />
       </div>
-      <div className="mt-[90px] pt-9">
+      <div className="pt-9">
         <ImageWideHome image={image} />
       </div>
     </div>

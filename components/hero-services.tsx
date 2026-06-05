@@ -12,19 +12,15 @@ export default function HeroServices({
   subHeading = 'Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.',
 }: HeroServicesProps) {
   return (
-    <div className="theme-dark-purple text-theme-text grid grid-cols-2 gap-5 px-[5%]">
-      <div className="z-10 mt-[90px] flex flex-col justify-items-start pt-10">
+    <div className="theme-dark-purple text-theme-text mt-[40px] grid grid-cols-2 gap-5 px-[5%]">
+      <div className="z-10 flex flex-col justify-items-start pt-10">
         <div>
-          <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tighter">
-            {heading}
-          </h1>
+          <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tighter">{heading}</h1>
         </div>
-        <p className="font-sabon pt-5 pr-30 text-xl leading-tight tracking-tighter">
-          {subHeading}
-        </p>
+        <p className="font-sabon pt-5 pr-30 text-xl leading-tight tracking-tighter">{subHeading}</p>
         <Button size="small" className="mt-9" text="KONTAKT" />
       </div>
-      <div className="mt-[90px] pt-9">
+      <div className="pt-9">
         <ImageWideHome image={image} />
       </div>
     </div>
