@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '@/public/images/team-two-happy-green3.jpg';
 import Image, { StaticImageData } from 'next/image';
-import TallImageDropLeft from './image-tall-drop-left';
+import TallImageDrop from './image-tall-drop-left';
 
 export default function DoubleImageWideSectionOnLeft({
   image1,
@@ -12,9 +12,9 @@ export default function DoubleImageWideSectionOnLeft({
 }) {
   return (
     <div className="flex flex-row">
-      <TallImageDropLeft src={image1} />
+      <TallImageDrop src={image1} />
       <div className="relative top-20 -left-3 z-20">
-        <TallImageDropLeft src={image2} />
+        <TallImageDrop src={image2} />
       </div>
     </div>
   );

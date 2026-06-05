@@ -17,14 +17,14 @@ import LeftTextAndButton from '../../components/left-text-and-button';
 import GloveWipe from '../../components/glvoe-wipe';
 import FormMessageOnly from '../../components/form-message-only';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
-
+import heroImage from '@/public/images/team-group-outside3.jpg';
 export default function Jobs() {
   return (
     <main className="theme-light-background bg-theme-background w-full">
       <div className="relative z-10 mx-auto w-[1060px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-          <HeroServices />
+          <HeroServices image={heroImage} />
           <DoubleWidePictureAndText
             text={{
               caption: 'Was Uns Auszeichnet',
