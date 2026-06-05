@@ -7,18 +7,18 @@ import image from '@/public/images/video-placeholder2.jpg';
 
 export default function HeroHome() {
   return (
-    <div className="theme-dark-purple text-theme-text mt-[40px] grid grid-cols-2 gap-5 px-[5%]">
+    <div className="theme-dark-purple text-theme-text mt-[20px] grid grid-cols-2 gap-5 px-[5%]">
       <div className="z-10 flex flex-col justify-items-start pt-10">
         <div>
-          <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tighter">
-            Ein Partner Für Alles
+          <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tight">
+            Ein Partner Für Alles,
           </h1>
-          <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tighter">Gebäudereinigung</h1>
+          <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tight">Gebäudereinigung</h1>
         </div>
-        <p className="font-sabon pt-5 pr-30 text-xl leading-tight tracking-tighter">
+        <p className="font-sabon pt-6 pr-10 text-2xl leading-tight tracking-tight">
           Höchste Qualität für Innen und Außen ohne Koordinationsaufwand.
         </p>
-        <Button size="small" className="mt-9" text="KONTAKT" />
+        <Button size="small" className="mt-12" text="KONTAKT" />
       </div>
       <div className="pt-9">
         <ImageWideHome image={image} />
