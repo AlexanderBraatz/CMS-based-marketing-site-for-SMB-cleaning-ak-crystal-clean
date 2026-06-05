@@ -17,7 +17,11 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
       <div className="relative z-10 mx-auto w-[1060px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
-          <HeroServices heading={pageData.page.heading} subHeading={pageData.page.subHeading} />
+          <HeroServices
+            heading={pageData.page.heading}
+            subHeading={pageData.page.subHeading}
+            image={pageData.page.image}
+          />
           <DoubleWidePictureAndText
             text={{
               caption: pageData.page.section1.caption,

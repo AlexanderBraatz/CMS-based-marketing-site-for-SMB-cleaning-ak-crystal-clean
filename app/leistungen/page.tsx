@@ -2,6 +2,7 @@ import WaveBackground from '../../components/wave-background';
 import HeroServices from '../../components/hero-services';
 import LinksToServices from '../../components/links-to-services';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
+import tempImage from '@/public/images/team-group-outside3.jpg';
 
 export default function Leistungen() {
   return (
@@ -12,10 +13,11 @@ export default function Leistungen() {
           <HeroServices
             heading="Professionelle Gebäudereinigung"
             subHeading="Für ihr Unternehmen — von Innen- bis Außenreinigung aus einer Hand."
+            image={tempImage}
           />
           <LinksToServices />
         </div>
-      </div> 
+      </div>
       <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
         <FormMessageOnlyOrMultiChoice heading="Was können wir für Sie tun?" showMulitChoice={false} />
       </div>

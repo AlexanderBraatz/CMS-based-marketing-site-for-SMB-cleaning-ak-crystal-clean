@@ -1,15 +1,17 @@
+import { StaticImageData } from 'next/image';
 import Button from './utility-components/button';
 import ImageWideHome from './utility-components/image-wide-home';
-import image from '@/public/images/team-group-outside3.jpg';
 
 type HeroServicesProps = {
   heading?: string;
   subHeading?: string;
+  image: StaticImageData;
 };
 
 export default function HeroServices({
   heading = 'Werde Teil Unseres Teams',
   subHeading = 'Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.',
+  image,
 }: HeroServicesProps) {
   return (
     <div className="theme-dark-purple text-theme-text mt-[40px] grid grid-cols-2 gap-5 px-[5%]">
