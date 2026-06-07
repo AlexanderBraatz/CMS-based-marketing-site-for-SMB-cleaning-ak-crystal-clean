@@ -88,6 +88,13 @@ body {
   background: linear-gradient(to bottom, #fafafa, #e8e8e8);
 }
 
+.image-gallery-gradient-left {
+  background: linear-gradient(to right, rgba(250, 250, 250, 1), rgba(250, 250, 250, 0));
+}
+.image-gallery-gradient-right {
+  background: linear-gradient(to left, rgba(250, 250, 250, 1), rgba(250, 250, 250, 0));
+}
+
 /* Client preview: only show the site between 1020px and 1060px viewport width */
 .viewport-gate-content {
   display: none;

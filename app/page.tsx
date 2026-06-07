@@ -10,13 +10,13 @@ import LogoBanner from '../components/logo-banner';
 import Map from '../components/map';
 import TestimonialQuotes from '../components/testimonial-quotes';
 import imageLeft from '@/public/images/team-solo-man1.jpg';
-import imageRight from '@/public/images/team-solo-woman1.jpg';
+import imageRight from '@/public/images/team-headshots/team-solo-headshot-woman-2.jpg';
 import image3 from '@/public/images/team-two-happy-green3.jpg';
 
 import ValuesAndImages from '../components/values-and-images';
 import WaveBackground from '../components/wave-background';
 import WidePictureAndText from '../components/wide-picture-and-text';
-import FormMessageOnly from '../components/form-message-only';
+
 import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
 
 export default function Home() {

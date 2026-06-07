@@ -4,6 +4,7 @@ import React from 'react';
 import heroImage from '@/public/images/team-group-outside3.jpg';
 import SomeText from '@/components/some-text';
 import ManagementGallery from '@/components/management-gallery';
+import TeamGallery from '@/components/team-gallery';
 
 export default function UberUns() {
   return (
@@ -22,6 +23,7 @@ export default function UberUns() {
             }}
           />
           <ManagementGallery />
+          <TeamGallery />
         </div>
       </div>
     </main>
