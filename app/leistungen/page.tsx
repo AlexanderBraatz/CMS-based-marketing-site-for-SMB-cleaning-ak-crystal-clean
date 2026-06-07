@@ -6,7 +6,7 @@ import tempImage from '@/public/images/team-group-outside3.jpg';
 
 export default function Leistungen() {
   return (
-    <main className="theme-light-background bg-theme-background w-full">
+    <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-[1060px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">

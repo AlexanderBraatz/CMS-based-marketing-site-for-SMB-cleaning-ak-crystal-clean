@@ -13,7 +13,7 @@ import GrayGradientBackgroundExtended from '../../components/gray-gradient-backg
 
 export default function ServicesPageTemplate({ pageData }: { pageData: TempFullService }) {
   return (
-    <main className="theme-light-background bg-theme-background w-full">
+    <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-[1060px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
