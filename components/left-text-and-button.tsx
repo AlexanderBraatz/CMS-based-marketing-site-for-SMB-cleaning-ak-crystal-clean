@@ -18,7 +18,7 @@ export default function LeftTextAndButton() {
           Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und
           höchste Qualitätsstandards, damit
         </p>
-        <Button variant="ghost" size="small" text="KONTAKT" />
+        <Button variant="ghost" size="small" text="KONTAKT" href="#contact-form" />
       </div>
     </motion.div>
   );
