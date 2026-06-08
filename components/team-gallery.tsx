@@ -12,7 +12,11 @@ import image9 from '@/public/images/team-headshots/team-solo-headshot-woman-6.jp
 import image10 from '@/public/images/team-headshots/team-solo-headshot-man-3.jpg';
 import image11 from '@/public/images/team-headshots/team-solo-headshot-woman-8.jpg';
 import Button from './utility-components/button';
-import { useRef, MouseEvent } from 'react';
+import { useRef, useEffect, MouseEvent } from 'react';
+
+const FRICTION = 0.94;
+const MIN_VELOCITY = 0.015;
+
 export default function TeamGallery() {
   const teamMembers = [
     { src: image1, alt: 'picture of team member' },
@@ -43,17 +47,34 @@ export default function TeamGallery() {
     }
   };
 
-  // scroll with mouse drag
+  // scroll with mouse drag + momentum
 
   const startX = useRef(0);
   const prevScrollLeft = useRef(0);
   const isScrolling = useRef(false);
+  const velocity = useRef(0);
+  const lastScrollLeft = useRef(0);
+  const lastMoveTime = useRef(0);
+  const momentumFrame = useRef<number | null>(null);
+
+  const cancelMomentum = () => {
+    if (momentumFrame.current !== null) {
+      cancelAnimationFrame(momentumFrame.current);
+      momentumFrame.current = null;
+    }
+  };
+
+  useEffect(() => () => cancelMomentum(), []);
 
   const handleMouseDown = (e: MouseEvent) => {
+    cancelMomentum();
     e.preventDefault();
     isScrolling.current = true;
     startX.current = e.pageX;
     prevScrollLeft.current = ref.current?.scrollLeft ?? 0;
+    lastScrollLeft.current = prevScrollLeft.current;
+    lastMoveTime.current = performance.now();
+    velocity.current = 0;
   };
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -63,15 +84,56 @@ export default function TeamGallery() {
     e.preventDefault();
 
     const walk = e.pageX - startX.current;
-    console.log('e.pageX', e.pageX);
-    console.log('startX.current', startX.current);
-    console.log('walk', walk);
+    const newScrollLeft = prevScrollLeft.current - walk;
+    const now = performance.now();
+    const dt = now - lastMoveTime.current;
 
-    ref.current.scrollLeft = prevScrollLeft.current - walk;
+    if (dt > 0) {
+      const instantVelocity = (newScrollLeft - lastScrollLeft.current) / dt;
+      velocity.current = velocity.current * 0.4 + instantVelocity * 0.6;
+    }
+
+    ref.current.scrollLeft = newScrollLeft;
+    lastScrollLeft.current = newScrollLeft;
+    lastMoveTime.current = now;
   };
+
+  const runMomentum = () => {
+    cancelMomentum();
+    let lastTime = performance.now();
+
+    const step = (time: number) => {
+      const container = ref.current;
+      if (!container) {
+        cancelMomentum();
+        return;
+      }
+
+      const dt = time - lastTime;
+      lastTime = time;
+
+      if (Math.abs(velocity.current) < MIN_VELOCITY) {
+        cancelMomentum();
+        return;
+      }
+
+      container.scrollLeft += velocity.current * dt;
+      velocity.current *= Math.pow(FRICTION, dt / 16);
+      momentumFrame.current = requestAnimationFrame(step);
+    };
+
+    if (Math.abs(velocity.current) >= MIN_VELOCITY) {
+      momentumFrame.current = requestAnimationFrame(step);
+    }
+  };
+
   const stopDragging = (e: MouseEvent) => {
     e.preventDefault();
+    if (!isScrolling.current) {
+      return;
+    }
     isScrolling.current = false;
+    runMomentum();
   };
 
   return (
