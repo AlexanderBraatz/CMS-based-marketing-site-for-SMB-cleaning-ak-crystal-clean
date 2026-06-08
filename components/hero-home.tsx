@@ -18,7 +18,7 @@ export default function HeroHome() {
         <p className="font-sabon pt-6 pr-10 text-2xl leading-tight tracking-tight">
           Höchste Qualität für Innen und Außen ohne Koordinationsaufwand.
         </p>
-        <Button size="small" className="mt-12" text="KONTAKT" />
+        <Button size="small" className="mt-12" text="KONTAKT" href="#contact-form" />
       </div>
       <div className="pt-9">
         <ImageWideHome image={image} />

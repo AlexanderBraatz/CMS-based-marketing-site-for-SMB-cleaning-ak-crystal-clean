@@ -30,7 +30,7 @@ export default function Navbar() {
                 </li>
               </ul>
             </nav>
-            <Button size="small" text="KONTAKT" />
+            <Button size="small" text="KONTAKT" href="#contact-form" />
           </div>
         </div>
       </div>

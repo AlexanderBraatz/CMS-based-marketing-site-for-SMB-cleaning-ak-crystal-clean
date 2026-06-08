@@ -20,7 +20,7 @@ export default function HeroServices({
           <h1 className="font-cooper-hewitt text-5xl leading-tight font-semibold tracking-tight">{heading}</h1>
         </div>
         <p className="font-sabon pt-5 pr-30 text-xl leading-tight tracking-tighter">{subHeading}</p>
-        <Button size="small" className="mt-9" text="KONTAKT" />
+        <Button size="small" className="mt-9" text="KONTAKT" href="#contact-form" />
       </div>
       <div className="pt-9">
         <ImageWideHome image={image} />

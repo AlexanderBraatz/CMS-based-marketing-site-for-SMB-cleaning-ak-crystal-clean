@@ -8,6 +8,7 @@
  */
 
 :root {
+  scroll-behavior: smooth;
   --tailwind-zinc-50: #fafafa;
   --palette-white: #ffffff;
   --palette-white-2: #fefefe;
