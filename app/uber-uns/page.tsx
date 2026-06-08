@@ -9,7 +9,7 @@ import TeamGallery from '@/components/team-gallery';
 export default function UberUns() {
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
-      <div className="relative z-10 mx-auto w-[1060px]">
+      <div className="relative z-10 mx-auto w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <HeroServices
