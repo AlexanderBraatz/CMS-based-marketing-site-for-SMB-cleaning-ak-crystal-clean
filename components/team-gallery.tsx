@@ -1,4 +1,6 @@
 'use client';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import TallImageDrop from './utility-components/image-tall-drop-left';
 import image1 from '@/public/images/team-headshots/team-solo-headshot-woman-1.jpg';
 import image2 from '@/public/images/team-headshots/team-solo-headshot-woman-5.jpg';
@@ -137,7 +139,7 @@ export default function TeamGallery() {
   };
 
   return (
-    <div className="">
+    <motion.div {...fadeInUp} className="">
       <h3 className="font-cooper-hewitt mb-5 px-[5%] text-[32px] leading-tight font-semibold tracking-tight opacity-80">
         Unser Team
       </h3>
@@ -165,6 +167,6 @@ export default function TeamGallery() {
           <Button text="→" size="xsmall" onClick={() => scrollByItem('forward')} dropIsOnLeft={true} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

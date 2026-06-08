@@ -1,6 +1,8 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import icon1 from '@/public/images/icon-s-height.svg';
 import icon2 from '@/public/images//icon-s-spa.svg';
 import icon3 from '@/public/images/icon-s-electric_rickshaw.svg';
@@ -18,7 +20,7 @@ export default function BulletPoints({
 }) {
   const [isFocused, setIsFocused] = useState(0);
   return (
-    <div className="px-[5%]">
+    <motion.div {...fadeInUp} className="px-[5%]">
       <div className="ml-[82px] w-[800px]">
         <p className="font-barlow-semi-condensed text-theme-text-highlight mb-5 font-bold">Unser Versprechen</p>
         <h3 className="font-cooper-hewitt mb-15 text-[32px] leading-tight font-semibold tracking-tighter">
@@ -50,6 +52,6 @@ export default function BulletPoints({
           {/* <Button size="large" variant="ghost" text="IHR PERSÖNLICHES ANGEBOT" /> */}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

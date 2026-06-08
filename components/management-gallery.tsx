@@ -1,4 +1,8 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'motion/react';
+import { fadeInUp } from '@/animations/motion';
 import TallImageDrop from './utility-components/image-tall-drop-left';
 import imagge1 from '@/public/images/team-tall-mehmet.jpg';
 import imagge2 from '@/public/images/team-tall-olga.jpg';
@@ -7,7 +11,7 @@ import imagge4 from '@/public/images/team-tall-reiner.jpg';
 
 export default function ManagementGallery() {
   return (
-    <div className="px-[5%]">
+    <motion.div {...fadeInUp} className="px-[5%]">
       <h3 className="font-cooper-hewitt mb-5 text-[32px] leading-tight font-semibold tracking-tight opacity-80">
         Management
       </h3>
@@ -42,6 +46,6 @@ export default function ManagementGallery() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
