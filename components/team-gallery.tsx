@@ -12,7 +12,7 @@ import image9 from '@/public/images/team-headshots/team-solo-headshot-woman-6.jp
 import image10 from '@/public/images/team-headshots/team-solo-headshot-man-3.jpg';
 import image11 from '@/public/images/team-headshots/team-solo-headshot-woman-8.jpg';
 import Button from './utility-components/button';
-import { useRef } from 'react';
+import { useRef, MouseEvent } from 'react';
 export default function TeamGallery() {
   const teamMembers = [
     { src: image1, alt: 'picture of team member' },
@@ -29,6 +29,8 @@ export default function TeamGallery() {
   ];
 
   const ref = useRef<HTMLDivElement | null>(null);
+
+  // scroll with buttons logic
   const WIDTH_OF_ITEM = 226;
   const WIDTH_OF_GAP = 20;
 
@@ -41,6 +43,37 @@ export default function TeamGallery() {
     }
   };
 
+  // scroll with mouse drag
+
+  const startX = useRef(0);
+  const prevScrollLeft = useRef(0);
+  const isScrolling = useRef(false);
+
+  const handleMouseDown = (e: MouseEvent) => {
+    e.preventDefault();
+    isScrolling.current = true;
+    startX.current = e.pageX;
+    prevScrollLeft.current = ref.current?.scrollLeft ?? 0;
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isScrolling.current || !ref.current) {
+      return;
+    }
+    e.preventDefault();
+
+    const walk = e.pageX - startX.current;
+    console.log('e.pageX', e.pageX);
+    console.log('startX.current', startX.current);
+    console.log('walk', walk);
+
+    ref.current.scrollLeft = prevScrollLeft.current - walk;
+  };
+  const stopDragging = (e: MouseEvent) => {
+    e.preventDefault();
+    isScrolling.current = false;
+  };
+
   return (
     <div className="">
       <h3 className="font-cooper-hewitt mb-5 px-[5%] text-[32px] leading-tight font-semibold tracking-tight opacity-80">
@@ -49,7 +82,14 @@ export default function TeamGallery() {
       <div className="relative z-0 mb-2">
         <div className="image-gallery-gradient-left absolute z-20 h-full w-[5%]"></div>
         <div className="image-gallery-gradient-right absolute right-0 z-20 h-full w-[5%]"></div>
-        <div ref={ref} className="relative z-0 w-full scrollbar-none overflow-x-scroll overflow-y-clip px-[5%] pb-5">
+        <div
+          ref={ref}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={stopDragging}
+          onMouseLeave={stopDragging}
+          className="scroll-container relative z-0 w-full cursor-grab scrollbar-none overflow-x-scroll overflow-y-clip px-[5%] pb-5 select-none active:cursor-grabbing"
+        >
           <div className="relative flex w-max flex-row gap-5 pl-1">
             {teamMembers.map((teamMember, index) => (
               <div key={index} className="flex flex-col gap-5">

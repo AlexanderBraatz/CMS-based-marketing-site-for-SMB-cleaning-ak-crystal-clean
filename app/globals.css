@@ -104,6 +104,10 @@ body {
   display: flex;
 }
 
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+}
+
 @media (min-width: 1020px) and (max-width: 1071px) {
   .viewport-gate-content {
     display: flex;
