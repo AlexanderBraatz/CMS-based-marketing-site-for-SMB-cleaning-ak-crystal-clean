@@ -13,7 +13,7 @@ export default function Button({
   size: string;
   variant?: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
-  dropIsOnLeft: boolean;
+  dropIsOnLeft?: boolean;
 }) {
   return (
     <span className={`${className} relative z-0`}>

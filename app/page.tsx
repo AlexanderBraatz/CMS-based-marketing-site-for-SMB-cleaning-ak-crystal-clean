@@ -24,7 +24,7 @@ export default function Home() {
     <div className="theme-light-background bg-theme-background w-full">
       <main className="relative w-screen overflow-clip">
         <WaveBackground />
-        <div className="relative z-10 mx-auto mb-50 w-[1060px]">
+        <div className="relative z-10 mx-auto mb-50 w-[1071px]">
           <div className="flex flex-col gap-[96px] pb-[96px]">
             <HeroHome />
             <LogoBanner />
@@ -56,7 +56,7 @@ export default function Home() {
           </div>
         </div>
         <div className="bg-theme-background2">
-          <div className="relative z-0 mx-auto w-[1060px] pb-25">
+          <div className="relative z-0 mx-auto w-[1071px] pb-25">
             <KeyPoints />
             <GrayGradientBackground />
             <LeftTextAndButton />

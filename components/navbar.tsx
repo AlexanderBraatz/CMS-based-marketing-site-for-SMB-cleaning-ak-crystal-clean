@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Navbar() {
   return (
     <header className="theme-dark-purple bg-theme-card-background/70 text-theme-text border-b-theme-card-background-2 sticky top-0 z-100 flex h-[60px] items-center justify-center border-b px-[5%]">
-      <div className="w-[1060px]">
+      <div className="w-[1071px]">
         <div className="flex justify-between px-[5%]">
           <Link className="flex items-baseline justify-center gap-2" href="/">
             <Image src={logo} alt="logo" className="block h-[40px] w-auto" />

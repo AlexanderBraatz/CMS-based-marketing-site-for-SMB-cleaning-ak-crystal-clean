@@ -39,7 +39,7 @@ export default function FormMessageOnlyOrMultiChoice({
     });
   }
   return (
-    <div className="mx-auto w-[1060px] py-28">
+    <div className="mx-auto w-[1071px] py-28">
       <div className="px-[5%]">
         <div className="px-[82px]">
           <div className="bg-theme-card-background-2 grid w-full grid-cols-2 gap-5">
@@ -133,7 +133,13 @@ export default function FormMessageOnlyOrMultiChoice({
                   />
                   <span className="text-theme-text"> Ich stimme der Datenschutzrichtlinie zu.</span>
                 </label>
-                <Button variant="onWhite" size="small" text="ABSENDEN" className="theme-light-background" />
+                <Button
+                  onClick={() => {}}
+                  variant="onWhite"
+                  size="small"
+                  text="ABSENDEN"
+                  className="theme-light-background"
+                />
               </form>
             </div>
             <Image src={image} alt="image" width={1492} height={2201} className="h-full w-full" />

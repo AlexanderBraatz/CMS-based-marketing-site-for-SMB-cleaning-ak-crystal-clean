@@ -59,20 +59,8 @@ export default function TeamGallery() {
           </div>
         </div>
         <div className="flex w-full justify-end gap-5 px-[5%]">
-          <Button
-            text="←"
-            size="xsmall"
-            onClick={() => scrollByItem('back')}
-            dropIsOnLeft={true}
-            className="text-2xl"
-          />
-          <Button
-            text="→"
-            size="xsmall"
-            onClick={() => scrollByItem('forward')}
-            dropIsOnLeft={true}
-            className="text-2xl"
-          />
+          <Button text="←" size="xsmall" onClick={() => scrollByItem('back')} dropIsOnLeft={true} />
+          <Button text="→" size="xsmall" onClick={() => scrollByItem('forward')} dropIsOnLeft={true} />
         </div>
       </div>
     </div>

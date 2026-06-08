@@ -14,19 +14,15 @@ export default function ViewportGate({
             Hinweis zur Vorschau
           </p>
           <p className="font-instrument-sans text-theme-text-highlight mb-6 text-base leading-relaxed">
-            Bitte öffnen Sie diese Seite in einem Browserfenster mit einer Breite
-            zwischen <strong>1020</strong> und <strong>1060</strong> Pixeln, damit
-            die Darstellung dem aktuellen Entwurf entspricht.
+            Bitte öffnen Sie diese Seite in einem Browserfenster mit einer Breite zwischen <strong>1020</strong> und{' '}
+            <strong>1071</strong> Pixeln, damit die Darstellung dem aktuellen Entwurf entspricht.
           </p>
           <p className="font-instrument-sans text-theme-text-highlight-2 text-sm leading-relaxed">
-            Andere Bildschirmgrößen und responsive Varianten befinden sich noch
-            in der Entwicklung.
+            Andere Bildschirmgrößen und responsive Varianten befinden sich noch in der Entwicklung.
           </p>
         </div>
       </div>
-      <div className="viewport-gate-content flex min-h-full flex-1 flex-col">
-        {children}
-      </div>
+      <div className="viewport-gate-content flex min-h-full flex-1 flex-col">{children}</div>
     </>
   );
 }

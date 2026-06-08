@@ -21,7 +21,7 @@ import heroImage from '@/public/images/team-group-outside3.jpg';
 export default function Jobs() {
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
-      <div className="relative z-10 mx-auto w-[1060px]">
+      <div className="relative z-10 mx-auto w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <HeroServices image={heroImage} />
@@ -73,7 +73,7 @@ export default function Jobs() {
         </div>
       </div>
       <div className="bg-theme-background2">
-        <div className="relative z-0 mx-auto w-[1060px] pb-25">
+        <div className="relative z-0 mx-auto w-[1071px] pb-25">
           <KeyPoints />
           <GrayGradientBackground />
           <div className="h-[356px]"></div>
