@@ -83,7 +83,7 @@ export default function Jobs() {
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
             heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
-            showMulitChoice={true}
+            showMulitChoice={false}
           />
         </div>
       </div>

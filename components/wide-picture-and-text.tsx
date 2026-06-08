@@ -5,17 +5,22 @@ import { StaticImageData } from 'next/image';
 import ImageWideSectionOnRight from './image-wide-section-on-right';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/animations/motion';
+import Button, { ButtonProps } from './utility-components/button';
 
 export default function WidePictureAndText({
   image,
   imageOnLeft = true,
   text,
   liftTextForSlantedDesign,
+  hasButton,
+  buttonProps,
 }: {
   image: StaticImageData;
   imageOnLeft?: boolean;
   text: { caption: string; heading: string; body: string };
   liftTextForSlantedDesign?: boolean;
+  hasButton?: boolean;
+  buttonProps?: ButtonProps;
 }) {
   return (
     <motion.div {...fadeInUp} className="theme-light-background text-theme-text grid grid-cols-2 px-[5%]">
@@ -27,7 +32,8 @@ export default function WidePictureAndText({
         <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
           {text.heading}
         </h3>
-        <p className="font-instrument-sans leading-normal tracking-tighter">{text.body}</p>
+        <p className="font-instrument-sans grow leading-normal tracking-tighter">{text.body}</p>
+        {hasButton && buttonProps ? <Button {...buttonProps} /> : <></>}
       </div>
       {imageOnLeft ? <></> : <ImageWideSectionOnRight image={image} />}
     </motion.div>
