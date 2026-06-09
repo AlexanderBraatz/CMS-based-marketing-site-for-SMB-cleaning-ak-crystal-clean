@@ -3,6 +3,7 @@ import LinksToServices from '../../components/links-to-services';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
 import tempImage from '@/public/images/team-group-outside3.jpg';
 import Hero from '@/components/hero-home';
+import SomeText from '@/components/some-text';
 
 export default function Leistungen() {
   return (
@@ -16,6 +17,13 @@ export default function Leistungen() {
             image={tempImage}
           />
           <LinksToServices />
+          <SomeText
+            text={{
+              body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes, stolzes Team — das Ihre Räume so behandelt, als wären es die eigenen.',
+              heading: 'Mehr Leistungen \nohne Aufwand',
+              caption: 'Unsere Werte',
+            }}
+          />
         </div>
       </div>
       <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">

@@ -8,9 +8,16 @@ type HeroProps = {
   subHeading?: string;
   image?: StaticImageData;
   video?: React.ComponentType;
+  onClick?: () => void;
 };
 
-export default function Hero({ heading, subHeading, image, video: VideoComponent }: HeroProps) {
+export default function Hero({
+  heading,
+  subHeading,
+  image,
+  video: VideoComponent,
+  onClick: flickToNextImage,
+}: HeroProps) {
   return (
     <div className="theme-dark-purple text-theme-text mt-[20px] grid grid-cols-2 gap-5 px-[5%]">
       <div className="z-10 flex flex-col justify-items-start pt-10">
@@ -23,7 +30,7 @@ export default function Hero({ heading, subHeading, image, video: VideoComponent
         <p className="font-sabon pt-6 pr-10 text-2xl leading-tight tracking-tight">{subHeading}</p>
         <Button size="small" className="mt-12" text="KONTAKT" href="#contact-form" />
       </div>
-      <div className="pt-9">
+      <div className="pt-9" onClick={flickToNextImage}>
         {image ? <ImageWideHome image={image} /> : VideoComponent ? <VideoComponent /> : null}
       </div>
     </div>

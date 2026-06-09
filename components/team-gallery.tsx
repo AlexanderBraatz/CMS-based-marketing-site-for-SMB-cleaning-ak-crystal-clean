@@ -27,7 +27,7 @@ export default function TeamGallery() {
     { src: image4, alt: 'picture of team member' },
     { src: image5, alt: 'picture of team member' },
     { src: image6, alt: 'picture of team member' },
-    { src: image7, alt: 'picture of team member' },
+    { src: image1, alt: 'picture of team member' },
     { src: image8, alt: 'picture of team member' },
     { src: image9, alt: 'picture of team member' },
     { src: image10, alt: 'picture of team member' },
