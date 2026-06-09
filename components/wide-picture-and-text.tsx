@@ -4,7 +4,7 @@ import ImageWideSectionOnLeft from './utility-components/image-wide-section-on-l
 import { StaticImageData } from 'next/image';
 import ImageWideSectionOnRight from './image-wide-section-on-right';
 import { motion } from 'motion/react';
-import { fadeInUp } from '@/animations/motion';
+import { fadeInUp, fadeInUpInstantly, getFadeInUpAtAmount } from '@/animations/motion';
 import Button, { ButtonProps } from './utility-components/button';
 
 export default function WidePictureAndText({
@@ -23,7 +23,7 @@ export default function WidePictureAndText({
   buttonProps?: ButtonProps;
 }) {
   return (
-    <motion.div {...fadeInUp} className="theme-light-background text-theme-text grid grid-cols-2 px-[5%]">
+    <motion.div {...getFadeInUpAtAmount(0)} className="theme-light-background text-theme-text grid grid-cols-2 px-[5%]">
       {imageOnLeft ? <ImageWideSectionOnLeft image={image} /> : <></>}
       <div
         className={`relative flex flex-col gap-5 ${liftTextForSlantedDesign ? 'top-[-100px]' : ''} ${imageOnLeft ? 'pl-[41px]' : 'pr-[41px]'}`}

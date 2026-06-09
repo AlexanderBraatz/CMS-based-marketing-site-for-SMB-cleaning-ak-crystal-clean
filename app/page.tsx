@@ -19,6 +19,7 @@ import WidePictureAndText from '../components/wide-picture-and-text';
 import imageHero from '@/public/images/video-placeholder2.jpg';
 
 import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
+import HeroVideo from '@/components/hero-video';
 
 export default function Home() {
   return (
@@ -30,7 +31,8 @@ export default function Home() {
             <Hero
               heading={'Ein Partner Für Alles,\nGebäudereinigung'}
               subHeading="Höchste Qualität für Innen und Außen ohne Koordinationsaufwand."
-              image={imageHero}
+              // image={imageHero}
+              video={HeroVideo}
             />
             <LogoBanner />
             <WidePictureAndText
