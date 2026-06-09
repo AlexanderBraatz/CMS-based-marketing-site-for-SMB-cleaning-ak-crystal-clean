@@ -4,7 +4,7 @@ import ImageWideSectionOnLeft from './utility-components/image-wide-section-on-l
 import { StaticImageData } from 'next/image';
 import ImageWideSectionOnRight from './image-wide-section-on-right';
 import { motion } from 'motion/react';
-import { fadeInUp, fadeInUpInstantly, getFadeInUpAtAmount } from '@/animations/motion';
+import { getFadeInUpAtAmount } from '@/animations/motion';
 import Button, { ButtonProps } from './utility-components/button';
 
 export default function WidePictureAndText({

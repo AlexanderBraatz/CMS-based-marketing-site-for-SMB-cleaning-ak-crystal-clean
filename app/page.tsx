@@ -11,7 +11,7 @@ import Map from '../components/map';
 import TestimonialQuotes from '../components/testimonial-quotes';
 import imageLeft from '@/public/images/team-solo-man1.jpg';
 import imageRight from '@/public/images/team-headshots/team-solo-headshot-woman-2.jpg';
-import image3 from '@/public/images/team-two-happy-green3.jpg';
+import image3 from '@/public/images/team-man-arms-crossed-hero-format.jpg';
 
 import ValuesAndImages from '../components/values-and-images';
 import WaveBackground from '../components/wave-background';
