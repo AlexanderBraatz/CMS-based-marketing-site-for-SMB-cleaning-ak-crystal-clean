@@ -2,7 +2,7 @@ import DoubleWidePictureAndText from '../components/double-wide-picture-and-text
 import FormWhitespace from '../components/form-whitespace';
 import GloveWipe from '../components/glvoe-wipe';
 import GrayGradientBackground from '../components/gray-gradient-background';
-import HeroHome from '../components/hero-home';
+import Hero from '../components/hero-home';
 import KeyPoints from '../components/key-points';
 import LeftTextAndButton from '../components/left-text-and-button';
 import LinksToServices from '../components/links-to-services';
@@ -16,6 +16,7 @@ import image3 from '@/public/images/team-two-happy-green3.jpg';
 import ValuesAndImages from '../components/values-and-images';
 import WaveBackground from '../components/wave-background';
 import WidePictureAndText from '../components/wide-picture-and-text';
+import imageHero from '@/public/images/video-placeholder2.jpg';
 
 import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
 
@@ -26,7 +27,11 @@ export default function Home() {
         <WaveBackground />
         <div className="relative z-10 mx-auto mb-50 w-[1071px]">
           <div className="flex flex-col gap-[96px] pb-[96px]">
-            <HeroHome />
+            <Hero
+              heading={'Ein Partner Für Alles,\nGebäudereinigung'}
+              subHeading="Höchste Qualität für Innen und Außen ohne Koordinationsaufwand."
+              image={imageHero}
+            />
             <LogoBanner />
             <WidePictureAndText
               image={image3}

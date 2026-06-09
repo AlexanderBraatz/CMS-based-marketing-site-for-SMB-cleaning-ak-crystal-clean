@@ -1,8 +1,8 @@
 import WaveBackground from '../../components/wave-background';
-import HeroServices from '../../components/hero-services';
 import LinksToServices from '../../components/links-to-services';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
 import tempImage from '@/public/images/team-group-outside3.jpg';
+import Hero from '@/components/hero-home';
 
 export default function Leistungen() {
   return (
@@ -10,9 +10,9 @@ export default function Leistungen() {
       <div className="relative z-10 mx-auto w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-          <HeroServices
+          <Hero
             heading="Professionelle Gebäudereinigung"
-            subHeading="Für ihr Unternehmen — von Innen- bis Außenreinigung aus einer Hand."
+            subHeading="Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand."
             image={tempImage}
           />
           <LinksToServices />

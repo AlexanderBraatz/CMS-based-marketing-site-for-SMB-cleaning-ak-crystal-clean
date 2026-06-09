@@ -1,6 +1,5 @@
 import React from 'react';
 import WaveBackground from '../../components/wave-background';
-import HeroServices from '../../components/hero-services';
 import DoubleWidePictureAndText from '../../components/double-wide-picture-and-text';
 import imageLeft from '@/public/images/team-solo-man-2.jpg';
 import imageRight from '@/public/images/team-solo-woman-2.png';
@@ -18,13 +17,18 @@ import GloveWipe from '../../components/glvoe-wipe';
 import FormMessageOnly from '../../components/form-message-only';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
 import heroImage from '@/public/images/team-group-outside3.jpg';
+import Hero from '@/components/hero-home';
 export default function Jobs() {
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-          <HeroServices image={heroImage} />
+          <Hero
+            heading={'Werde Teil \nUnseres Teams'}
+            subHeading="Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz."
+            image={heroImage}
+          />
           <DoubleWidePictureAndText
             text={{
               caption: 'Was Uns Auszeichnet',

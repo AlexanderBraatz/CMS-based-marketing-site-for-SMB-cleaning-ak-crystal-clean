@@ -1,7 +1,6 @@
 import { TempFullService } from '@/lib/data';
 import React from 'react';
 import WaveBackground from '../../components/wave-background';
-import HeroServices from '../../components/hero-services';
 import DoubleWidePictureAndText from '../../components/double-wide-picture-and-text';
 import WidePictureAndText from '../../components/wide-picture-and-text';
 import BulletPoints from '../../components/bullet-points';
@@ -10,6 +9,8 @@ import GrayGradientBackground from '../../components/gray-gradient-background';
 import GloveWipe from '../../components/glvoe-wipe';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
 import GrayGradientBackgroundExtended from '../../components/gray-gradient-background-extended';
+import Hero from '@/components/hero-home';
+import LinksToServices from '@/components/links-to-services';
 
 export default function ServicesPageTemplate({ pageData }: { pageData: TempFullService }) {
   return (
@@ -17,11 +18,7 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
       <div className="relative z-10 mx-auto w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
-          <HeroServices
-            heading={pageData.page.heading}
-            subHeading={pageData.page.subHeading}
-            image={pageData.page.image}
-          />
+          <Hero heading={pageData.page.heading} subHeading={pageData.page.subHeading} image={pageData.page.image} />
           <DoubleWidePictureAndText
             text={{
               caption: pageData.page.section1.caption,
@@ -58,11 +55,17 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
           <GloveWipe />
         </div>
 
-        <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
+        <div className="theme-dark-purple bg-theme-background-dark relative z-10 w-full">
           <FormMessageOnlyOrMultiChoice
             heading={`Jetzt ${pageData.label} kostenlos anfragen.`}
             showMulitChoice={true}
           />
+        </div>
+        <div className="relative z-0 mx-auto mt-10 w-[1071px]">
+          {/* <WaveBackground /> */}
+          <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
+            <LinksToServices />
+          </div>
         </div>
       </div>
     </main>

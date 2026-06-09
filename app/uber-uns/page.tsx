@@ -1,4 +1,3 @@
-import HeroServices from '@/components/hero-services';
 import WaveBackground from '@/components/wave-background';
 import React from 'react';
 import heroImage from '@/public/images/team-group-outside3.jpg';
@@ -13,6 +12,7 @@ import GrayGradientBackground from '@/components/gray-gradient-background';
 import GloveWipe from '@/components/glvoe-wipe';
 import FormMessageOnlyOrMultiChoice from '@/components/form-message-only';
 import LeftTextAndButton from '@/components/left-text-and-button';
+import Hero from '@/components/hero-home';
 
 export default function UberUns() {
   return (
@@ -20,7 +20,7 @@ export default function UberUns() {
       <div className="relative z-10 mx-auto mb-20 w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-          <HeroServices
+          <Hero
             image={heroImage}
             heading="Ihr Partner in Gründau für Gebeudereinigung"
             subHeading="Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner"
