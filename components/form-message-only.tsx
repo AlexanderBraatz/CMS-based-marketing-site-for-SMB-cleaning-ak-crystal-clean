@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import image from '@/public/images/team-group-and-olga-fun.jpg';
 import Button from './utility-components/button';
@@ -17,6 +18,15 @@ const SERVICE_OPTIONS = [
 
 type ServiceValue = (typeof SERVICE_OPTIONS)[number]['value'];
 
+const SERVICE_VALUES = new Set<string>(SERVICE_OPTIONS.map((option) => option.value));
+
+function getServiceFromPathname(pathname: string): ServiceValue | undefined {
+  const segment = pathname.split('/').filter(Boolean).at(-1);
+  if (segment && SERVICE_VALUES.has(segment)) {
+    return segment as ServiceValue;
+  }
+}
+
 export default function FormMessageOnlyOrMultiChoice({
   heading,
   showMulitChoice,
@@ -24,8 +34,12 @@ export default function FormMessageOnlyOrMultiChoice({
   heading: string;
   showMulitChoice: boolean;
 }) {
+  const pathname = usePathname();
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
-  const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(new Set());
+  const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(() => {
+    const service = getServiceFromPathname(pathname);
+    return service ? new Set([service]) : new Set();
+  });
 
   function toggleService(value: ServiceValue) {
     setSelectedServices((prev) => {
