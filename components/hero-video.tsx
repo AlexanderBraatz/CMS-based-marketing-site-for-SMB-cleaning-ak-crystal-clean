@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error  next-video virtual import with query params
 import LogoVideo from '@/videos/logo-video-horizontal-trimed-3xshort-and-trim-off-end.mp4?thumbnailTime=9';
 import BackgroundVideo from 'next-video/background-video';
 
