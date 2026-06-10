@@ -1,7 +1,4 @@
-'use client';
-
 import WaveBackground from '@/components/wave-background';
-import React, { useState } from 'react';
 import heroImage1 from '@/public/images/team-group-outside3.jpg';
 import heroImage2 from '@/public/images/team-two-managment-hero-fromat.jpg';
 import heroImage3 from '@/public/images/team-man-arms-crossed-hero-format.jpg';
@@ -17,25 +14,18 @@ import GloveWipe from '@/components/glvoe-wipe';
 import FormMessageOnlyOrMultiChoice from '@/components/form-message-only';
 import LeftTextAndButton from '@/components/left-text-and-button';
 import Hero from '@/components/hero-home';
-
-const images = [heroImage3, heroImage2, heroImage1];
+import formImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
 
 export default function UberUns() {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const flickToNextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1 < images.length ? prevIndex + 1 : 0));
-  };
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto mb-20 w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero
-            image={images[currentImage]}
+            image={heroImage3}
             heading="Ihr Partner in Gründau für Gebeudereinigung"
             subHeading="Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner"
-            onClick={flickToNextImage}
           />
           <SomeText
             text={{
@@ -83,6 +73,7 @@ export default function UberUns() {
             devImageChoiceIndex={3}
             heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
             showMulitChoice={false}
+            image={formImage}
           />
         </div>
       </div>

@@ -1,5 +1,3 @@
-'use client';
-
 import WaveBackground from '../../components/wave-background';
 import LinksToServices from '../../components/links-to-services';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
@@ -11,15 +9,10 @@ import heroImage2 from '@/public/images/team-two-managment-hero-fromat.jpg';
 import heroImage3 from '@/public/images/team-man-arms-crossed-hero-format.jpg';
 import heroImage4 from '@/public/images/team-two-hero-wide-window.jpg';
 import heroImage5 from '@/public/images/team-mopping-hero-wide.jpg';
-import { useState } from 'react';
 
-const images = [heroImage3, heroImage2, heroImage4, heroImage5];
+import FormImage from '@/public/images/form-right-side/team-two-bosses.jpg';
+
 export default function Leistungen() {
-  const [currentImage, setCurrentImage] = useState(3);
-
-  const flickToNextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1 < images.length ? prevIndex + 1 : 0));
-  };
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-[1071px]">
@@ -28,8 +21,7 @@ export default function Leistungen() {
           <Hero
             heading="Professionelle Gebäudereinigung"
             subHeading="Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand."
-            image={images[currentImage]}
-            onClick={flickToNextImage}
+            image={heroImage5}
           />
           <LinksToServices />
           <SomeText
@@ -46,6 +38,7 @@ export default function Leistungen() {
           devImageChoiceIndex={0}
           heading="Was können wir für Sie tun?"
           showMulitChoice={false}
+          image={FormImage}
         />
       </div>
     </main>

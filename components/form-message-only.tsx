@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import formImageDusting from '@/public/images/form-right-side/team-solo-dusting.jpg';
@@ -12,6 +12,9 @@ import formImageThreeMopping from '@/public/images/form-right-side/team-three-mo
 import formImageTwoBosses from '@/public/images/form-right-side/team-two-bosses.jpg';
 import Button from './utility-components/button';
 
+import womanImage from '@/public/images/form-right-side/team-solo-dusting.jpg';
+import manImage from '@/public/images/form-right-side/team-three-men-outside.jpg';
+
 const SERVICE_OPTIONS = [
   { value: 'glass-und-fassaden', label: 'Glass und Fassaden' },
   { value: 'unterhaltsreinigung', label: 'Unterhaltsreinigung' },
@@ -22,9 +25,18 @@ const SERVICE_OPTIONS = [
   { value: 'industrie', label: 'Industrie' },
 ] as const;
 
+const SERVICE_OPTIONS_MAN = [
+  { value: 'glass-und-fassaden', label: 'Glass und Fassaden' },
+  { value: 'hausmeisterdienst', label: 'Hausmeisterdienst' },
+  { value: 'pflasterstein-wege', label: 'Pflasterstein & Wege' },
+  { value: 'solar-und-dach', label: 'Solar und Dach' },
+  { value: 'industrie', label: 'Industrie' },
+] as const;
+
 type ServiceValue = (typeof SERVICE_OPTIONS)[number]['value'];
 
 const SERVICE_VALUES = new Set<string>(SERVICE_OPTIONS.map((option) => option.value));
+const MAN_SERVICE_VALUES = new Set<string>(SERVICE_OPTIONS_MAN.map((option) => option.value));
 
 function getServiceFromPathname(pathname: string): ServiceValue | undefined {
   const segment = pathname.split('/').filter(Boolean).at(-1);
@@ -45,17 +57,21 @@ export default function FormMessageOnlyOrMultiChoice({
   heading,
   showMulitChoice,
   devImageChoiceIndex = 0,
+  image,
 }: {
   heading: string;
   showMulitChoice: boolean;
   devImageChoiceIndex: number;
+  image?: StaticImageData;
 }) {
+  const pathname = usePathname();
   const [currentImage, setCurrentImage] = useState(devImageChoiceIndex);
+  const serviceFromPath = getServiceFromPathname(pathname);
+  const pathBasedImage = serviceFromPath && MAN_SERVICE_VALUES.has(serviceFromPath) ? manImage : womanImage;
 
   const flickToNextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1 < images.length ? prevIndex + 1 : 0));
   };
-  const pathname = usePathname();
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
   const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(() => {
     const service = getServiceFromPathname(pathname);
@@ -177,14 +193,18 @@ export default function FormMessageOnlyOrMultiChoice({
                 />
               </form>
             </div>
-            <Image
-              onClick={flickToNextImage}
-              src={images[currentImage]}
-              alt="image"
-              width={1492}
-              height={2201}
-              className="h-full w-full"
-            />
+            {image ? (
+              <Image src={image} alt="image" width={1492} height={2201} className="h-full w-full" />
+            ) : (
+              <Image
+                onClick={flickToNextImage}
+                src={pathBasedImage}
+                alt="image"
+                width={1492}
+                height={2201}
+                className="h-full w-full"
+              />
+            )}
           </div>
         </div>
       </div>

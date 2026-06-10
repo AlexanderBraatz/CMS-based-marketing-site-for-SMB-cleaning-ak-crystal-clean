@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import WaveBackground from '../../components/wave-background';
 import DoubleWidePictureAndText from '../../components/double-wide-picture-and-text';
@@ -25,15 +23,10 @@ import heroImage2 from '@/public/images/team-two-managment-hero-fromat.jpg';
 import heroImage3 from '@/public/images/team-man-arms-crossed-hero-format.jpg';
 import heroImage4 from '@/public/images/team-two-hero-wide-window.jpg';
 import heroImage5 from '@/public/images/team-mopping-hero-wide.jpg';
-import { useState } from 'react';
 
-const images = [heroImage3, heroImage2, heroImage4, heroImage5];
+import FormImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
+
 export default function Jobs() {
-  const [currentImage, setCurrentImage] = useState(2);
-
-  const flickToNextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1 < images.length ? prevIndex + 1 : 0));
-  };
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-[1071px]">
@@ -42,8 +35,7 @@ export default function Jobs() {
           <Hero
             heading={'Werde Teil \nUnseres Teams'}
             subHeading="Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz."
-            image={images[currentImage]}
-            onClick={flickToNextImage}
+            image={heroImage4}
           />
           <DoubleWidePictureAndText
             text={{
@@ -105,6 +97,7 @@ export default function Jobs() {
             heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
             showMulitChoice={false}
             devImageChoiceIndex={3}
+            image={FormImage}
           />
         </div>
       </div>

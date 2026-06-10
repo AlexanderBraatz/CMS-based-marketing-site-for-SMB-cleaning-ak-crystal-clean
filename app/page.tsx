@@ -18,6 +18,7 @@ import ValuesAndImages from '../components/values-and-images';
 import WaveBackground from '../components/wave-background';
 import WidePictureAndText from '../components/wide-picture-and-text';
 import imageHero from '@/public/images/video-placeholder2.jpg';
+import formImage from '@/public/images/form-right-side/team-two-bosses.jpg';
 
 import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
 import ChoseComponent from '@/components/utility-components/chose-component';
@@ -97,6 +98,7 @@ export default function Home() {
             devImageChoiceIndex={6}
             heading="Was können wir für Sie tun ?"
             showMulitChoice={false}
+            image={formImage}
           />
         </div>
       </main>
