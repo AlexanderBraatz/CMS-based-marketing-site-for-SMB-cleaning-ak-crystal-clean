@@ -8,6 +8,8 @@
  */
 
 :root {
+  overflow-x: clip;
+  overflow-y: scroll;
   --tailwind-zinc-50: #fafafa;
   --palette-white: #ffffff;
   --palette-white-2: #fefefe;
