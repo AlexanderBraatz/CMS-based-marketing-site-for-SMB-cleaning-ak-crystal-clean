@@ -22,7 +22,7 @@ export default function DoubleWidePictureAndText({
       <DoubleImageWideSectionOnLeft image1={imageLeft} image2={imageRight} />
       <div className="flex flex-col gap-5 pl-[41px]">
         <p className="font-barlow-semi-condensed text-theme-text-highlight font-bold">{text.caption}</p>
-        <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
+        <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter whitespace-pre-line opacity-80">
           {text.heading}
         </h3>
         <p className="font-instrument-sans leading-normal tracking-tighter">{text.body}</p>

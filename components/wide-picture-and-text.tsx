@@ -29,7 +29,7 @@ export default function WidePictureAndText({
         className={`relative flex flex-col gap-5 ${liftTextForSlantedDesign ? 'top-[-100px]' : ''} ${imageOnLeft ? 'pl-[41px]' : 'pr-[41px]'}`}
       >
         <p className="font-barlow-semi-condensed text-theme-text-highlight font-bold">{text.caption}</p>
-        <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
+        <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter whitespace-pre-line opacity-80">
           {text.heading}
         </h3>
         <p className="font-instrument-sans grow leading-normal tracking-tighter">{text.body}</p>

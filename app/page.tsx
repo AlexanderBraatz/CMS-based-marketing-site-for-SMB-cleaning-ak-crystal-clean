@@ -12,6 +12,7 @@ import TestimonialQuotes from '../components/testimonial-quotes';
 import imageLeft from '@/public/images/team-solo-man1.jpg';
 import imageRight from '@/public/images/team-headshots/team-solo-headshot-woman-2.jpg';
 import image3 from '@/public/images/team-man-arms-crossed-hero-format.jpg';
+import image4 from '@/public/images/team-two-happy-green3.jpg';
 
 import ValuesAndImages from '../components/values-and-images';
 import WaveBackground from '../components/wave-background';
@@ -52,7 +53,16 @@ export default function Home() {
               imageOnLeft={true}
               text={{
                 caption: 'Was Uns Auszeichnet',
-                heading: 'Werde Teil Unseres Reinigungsteams',
+                heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
+                body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
+              }}
+            />
+            <WidePictureAndText
+              image={image4}
+              imageOnLeft={false}
+              text={{
+                caption: 'Was Uns Auszeichnet',
+                heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
                 body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
               }}
             />
@@ -64,7 +74,7 @@ export default function Home() {
                 imageRight={imageRight}
                 text={{
                   caption: 'Was Uns Auszeichnet',
-                  heading: 'Ein Ansprechpartner für <br /> effiziente Betreuung',
+                  heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
                   body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
                 }}
               />
