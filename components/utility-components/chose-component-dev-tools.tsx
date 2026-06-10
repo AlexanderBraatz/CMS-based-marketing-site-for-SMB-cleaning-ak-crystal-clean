@@ -12,7 +12,7 @@ export default function ChoseComponentDevTools({ children }: { children: ReactNo
   return (
     <ChoseComponentProvider>
       {children}
-      <ChoseComponentToggle />
+      {/* <ChoseComponentToggle /> */}
     </ChoseComponentProvider>
   );
 }
