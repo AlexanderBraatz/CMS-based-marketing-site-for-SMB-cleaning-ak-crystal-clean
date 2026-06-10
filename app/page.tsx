@@ -19,7 +19,9 @@ import WidePictureAndText from '../components/wide-picture-and-text';
 import imageHero from '@/public/images/video-placeholder2.jpg';
 
 import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
+import ChoseComponent from '@/components/utility-components/chose-component';
 import HeroVideo from '@/components/hero-video';
+import SomeText from '@/components/some-text';
 
 export default function Home() {
   return (
@@ -34,7 +36,17 @@ export default function Home() {
               // image={imageHero}
               video={HeroVideo}
             />
-            <LogoBanner />
+            <ChoseComponent>
+              <LogoBanner />
+              <SomeText
+                text={{
+                  body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes, stolzes Team — das Ihre Räume so behandelt, als wären es die eigenen.',
+                  heading: 'Mehr Leistungen \nohne Aufwand',
+                  caption: 'Unsere Werte',
+                }}
+              />
+            </ChoseComponent>
+
             <WidePictureAndText
               image={image3}
               imageOnLeft={true}

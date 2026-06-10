@@ -5,6 +5,7 @@ import './globals.css';
 import Footer from '../components/footer';
 import ViewportGate from './viewport-gate';
 import Navbar from '../components/navbar';
+import ChoseComponentDevTools from '@/components/utility-components/chose-component-dev-tools';
 
 const barlowSemiCondensed = Barlow_Semi_Condensed({
   variable: '--font-barlow-semi-condensed',
@@ -127,11 +128,13 @@ export default function RootLayout({
       className={`${cooperHewitt.variable} ${sabon.variable} ${barlowSemiCondensed.variable} ${instrumentSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
-        {/* <ViewportGate> */}
-        <Navbar />
-        {children}
-        <Footer />
-        {/* </ViewportGate> */}
+        <ChoseComponentDevTools>
+          {/* <ViewportGate> */}
+          <Navbar />
+          {children}
+          <Footer />
+          {/* </ViewportGate> */}
+        </ChoseComponentDevTools>
       </body>
     </html>
   );
