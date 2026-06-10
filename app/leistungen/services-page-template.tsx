@@ -57,6 +57,7 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-10 w-full">
           <FormMessageOnlyOrMultiChoice
+            devImageChoiceIndex={4}
             heading={`Jetzt ${pageData.label} kostenlos anfragen.`}
             showMulitChoice={true}
           />

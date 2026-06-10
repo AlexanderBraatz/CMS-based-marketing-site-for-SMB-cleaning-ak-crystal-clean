@@ -3,7 +3,13 @@
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
-import image from '@/public/images/team-group-and-olga-fun.jpg';
+import formImageDusting from '@/public/images/form-right-side/team-solo-dusting.jpg';
+import formImageHovering from '@/public/images/form-right-side/team-solo-hovering.jpg';
+import formImageWindowInside from '@/public/images/form-right-side/team-solo-window-inside.jpg';
+import formImageHandsOutside from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
+import formImageThreeMenOutside from '@/public/images/form-right-side/team-three-men-outside.jpg';
+import formImageThreeMopping from '@/public/images/form-right-side/team-three-mopping.jpg';
+import formImageTwoBosses from '@/public/images/form-right-side/team-two-bosses.jpg';
 import Button from './utility-components/button';
 
 const SERVICE_OPTIONS = [
@@ -26,14 +32,29 @@ function getServiceFromPathname(pathname: string): ServiceValue | undefined {
     return segment as ServiceValue;
   }
 }
-
+const images = [
+  formImageDusting,
+  formImageHovering,
+  formImageWindowInside,
+  formImageHandsOutside,
+  formImageThreeMenOutside,
+  formImageThreeMopping,
+  formImageTwoBosses,
+];
 export default function FormMessageOnlyOrMultiChoice({
   heading,
   showMulitChoice,
+  devImageChoiceIndex = 0,
 }: {
   heading: string;
   showMulitChoice: boolean;
+  devImageChoiceIndex: number;
 }) {
+  const [currentImage, setCurrentImage] = useState(devImageChoiceIndex);
+
+  const flickToNextImage = () => {
+    setCurrentImage((prevIndex) => (prevIndex + 1 < images.length ? prevIndex + 1 : 0));
+  };
   const pathname = usePathname();
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
   const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(() => {
@@ -156,7 +177,14 @@ export default function FormMessageOnlyOrMultiChoice({
                 />
               </form>
             </div>
-            <Image src={image} alt="image" width={1492} height={2201} className="h-full w-full" />
+            <Image
+              onClick={flickToNextImage}
+              src={images[currentImage]}
+              alt="image"
+              width={1492}
+              height={2201}
+              className="h-full w-full"
+            />
           </div>
         </div>
       </div>

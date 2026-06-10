@@ -80,6 +80,7 @@ export default function UberUns() {
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
+            devImageChoiceIndex={3}
             heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
             showMulitChoice={false}
           />
