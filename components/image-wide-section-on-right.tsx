@@ -8,10 +8,14 @@ export default function ImageWideSectionOnRight({ image }: { image: StaticImageD
         <div className="border-theme-color-image-border bg-theme-color-image-drop relative z-20 h-full w-full overflow-clip rounded-tl-[80px] rounded-br-[80px] border">
           <Image
             src={image}
-            alt="image of video"
+            alt="image"
             className="bg-theme-color-image-drop h-full w-full object-cover"
-            width={1764}
-            height={1200}
+            // width={1764}
+            // height={1200}
+            fill
+            sizes="441px"
+            quality={20}
+            placeholder="blur"
           />
         </div>
       </div>

@@ -18,8 +18,19 @@ export default function Navbar() {
       <div className="w-[1071px]">
         <div className="flex justify-between px-[5%]">
           <NavLink className="flex items-baseline justify-center gap-2" href="/">
-            <Image src={logo} alt="logo" className="block h-[40px] w-auto" />
-            <Image src={logoText} alt="logo" className="block h-[30px] w-auto" />
+            <div className="relative h-[40px] w-[43px]">
+              <Image fill sizes="43px" src={logo} alt="logo" className="h-full w-full object-cover" />
+            </div>
+            <div className="relative h-[30px] w-[253px]">
+              <Image
+                fill
+                sizes="253px"
+                src={logoText}
+                loading="eager"
+                alt="logo"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </NavLink>
           <div className="flex items-center justify-center gap-5">
             <nav>

@@ -9,9 +9,13 @@ export default function ImageWideSectionOnLeft({ image }: { image: StaticImageDa
           <Image
             src={image}
             alt="image"
-            className="h-full w-full bg-theme-color-image-drop object-cover"
-            width={1764}
-            height={1200}
+            className="bg-theme-color-image-drop h-full w-full object-cover"
+            // width={1764}
+            // height={1200}
+            fill
+            sizes="441px"
+            quality={20}
+            placeholder="blur"
           />
         </div>
       </div>

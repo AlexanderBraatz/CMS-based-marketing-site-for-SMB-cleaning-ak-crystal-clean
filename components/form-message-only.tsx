@@ -193,18 +193,33 @@ export default function FormMessageOnlyOrMultiChoice({
                 />
               </form>
             </div>
-            {image ? (
-              <Image src={image} alt="image" width={1492} height={2201} className="h-full w-full" />
-            ) : (
-              <Image
-                onClick={flickToNextImage}
-                src={pathBasedImage}
-                alt="image"
-                width={1492}
-                height={2201}
-                className="h-full w-full"
-              />
-            )}
+            <div className="relative h-[556px] w-full">
+              {image ? (
+                <Image
+                  src={image}
+                  alt="image"
+                  // width={1492} height={2201}
+                  fill
+                  sizes="390px"
+                  className="h-full w-full object-cover"
+                  placeholder="blur"
+                  quality={20}
+                />
+              ) : (
+                <Image
+                  onClick={flickToNextImage}
+                  src={pathBasedImage}
+                  alt="image"
+                  // width={1492}
+                  // height={2201}
+                  className="h-full w-full object-cover"
+                  sizes="390px"
+                  fill
+                  quality={20}
+                  placeholder="blur"
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>

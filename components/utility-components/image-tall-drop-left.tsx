@@ -9,7 +9,16 @@ export default function TallImageDrop({ src, dropIsOnLeft = true }: { src: Stati
       <div
         className={`border-theme-color-image-border relative z-20 h-full w-full overflow-clip ${dropIsOnLeft ? 'rounded-tr-[80px] rounded-bl-[80px]' : 'rounded-tl-[80px] rounded-br-[80px]'} border`}
       >
-        <Image src={src} alt="image of video" width={904} height={1140} />
+        <Image
+          src={src}
+          alt="image of video"
+          quality={20}
+          placeholder="blur"
+          // width={904} height={1140}
+          className="object-cover"
+          sizes="224px"
+          fill
+        />
       </div>
     </div>
   );

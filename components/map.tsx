@@ -15,18 +15,34 @@ export default function Map() {
       </h3>
       <div className="grid grid-cols-3 gap-5">
         <div className="col-span-2">
-          <div className="border-theme-color-image-border overflow-clip rounded-tl-[80px] rounded-br-[80px] border">
-            <Image src={map} alt="map" width={2436} height={2030} />
+          <div className="border-theme-color-image-border relative h-[528px] w-full overflow-clip rounded-tl-[80px] rounded-br-[80px] border">
+            <Image
+              src={map}
+              alt="map"
+              // width={2436}
+              // height={2030}
+              quality={20}
+              fill
+              sizes="634px"
+              placeholder="blur"
+              className="object-cover"
+            />
           </div>
         </div>
         <div>
-          <Image
-            src={location}
-            alt="picture of town"
-            width={1160}
-            height={773}
-            className="border-theme-color-image-border border"
-          />
+          <div className="border-theme-color-image-border relative h-[193px] w-full border">
+            <Image
+              src={location}
+              alt="picture of town"
+              // width={1160}
+              // height={773}
+              quality={20}
+              fill
+              sizes="290px"
+              placeholder="blur"
+              className="object-cover"
+            />
+          </div>
           <div className="mt-5 flex flex-row items-start gap-2">
             <Image src={icon} alt="icon" />
             <div className="font-instrument-sans text-xl leading-tight font-semibold tracking-tighter">

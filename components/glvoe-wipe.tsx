@@ -34,8 +34,16 @@ export default function GloveWipe() {
       <div className="bg-theme-background absolute left-[50%] -mt-30 h-[164px] w-[2000px] translate-x-[-50%] -rotate-14"></div>
       <motion.div ref={gloveRef} style={{ x, y }} className="absolute left-[50%] -mt-62 flex translate-x-[-50%]">
         <div className="bg-theme-background2 -mr-15 h-[413px] w-[1200px]"></div>
-        <motion.div style={{ rotate: rotation }} className="w-[460px]">
-          <Image src={glove} alt="gloved hand " />
+        <motion.div style={{ rotate: rotation }} className="relative h-auto w-[460px]">
+          <Image
+            src={glove}
+            alt="gloved hand "
+            className="object-cover"
+            fill
+            sizes="460px"
+            quality={20}
+            loading="eager"
+          />
         </motion.div>
         <div className="h-[413px] w-[400px]"></div>
       </motion.div>

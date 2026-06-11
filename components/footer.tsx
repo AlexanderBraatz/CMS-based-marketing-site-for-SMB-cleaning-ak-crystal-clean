@@ -26,6 +26,12 @@ export default function Footer() {
             <div className="mb-4 flex items-baseline gap-2">
               <Image src={logo} alt="" className="block h-8 w-auto" />
               <Image src={logoText} alt="Crystal Clean" className="block h-5 w-auto" />
+              <div className="relative h-8 w-auto">
+                <Image fill sizes="43px" src={logo} alt="logo" className="h-full w-full object-cover" />
+              </div>
+              <div className="relative h-5 w-auto">
+                <Image fill sizes="253px" src={logoText} alt="logo" className="h-full w-full object-cover" />
+              </div>
             </div>
             <p className="font-instrument-sans text-sm leading-snug opacity-80">
               Professionelle Gebäudereinigung für Unternehmen in der Region.

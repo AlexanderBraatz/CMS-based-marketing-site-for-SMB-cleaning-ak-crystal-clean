@@ -10,8 +10,12 @@ export default function ImageWideHome({ image }: { image: StaticImageData }) {
             src={image}
             className=":bg-theme-color-image-drop h-full w-full object-cover"
             alt="image of video"
-            width={1692}
-            height={1091}
+            // width={1692}
+            // height={1091}
+            fill
+            sizes="439px"
+            quality={20}
+            placeholder="blur"
           />
         </div>
       </div>

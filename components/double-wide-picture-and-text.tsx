@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/animations/motion';
-import ImageWideSectionOnLeft from './utility-components/image-wide-section-on-left';
 import DoubleImageWideSectionOnLeft from './utility-components/double-image-wide-section-on-left';
 
 import { StaticImageData } from 'next/image';
