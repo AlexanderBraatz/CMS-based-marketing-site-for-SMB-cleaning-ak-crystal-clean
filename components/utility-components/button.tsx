@@ -3,16 +3,31 @@
 import Link from 'next/link';
 import React, { MouseEventHandler } from 'react';
 
-type Size = 'xsmall' | 'small' | 'medium' | 'large';
+type Size = 'square' | 'xsmall' | 'small' | 'medium' | 'large';
 type Variant = 'ghost' | 'onWhite' | '';
 
 type BaseButtonProps = {
-  text: string;
   className?: string;
   size: Size;
   variant?: Variant;
   dropIsOnLeft?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
+  iconClassName?: string;
 };
+
+type IconOnlyProps = {
+  text?: never;
+  icon: React.ReactNode;
+  ariaLabel: string;
+};
+
+type TextProps = {
+  text: string;
+  ariaLabel?: never;
+};
+
+type ContentProps = IconOnlyProps | TextProps;
 
 type LinkButtonProps = BaseButtonProps & {
   href: string;
@@ -24,7 +39,7 @@ type ActionButtonProps = BaseButtonProps & {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-export type ButtonProps = LinkButtonProps | ActionButtonProps;
+export type ButtonProps = (LinkButtonProps | ActionButtonProps) & ContentProps;
 
 export default function Button({
   text,
@@ -34,6 +49,10 @@ export default function Button({
   onClick,
   dropIsOnLeft = false,
   href,
+  icon,
+  iconPosition = 'left',
+  iconClassName = '',
+  ariaLabel,
 }: ButtonProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (href?.startsWith('#')) {
@@ -43,18 +62,51 @@ export default function Button({
     }
   };
 
+  const isIconOnly = typeof text !== 'string';
+  const widthClass =
+    size === 'square'
+      ? 'w-10'
+      : size === 'small'
+        ? 'w-36'
+        : size === 'medium'
+          ? 'w-[226px]'
+          : size === 'large'
+            ? 'w-[308px]'
+            : size === 'xsmall'
+              ? 'w-[103px]'
+              : '';
+
+  const sharedClassName = `${widthClass} border-theme-border font-barlow-semi-condensed ${variant === 'ghost' ? 'bg-white' : 'bg-theme-color-button'} text-theme-text-button hover:bg-theme-text-button hover:text-theme-color-button flex h-10 cursor-pointer items-center justify-center border text-base font-bold tracking-widest transition-all duration-50 ease-in ${dropIsOnLeft ? 'active:-translate-x-1 active:translate-y-1' : 'active:translate-1'}`;
+
+  const content = (
+    <span className={`inline-flex items-center justify-center ${isIconOnly ? '' : 'gap-2'}`}>
+      {icon && iconPosition === 'left' ? (
+        <span className={`${iconClassName} inline-flex shrink-0 items-center`} aria-hidden={!isIconOnly}>
+          {icon}
+        </span>
+      ) : null}
+      {typeof text === 'string' ? <span>{text}</span> : null}
+      {icon && iconPosition === 'right' ? (
+        <span className={`${iconClassName} inline-flex shrink-0 items-center`} aria-hidden={!isIconOnly}>
+          {icon}
+        </span>
+      ) : null}
+    </span>
+  );
+
   if (href) {
     return (
       <span className={`${className} relative z-0 inline-block`}>
         <Link
           href={href}
           onClick={handleClick}
-          className={`${size === 'small' ? 'w-36' : size === 'medium' ? 'w-[226px]' : size === 'large' ? 'w-[308px]' : size === 'xsmall' ? 'w-[103px]' : ''} border-theme-border font-barlow-semi-condensed ${variant === 'ghost' ? 'bg-white' : 'bg-theme-color-button'} text-theme-text-button hover:bg-theme-text-button hover:text-theme-color-button flex h-10 cursor-pointer items-center justify-center border text-base font-bold tracking-widest transition-all duration-50 ease-in ${dropIsOnLeft ? 'active:-translate-x-1 active:translate-y-1' : 'active:translate-1'}`}
+          aria-label={isIconOnly ? ariaLabel : undefined}
+          className={sharedClassName}
         >
-          {text}
+          {content}
         </Link>
         <span
-          className={`${size === 'small' ? 'w-36' : size === 'medium' ? 'w-[226px]' : size === 'large' ? 'w-[308px]' : size === 'xsmall' ? 'w-[103px]' : ''} ${variant === 'onWhite' ? 'bg-white' : 'bg-theme-color-button-drop'} absolute ${dropIsOnLeft ? 'right-1' : 'left-1'} top-1 -z-20 h-10`}
+          className={`${widthClass} ${variant === 'onWhite' ? 'bg-white' : 'bg-theme-color-button-drop'} absolute ${dropIsOnLeft ? 'right-1' : 'left-1'} top-1 -z-20 h-10`}
           aria-hidden
         />
       </span>
@@ -66,12 +118,13 @@ export default function Button({
       <button
         type="button"
         onClick={onClick}
-        className={`${size === 'small' ? 'w-36' : size === 'medium' ? 'w-[226px]' : size === 'large' ? 'w-[308px]' : size === 'xsmall' ? 'w-[103px]' : ''} border-theme-border font-barlow-semi-condensed ${variant === 'ghost' ? 'bg-white' : 'bg-theme-color-button'} text-theme-text-button hover:bg-theme-text-button hover:text-theme-color-button flex h-10 cursor-pointer items-center justify-center border text-base font-bold tracking-widest transition-all duration-50 ease-in ${dropIsOnLeft ? 'active:-translate-x-1 active:translate-y-1' : 'active:translate-1'}`}
+        aria-label={isIconOnly ? ariaLabel : undefined}
+        className={sharedClassName}
       >
-        {text}
+        {content}
       </button>
       <span
-        className={`${size === 'small' ? 'w-36' : size === 'medium' ? 'w-[226px]' : size === 'large' ? 'w-[308px]' : size === 'xsmall' ? 'w-[103px]' : ''} ${variant === 'onWhite' ? 'bg-white' : 'bg-theme-color-button-drop'} absolute ${dropIsOnLeft ? 'right-1' : 'left-1'} top-1 -z-20 h-10`}
+        className={`${widthClass} ${variant === 'onWhite' ? 'bg-white' : 'bg-theme-color-button-drop'} absolute ${dropIsOnLeft ? 'right-1' : 'left-1'} top-1 -z-20 h-10`}
         aria-hidden
       />
     </span>

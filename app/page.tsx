@@ -30,10 +30,10 @@ export default function Home() {
     <div className="theme-light-background bg-theme-background w-full">
       <main className="relative w-screen overflow-clip">
         <WaveBackground />
-        <div className="relative z-10 mx-auto mb-50 w-[1071px]">
+        <div className="relative z-10 mx-auto mb-50 md:w-full lg:w-[1071px]">
           <div className="flex flex-col gap-[96px] pb-[96px]">
             <Hero
-              heading={'Ein Partner Für Alles,\nGebäudereinigung'}
+              heading={'Ein Partner Für Alles\nGebäudereinigung'}
               subHeading="Höchste Qualität für Innen und Außen ohne Koordinationsaufwand."
               // image={imageHero}
               video={HeroVideo}
