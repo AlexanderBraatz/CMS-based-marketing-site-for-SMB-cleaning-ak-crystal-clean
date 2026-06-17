@@ -16,9 +16,10 @@ import icon4 from '@/public/images/icon-shield_person.svg';
 
 export default function ValuesAndImages() {
   return (
-    <motion.div {...fadeInUp} className="grid grid-cols-4 gap-5 px-[5%] pt-8">
-      <TallImageDrop src={image1} />
+    <motion.div {...fadeInUp} className="xs:grid-cols-[1fr_2fr] grid gap-5 px-[5%] pt-8 lg:grid-cols-4">
+      <TallImageDrop className="xs:justify-self-end order-1 justify-self-center lg:order-0" src={image1} />
       <TallTextBox
+        className="xs:[&>p]:block order-2 justify-self-center lg:-top-8 lg:order-0"
         icon={icon1}
         heading="Partnerschaft"
         text="Langfristige Partner
@@ -26,24 +27,27 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
       />
 
       <TallTextBox
+        className="xs:[&>p]:block order-4 justify-self-center lg:-top-8 lg:order-0"
         icon={icon2}
         heading="Zuverlässig"
         text="Seit über 30 Jahren vereinen wir präzise Handwerkskunst mit moderner Effizienz und schaffen so nachhaltig beeindruckende Ergebnisse."
       />
-      <TallImageDrop src={image3} />
-      <TallImageDrop src={image2} />
+      <TallImageDrop className="xs:justify-self-end order-3 justify-self-center lg:order-0" src={image3} />
+      <TallImageDrop className="xs:justify-self-end order-5 justify-self-center lg:order-0" src={image2} />
       <TallTextBox
+        className="xs:[&>p]:block order-6 justify-self-center lg:-top-8 lg:order-0"
         icon={icon3}
         heading="Fortschrittlich"
         text="Zukunftsweisende Technologien für beste Reinigungsergebnisse, maximale Effizienz und spürbare Qualität."
       />
 
       <TallTextBox
+        className="xs:[&>p]:block order-8 justify-self-center lg:-top-8 lg:order-0"
         icon={icon4}
         heading="Expertengeführt"
         text="Fokussierte Gebäudereinigung mit maßgeschneiderten Lösungen, die genau Ihren Anforderungen entsprechen."
       />
-      <TallImageDrop src={image4} />
+      <TallImageDrop className="xs:justify-self-end order-7 justify-self-center lg:order-0" src={image4} />
     </motion.div>
   );
 }
