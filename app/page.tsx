@@ -42,7 +42,7 @@ export default function Home() {
             <LogoBanner />
             {/* </ChoseComponent> */}
 
-            <WidePictureAndText
+            {/* <WidePictureAndText
               image={image3}
               imageOnLeft={true}
               text={{
@@ -59,7 +59,7 @@ export default function Home() {
                 heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
                 body: ' Wir reinigen nicht nur sichtbar, sondern spürbar: mit Sorgfalt, geschultem Personal und einem Blick fürs Detail schaffen wir hygienische, angenehme Arbeitsumgebungen. Dabei arbeiten wir zuverlässig nach klaren Standards, nutzen moderne Methoden und stimmen alle Abläufe eng mit Ihnen ab. Ihre Mitarbeitenden gesund und Ihr Alltag läuft ohne Unterbrechungen weiter.',
               }}
-            />
+            /> */}
             <div className="flex flex-col gap-[180px]">
               <TestimonialQuotes />
               <ValuesAndImages />
