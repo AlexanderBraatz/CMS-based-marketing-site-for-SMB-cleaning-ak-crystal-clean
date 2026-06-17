@@ -23,7 +23,10 @@ export default function WidePictureAndText({
   buttonProps?: ButtonProps;
 }) {
   return (
-    <motion.div {...getFadeInUpAtAmount(0)} className="theme-light-background text-theme-text grid grid-cols-2 px-[5%]">
+    <motion.div
+      {...getFadeInUpAtAmount(0)}
+      className="theme-light-background text-theme-text grid grid-cols-1 bg-amber-400 px-[5%] sm:grid-cols-2"
+    >
       {imageOnLeft ? <ImageWideSectionOnLeft image={image} /> : <></>}
       <div
         className={`relative flex flex-col gap-5 ${liftTextForSlantedDesign ? 'top-[-100px]' : ''} ${imageOnLeft ? 'pl-[41px]' : 'pr-[41px]'}`}
