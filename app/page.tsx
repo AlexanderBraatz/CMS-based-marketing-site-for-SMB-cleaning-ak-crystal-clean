@@ -48,7 +48,7 @@ export default function Home() {
               text={{
                 caption: 'Was Uns Auszeichnet',
                 heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
-                body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
+                body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
               }}
             />
             <WidePictureAndText
@@ -57,7 +57,7 @@ export default function Home() {
               text={{
                 caption: 'Was Uns Auszeichnet',
                 heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
-                body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
+                body: ' Wir reinigen nicht nur sichtbar, sondern spürbar: mit Sorgfalt, geschultem Personal und einem Blick fürs Detail schaffen wir hygienische, angenehme Arbeitsumgebungen. Dabei arbeiten wir zuverlässig nach klaren Standards, nutzen moderne Methoden und stimmen alle Abläufe eng mit Ihnen ab. Ihre Mitarbeitenden gesund und Ihr Alltag läuft ohne Unterbrechungen weiter.',
               }}
             />
             <div className="flex flex-col gap-[180px]">

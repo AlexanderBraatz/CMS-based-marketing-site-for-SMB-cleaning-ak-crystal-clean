@@ -25,17 +25,17 @@ export default function WidePictureAndText({
   return (
     <motion.div
       {...getFadeInUpAtAmount(0)}
-      className="theme-light-background text-theme-text grid grid-cols-1 bg-amber-400 px-[5%] sm:grid-cols-2"
+      className="theme-light-background text-theme-text grid grid-cols-1 px-[5%] sm:grid-cols-2"
     >
       {imageOnLeft ? <ImageWideSectionOnLeft image={image} /> : <></>}
       <div
-        className={`relative flex flex-col gap-5 ${liftTextForSlantedDesign ? 'top-[-100px]' : ''} ${imageOnLeft ? 'pl-[41px]' : 'pr-[41px]'}`}
+        className={`relative flex flex-col gap-8 ${liftTextForSlantedDesign ? 'top-[-100px]' : ''} ${imageOnLeft ? 'pl-[41px]' : 'pr-[41px]'}`}
       >
         <p className="font-barlow-semi-condensed text-theme-text-highlight font-bold">{text.caption}</p>
-        <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter whitespace-pre-line opacity-80">
+        <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tight whitespace-pre-line opacity-80">
           {text.heading}
         </h3>
-        <p className="font-instrument-sans grow leading-normal tracking-tighter">{text.body}</p>
+        <p className="font-instrument-sans grow leading-7 tracking-normal">{text.body}</p>
         {hasButton && buttonProps ? <Button {...buttonProps} /> : <></>}
       </div>
       {imageOnLeft ? <></> : <ImageWideSectionOnRight image={image} />}
