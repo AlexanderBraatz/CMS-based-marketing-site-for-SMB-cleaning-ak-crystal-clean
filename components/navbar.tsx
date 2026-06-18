@@ -52,7 +52,7 @@ export default function Navbar() {
                 ))}
               </ul>
             </nav>
-            <Button size="small" text="KONTAKT" href="#contact-form" className="xxs:inline-block! hidden!" />
+            <Button size="small" text="KONTAKT" href="#contact-form" className="1xs:inline-block! hidden!" />
             <Button size="square" icon={hamburger} ariaLabel="Open menu" className="2sm:hidden inline-block" />
           </div>
         </div>

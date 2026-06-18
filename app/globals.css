@@ -12,8 +12,8 @@ make gap 2vw but min 8px max 20px */
 
 @theme {
   --breakpoint-xxxs: 345px;
-  --breakpoint-xxs: 520px;
   --breakpoint-xs: 480px;
+  --breakpoint-1xs: 520px;
   --breakpoint-2xs: 600px;
   --breakpoint-sm: 708px;
   --breakpoint-2sm: 880px;
