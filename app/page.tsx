@@ -38,11 +38,10 @@ export default function Home() {
               // image={imageHero}
               video={HeroVideo}
             />
-            {/* <ChoseComponent> */}
-            <LogoBanner />
-            {/* </ChoseComponent> */}
 
-            {/* <WidePictureAndText
+            <LogoBanner />
+
+            <WidePictureAndText
               image={image3}
               imageOnLeft={true}
               text={{
@@ -50,8 +49,8 @@ export default function Home() {
                 heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
                 body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
               }}
-            /> */}
-            {/* <WidePictureAndText
+            />
+            <WidePictureAndText
               image={image4}
               imageOnLeft={false}
               text={{
@@ -59,11 +58,11 @@ export default function Home() {
                 heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
                 body: ' Wir reinigen nicht nur sichtbar, sondern spürbar: mit Sorgfalt, geschultem Personal und einem Blick fürs Detail schaffen wir hygienische, angenehme Arbeitsumgebungen. Dabei arbeiten wir zuverlässig nach klaren Standards, nutzen moderne Methoden und stimmen alle Abläufe eng mit Ihnen ab. Ihre Mitarbeitenden gesund und Ihr Alltag läuft ohne Unterbrechungen weiter.',
               }}
-            /> */}
+            />
             <div className="flex flex-col gap-[180px]">
-              {/* <TestimonialQuotes /> */}
-              {/* <ValuesAndImages /> */}
-              {/* <DoubleWidePictureAndText
+              <TestimonialQuotes />
+              <ValuesAndImages />
+              <DoubleWidePictureAndText
                 imageLeft={imageLeft}
                 imageRight={imageRight}
                 text={{
@@ -71,9 +70,9 @@ export default function Home() {
                   heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
                   body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
                 }}
-              /> */}
-              {/* <LinksToServices /> */}
-              {/* <FormWhitespace /> */}
+              />
+              <LinksToServices />
+              <FormWhitespace />
               <Map />
             </div>
           </div>
