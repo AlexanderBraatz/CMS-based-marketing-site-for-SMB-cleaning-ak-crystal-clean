@@ -154,7 +154,7 @@ export default function TeamGallery() {
           onMouseLeave={stopDragging}
           className="scroll-container relative z-0 w-full cursor-grab scrollbar-none overflow-x-scroll overflow-y-clip px-[5%] pb-5 select-none active:cursor-grabbing"
         >
-          <div className="relative flex w-max flex-row gap-5 pl-1">
+          <div className="relative grid w-max auto-cols-[226px] grid-flow-col gap-5 pl-1">
             {teamMembers.map((teamMember, index) => (
               <div key={index} className="flex flex-col gap-5">
                 <TallImageDrop src={teamMember.src} dropIsOnLeft={true} />
@@ -162,9 +162,14 @@ export default function TeamGallery() {
             ))}
           </div>
         </div>
-        <div className="flex w-full justify-end gap-5 px-[5%]">
+        <div className="1xs:flex hidden w-full justify-end gap-5 px-[5%]">
           <Button text="←" size="xsmall" onClick={() => scrollByItem('back')} dropIsOnLeft={true} />
           <Button text="→" size="xsmall" onClick={() => scrollByItem('forward')} dropIsOnLeft={true} />
+        </div>
+        <div className="1xs:hidden mt-4 flex justify-center gap-2 px-[5%]" aria-hidden="true">
+          <span className="h-2 w-2 rounded-full bg-black opacity-20" />
+          <span className="h-2 w-2 rounded-full bg-black opacity-40" />
+          <span className="h-2 w-2 rounded-full bg-black opacity-20" />
         </div>
       </div>
     </motion.div>

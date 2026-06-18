@@ -19,7 +19,7 @@ import formImage from '@/public/images/form-right-side/team-thre-hands-outside.j
 export default function UberUns() {
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
-      <div className="relative z-10 mx-auto mb-20 w-[1071px]">
+      <div className="relative z-10 mx-auto mb-20 w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero

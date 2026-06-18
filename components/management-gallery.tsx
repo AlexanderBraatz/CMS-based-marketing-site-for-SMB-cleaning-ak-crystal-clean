@@ -16,7 +16,7 @@ export default function ManagementGallery() {
         Management
       </h3>
 
-      <div className="flex flex-row gap-5">
+      <div className="1xs:grid-cols-[repeat(auto-fit,minmax(225px,1fr))] 1xs:gap-5 grid w-full grid-cols-[225px] gap-15">
         <div className="flex flex-col gap-5">
           <TallImageDrop src={imagge1} dropIsOnLeft={true} />
           <div className="flex flex-col gap-1">
