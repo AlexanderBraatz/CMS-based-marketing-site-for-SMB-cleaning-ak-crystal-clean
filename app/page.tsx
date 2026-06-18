@@ -73,7 +73,7 @@ export default function Home() {
                 }}
               /> */}
               {/* <LinksToServices /> */}
-              <FormWhitespace />
+              {/* <FormWhitespace /> */}
               <Map />
             </div>
           </div>
