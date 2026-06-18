@@ -42,7 +42,7 @@ export default function Home() {
             <LogoBanner />
             {/* </ChoseComponent> */}
 
-            <WidePictureAndText
+            {/* <WidePictureAndText
               image={image3}
               imageOnLeft={true}
               text={{
@@ -50,7 +50,7 @@ export default function Home() {
                 heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
                 body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
               }}
-            />
+            /> */}
             {/* <WidePictureAndText
               image={image4}
               imageOnLeft={false}
@@ -63,7 +63,7 @@ export default function Home() {
             <div className="flex flex-col gap-[180px]">
               {/* <TestimonialQuotes /> */}
               {/* <ValuesAndImages /> */}
-              <DoubleWidePictureAndText
+              {/* <DoubleWidePictureAndText
                 imageLeft={imageLeft}
                 imageRight={imageRight}
                 text={{
@@ -71,7 +71,7 @@ export default function Home() {
                   heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
                   body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
                 }}
-              />
+              /> */}
               <LinksToServices />
               <FormWhitespace />
               <Map />

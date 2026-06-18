@@ -33,7 +33,7 @@ export default function LinksToServices() {
       <h3 className="font-cooper-hewitt pb-10 text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
         Professionelle Gebäudereinigung für ihr Unternehmen
       </h3>
-      <div className="grid grid-cols-4 gap-5">
+      <div className="flex flex-row flex-wrap justify-center gap-4">
         {SERVICE_OPTIONS.map((option) => (
           <ServiceLink
             key={option.value}
@@ -42,7 +42,7 @@ export default function LinksToServices() {
             image={SERVICE_ICONS[option.value]}
           />
         ))}
-        <ServiceLink href="/leistungen/" heading="Unser Leistungen >" image={image8} />
+        <ServiceLink href="/leistungen/" heading="Unser Leistungen" image={image8} />
       </div>
     </motion.div>
   );
