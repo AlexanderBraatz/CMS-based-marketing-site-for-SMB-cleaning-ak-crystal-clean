@@ -42,7 +42,7 @@ export default function Home() {
             <LogoBanner />
             {/* </ChoseComponent> */}
 
-            {/* <WidePictureAndText
+            <WidePictureAndText
               image={image3}
               imageOnLeft={true}
               text={{
@@ -51,7 +51,7 @@ export default function Home() {
                 body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
               }}
             />
-            <WidePictureAndText
+            {/* <WidePictureAndText
               image={image4}
               imageOnLeft={false}
               text={{
@@ -62,14 +62,14 @@ export default function Home() {
             /> */}
             <div className="flex flex-col gap-[180px]">
               {/* <TestimonialQuotes /> */}
-              <ValuesAndImages />
+              {/* <ValuesAndImages /> */}
               <DoubleWidePictureAndText
                 imageLeft={imageLeft}
                 imageRight={imageRight}
                 text={{
                   caption: 'Was Uns Auszeichnet',
                   heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
-                  body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
+                  body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
                 }}
               />
               <LinksToServices />
