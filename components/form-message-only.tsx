@@ -90,36 +90,36 @@ export default function FormMessageOnlyOrMultiChoice({
     });
   }
   return (
-    <div className="mx-auto w-[1071px] scroll-mt-15 py-28" id="contact-form">
+    <div className="mx-auto w-full scroll-mt-15 py-28 lg:w-[1071px]" id="contact-form">
       <div className="px-[5%]">
-        <div className="px-[82px]">
-          <div className="bg-theme-card-background-2 grid w-full grid-cols-2 gap-5">
-            <div className="flex h-full min-h-0 flex-col pt-8 pl-5">
+        <div className="px-0 md:px-[82px]">
+          <div className="bg-theme-card-background-2 2sm:grid-cols-2 grid w-full grid-cols-1 gap-5 sm:grid-cols-[1fr_300px]">
+            <div className="flex h-full min-h-0 flex-col pt-6 pr-5 pl-5 sm:pr-0">
               <h5 className="font-cooper-hewitt text-theme-text mb-6 shrink-0 text-3xl leading-tight font-semibold tracking-tight">
                 {heading}
               </h5>
               <form className="flex min-h-0 flex-1 flex-col pb-5">
-                <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-[auto_auto_1fr] gap-x-5 gap-y-5">
-                  <div className="col-span-2 row-start-1 flex w-full flex-col">
+                <div className="xs:grid-cols-2 xs:grid-rows-[auto_auto_1fr] grid min-h-0 flex-1 grid-cols-1 gap-x-5 gap-y-5">
+                  <div className="xs:col-span-2 row-start-1 flex w-full flex-col">
                     <label className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white">
                       Name
                     </label>
                     <input type="text" className="bg-theme-background h-10 border" />
                   </div>
-                  <div className="col-span-1 row-start-2 flex w-full flex-col">
+                  <div className="xs:col-span-1 row-start-2 flex w-full flex-col">
                     <label className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white">
                       Telefone / Handy
                     </label>
                     <input type="text" className="bg-theme-background h-10 border" />
                   </div>
-                  <div className="col-span-1 row-start-2 flex w-full flex-col">
+                  <div className="xs:col-span-1 xs:row-start-2 row-start-3 flex w-full flex-col">
                     <label className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white">
                       E-mail
                     </label>
                     <input type="text" className="bg-theme-background h-10 border" />
                   </div>
                   {showMulitChoice ? (
-                    <fieldset className="col-span-2 row-start-3 flex min-h-0 w-full min-w-0 flex-col border-0 p-0">
+                    <fieldset className="xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full min-w-0 flex-col border-0 p-0">
                       <legend className="text-theme-text mb-3 block w-full leading-tight font-semibold tracking-tighter">
                         Wählen sie weitere Leistungen
                       </legend>
@@ -158,16 +158,16 @@ export default function FormMessageOnlyOrMultiChoice({
                       </div>
                     </fieldset>
                   ) : (
-                    <div className="col-span-2 row-start-3 flex min-h-0 w-full flex-col">
+                    <div className="xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full flex-col">
                       <label className="font-instrument-sans shrink-0 leading-tight font-semibold tracking-tighter text-white">
                         Nachricht
                       </label>
-                      <textarea className="bg-theme-background max-h-25 min-h-0 flex-1 border" />
+                      <textarea className="bg-theme-background max-h-25 min-h-25 flex-1 border" />
                     </div>
                   )}
                 </div>
                 <div className="h-10"></div>
-                <label className="mb-3 flex cursor-pointer items-center gap-1.5 rounded-sm pl-1 leading-tight tracking-tighter">
+                <label className="mb-3 flex cursor-pointer items-center gap-1.5 rounded-sm pl-1 leading-tight">
                   <input
                     type="checkbox"
                     name="dataAgreement"
@@ -182,18 +182,28 @@ export default function FormMessageOnlyOrMultiChoice({
                       dataAgreementAccepted ? 'bg-theme-background border-3' : ''
                     }`}
                   />
-                  <span className="text-theme-text"> Ich stimme der Datenschutzrichtlinie zu.</span>
+                  <span className="text-theme-text xs:text-base text-xs tracking-normal hover:underline">
+                    {' '}
+                    Ich stimme der Datenschutzrichtlinie zu.
+                  </span>
                 </label>
                 <Button
                   onClick={() => {}}
                   variant="onWhite"
                   size="small"
                   text="ABSENDEN"
-                  className="theme-light-background"
+                  className="theme-light-background xs:!block !hidden"
+                />
+                <Button
+                  onClick={() => {}}
+                  variant="onWhite"
+                  size="full"
+                  text="ABSENDEN"
+                  className="theme-light-background xs:!hidden !block"
                 />
               </form>
             </div>
-            <div className="relative h-[556px] w-full">
+            <div className="relative hidden h-[556px] w-full sm:block">
               {image ? (
                 <Image
                   src={image}
