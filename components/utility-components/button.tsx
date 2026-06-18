@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React, { MouseEventHandler } from 'react';
 
-type Size = 'square' | 'xsmall' | 'small' | 'medium' | 'large';
+type Size = 'square' | 'xsmall' | 'small' | 'medium' | 'large' | 'full';
 type Variant = 'ghost' | 'onWhite' | '';
 
 type BaseButtonProps = {
@@ -64,17 +64,22 @@ export default function Button({
 
   const isIconOnly = typeof text !== 'string';
   const widthClass =
-    size === 'square'
-      ? 'w-10'
-      : size === 'small'
-        ? 'w-36'
-        : size === 'medium'
-          ? 'w-[226px]'
-          : size === 'large'
-            ? 'w-[308px]'
-            : size === 'xsmall'
-              ? 'w-[103px]'
-              : '';
+    size === 'full'
+      ? 'w-full'
+      : size === 'square'
+        ? 'w-10'
+        : size === 'small'
+          ? 'w-36'
+          : size === 'medium'
+            ? 'w-[226px]'
+            : size === 'large'
+              ? 'w-[308px]'
+              : size === 'xsmall'
+                ? 'w-[103px]'
+                : '';
+
+  const wrapperClassName =
+    size === 'full' ? `${className} relative z-0 block w-full` : `${className} relative z-0 inline-block`;
 
   const sharedClassName = `${widthClass} border-theme-border font-barlow-semi-condensed ${variant === 'ghost' ? 'bg-white' : 'bg-theme-color-button'} text-theme-text-button hover:bg-theme-text-button hover:text-theme-color-button flex h-10 cursor-pointer items-center justify-center border text-base font-bold tracking-widest transition-all duration-50 ease-in ${dropIsOnLeft ? 'active:-translate-x-1 active:translate-y-1' : 'active:translate-1'}`;
 
@@ -96,7 +101,7 @@ export default function Button({
 
   if (href) {
     return (
-      <span className={`${className} relative z-0 inline-block`}>
+      <span className={wrapperClassName}>
         <Link
           href={href}
           onClick={handleClick}
@@ -114,7 +119,7 @@ export default function Button({
   }
 
   return (
-    <span className={`${className} relative z-0 inline-block`}>
+    <span className={wrapperClassName}>
       <button
         type="button"
         onClick={onClick}

@@ -72,7 +72,7 @@ export default function Home() {
                   body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
                 }}
               /> */}
-              <LinksToServices />
+              {/* <LinksToServices /> */}
               <FormWhitespace />
               <Map />
             </div>

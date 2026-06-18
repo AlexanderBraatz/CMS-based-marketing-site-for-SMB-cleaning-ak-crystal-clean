@@ -22,12 +22,15 @@ export default function FormWhitespace() {
   }
 
   return (
-    <motion.div {...fadeInUp} className="mx-auto flex w-[472px] flex-col items-center">
-      <h3 className="font-instrument-sans w-[520px] pb-10 text-center text-[32px] leading-tight font-semibold tracking-tighter">
+    <motion.div
+      {...fadeInUp}
+      className="2sm:w-[472px] xs:w-[428px] xs:p-0 mx-auto flex w-full flex-col items-center p-[5%]"
+    >
+      <h3 className="font-instrument-sans 2xs:w-[520px] xs:text-center w-full pb-10 text-[32px] leading-tight font-semibold tracking-tighter">
         Erhalten Sie ein kostenloses Angebot für Ihren Reinigungsbedarf
       </h3>
-      <form className="flex flex-col items-center">
-        <div className="mb-14 flex flex-row">
+      <form className="xs:items-center flex w-full flex-col items-start">
+        <div className="xs:flex-row xs:gap-0 xs:mb-14 mb-5 flex w-full flex-col gap-5">
           <fieldset className="flex w-full flex-col">
             <legend className="mb-3 leading-tight font-semibold tracking-tighter">Wählen sie ihre service</legend>
             <div className="flex flex-col gap-2 pl-2" role="group" aria-label="Services auswählen">
@@ -53,28 +56,29 @@ export default function FormWhitespace() {
                         isSelected ? 'bg-black' : 'bg-theme-gray'
                       }`}
                     />
-                    <span className="text-theme-text">{option.label}</span>
+                    <span className="text-theme-text hover:underline">{option.label}</span>
                   </label>
                 );
               })}
             </div>
           </fieldset>
-          <div className="flex flex-col gap-3">
-            <div>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col justify-start">
               <label className="leading-tight font-semibold tracking-tighter">Name</label>
-              <input className="h-10 w-[226px] border" />
+              <input className="xs:w-[226px] h-10 w-full border" />
             </div>
-            <div>
+            <div className="flex flex-col justify-start">
               <label className="leading-tight font-semibold tracking-tighter">Telefone / Handy </label>
-              <input className="h-10 w-[226px] border" />
+              <input className="xs:w-[226px] h-10 w-full border" />
             </div>
-            <div>
+            <div className="flex flex-col justify-start">
               <label className="leading-tight font-semibold tracking-tighter">E-mail</label>
-              <input className="h-10 w-[226px] border" />
+              <input className="xs:w-[226px] h-10 w-full border" />
             </div>
           </div>
         </div>
-        <Button size="large" text="IHR PERSÖNLICHES ANGEBOT" />
+        <Button size="large" text="IHR PERSÖNLICHES ANGEBOT" className="xs:!inline-block !hidden" />
+        <Button size="full" text="IHR ANGEBOT" className="xs:hidden" />
       </form>
     </motion.div>
   );
