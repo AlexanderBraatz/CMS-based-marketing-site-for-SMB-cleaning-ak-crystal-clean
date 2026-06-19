@@ -32,7 +32,7 @@ export default function WidePictureAndText({
         className={`order-1 ${imageOnLeft ? '2sm:order-1' : '2sm:order-2'}`}
       />
       <div
-        className={`relative order-2 flex flex-col gap-5 lg:gap-8 ${imageOnLeft ? '2sm:order-2' : '2sm:order-1'} ${liftTextForSlantedDesign ? 'top-[-100px]' : ''} ${imageOnLeft ? '2sm:pl-[20px] pl-0 lg:pl-[41px]' : '2sm:pr-[20px] pr-0 lg:pr-[41px]'}`}
+        className={`relative order-2 flex flex-col gap-5 lg:gap-8 ${imageOnLeft ? '2sm:order-2' : '2sm:order-1'} ${liftTextForSlantedDesign ? '2sm:top-[-100px]' : ''} ${imageOnLeft ? '2sm:pl-[20px] pl-0 lg:pl-[41px]' : '2sm:pr-[20px] pr-0 lg:pr-[41px]'}`}
       >
         <p className="font-barlow-semi-condensed text-theme-text-highlight font-bold">{text.caption}</p>
         <h3 className="font-cooper-hewitt xxxs:text-3xl text-2xl leading-tight font-semibold tracking-tight whitespace-pre-line opacity-80 lg:text-[32px]">

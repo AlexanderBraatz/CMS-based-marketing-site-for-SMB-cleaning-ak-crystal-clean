@@ -9,6 +9,7 @@ type HeroProps = {
   image?: StaticImageData;
   video?: React.ComponentType;
   onClick?: () => void;
+  className?: string;
 };
 
 export default function Hero({
@@ -17,9 +18,12 @@ export default function Hero({
   image,
   video: VideoComponent,
   onClick: flickToNextImage,
+  className,
 }: HeroProps) {
   return (
-    <div className="theme-dark-purple text-theme-text 1xs:mt-[20px] 1xs:gap-5 xxxs:gap-15 grid grid-cols-1 gap-10 px-[5%] sm:grid-cols-2">
+    <div
+      className={`${className} theme-dark-purple text-theme-text 1xs:mt-[20px] 1xs:gap-5 xxxs:gap-15 grid grid-cols-1 gap-10 px-[5%] sm:grid-cols-2`}
+    >
       <div className="z-10 flex flex-col justify-items-start pt-10">
         <div>
           <h1 className="font-cooper-hewitt xxxs:text-4xl text-3xl leading-tight font-semibold tracking-tight whitespace-pre-line lg:text-5xl">

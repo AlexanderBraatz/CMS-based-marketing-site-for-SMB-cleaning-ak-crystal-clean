@@ -15,7 +15,7 @@ import LinksToServices from '@/components/links-to-services';
 export default function ServicesPageTemplate({ pageData }: { pageData: TempFullService }) {
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
-      <div className="relative z-10 mx-auto w-[1071px]">
+      <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
           <Hero heading={pageData.page.heading} subHeading={pageData.page.subHeading} image={pageData.page.image} />
@@ -48,7 +48,7 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
         />
       </div>
       <div className="bg-theme-background2">
-        <div className="relative z-0 mx-auto w-[1071px] pb-25">
+        <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
           {/* <KeyPoints /> */}
           <GrayGradientBackgroundExtended />
           <div className="h-[356px]"></div>
@@ -63,7 +63,6 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
           />
         </div>
         <div className="relative z-0 mx-auto mt-10 w-[1071px]">
-          {/* <WaveBackground /> */}
           <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
             <LinksToServices />
           </div>

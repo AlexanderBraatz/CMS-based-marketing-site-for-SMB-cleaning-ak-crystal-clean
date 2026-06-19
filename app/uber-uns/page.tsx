@@ -61,10 +61,11 @@ export default function UberUns() {
         </div>
       </div>
       <div className="bg-theme-background2">
-        <div className="relative z-0 mx-auto w-[1071px] pb-25">
+        <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
           <KeyPoints />
           <GrayGradientBackground />
           <LeftTextAndButton />
+          <div className="xs:hidden block h-[356px]"></div>
           <GloveWipe />
         </div>
 

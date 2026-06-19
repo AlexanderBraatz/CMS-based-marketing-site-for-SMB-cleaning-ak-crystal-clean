@@ -15,13 +15,14 @@ import FormImage from '@/public/images/form-right-side/team-two-bosses.jpg';
 export default function Leistungen() {
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
-      <div className="relative z-10 mx-auto w-[1071px]">
+      <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero
             heading="Professionelle Gebäudereinigung"
             subHeading="Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand."
             image={heroImage5}
+            className={'2sm:mb-0 mb-0 sm:mb-20'}
           />
           <LinksToServices />
           <SomeText
