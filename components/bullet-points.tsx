@@ -43,7 +43,7 @@ export default function BulletPoints({
             </div>
           ))}
         </div>
-        <div className="relative col-span-full flex h-100 flex-col gap-5 sm:col-start-2 sm:col-end-12">
+        <div className="relative col-span-full flex h-50 flex-col gap-5 sm:col-start-2 sm:col-end-12">
           {bullets.map((bullet, index) => (
             <p
               key={index}

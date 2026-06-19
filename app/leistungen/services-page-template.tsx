@@ -62,7 +62,7 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
             showMulitChoice={true}
           />
         </div>
-        <div className="relative z-0 mx-auto mt-10 w-[1071px]">
+        <div className="relative z-0 mx-auto mt-10 w-full lg:w-[1071px]">
           <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
             <LinksToServices />
           </div>
