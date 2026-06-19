@@ -124,7 +124,7 @@ export default function FormMessageOnlyOrMultiChoice({
                         Wählen sie weitere Leistungen
                       </legend>
                       <div
-                        className="grid grid-cols-2 content-start gap-x-5 gap-y-2 pl-1"
+                        className="xs:grid-cols-2 grid grid-cols-1 content-start gap-x-5 gap-y-2 pl-1"
                         role="group"
                         aria-label="Services auswählen"
                       >
