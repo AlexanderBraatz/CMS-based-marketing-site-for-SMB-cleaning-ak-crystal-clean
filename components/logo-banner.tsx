@@ -6,28 +6,89 @@ import logo3 from '@/public/images/logos/logo-josgrund.png';
 import logo4 from '@/public/images/logos/logo-paradieschen.png';
 import logo5 from '@/public/images/logos/main-koerper-360.png';
 import logo6 from '@/public/images/logos/logo-weber.png';
+import logo7 from '@/public/images/logos/logo-senckenberg.png';
+import logo8 from '@/public/images/logos/logo-auto-nix.png';
 import Image from 'next/image';
 
 export default function LogoBanner() {
   return (
-    <div className="flex w-full flex-row items-center justify-between gap-6 px-[5%]">
-      <div className="relative h-auto w-[140px]">
-        <Image alt="logo" src={logo1} className="max-h-[50px] w-[140px] object-contain" sizes="140px" quality={5} />
+    <div className="grid grid-cols-1 gap-5 px-[5%] sm:grid-cols-12">
+      <div className="flex flex-col gap-5 sm:col-span-4">
+        <div className="flex flex-col justify-between">
+          <p className="xs:w-full font-barlow-semi-condensed text-theme-text-highlight xs:mx-0 mx-auto w-[226px] pb-5 font-bold">
+            Was Uns Auszeichnet
+          </p>
+          <h3 className="xs:w-full font-cooper-hewitt xxxs:text-3xl xs:mx-0 span-2 mx-auto w-[226px] pb-3 text-2xl leading-tight font-semibold tracking-tight opacity-80 lg:pb-0 lg:text-[32px]">
+            Kunden die uns bereits vertrauen
+          </h3>
+        </div>
       </div>
-      <div className="relative h-auto w-[140px]">
-        <Image alt="logo" src={logo2} className="max-h-[50px] w-[140px] object-contain" sizes="140px" quality={5} />
-      </div>
-      <div className="relative h-auto w-[140px]">
-        <Image alt="logo" src={logo3} className="max-h-[60px] w-[140px] object-contain" sizes="140px" quality={5} />
-      </div>
-      <div className="relative h-auto w-[140px]">
-        <Image alt="logo" src={logo4} className="max-h-[50px] w-[140px] object-contain" sizes="140px" quality={5} />
-      </div>
-      <div className="relative h-auto w-[140px]">
-        <Image alt="logo" src={logo5} className="max-h-[50px] w-[140px] object-contain" sizes="140px" quality={5} />
-      </div>
-      <div className="relative h-auto w-[140px]">
-        <Image alt="logo" src={logo6} className="max-h-[50px] w-[140px] object-contain" sizes="140px" quality={5} />
+      {/* <p className="font-instrument-sans leading-7 tracking-normal whitespace-pre-line sm:col-span-2">{text.body}</p> */}
+
+      <div className="col-span-8 grid grid-cols-8 items-center gap-5">
+        <Image
+          alt="logo"
+          src={logo1}
+          className="col-span-2 max-h-[45px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
+
+        <Image
+          alt="logo"
+          src={logo2}
+          className="col-span-2 max-h-[45px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
+
+        <Image
+          alt="logo"
+          src={logo3}
+          className="col-span-2 max-h-[50px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
+
+        <Image
+          alt="logo"
+          src={logo4}
+          className="col-span-2 max-h-[45px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
+
+        <Image
+          alt="logo"
+          src={logo5}
+          className="col-span-2 max-h-[45px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
+
+        <Image
+          alt="logo"
+          src={logo6}
+          className="col-span-2 max-h-[45px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
+
+        <Image
+          alt="logo"
+          src={logo7}
+          className="col-span-2 max-h-[45px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
+
+        <Image
+          alt="logo"
+          src={logo8}
+          className="col-span-2 max-h-[45px] w-[120px] justify-self-end object-contain"
+          sizes="120px"
+          quality={5}
+        />
       </div>
     </div>
   );
