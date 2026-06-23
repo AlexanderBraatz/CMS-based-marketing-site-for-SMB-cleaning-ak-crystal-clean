@@ -1,7 +1,3 @@
-import icon1 from '@/public/images/icon-s-height.svg';
-import icon2 from '@/public/images/icon-s-spa.svg';
-import icon3 from '@/public/images/icon-s-electric_rickshaw.svg';
-import icon4 from '@/public/images/icon-s-wall-person.svg';
 import windowImageHero from '@/public/images/team-solo-window-cleaning-outside.jpg';
 import unterhaltImageHero from '@/public/images/team-men-and-women-cleaning-staged.jpg';
 import hausmeisterImageHero from '@/public/images/team-men-four.jpg';
@@ -66,22 +62,22 @@ export const SERVICE_OPTIONS = [
         bullets: [
           {
             point: 'Höhenerprobtes Personal',
-            icon: icon1,
+            icon: 'height',
             body: 'Unsere höhenerprobten Fachkräfte sind speziell für Arbeiten an schwer zugänglichen Glas- und Fassadenflächen geschult. Mit umfangreicher Erfahrung und modernster Sicherungstechnik führen wir Reinigungsarbeiten auch in großen Höhen zuverlässig und professionell durch.\n\nDurch regelmäßige Schulungen und die Einhaltung aller Sicherheitsstandards gewährleisten wir höchste Qualität bei jedem Einsatz. So können auch anspruchsvolle Objekte effizient und ohne Beeinträchtigung des laufenden Betriebs gereinigt werden.\n\nUnsere qualifizierten Teams sorgen für ein sauberes Erscheinungsbild Ihrer Immobilie und arbeiten dabei jederzeit sicher, sorgfältig und verantwortungsbewusst.',
           },
           {
             point: 'Umweltschonende Methoden',
-            icon: icon2,
+            icon: 'eco',
             body: 'Bei der Glas- und Fassadenreinigung setzen wir auf umweltschonende Verfahren, die hervorragende Ergebnisse liefern und gleichzeitig Ressourcen schonen. Wo immer möglich, arbeiten wir mit reinem Wasser und verzichten auf unnötige chemische Zusätze.\n\nDurch moderne Reinigungstechniken werden Verschmutzungen effektiv entfernt, ohne empfindliche Oberflächen oder die Umwelt zu belasten. Dadurch bleibt die natürliche Optik Ihrer Glasflächen langfristig erhalten.\n\nNachhaltigkeit und Qualität gehen bei uns Hand in Hand, sodass Sie von einer gründlichen Reinigung und einem verantwortungsvollen Umgang mit der Umwelt profitieren.',
           },
           {
             point: 'Moderene Maschinen',
-            icon: icon3,
+            icon: 'precision_manufacturing',
             body: 'Für optimale Reinigungsergebnisse nutzen wir moderne Maschinen und professionelle Ausrüstung, die speziell für Glas- und Fassadenflächen entwickelt wurden. Dadurch können selbst große Flächen effizient und streifenfrei gereinigt werden.\n\nDer Einsatz innovativer Technik ermöglicht eine schonende Bearbeitung verschiedenster Materialien und reduziert gleichzeitig den Zeitaufwand vor Ort. So profitieren Sie von einer schnellen und zuverlässigen Ausführung aller Arbeiten.\n\nDurch regelmäßige Wartung unserer Geräte und den Einsatz aktueller Technologien gewährleisten wir dauerhaft hohe Qualitätsstandards bei jedem Projekt.',
           },
           {
             point: 'Zuverlässigkeit & Sorgfalt',
-            icon: icon4,
+            icon: 'verified_user',
             body: 'Zuverlässigkeit und Sorgfalt bilden die Grundlage unserer täglichen Arbeit. Wir halten vereinbarte Termine ein und führen jede Reinigung mit größter Aufmerksamkeit für Details durch.\n\nVon einzelnen Glasflächen bis hin zu komplexen Fassadenprojekten arbeiten wir strukturiert und präzise, um ein gleichbleibend hochwertiges Ergebnis sicherzustellen. Dabei achten wir stets auf den Schutz Ihrer Immobilie und aller angrenzenden Bereiche.\n\nDurch transparente Kommunikation, feste Ansprechpartner und eine sorgfältige Ausführung schaffen wir Vertrauen und sorgen langfristig für zufriedene Kunden.',
           },
         ],
@@ -114,22 +110,22 @@ export const SERVICE_OPTIONS = [
         bullets: [
           {
             point: 'Zuverlässige Terminplanung',
-            icon: icon1,
+            icon: 'event_repeat',
             body: 'Wir planen Ihre Unterhaltsreinigung zuverlässig nach festen Intervallen und abgestimmt auf Ihre Betriebszeiten. So bleiben Arbeitsbereiche, Eingänge, Sanitäranlagen und Gemeinschaftsflächen dauerhaft sauber, ohne den laufenden Alltag zu stören.\n\nDurch klare Abläufe, feste Ansprechpartner und sorgfältige Kontrolle sorgen wir dafür, dass vereinbarte Leistungen pünktlich und gleichbleibend hochwertig ausgeführt werden.',
           },
           {
             point: 'Werterhalt Ihrer Immobilie',
-            icon: icon2,
+            icon: 'home_work',
             body: 'Regelmäßige Reinigung schützt Böden, Oberflächen, Möbel und stark genutzte Bereiche vor vorzeitigem Verschleiß. Mit passenden Reinigungsmethoden tragen wir dazu bei, den gepflegten Zustand Ihrer Immobilie langfristig zu erhalten.\n\nSo bleibt nicht nur der optische Eindruck überzeugend, sondern auch der Wert Ihrer Räume wird nachhaltig unterstützt.',
           },
           {
             point: 'Gesundes Arbeitsumfeld ',
-            icon: icon3,
+            icon: 'health_and_safety',
             body: 'Ein sauberes Arbeitsumfeld trägt spürbar zum Wohlbefinden von Mitarbeitern, Kunden und Besuchern bei. Wir achten besonders auf hygienisch sensible Bereiche und reinigen gründlich dort, wo täglich viele Menschen zusammenkommen.\n\nDurch regelmäßige Pflege reduzieren wir Schmutz, Staub und Belastungen im Alltag und schaffen eine angenehme Atmosphäre.',
           },
           {
             point: 'Zuverlässigkeit & Sorgfalt',
-            icon: icon4,
+            icon: 'task_alt',
             body: 'Wir arbeiten zuverlässig, sorgfältig und mit Blick für Details. Jede Fläche wird mit der passenden Methode gereinigt, damit ein gleichmäßig sauberes Ergebnis entsteht.\n\nDabei halten wir Absprachen ein, reagieren flexibel auf besondere Anforderungen und sorgen dafür, dass Ihre Räume jederzeit gepflegt und einladend wirken.',
           },
         ],
@@ -162,22 +158,22 @@ export const SERVICE_OPTIONS = [
         bullets: [
           {
             point: 'Werterhalt Ihrer Immobilie',
-            icon: icon1,
+            icon: 'real_estate_agent',
             body: 'Ein zuverlässiger Hausmeisterdienst trägt wesentlich zum Werterhalt Ihrer Immobilie bei. Wir kümmern uns um regelmäßige Pflege, kleinere Kontrollen und die Sauberkeit gemeinschaftlich genutzter Bereiche.\n\nDurch kontinuierliche Betreuung werden Schäden frühzeitig erkannt und Ihre Immobilie bleibt langfristig gepflegt, sicher und repräsentativ.',
           },
           {
             point: 'Regelmäßige Kontrollgänge',
-            icon: icon2,
+            icon: 'fact_check',
             body: 'Unsere regelmäßigen Kontrollgänge sorgen dafür, dass Mängel, Verschmutzungen oder Gefahrenstellen schnell erkannt werden. Dabei prüfen wir Außenbereiche, Wege, Treppenhäuser und weitere gemeinsam genutzte Flächen sorgfältig.\n\nSo können notwendige Maßnahmen rechtzeitig eingeleitet und ein gepflegter Gesamteindruck dauerhaft sichergestellt werden.',
           },
           {
             point: 'Sicherheit für Besucher ',
-            icon: icon3,
+            icon: 'shield',
             body: 'Sichere Wege, saubere Eingänge und gepflegte Treppenbereiche sind wichtig für Besucher, Bewohner und Mitarbeiter. Wir achten darauf, dass Stolperstellen, Verschmutzungen und wetterbedingte Risiken schnell beseitigt werden.\n\nDamit schaffen wir ein ordentliches Umfeld und erhöhen die Sicherheit rund um Ihre Immobilie.',
           },
           {
             point: 'Schneller Service je Wetterlage',
-            icon: icon4,
+            icon: 'partly_cloudy_day',
             body: 'Je nach Wetterlage reagieren wir flexibel und zuverlässig. Ob Laub, Verschmutzungen, Regenrückstände oder winterliche Bedingungen wir sorgen dafür, dass Außenflächen schnell wieder nutzbar und gepflegt sind.\n\nDurch kurze Reaktionszeiten und strukturierte Abläufe bleibt Ihre Immobilie auch bei wechselnden Bedingungen in gutem Zustand.',
           },
         ],
@@ -210,22 +206,22 @@ export const SERVICE_OPTIONS = [
         bullets: [
           {
             point: 'Rutschhemmende Reinigung',
-            icon: icon1,
+            icon: 'cleaning_services',
             body: 'Unsere Reinigung entfernt rutschige Beläge, Moos und Verschmutzungen, die besonders bei Nässe zu Gefahren werden können. Dadurch verbessern wir die Trittsicherheit auf Wegen, Einfahrten und Außenbereichen.\n\nSo entstehen gepflegte Flächen, die nicht nur optisch überzeugen, sondern auch sicherer für Besucher, Bewohner und Mitarbeiter sind.',
           },
           {
             point: 'Schnelle Durchführung',
-            icon: icon2,
+            icon: 'bolt',
             body: 'Wir führen die Reinigung Ihrer Pflasterflächen schnell, strukturiert und mit professioneller Ausrüstung durch. Dabei stimmen wir den Ablauf so ab, dass Wege und Zufahrten möglichst kurz eingeschränkt sind.\n\nDurch effiziente Arbeitsweise erzielen wir sichtbare Ergebnisse in kurzer Zeit und sorgen für eine saubere Übergabe.',
           },
           {
             point: 'Saubere Einfahrten',
-            icon: icon3,
+            icon: 'garage',
             body: 'Saubere Einfahrten prägen den ersten Eindruck Ihrer Immobilie. Wir entfernen Schmutz, Verfärbungen und Ablagerungen gründlich, damit Ihre Außenbereiche wieder gepflegt und einladend wirken.\n\nDabei achten wir auf gleichmäßige Ergebnisse und eine sorgfältige Behandlung der gesamten Fläche.',
           },
           {
             point: 'Reinigung großer Flächen',
-            icon: icon4,
+            icon: 'square_foot',
             body: 'Auch große Pflasterflächen, Wege und Außenanlagen reinigen wir zuverlässig und effizient. Mit geeigneter Technik und klaren Abläufen bearbeiten wir umfangreiche Bereiche gründlich und zeitsparend.\n\nSo erhalten auch stark genutzte Flächen wieder ein gepflegtes Erscheinungsbild.',
           },
         ],
@@ -258,22 +254,22 @@ export const SERVICE_OPTIONS = [
         bullets: [
           {
             point: 'Fachgerechte Entsorgung',
-            icon: icon1,
+            icon: 'recycling',
             body: 'Wir kümmern uns um die fachgerechte Entsorgung aller anfallenden Materialien. Dabei trennen wir Wertstoffe, Sperrmüll und sonstige Abfälle sorgfältig und bringen alles zu den passenden Entsorgungsstellen.\n\nSo können Sie sicher sein, dass Ihre Entrümpelung sauber, korrekt und verantwortungsvoll durchgeführt wird.',
           },
           {
             point: 'Besenreine Übergabe',
-            icon: icon2,
+            icon: 'mop',
             body: 'Nach Abschluss der Räumung übergeben wir die Flächen besenrein und ordentlich. Räume, Keller, Garagen oder Gewerbeflächen sind danach direkt bereit für Renovierung, Übergabe oder neue Nutzung.\n\nUnser Ziel ist eine saubere, stressfreie Abwicklung ohne unnötigen Aufwand für Sie.',
           },
           {
             point: 'Kurzfristige Einsätze möglich',
-            icon: icon3,
+            icon: 'event_available',
             body: 'Wenn es schnell gehen muss, sind auch kurzfristige Entrümpelungstermine möglich. Wir reagieren flexibel auf Ihre Situation und organisieren den Einsatz so effizient wie möglich.\n\nOb Wohnungsauflösung, Umzug oder gewerbliche Räumung wir unterstützen Sie zuverlässig und zeitnah.',
           },
           {
             point: 'Ordnung und Sauberkeit',
-            icon: icon4,
+            icon: 'inventory_2',
             body: 'Entrümpelung bedeutet für uns mehr als nur das Entfernen von Gegenständen. Wir schaffen Struktur, Ordnung und saubere Flächen, damit Räume wieder sinnvoll genutzt werden können.\n\nDabei arbeiten wir sorgfältig, respektvoll und mit einem klaren Blick für eine ordentliche Übergabe.',
           },
         ],
@@ -306,22 +302,22 @@ export const SERVICE_OPTIONS = [
         bullets: [
           {
             point: 'Schutz von Oberflächen',
-            icon: icon1,
+            icon: 'layers',
             body: 'Bei der Solar und Dachreinigung steht der Schutz empfindlicher Oberflächen im Mittelpunkt. Wir verwenden schonende Methoden, die Verschmutzungen gründlich entfernen, ohne Module, Rahmen oder Dachmaterial unnötig zu belasten.\n\nSo bleibt Ihre Anlage gepflegt und die Lebensdauer der Oberflächen wird unterstützt.',
           },
           {
             point: 'Sichtbare Ergebnisse',
-            icon: icon2,
+            icon: 'visibility',
             body: 'Nach der Reinigung sind Verschmutzungen deutlich reduziert und die Flächen wirken wieder gepflegt. Besonders bei Solarmodulen zeigt sich der Unterschied durch saubere Glasflächen und eine bessere Lichtaufnahme.\n\nWir sorgen für gründliche Ergebnisse, die optisch und funktional überzeugen.',
           },
           {
             point: 'Sicherheitsstandards',
-            icon: icon3,
+            icon: 'health_and_safety',
             body: 'Arbeiten auf Dächern erfordern Erfahrung, Sorgfalt und klare Sicherheitsstandards. Unsere Teams arbeiten mit geeigneter Ausrüstung und achten auf sichere Abläufe bei jedem Einsatz.\n\nSo können Reinigungsarbeiten zuverlässig durchgeführt werden, ohne Risiken für Personen, Anlage oder Gebäude einzugehen.',
           },
           {
             point: 'Höhere Energieeffizienz',
-            icon: icon4,
+            icon: 'solar_power',
             body: 'Saubere Solarmodule können mehr Sonnenlicht aufnehmen und dadurch effizienter arbeiten. Durch die Entfernung von Schmutz, Staub und Ablagerungen unterstützen wir die Leistungsfähigkeit Ihrer Anlage.\n\nRegelmäßige Reinigung hilft, Ertragseinbußen zu reduzieren und Ihre Investition langfristig zu schützen.',
           },
         ],
@@ -354,22 +350,22 @@ export const SERVICE_OPTIONS = [
         bullets: [
           {
             point: 'Reinigung im laufenden Betrieb',
-            icon: icon1,
+            icon: 'factory',
             body: 'Wir reinigen Industrieflächen auf Wunsch auch während des laufenden Betriebs. Dabei arbeiten wir strukturiert, sicher und abgestimmt auf Ihre internen Abläufe.\n\nSo bleiben Produktionsbereiche, Lagerflächen und Verkehrswege sauber, ohne unnötige Unterbrechungen zu verursachen.',
           },
           {
             point: 'Werterhalt von Anlagen',
-            icon: icon2,
+            icon: 'build_circle',
             body: 'Regelmäßige Reinigung trägt dazu bei, Maschinen, Anlagen und Betriebsflächen langfristig zu erhalten. Verschmutzungen, Staub und Rückstände werden entfernt, bevor sie Materialien oder Funktionen beeinträchtigen können.\n\nDamit unterstützen wir die Lebensdauer Ihrer Ausstattung und den gepflegten Zustand Ihres Betriebs.',
           },
           {
             point: 'Hygienische Produktionsbereiche',
-            icon: icon3,
+            icon: 'clean_hands',
             body: 'In Produktionsbereichen ist Hygiene ein wichtiger Bestandteil sicherer und effizienter Abläufe. Wir reinigen gründlich und achten besonders auf Bereiche, in denen Sauberkeit für Qualität und Arbeitssicherheit entscheidend ist.\n\nSo entsteht ein gepflegtes Umfeld für Mitarbeiter, Prozesse und Produkte.',
           },
           {
             point: 'Maschinenreinigung',
-            icon: icon4,
+            icon: 'precision_manufacturing',
             body: 'Maschinen und technische Anlagen benötigen eine sorgfältige und passende Reinigung. Wir entfernen Staub, Rückstände und produktionsbedingte Verschmutzungen mit geeigneten Methoden und professioneller Ausrüstung.\n\nDadurch bleiben Anlagen gepflegt, funktionsfähig und besser vor langfristiger Belastung geschützt.',
           },
         ],

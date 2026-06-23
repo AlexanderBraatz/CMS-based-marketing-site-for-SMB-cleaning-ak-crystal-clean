@@ -1,15 +1,10 @@
 'use client';
-import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { fadeInUp, getFadeInUpAtAmount } from '@/animations/motion';
-import icon1 from '@/public/images/icon-s-height.svg';
-import icon2 from '@/public/images//icon-s-spa.svg';
-import icon3 from '@/public/images/icon-s-electric_rickshaw.svg';
-import icon4 from '@/public/images/icon-s-wall-person.svg';
-import Button from './utility-components/button';
+import { getFadeInUpAtAmount } from '@/animations/motion';
+import MaterialSymbol from './material-symbol';
 
-type Bullet = Readonly<{ point: string; icon: StaticImageData; body: string }>;
+type Bullet = Readonly<{ point: string; icon: string; body: string }>;
 
 export default function BulletPoints({
   bullets,
@@ -36,7 +31,7 @@ export default function BulletPoints({
               key={index}
               className={` ${isFocused === index ? 'border-theme-color-image-border' : 'border-transparent'} flex h-15 cursor-default flex-row items-center justify-start gap-4 border px-2 transition-all duration-300 ease-out sm:gap-5`}
             >
-              <Image src={bullet.icon} alt="icon" className="h-8 w-8 sm:h-10 sm:w-10" />
+              <MaterialSymbol name={bullet.icon} size={40} className="shrink-0" />
               <p className="font-instrument-sans xs:text-xl text-base font-semibold tracking-tight opacity-80">
                 {bullet.point}
               </p>

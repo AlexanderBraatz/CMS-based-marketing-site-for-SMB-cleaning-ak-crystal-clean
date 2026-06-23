@@ -9,10 +9,6 @@ import image3 from '@/public/images/team-solo-outside-house-cleaning.jpg';
 import image4 from '@/public/images/team-solo-outside-window-cleaning.jpg';
 import TallImageDrop from './utility-components/image-tall-drop-left';
 import TallTextBox from './utility-components/tall-text-box';
-import icon1 from '@/public/images/icon-handshake.svg';
-import icon2 from '@/public/images/icon-clock.svg';
-import icon3 from '@/public/images/icon-lightbulb.svg';
-import icon4 from '@/public/images/icon-shield_person.svg';
 
 const valuesImageSizes = '(min-width: 1080px) 224px, (min-width: 820px) 30vw, (min-width: 480px) 215px, 90vw';
 
@@ -33,7 +29,7 @@ export default function ValuesAndImages() {
         />
         <TallTextBox
           className="xs:[&>p]:block order-2 justify-self-center lg:-top-8 lg:order-0"
-          icon={icon1}
+          icon="handshake"
           heading="Partnerschaft"
           text="Langfristige Partner
 sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reinigungsqualität."
@@ -41,7 +37,7 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
 
         <TallTextBox
           className="xs:[&>p]:block order-4 justify-self-center lg:-top-8 lg:order-0"
-          icon={icon2}
+          icon="schedule"
           heading="Zuverlässigkeit"
           text="Seit über 30 Jahren vereinen wir präzise Handwerkskunst mit moderner Effizienz und schaffen so nachhaltig beeindruckende Ergebnisse."
         />
@@ -57,14 +53,14 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
         />
         <TallTextBox
           className="xs:[&>p]:block order-6 justify-self-center lg:-top-8 lg:order-0"
-          icon={icon3}
+          icon="lightbulb"
           heading="Fortschritt"
           text="Zukunftsweisende Technologien für beste Reinigungsergebnisse, maximale Effizienz und spürbare Qualität."
         />
 
         <TallTextBox
           className="xs:[&>p]:block order-8 justify-self-center lg:-top-8 lg:order-0"
-          icon={icon4}
+          icon="shield_person"
           heading="Expertengeführt"
           text="Fokussierte Gebäudereinigung mit maßgeschneiderten Lösungen, die genau Ihren Anforderungen entsprechen."
         />

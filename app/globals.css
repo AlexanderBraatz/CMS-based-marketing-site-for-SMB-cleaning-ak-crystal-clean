@@ -1,5 +1,19 @@
 @import 'tailwindcss';
 
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* colors are to be 
 1. named (usinghttps://hextotailwind.com/) with closesd matching tailwind colour so ilearn the system and so i can use the 50-950 scale, on the root 
 2. mapped to their semantic end use while respecting this guideline : background 60% , secondary 30%, primary 10% 
