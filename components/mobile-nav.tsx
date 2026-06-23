@@ -22,38 +22,12 @@ export default function MobileNavSheet({ isOpen, onClose }: MobileNavSheetProps)
   useEffect(() => {
     if (!isOpen) return;
 
-    const scrollY = window.scrollY;
-    const { style: bodyStyle } = document.body;
-    const previousBodyOverflow = bodyStyle.overflow;
-    const previousBodyPosition = bodyStyle.position;
-    const previousBodyTop = bodyStyle.top;
-    const previousBodyLeft = bodyStyle.left;
-    const previousBodyRight = bodyStyle.right;
-    const previousBodyWidth = bodyStyle.width;
-
-    bodyStyle.overflow = 'hidden';
-    bodyStyle.position = 'fixed';
-    bodyStyle.top = `-${scrollY}px`;
-    bodyStyle.left = '0';
-    bodyStyle.right = '0';
-    bodyStyle.width = '100%';
-
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose();
     };
 
     window.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      bodyStyle.overflow = previousBodyOverflow;
-      bodyStyle.position = previousBodyPosition;
-      bodyStyle.top = previousBodyTop;
-      bodyStyle.left = previousBodyLeft;
-      bodyStyle.right = previousBodyRight;
-      bodyStyle.width = previousBodyWidth;
-      window.scrollTo(0, scrollY);
-      window.removeEventListener('keydown', onKeyDown);
-    };
+    return () => window.removeEventListener('keydown', onKeyDown);
   }, [isOpen, onClose]);
 
   if (!mounted) return null;
