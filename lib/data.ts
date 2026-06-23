@@ -45,7 +45,7 @@ export const SERVICE_OPTIONS = [
       section1: {
         image1: glassImage1,
         image2: glassImage2,
-        caption: 'Was Uns Auszeichnet',
+        caption: 'Unsere Stärken',
         heading: 'Schonend Angewandt ganz ohne Chemikalien',
         body: 'Saubere Glasflächen und gepflegte Fassaden sind die Visitenkarte jeder Immobilie. Mit professionellen Reinigungsverfahren entfernen wir Schmutz, Witterungsrückstände und Ablagerungen gründlich und streifenfrei von Fenstern, Glasfronten und Fassadenflächen.\n\nDabei arbeiten wir materialschonend und setzen moderne Techniken ein, um auch schwer zugängliche Bereiche sicher und effizient zu reinigen. So sorgen wir dauerhaft für einen gepflegten ersten Eindruck und den langfristigen Werterhalt Ihrer Immobilie.',
       },
@@ -57,7 +57,7 @@ export const SERVICE_OPTIONS = [
         body: 'Saubere Glasflächen und gepflegte Fassaden sind die Visitenkarte jeder Immobilie. Mit professionellen Reinigungsverfahren entfernen wir Schmutz, Witterungsrückstände und Ablagerungen gründlich und streifenfrei von Fenstern, Glasfronten und Fassadenflächen.\n\nDabei arbeiten wir materialschonend und setzen moderne Techniken ein, um auch schwer zugängliche Bereiche sicher und effizient zu reinigen. So sorgen wir dauerhaft für einen gepflegten ersten Eindruck und den langfristigen Werterhalt Ihrer Immobilie.',
       },
       section3: {
-        caption: 'Unser Versprechen',
+        caption: 'Ihre Vorteile',
         heading: 'Ihre Vorteile unserer Glas- und Fassadenreinigung',
         bullets: [
           {
@@ -94,7 +94,7 @@ export const SERVICE_OPTIONS = [
       section1: {
         image1: unterhaltImage1,
         image2: unterhaltImage2,
-        caption: 'Was Uns Auszeichnet',
+        caption: 'Darauf können Sie sich verlassen',
         heading: 'Hygienische Sauberkeit für jeden Bereich',
         body: 'Eine regelmäßige Unterhaltsreinigung sorgt für dauerhaft saubere, hygienische und einladende Räume. Ob Büro, Praxis, Treppenhaus oder Gewerbefläche – wir reinigen alle Bereiche gründlich und abgestimmt auf Ihre individuellen Anforderungen.\n\nDurch feste Reinigungspläne und geschulte Fachkräfte gewährleisten wir eine gleichbleibend hohe Qualität. So schaffen wir eine angenehme Umgebung für Mitarbeiter, Kunden und Besucher und tragen gleichzeitig zum Werterhalt Ihrer Räumlichkeiten bei.',
       },
@@ -105,7 +105,7 @@ export const SERVICE_OPTIONS = [
         body: 'Qualität zeigt sich besonders in der täglichen Beständigkeit. Deshalb richten wir unsere Reinigungsleistungen flexibel nach Ihren Betriebszeiten und Abläufen aus, damit der laufende Betrieb nicht gestört wird.\n\nMit zuverlässigen Teams, klaren Prozessen und regelmäßigen Qualitätskontrollen sorgen wir dafür, dass Ihre Räumlichkeiten jeden Tag gepflegt, hygienisch und repräsentativ bleiben.',
       },
       section3: {
-        caption: 'Unser Versprechen',
+        caption: 'Ihre Vorteile',
         heading: 'Ihre Vorteile unserer Unterhaltsreinigung ',
         bullets: [
           {
@@ -142,7 +142,7 @@ export const SERVICE_OPTIONS = [
       section1: {
         image1: hausmeisterImage1,
         image2: hausmeisterImage2,
-        caption: 'Was Uns Auszeichnet',
+        caption: 'Unsere Stärken',
         heading: 'Gepflegte Außenbereiche für einen starken Eindruck',
         body: 'Ein gepflegtes Gebäude beginnt mit einem professionellen Hausmeisterservice. Wir kümmern uns um die regelmäßige Kontrolle und Pflege von Außenanlagen, Wegen, Eingangsbereichen und gemeinschaftlich genutzten Flächen.\n\nDurch unsere kontinuierliche Betreuung erkennen wir kleinere Mängel frühzeitig und tragen dazu bei, den gepflegten Zustand Ihrer Immobilie langfristig zu erhalten. So hinterlassen Ihre Außenbereiche jederzeit einen positiven und professionellen Eindruck.',
       },
@@ -153,7 +153,7 @@ export const SERVICE_OPTIONS = [
         body: 'Ob Grünflächenpflege, Reinigung von Wegen oder die Betreuung von Treppenhäusern – wir übernehmen vielfältige Aufgaben rund um Ihre Immobilie zuverlässig und sorgfältig. Dabei achten wir auf Sauberkeit, Sicherheit und einen ordentlichen Gesamteindruck.\n\nMit regelmäßigen Pflege- und Kontrollmaßnahmen sorgen wir dafür, dass alle Bereiche Ihrer Immobilie funktional, gepflegt und für Bewohner, Mitarbeiter sowie Besucher angenehm nutzbar bleiben.',
       },
       section3: {
-        caption: 'Unser Versprechen',
+        caption: 'Ihre Vorteile',
         heading: 'Ihre Vorteile unserer Hausmeisterdienste',
         bullets: [
           {
@@ -190,7 +190,7 @@ export const SERVICE_OPTIONS = [
       section1: {
         image1: pflastersteinImage1,
         image2: pflastersteinImage2,
-        caption: 'Was Uns Auszeichnet',
+        caption: 'Warum AK Crystal Clean',
         heading: 'Gründlichkeit bis in jede Fuge',
         body: 'Pflastersteine, Wege und Einfahrten sind täglich Witterung, Schmutz und starker Nutzung ausgesetzt. Wir reinigen gründlich bis in die Fugen und entfernen Ablagerungen, Moos sowie hartnäckige Verschmutzungen zuverlässig.\n\nMit passenden Verfahren sorgen wir für gepflegte Flächen, die nicht nur sauber aussehen, sondern auch sicherer begehbar bleiben.',
       },
@@ -201,7 +201,7 @@ export const SERVICE_OPTIONS = [
         body: 'Bei der Reinigung von Pflaster und Wegen achten wir auf eine materialschonende Vorgehensweise. Jede Fläche wird passend zu Zustand, Oberfläche und Verschmutzungsgrad behandelt, damit ein sauberes und gleichmäßiges Ergebnis entsteht.\n\nSo bleiben Wege, Einfahrten und Außenflächen langfristig gepflegt, ohne unnötige Belastung für Stein, Fugen oder Umgebung.',
       },
       section3: {
-        caption: 'Unser Versprechen',
+        caption: 'Ihre Vorteile',
         heading: 'Ihre Vorteile unserer Pflasterstein & Wegereinigung',
         bullets: [
           {
@@ -238,7 +238,7 @@ export const SERVICE_OPTIONS = [
       section1: {
         image1: entruempelungImage1,
         image2: entruempelungImage2,
-        caption: 'Was Uns Auszeichnet',
+        caption: 'Darauf können Sie sich verlassen',
         heading: 'Stressfreie Räumungen für Privat und Gewerbe',
         body: 'Ob Keller, Wohnung, Büro oder Gewerbefläche wir übernehmen Entrümpelungen zuverlässig, diskret und gut organisiert. Von der Planung bis zur besenreinen Übergabe kümmern wir uns um alle notwendigen Schritte.\n\nSo sparen Sie Zeit, Aufwand und Stress, während wir für eine schnelle und ordentliche Räumung sorgen.',
       },
@@ -249,7 +249,7 @@ export const SERVICE_OPTIONS = [
         body: 'Bei jeder Entrümpelung achten wir auf eine verantwortungsvolle Trennung der Materialien. Verwertbare Gegenstände, Wertstoffe und Abfälle werden fachgerecht sortiert und entsprechend entsorgt oder dem Recycling zugeführt.\n\nDamit schaffen wir nicht nur Platz, sondern handeln auch nachhaltig und umweltbewusst.',
       },
       section3: {
-        caption: 'Unser Versprechen',
+        caption: 'Ihre Vorteile',
         heading: 'Ihre Vorteile unseres Entrümpelungsservice',
         bullets: [
           {
@@ -286,7 +286,7 @@ export const SERVICE_OPTIONS = [
       section1: {
         image1: solarImage1,
         image2: solarImage2,
-        caption: 'Was Uns Auszeichnet',
+        caption: 'Unsere Stärken',
         heading: 'Mehr Energieeffizienz durch saubere Solarmodule',
         body: 'Verschmutzte Solarmodule können die Leistung Ihrer Anlage spürbar beeinträchtigen. Wir entfernen Staub, Pollen, Vogelkot und andere Ablagerungen schonend, damit Ihre Module wieder effizient arbeiten können.\n\nMit professioneller Ausrüstung und sicherer Arbeitsweise sorgen wir für saubere Oberflächen und unterstützen den langfristigen Ertrag Ihrer Solaranlage.',
       },
@@ -297,7 +297,7 @@ export const SERVICE_OPTIONS = [
         body: 'Ob private Dachanlage oder gewerbliches Objekt wir bieten zuverlässige Reinigungslösungen passend zu Ihrer Immobilie. Dabei achten wir auf Sicherheit, Materialschutz und eine sorgfältige Durchführung aller Arbeiten.\n\nDurch transparente Abläufe und feste Ansprechpartner erhalten Sie einen Service, auf den Sie sich langfristig verlassen können.',
       },
       section3: {
-        caption: 'Unser Versprechen',
+        caption: 'Ihre Vorteile',
         heading: 'Ihre Vorteile unserer Solar und Dachreinigung',
         bullets: [
           {
@@ -334,7 +334,7 @@ export const SERVICE_OPTIONS = [
       section1: {
         image1: industreImage1,
         image2: industreImage2,
-        caption: 'Was Uns Auszeichnet',
+        caption: 'Warum AK Crystal Clean',
         heading: 'Erfahrene Fachkräfte für anspruchsvolle Aufgaben',
         body: 'Industrielle Bereiche stellen besondere Anforderungen an Reinigung, Sicherheit und Organisation. Unsere erfahrenen Fachkräfte kennen die Abläufe in Produktions-, Lager- und Betriebsflächen und arbeiten sorgfältig nach abgestimmten Konzepten.\n\nSo sorgen wir für Sauberkeit, Werterhalt und reibungslose Abläufe auch bei anspruchsvollen Reinigungsaufgaben.',
       },
@@ -345,7 +345,7 @@ export const SERVICE_OPTIONS = [
         body: 'Jeder Betrieb hat andere Anforderungen. Deshalb entwickeln wir flexible Reinigungskonzepte, die zu Ihren Arbeitszeiten, Sicherheitsvorgaben und Produktionsabläufen passen.\n\nOb regelmäßige Reinigung, Maschinenpflege oder gezielte Sonderreinigung wir stimmen unsere Leistungen so ab, dass Ihr Betrieb möglichst wenig beeinträchtigt wird.',
       },
       section3: {
-        caption: 'Unser Versprechen',
+        caption: 'Ihre Vorteile',
         heading: 'Ihre Vorteile unserer Industriereinigung  ',
         bullets: [
           {

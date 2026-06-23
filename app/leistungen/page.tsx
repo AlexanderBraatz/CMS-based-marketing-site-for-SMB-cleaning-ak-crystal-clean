@@ -27,9 +27,9 @@ export default function Leistungen() {
           <LinksToServices />
           <SomeText
             text={{
-              body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes, stolzes Team — das Ihre Räume so behandelt, als wären es die eigenen.',
+              body: 'Mit AK Crystal Clean erhalten Sie alle Reinigungsleistungen aus einer Hand. Statt mehrere Dienstleister zu koordinieren, profitieren Sie von festen Ansprechpartnern, klaren Abläufen und einem zuverlässigen Service. So reduzieren Sie Ihren Aufwand und gewinnen Zeit für die wirklich wichtigen Aufgaben in Ihrem Unternehmen.',
               heading: 'Mehr Leistungen \nohne Aufwand',
-              caption: 'Unsere Werte',
+              caption: 'Ihre Vorteile',
             }}
           />
         </div>

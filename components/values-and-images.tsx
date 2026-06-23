@@ -16,7 +16,7 @@ export default function ValuesAndImages() {
   return (
     <motion.div {...fadeInUp} className="px-[5%]">
       <p className="xs:w-full font-barlow-semi-condensed text-theme-text-highlight xs:mx-0 mx-auto w-[226px] pb-5 font-bold">
-        Was Uns Auszeichnet
+        Unsere Werte
       </p>
       <h3 className="xs:w-full font-cooper-hewitt xxxs:text-3xl xs:mx-0 mx-auto w-[226px] pb-8 text-2xl leading-tight font-semibold tracking-tight opacity-80 lg:pb-20 lg:text-[32px]">
         Die Werte, die uns antreiben

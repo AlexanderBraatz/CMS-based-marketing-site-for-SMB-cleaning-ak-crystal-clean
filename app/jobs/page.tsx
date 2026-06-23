@@ -35,7 +35,7 @@ export default function Jobs() {
           />
           <DoubleWidePictureAndText
             text={{
-              caption: 'Was Uns Auszeichnet',
+              caption: 'Warum AK Crystal Clean',
               heading: 'Werde Teil Unseres Reinigungsteams',
               body: 'Bei AK Crystal Clean arbeitest du in einem familiären Team mit starkem Zusammenhalt. Respekt, kurze Kommunikationswege und gegenseitige Unterstützung sorgen für ein Arbeitsumfeld, in dem sich jeder wertgeschätzt fühlt.',
             }}
@@ -46,7 +46,7 @@ export default function Jobs() {
             image={image3}
             imageOnLeft={false}
             text={{
-              caption: 'Was Uns Auszeichnet',
+              caption: 'Darauf können Sie sich verlassen',
               heading: 'Sichere Arbeit mit Zukunft',
               body: 'Als etabliertes Familienunternehmen mit über 30 Jahren Erfahrung bieten wir dir einen sicheren Arbeitsplatz und langfristige Perspektiven. Durch unser stetiges Wachstum entstehen regelmäßig neue Entwicklungsmöglichkeiten für engagierte Mitarbeiterinnen und Mitarbeiter.',
             }}

@@ -42,6 +42,7 @@ export default function ServicesPageTemplate({ pageData }: { pageData: TempFullS
         </div>
         <BulletPoints
           bullets={pageData.page.section3.bullets}
+          caption={pageData.page.section3.caption}
           text={{
             heading: pageData.page.section3.heading,
           }}

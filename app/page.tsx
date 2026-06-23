@@ -45,7 +45,7 @@ export default function Home() {
               image={image3}
               imageOnLeft={true}
               text={{
-                caption: 'Was Uns Auszeichnet',
+                caption: 'Warum AK Crystal Clean',
                 heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
                 body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
               }}
@@ -54,9 +54,9 @@ export default function Home() {
               image={image4}
               imageOnLeft={false}
               text={{
-                caption: 'Was Uns Auszeichnet',
+                caption: 'Unsere Stärken',
                 heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
-                body: ' Wir reinigen nicht nur sichtbar, sondern spürbar: mit Sorgfalt, geschultem Personal und einem Blick fürs Detail schaffen wir hygienische, angenehme Arbeitsumgebungen. Dabei arbeiten wir zuverlässig nach klaren Standards, nutzen moderne Methoden und stimmen alle Abläufe eng mit Ihnen ab. Ihre Mitarbeitenden gesund und Ihr Alltag läuft ohne Unterbrechungen weiter.',
+                body: 'Wir reinigen nicht nur sichtbar, sondern spürbar. Mit geschultem Personal, klaren Qualitätsstandards und einem hohen Anspruch an Sauberkeit schaffen wir hygienische Arbeitsumgebungen, in denen sich Mitarbeitende und Kunden gleichermaßen wohlfühlen. So bleiben Abläufe störungsfrei und Ihre Arbeitsplätze dauerhaft gepflegt.',
               }}
             />
             <div className="flex flex-col gap-[180px]">
@@ -66,7 +66,7 @@ export default function Home() {
                 imageLeft={imageLeft}
                 imageRight={imageRight}
                 text={{
-                  caption: 'Was Uns Auszeichnet',
+                  caption: 'Unsere Erfahrung',
                   heading: 'Über 30 Jahre Erfahrung in der Gebäudereinigung',
 
                   body: ' Seit über drei Jahrzehnten vertrauen Unternehmen auf unsere Kompetenz. Dieses Know-how ermöglicht es uns, individuelle Reinigungskonzepte zu entwickeln und dauerhaft höchste Qualitätsstandards sicherzustellen, unabhängig von Größe oder Branche.',

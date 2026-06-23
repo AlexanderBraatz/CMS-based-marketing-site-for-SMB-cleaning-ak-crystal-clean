@@ -20,7 +20,7 @@ export default function LogoBanner() {
       <div className="2sm:col-span-4 col-span-full flex flex-col gap-5">
         <div className="flex flex-col justify-between">
           <p className="font-barlow-semi-condensed text-theme-text-highlight xs:mx-0 mx-auto w-full pb-5 font-bold">
-            Was Uns Auszeichnet
+            Darauf können Sie sich verlassen
           </p>
           <h3 className="font-cooper-hewitt xxxs:text-3xl xs:mx-0 span-2 mx-auto w-full pb-3 text-2xl leading-tight font-semibold tracking-tight opacity-80 lg:pb-0 lg:text-[32px]">
             Kunden die uns bereits vertrauen

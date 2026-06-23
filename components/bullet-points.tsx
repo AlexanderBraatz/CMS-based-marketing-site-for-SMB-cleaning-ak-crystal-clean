@@ -9,16 +9,18 @@ type Bullet = Readonly<{ point: string; icon: string; body: string }>;
 export default function BulletPoints({
   bullets,
   text,
+  caption = 'Ihre Vorteile',
 }: {
   bullets: readonly Bullet[];
   text: Readonly<{ heading: string }>;
+  caption?: string;
 }) {
   const [isFocused, setIsFocused] = useState(0);
   return (
     <motion.div {...getFadeInUpAtAmount(0.05)} className="mb-20 px-[5%]">
       <div className="grid grid-cols-12 gap-x-5">
         <p className="font-barlow-semi-condensed text-theme-text-highlight col-span-full mb-5 font-bold sm:col-start-2 sm:col-end-12">
-          Unser Versprechen
+          {caption}
         </p>
         <h3 className="font-cooper-hewitt col-span-full mb-15 text-[32px] leading-tight font-semibold tracking-tighter sm:col-start-2 sm:col-end-12">
           {text.heading}

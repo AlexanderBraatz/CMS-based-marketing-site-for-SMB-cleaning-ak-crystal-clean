@@ -13,10 +13,10 @@ export default function LeftTextAndButton() {
         <h3 className="font-cooper-hewitt text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
           AK Crystal Clean <br /> Wir machen Alles Klar!
         </h3>
-        <p className="font-instrument-sans leading-normal tracking-tighter">
-          Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger
-          Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und
-          höchste Qualitätsstandards, damit
+        <p className="font-instrument-sans leading-7 tracking-normal">
+          Unser Anspruch ist klar: Reinigungsqualität, auf die Sie sich jederzeit verlassen können. Deshalb setzen wir
+          auf geschulte Mitarbeiter, klare Prozesse und eine enge Zusammenarbeit mit unseren Kunden, um dauerhaft
+          überzeugende Ergebnisse zu liefern.
         </p>
         <Button variant="ghost" size="small" text="KONTAKT" href="#contact-form" />
       </div>
