@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { fadeInUp, getFadeInUpAtAmount } from '@/animations/motion';
 import TallImageDrop from './utility-components/image-tall-drop-left';
 import imagge1 from '@/public/images/team-tall-mehmet.jpg';
-import imagge2 from '@/public/images/team-tall-olga.jpg';
+import imagge2 from '@/public/images/team-solo-olga-tall-new.jpg';
 import imagge3 from '@/public/images/team-tall-leo-more-recent.jpg';
 import imagge4 from '@/public/images/team-tall-reiner.jpg';
 
