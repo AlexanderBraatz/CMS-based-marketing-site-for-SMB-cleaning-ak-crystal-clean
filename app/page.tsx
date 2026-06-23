@@ -67,8 +67,9 @@ export default function Home() {
                 imageRight={imageRight}
                 text={{
                   caption: 'Was Uns Auszeichnet',
-                  heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
-                  body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können.',
+                  heading: 'Über 30 Jahre Erfahrung in der Gebäudereinigung',
+
+                  body: ' Seit über drei Jahrzehnten vertrauen Unternehmen auf unsere Kompetenz. Dieses Know-how ermöglicht es uns, individuelle Reinigungskonzepte zu entwickeln und dauerhaft höchste Qualitätsstandards sicherzustellen, unabhängig von Größe oder Branche.',
                 }}
               />
               <LinksToServices />

@@ -42,7 +42,7 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
         <TallTextBox
           className="xs:[&>p]:block order-4 justify-self-center lg:-top-8 lg:order-0"
           icon={icon2}
-          heading="Zuverlässig"
+          heading="Zuverlässigkeit"
           text="Seit über 30 Jahren vereinen wir präzise Handwerkskunst mit moderner Effizienz und schaffen so nachhaltig beeindruckende Ergebnisse."
         />
         <TallImageDrop
@@ -58,7 +58,7 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
         <TallTextBox
           className="xs:[&>p]:block order-6 justify-self-center lg:-top-8 lg:order-0"
           icon={icon3}
-          heading="Fortschrittlich"
+          heading="Fortschritt"
           text="Zukunftsweisende Technologien für beste Reinigungsergebnisse, maximale Effizienz und spürbare Qualität."
         />
 

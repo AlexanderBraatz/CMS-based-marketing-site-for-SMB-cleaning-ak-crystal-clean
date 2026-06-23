@@ -153,7 +153,7 @@ export default function FormMessageOnlyOrMultiChoice({
                                 }`}
                               />
 
-                              <span className="text-theme-text">{option.label}</span>
+                              <span className="text-theme-text hover:underline">{option.label}</span>
                             </label>
                           );
                         })}

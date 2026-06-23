@@ -52,8 +52,8 @@ export default function UberUns() {
               image={image2}
               imageOnLeft={true}
               text={{
-                caption: 'Unsere Zukunft',
-                heading: 'Als Meisterbetrieb,  schulen wir \ndie nächste Generation',
+                caption: 'Unsere Erfahrung',
+                heading: 'Über 30 Jahre Erfahrung in der Gebäudereinigung',
                 body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes, stolzes Team.',
               }}
             />{' '}
@@ -72,7 +72,7 @@ export default function UberUns() {
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
             devImageChoiceIndex={3}
-            heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
+            heading="Was können wir für Sie tun ?"
             showMulitChoice={false}
             image={formImage}
           />

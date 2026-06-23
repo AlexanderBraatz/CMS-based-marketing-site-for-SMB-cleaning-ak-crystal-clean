@@ -33,7 +33,7 @@ export default function Jobs() {
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero
-            heading={'Werde Teil \nUnseres Teams'}
+            heading={'Werde Teil eines \nstarken Teams'}
             subHeading="Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz."
             image={heroImage4}
           />
@@ -41,7 +41,7 @@ export default function Jobs() {
             text={{
               caption: 'Was Uns Auszeichnet',
               heading: 'Werde Teil Unseres Reinigungsteams',
-              body: ' Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können. <br /> <br /> Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand',
+              body: 'Bei AK Crystal Clean arbeitest du in einem familiären Team mit starkem Zusammenhalt. Respekt, kurze Kommunikationswege und gegenseitige Unterstützung sorgen für ein Arbeitsumfeld, in dem sich jeder wertgeschätzt fühlt.',
             }}
             imageLeft={imageLeft}
             imageRight={imageRight}
@@ -51,8 +51,8 @@ export default function Jobs() {
             imageOnLeft={false}
             text={{
               caption: 'Was Uns Auszeichnet',
-              heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
-              body: ' Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. Das Ergebnis ist ein engagiertes, stolzes Team — das Ihre Räume so behandelt, als wären es die eigenen.',
+              heading: 'Sichere Arbeit mit Zukunft',
+              body: 'Als etabliertes Familienunternehmen mit über 30 Jahren Erfahrung bieten wir dir einen sicheren Arbeitsplatz und langfristige Perspektiven. Durch unser stetiges Wachstum entstehen regelmäßig neue Entwicklungsmöglichkeiten für engagierte Mitarbeiterinnen und Mitarbeiter.',
             }}
           />
           <BulletPoints
