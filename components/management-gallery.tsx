@@ -9,6 +9,8 @@ import imagge2 from '@/public/images/team-tall-olga.jpg';
 import imagge3 from '@/public/images/team-tall-leo-more-recent.jpg';
 import imagge4 from '@/public/images/team-tall-reiner.jpg';
 
+const MANAGEMENT_GALLERY_IMAGE_SIZES = '225px';
+
 export default function ManagementGallery() {
   return (
     <motion.div {...getFadeInUpAtAmount(0)} className="px-[5%]">
@@ -18,28 +20,28 @@ export default function ManagementGallery() {
 
       <div className="1xs:grid-cols-[repeat(auto-fit,minmax(225px,1fr))] 1xs:gap-5 grid w-full grid-cols-[225px] gap-15">
         <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge1} dropIsOnLeft={true} />
+          <TallImageDrop src={imagge1} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
           <div className="flex flex-col gap-1">
             <p className="font-instrument-sans text-xl font-semibold">Mehmet Akca</p>
             <p className="font-instrument-sans tracking-tight">Geschäftsführer</p>
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge2} dropIsOnLeft={true} />
+          <TallImageDrop src={imagge2} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
           <div className="flex flex-col gap-1">
             <p className="font-instrument-sans text-xl font-semibold">Olga Akca-Klug</p>
             <p className="font-instrument-sans tracking-tight">Personalmanagement</p>
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge3} dropIsOnLeft={true} />
+          <TallImageDrop src={imagge3} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
           <div className="flex flex-col gap-1">
             <p className="font-instrument-sans text-xl font-semibold">Leo Klug</p>
             <p className="font-instrument-sans tracking-tight">Bereichsleitung Glasreinigung</p>
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge4} dropIsOnLeft={true} />
+          <TallImageDrop src={imagge4} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
           <div className="flex flex-col gap-1">
             <p className="font-instrument-sans text-xl font-semibold">Reiner Klix</p>
             <p className="font-instrument-sans tracking-tight">Gebäudereinigungsmeister</p>

@@ -10,6 +10,10 @@ import logo7 from '@/public/images/logos/logo-senckenberg.png';
 import logo8 from '@/public/images/logos/logo-auto-nix.png';
 import Image from 'next/image';
 
+const LOGO_SIZES_STANDARD = '(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px';
+const LOGO_SIZES_NARROW = '(min-width: 760px) 93px, (min-width: 480px) calc(13.85vw - 9px), 93px';
+const LOGO_SIZES_MEDIUM = '(min-width: 880px) 108px, (min-width: 480px) calc(13.42vw - 7px), 108px';
+
 export default function LogoBanner() {
   return (
     <div className="2sm:grid-cols-12 2sm:w-full xs:w-[70vw] mx-auto grid w-full grid-cols-8 gap-5 px-[5%] sm:pt-10 md:pt-0">
@@ -31,7 +35,7 @@ export default function LogoBanner() {
           src={logo1}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
+          sizes={LOGO_SIZES_STANDARD}
           quality={5}
         />
         <Image
@@ -39,7 +43,7 @@ export default function LogoBanner() {
           src={logo4}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 760px) 93px, (min-width: 480px) calc(13.85vw - 9px), 93px"
+          sizes={LOGO_SIZES_NARROW}
           quality={5}
         />
         <Image
@@ -47,7 +51,7 @@ export default function LogoBanner() {
           src={logo3}
           className="xs:justify-self-end col-span-2 max-h-[50px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 760px) 92px, (min-width: 480px) calc(13.46vw - 8px), 92px"
+          sizes={LOGO_SIZES_NARROW}
           quality={5}
         />
 
@@ -56,7 +60,7 @@ export default function LogoBanner() {
           src={logo2}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
+          sizes={LOGO_SIZES_STANDARD}
           quality={5}
         />
 
@@ -65,7 +69,7 @@ export default function LogoBanner() {
           src={logo5}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
+          sizes={LOGO_SIZES_STANDARD}
           quality={5}
         />
 
@@ -74,7 +78,7 @@ export default function LogoBanner() {
           src={logo6}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 880px) 108px, (min-width: 480px) calc(13.42vw - 7px), 108px"
+          sizes={LOGO_SIZES_MEDIUM}
           quality={5}
         />
 
@@ -83,7 +87,7 @@ export default function LogoBanner() {
           src={logo7}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
+          sizes={LOGO_SIZES_STANDARD}
           quality={5}
         />
 
@@ -92,7 +96,7 @@ export default function LogoBanner() {
           src={logo8}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
-          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
+          sizes={LOGO_SIZES_STANDARD}
           quality={5}
         />
       </div>

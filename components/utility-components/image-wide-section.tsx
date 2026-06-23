@@ -1,18 +1,22 @@
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
+const WIDE_IMAGE_SIZES_LEFT =
+  '(min-width: 1100px) 547px, (min-width: 880px) calc(40.5vw + 110px), (min-width: 480px) 74.74vw, 111.25vw';
+const WIDE_IMAGE_SIZES_RIGHT =
+  '(min-width: 1100px) 439px, (min-width: 880px) calc(32.5vw + 88px), (min-width: 480px) 60vw, 90vw';
+
 export default function ImageWideSection({
   image,
   isOnLeft,
   className = '',
-  // sizes = '441px',
-  sizes = '(min-width: 1100px) 439px, (min-width: 880px) calc(32.5vw + 88px), (min-width: 480px) 60vw, 90vw',
 }: {
   image: StaticImageData;
   isOnLeft: boolean;
   className?: string;
-  sizes?: string;
 }) {
+  const sizes = isOnLeft ? WIDE_IMAGE_SIZES_LEFT : WIDE_IMAGE_SIZES_RIGHT;
+
   return (
     <div
       className={`grid self-start ${isOnLeft ? '2sm:grid-cols-[1fr_20px] grid-cols-[1fr_0px] lg:grid-cols-[1fr_41px]' : '2sm:grid-cols-[20px_1fr] grid-cols-[0px_1fr] lg:grid-cols-[41px_1fr]'} ${className}`}

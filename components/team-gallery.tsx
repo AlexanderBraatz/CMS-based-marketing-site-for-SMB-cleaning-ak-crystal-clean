@@ -18,20 +18,21 @@ import { useRef, useEffect, MouseEvent } from 'react';
 
 const FRICTION = 0.94;
 const MIN_VELOCITY = 0.015;
+const TEAM_GALLERY_IMAGE_SIZES = '226px';
 
 export default function TeamGallery() {
   const teamMembers = [
-    { src: image1, alt: 'picture of team member', sizes: '224px' },
-    { src: image2, alt: 'picture of team member', sizes: '224px' },
-    { src: image3, alt: 'picture of team member', sizes: '224px' },
-    { src: image4, alt: 'picture of team member', sizes: '224px' },
-    { src: image5, alt: 'picture of team member', sizes: '224px' },
-    { src: image6, alt: 'picture of team member', sizes: '224px' },
-    { src: image1, alt: 'picture of team member', sizes: '224px' },
-    { src: image8, alt: 'picture of team member', sizes: '226px' },
-    { src: image9, alt: 'picture of team member', sizes: '226px' },
-    { src: image10, alt: 'picture of team member', sizes: '226px' },
-    { src: image11, alt: 'picture of team member', sizes: '226px' },
+    { src: image1, alt: 'picture of team member' },
+    { src: image2, alt: 'picture of team member' },
+    { src: image3, alt: 'picture of team member' },
+    { src: image4, alt: 'picture of team member' },
+    { src: image5, alt: 'picture of team member' },
+    { src: image6, alt: 'picture of team member' },
+    { src: image1, alt: 'picture of team member' },
+    { src: image8, alt: 'picture of team member' },
+    { src: image9, alt: 'picture of team member' },
+    { src: image10, alt: 'picture of team member' },
+    { src: image11, alt: 'picture of team member' },
   ];
 
   const ref = useRef<HTMLDivElement | null>(null);
@@ -157,7 +158,7 @@ export default function TeamGallery() {
           <div className="relative grid w-max auto-cols-[226px] grid-flow-col gap-5 pl-1">
             {teamMembers.map((teamMember, index) => (
               <div key={index} className="flex flex-col gap-5">
-                <TallImageDrop src={teamMember.src} dropIsOnLeft={true} sizes={teamMember.sizes} />
+                <TallImageDrop src={teamMember.src} dropIsOnLeft={true} sizes={TEAM_GALLERY_IMAGE_SIZES} />
               </div>
             ))}
           </div>

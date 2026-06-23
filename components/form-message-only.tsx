@@ -12,6 +12,8 @@ import formImageThreeMopping from '@/public/images/form-right-side/team-three-mo
 import formImageTwoBosses from '@/public/images/form-right-side/team-two-bosses.jpg';
 import Button from './utility-components/button';
 
+const FORM_SIDE_IMAGE_SIZES = '(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)';
+
 import womanImage from '@/public/images/form-right-side/team-solo-dusting.jpg';
 import manImage from '@/public/images/form-right-side/team-three-men-outside.jpg';
 
@@ -211,7 +213,7 @@ export default function FormMessageOnlyOrMultiChoice({
                   // width={1492} height={2201}
                   fill
                   // sizes="390px"
-                  sizes="(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)"
+                  sizes={FORM_SIDE_IMAGE_SIZES}
                   className="h-full w-full object-cover"
                   placeholder="blur"
                   quality={20}
@@ -225,7 +227,7 @@ export default function FormMessageOnlyOrMultiChoice({
                   // height={2201}
                   className="h-full w-full object-cover"
                   // sizes="390px"
-                  sizes="(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)"
+                  sizes={FORM_SIDE_IMAGE_SIZES}
                   fill
                   quality={20}
                   placeholder="blur"

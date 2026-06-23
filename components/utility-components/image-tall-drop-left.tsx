@@ -5,7 +5,7 @@ export default function TallImageDrop({
   src,
   dropIsOnLeft = true,
   className,
-  sizes = '(min-width: 1100px) 241px, (min-width: 880px) calc(18vw + 47px), (min-width: 480px) 32.89vw, 49.38vw',
+  sizes = '280px',
 }: {
   src: StaticImageData;
   dropIsOnLeft?: boolean;
