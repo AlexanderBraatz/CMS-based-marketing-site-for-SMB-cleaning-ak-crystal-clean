@@ -26,7 +26,9 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 z-50 w-full">
-      <div className="theme-dark-purple bg-theme-card-background/70 text-theme-text border-b-theme-card-background-2 flex h-[60px] items-center justify-center border-b">
+      <div
+        className={`theme-dark-purple text-theme-text border-b-theme-card-background-2 flex h-[60px] items-center justify-center border-b ${isOpen ? 'bg-theme-card-background' : 'bg-theme-card-background/70'}`}
+      >
         <div className="w-full lg:w-[1071px]">
           <div className="flex justify-between px-[5%]">
             <NavLink className="2xs:items-baseline flex items-center justify-center gap-2" href="/">

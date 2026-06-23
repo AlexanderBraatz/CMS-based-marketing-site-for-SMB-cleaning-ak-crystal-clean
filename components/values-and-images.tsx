@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { fadeInUp } from '@/animations/motion';
+import { fadeInUp, getFadeInUpAtAmount } from '@/animations/motion';
 import image1 from '@/public/images/team-solo-dusting-tall.jpg';
 import image2 from '@/public/images/team-solo-window-cleaning-tall.jpg';
 import image3 from '@/public/images/team-solo-outside-house-cleaning.jpg';
@@ -14,7 +14,7 @@ const valuesImageSizes = '(min-width: 1080px) 224px, (min-width: 820px) 30vw, (m
 
 export default function ValuesAndImages() {
   return (
-    <motion.div {...fadeInUp} className="px-[5%]">
+    <motion.div {...getFadeInUpAtAmount(0)} className="px-[5%]">
       <p className="xs:w-full font-barlow-semi-condensed text-theme-text-highlight xs:mx-0 mx-auto w-[226px] pb-5 font-bold">
         Unsere Werte
       </p>
