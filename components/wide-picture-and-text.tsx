@@ -13,6 +13,7 @@ export default function WidePictureAndText({
   liftTextForSlantedDesign,
   hasButton,
   buttonProps,
+  imageSizes,
 }: {
   image: StaticImageData;
   imageOnLeft?: boolean;
@@ -20,6 +21,7 @@ export default function WidePictureAndText({
   liftTextForSlantedDesign?: boolean;
   hasButton?: boolean;
   buttonProps?: ButtonProps;
+  imageSizes?: string;
 }) {
   return (
     <motion.div
@@ -30,6 +32,7 @@ export default function WidePictureAndText({
         image={image}
         isOnLeft={imageOnLeft}
         className={`order-1 ${imageOnLeft ? '2sm:order-1' : '2sm:order-2'}`}
+        sizes={imageSizes}
       />
       <div
         className={`relative order-2 flex flex-col gap-5 lg:gap-8 ${imageOnLeft ? '2sm:order-2' : '2sm:order-1'} ${liftTextForSlantedDesign ? '2sm:top-[-100px]' : ''} ${imageOnLeft ? '2sm:pl-[20px] pl-0 lg:pl-[41px]' : '2sm:pr-[20px] pr-0 lg:pr-[41px]'}`}

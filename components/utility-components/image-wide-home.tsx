@@ -11,7 +11,8 @@ export default function ImageWideHome({ image }: { image: StaticImageData }) {
             className="bg-theme-color-image-drop h-full w-full object-cover"
             alt="image of video"
             fill
-            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 441px"
+            // sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 441px"
+            sizes="(min-width: 1140px) 463px, (min-width: 720px) calc(36.75vw + 51px), 95.25vw"
             quality={20}
             placeholder="blur"
           />

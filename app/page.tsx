@@ -44,6 +44,7 @@ export default function Home() {
             <WidePictureAndText
               image={image3}
               imageOnLeft={true}
+              imageSizes="(min-width: 1100px) 547px, (min-width: 880px) calc(40.5vw + 110px), (min-width: 480px) 74.74vw, 111.25vw"
               text={{
                 caption: 'Was Uns Auszeichnet',
                 heading: 'Ein Ansprechpartner für \neffiziente Betreuung',
@@ -53,6 +54,7 @@ export default function Home() {
             <WidePictureAndText
               image={image4}
               imageOnLeft={false}
+              imageSizes="(min-width: 1100px) 439px, (min-width: 880px) calc(32.5vw + 88px), (min-width: 480px) 60vw, 90vw"
               text={{
                 caption: 'Was Uns Auszeichnet',
                 heading: 'Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.',
@@ -65,6 +67,7 @@ export default function Home() {
               <DoubleWidePictureAndText
                 imageLeft={imageLeft}
                 imageRight={imageRight}
+                imageSizes="(min-width: 1080px) 241px, (min-width: 880px) calc(25vw - 15px), (min-width: 480px) 32.89vw, 49.38vw"
                 text={{
                   caption: 'Was Uns Auszeichnet',
                   heading: 'Ein Ansprechpartner für \neffiziente Betreuung',

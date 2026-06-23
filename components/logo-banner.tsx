@@ -30,21 +30,24 @@ export default function LogoBanner() {
           alt="logo"
           src={logo1}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
           quality={5}
         />
         <Image
           alt="logo"
           src={logo4}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 760px) 93px, (min-width: 480px) calc(13.85vw - 9px), 93px"
           quality={5}
         />
         <Image
           alt="logo"
           src={logo3}
           className="xs:justify-self-end col-span-2 max-h-[50px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 760px) 92px, (min-width: 480px) calc(13.46vw - 8px), 92px"
           quality={5}
         />
 
@@ -52,7 +55,8 @@ export default function LogoBanner() {
           alt="logo"
           src={logo2}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
           quality={5}
         />
 
@@ -60,7 +64,8 @@ export default function LogoBanner() {
           alt="logo"
           src={logo5}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
           quality={5}
         />
 
@@ -68,7 +73,8 @@ export default function LogoBanner() {
           alt="logo"
           src={logo6}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 880px) 108px, (min-width: 480px) calc(13.42vw - 7px), 108px"
           quality={5}
         />
 
@@ -76,7 +82,8 @@ export default function LogoBanner() {
           alt="logo"
           src={logo7}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
           quality={5}
         />
 
@@ -84,7 +91,8 @@ export default function LogoBanner() {
           alt="logo"
           src={logo8}
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
-          sizes="120px"
+          // sizes="120px"
+          sizes="(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px"
           quality={5}
         />
       </div>

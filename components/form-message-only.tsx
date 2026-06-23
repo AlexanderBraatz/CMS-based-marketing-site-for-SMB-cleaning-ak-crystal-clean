@@ -210,7 +210,8 @@ export default function FormMessageOnlyOrMultiChoice({
                   alt="image"
                   // width={1492} height={2201}
                   fill
-                  sizes="390px"
+                  // sizes="390px"
+                  sizes="(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)"
                   className="h-full w-full object-cover"
                   placeholder="blur"
                   quality={20}
@@ -223,7 +224,8 @@ export default function FormMessageOnlyOrMultiChoice({
                   // width={1492}
                   // height={2201}
                   className="h-full w-full object-cover"
-                  sizes="390px"
+                  // sizes="390px"
+                  sizes="(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)"
                   fill
                   quality={20}
                   placeholder="blur"

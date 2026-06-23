@@ -5,10 +5,13 @@ export default function ImageWideSection({
   image,
   isOnLeft,
   className = '',
+  // sizes = '441px',
+  sizes = '(min-width: 1100px) 439px, (min-width: 880px) calc(32.5vw + 88px), (min-width: 480px) 60vw, 90vw',
 }: {
   image: StaticImageData;
   isOnLeft: boolean;
   className?: string;
+  sizes?: string;
 }) {
   return (
     <div
@@ -25,7 +28,8 @@ export default function ImageWideSection({
             alt="image"
             className="bg-theme-color-image-drop h-full w-full object-cover"
             fill
-            sizes="441px"
+            // sizes="441px"
+            sizes={sizes}
             quality={20}
             placeholder="blur"
           />

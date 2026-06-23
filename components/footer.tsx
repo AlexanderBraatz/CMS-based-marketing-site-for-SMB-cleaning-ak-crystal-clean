@@ -11,7 +11,14 @@ function FooterLogo() {
         <Image fill sizes="43px" src={logo} alt="" className="h-full w-full object-cover" />
       </div>
       <div className="xs-[30] xxxs:h-[25px] relative aspect-[calc(253/30)] h-[22px] lg:h-[20px]">
-        <Image fill sizes="253px" src={logoText} alt="Crystal Clean" className="h-full w-full object-cover" />
+        <Image
+          fill
+          // sizes="253px"
+          sizes="(min-width: 1080px) 169px, (min-width: 360px) 211px, 186px"
+          src={logoText}
+          alt="Crystal Clean"
+          className="h-full w-full object-cover"
+        />
       </div>
     </div>
   );

@@ -23,7 +23,8 @@ export default function Map() {
               // height={2030}
               quality={20}
               fill
-              sizes="634px"
+              // sizes="634px"
+              sizes="(min-width: 1140px) 634px, (min-width: 720px) calc(52.75vw + 43px), 90vw"
               placeholder="blur"
               className="object-cover"
             />
@@ -38,7 +39,8 @@ export default function Map() {
               // height={773}
               quality={20}
               fill
-              sizes="290px"
+              // sizes="290px"
+              sizes="(min-width: 1140px) 306px, calc(26.25vw + 12px)"
               placeholder="blur"
               className="object-cover"
             />

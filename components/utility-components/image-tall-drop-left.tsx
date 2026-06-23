@@ -5,10 +5,12 @@ export default function TallImageDrop({
   src,
   dropIsOnLeft = true,
   className,
+  sizes = '(min-width: 1100px) 241px, (min-width: 880px) calc(18vw + 47px), (min-width: 480px) 32.89vw, 49.38vw',
 }: {
   src: StaticImageData;
   dropIsOnLeft?: boolean;
   className?: string;
+  sizes?: string;
 }) {
   return (
     <div
@@ -23,7 +25,8 @@ export default function TallImageDrop({
           quality={20}
           placeholder="blur"
           className="object-cover"
-          sizes="(max-width: 640px) 55vw, 280px"
+          // sizes="(max-width: 640px) 55vw, 280px"
+          sizes={sizes}
           fill
         />
       </div>

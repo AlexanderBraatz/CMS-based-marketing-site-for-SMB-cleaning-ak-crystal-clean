@@ -14,6 +14,8 @@ import icon2 from '@/public/images/icon-clock.svg';
 import icon3 from '@/public/images/icon-lightbulb.svg';
 import icon4 from '@/public/images/icon-shield_person.svg';
 
+const valuesImageSizes = '(min-width: 1080px) 224px, (min-width: 820px) 30vw, (min-width: 480px) 215px, 90vw';
+
 export default function ValuesAndImages() {
   return (
     <motion.div {...fadeInUp} className="px-[5%]">
@@ -24,7 +26,11 @@ export default function ValuesAndImages() {
         Die Werte, die uns antreiben
       </h3>
       <div className="xs:grid-cols-[1fr_2fr] grid gap-5 lg:grid-cols-4">
-        <TallImageDrop className="xs:justify-self-end order-1 justify-self-center lg:order-0" src={image1} />
+        <TallImageDrop
+          className="xs:justify-self-end order-1 justify-self-center lg:order-0"
+          src={image1}
+          sizes={valuesImageSizes}
+        />
         <TallTextBox
           className="xs:[&>p]:block order-2 justify-self-center lg:-top-8 lg:order-0"
           icon={icon1}
@@ -39,8 +45,16 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
           heading="Zuverlässig"
           text="Seit über 30 Jahren vereinen wir präzise Handwerkskunst mit moderner Effizienz und schaffen so nachhaltig beeindruckende Ergebnisse."
         />
-        <TallImageDrop className="xs:justify-self-end order-3 justify-self-center lg:order-0" src={image3} />
-        <TallImageDrop className="xs:justify-self-end order-5 justify-self-center lg:order-0" src={image2} />
+        <TallImageDrop
+          className="xs:justify-self-end order-3 justify-self-center lg:order-0"
+          src={image3}
+          sizes={valuesImageSizes}
+        />
+        <TallImageDrop
+          className="xs:justify-self-end order-5 justify-self-center lg:order-0"
+          src={image2}
+          sizes={valuesImageSizes}
+        />
         <TallTextBox
           className="xs:[&>p]:block order-6 justify-self-center lg:-top-8 lg:order-0"
           icon={icon3}
@@ -54,7 +68,11 @@ sind unser Fundament, getragen von offener Kommunikation und erstklassiger Reini
           heading="Expertengeführt"
           text="Fokussierte Gebäudereinigung mit maßgeschneiderten Lösungen, die genau Ihren Anforderungen entsprechen."
         />
-        <TallImageDrop className="xs:justify-self-end order-7 justify-self-center lg:order-0" src={image4} />
+        <TallImageDrop
+          className="xs:justify-self-end order-7 justify-self-center lg:order-0"
+          src={image4}
+          sizes={valuesImageSizes}
+        />
       </div>
     </motion.div>
   );

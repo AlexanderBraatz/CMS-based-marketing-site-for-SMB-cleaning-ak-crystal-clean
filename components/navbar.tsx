@@ -36,7 +36,8 @@ export default function Navbar() {
               <div className="2xs:h-[30px] 2xs:w-[253px] xxxs:h-[25px] relative aspect-[calc(253/30)] h-[22px]">
                 <Image
                   fill
-                  sizes="253px"
+                  // sizes="253px"
+                  sizes="(min-width: 600px) 253px, (min-width: 360px) 211px, 186px"
                   src={logoText}
                   loading="eager"
                   alt="logo"
