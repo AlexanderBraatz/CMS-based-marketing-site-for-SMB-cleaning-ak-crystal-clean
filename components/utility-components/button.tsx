@@ -14,6 +14,8 @@ type BaseButtonProps = {
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   iconClassName?: string;
+  'aria-expanded'?: boolean;
+  'aria-controls'?: string;
 };
 
 type IconOnlyProps = {
@@ -31,7 +33,7 @@ type ContentProps = IconOnlyProps | TextProps;
 
 type LinkButtonProps = BaseButtonProps & {
   href: string;
-  onClick?: never;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 };
 
 type ActionButtonProps = BaseButtonProps & {
@@ -41,24 +43,32 @@ type ActionButtonProps = BaseButtonProps & {
 
 export type ButtonProps = (LinkButtonProps | ActionButtonProps) & ContentProps;
 
-export default function Button({
-  text,
-  className = '',
-  size,
-  variant = '',
-  onClick,
-  dropIsOnLeft = false,
-  href,
-  icon,
-  iconPosition = 'left',
-  iconClassName = '',
-  ariaLabel,
-}: ButtonProps) {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (href?.startsWith('#')) {
+export default function Button(props: ButtonProps) {
+  const {
+    text,
+    className = '',
+    size,
+    variant = '',
+    dropIsOnLeft = false,
+    href,
+    icon,
+    iconPosition = 'left',
+    iconClassName = '',
+    ariaLabel,
+    'aria-expanded': ariaExpanded,
+    'aria-controls': ariaControls,
+  } = props;
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const linkProps = props as LinkButtonProps & ContentProps;
+
+    linkProps.onClick?.(e);
+    if (e.defaultPrevented) return;
+
+    if (linkProps.href.startsWith('#')) {
       e.preventDefault();
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-      window.history.pushState(null, '', href);
+      document.querySelector(linkProps.href)?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', linkProps.href);
     }
   };
 
@@ -104,8 +114,10 @@ export default function Button({
       <span className={wrapperClassName}>
         <Link
           href={href}
-          onClick={handleClick}
+          onClick={handleLinkClick}
           aria-label={isIconOnly ? ariaLabel : undefined}
+          aria-expanded={ariaExpanded}
+          aria-controls={ariaControls}
           className={sharedClassName}
         >
           {content}
@@ -122,8 +134,10 @@ export default function Button({
     <span className={wrapperClassName}>
       <button
         type="button"
-        onClick={onClick}
+        onClick={(props as ActionButtonProps & ContentProps).onClick}
         aria-label={isIconOnly ? ariaLabel : undefined}
+        aria-expanded={ariaExpanded}
+        aria-controls={ariaControls}
         className={sharedClassName}
       >
         {content}

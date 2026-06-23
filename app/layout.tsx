@@ -131,6 +131,7 @@ export default function RootLayout({
         <ChoseComponentDevTools>
           {/* <ViewportGate> */}
           <Navbar />
+          <div className="h-[60px] w-full"></div>
           {children}
           <Footer />
           {/* </ViewportGate> */}

@@ -1,21 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { mainNavLinks, serviceNavLinks } from '@/lib/nav-links';
 import logo from '@/public/images/logo-crystal-white-outline.png';
 import logoText from '@/public/images/logo-text-white2.png';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/uber-uns', label: 'Über uns' },
-  { href: '/leistungen', label: 'Leistungen' },
-  { href: '/jobs', label: 'Jobs' },
-];
-
-const serviceLinks = [
-  { href: '/leistungen/glass-und-fassaden', label: 'Glas und Fassaden' },
-  { href: '/leistungen/unterhaltsreinigung', label: 'Unterhaltsreinigung' },
-  { href: '/leistungen/hausmeisterdienst', label: 'Hausmeisterdienst' },
-  { href: '/leistungen', label: 'Alle Leistungen' },
-];
 
 function FooterLogo() {
   return (
@@ -46,7 +33,7 @@ export default function Footer() {
             <div className="2sm:col-start-1 2sm:row-start-2 col-span-1 lg:col-start-auto lg:row-start-auto">
               <p className="font-barlow-semi-condensed mb-3 text-sm font-bold tracking-wide uppercase">Navigation</p>
               <ul className="font-instrument-sans flex flex-col gap-2 text-sm">
-                {navLinks.map(({ href, label }) => (
+                {mainNavLinks.map(({ href, label }) => (
                   <li key={href}>
                     <Link href={href} className="hover:underline">
                       {label}
@@ -59,7 +46,7 @@ export default function Footer() {
             <div className="2sm:col-start-2 2sm:row-start-1 col-span-1 lg:col-start-auto lg:row-start-auto">
               <p className="font-barlow-semi-condensed mb-3 text-sm font-bold tracking-wide uppercase">Leistungen</p>
               <ul className="font-instrument-sans flex flex-col gap-2 text-sm">
-                {serviceLinks.map(({ href, label }) => (
+                {serviceNavLinks.map(({ href, label }) => (
                   <li key={href}>
                     <Link href={href} className="hover:underline">
                       {label}
