@@ -22,7 +22,7 @@ const TEAM_GALLERY_IMAGE_SIZES = '226px';
 
 export default function TeamGallery() {
   const teamMembers = [
-    { src: image1, alt: 'picture of team member' },
+    { src: image11, alt: 'picture of team member' },
     { src: image2, alt: 'picture of team member' },
     { src: image3, alt: 'picture of team member' },
     { src: image4, alt: 'picture of team member' },
@@ -32,7 +32,7 @@ export default function TeamGallery() {
     { src: image8, alt: 'picture of team member' },
     { src: image9, alt: 'picture of team member' },
     { src: image10, alt: 'picture of team member' },
-    { src: image11, alt: 'picture of team member' },
+    { src: image7, alt: 'picture of team member' },
   ];
 
   const ref = useRef<HTMLDivElement | null>(null);
