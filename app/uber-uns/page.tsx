@@ -29,7 +29,7 @@ export default function UberUns() {
           />
           <SomeText
             text={{
-              body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes, stolzes Team — das Ihre Räume so behandelt, als wären es die eigenen.',
+              body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes Team, das Ihre Räume und Fassaden so behandelt, als wären es die eigenen.',
               heading: ' Erstklassige Arbeit Starkes Team',
               caption: 'Unsere Werte',
             }}
@@ -45,7 +45,7 @@ export default function UberUns() {
               text={{
                 caption: 'Unsere Zukunft',
                 heading: 'Als Meisterbetrieb,  schulen wir \ndie nächste Generation',
-                body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes, stolzes Team.',
+                body: 'Wer Qualität dauerhaft sichern möchte, muss Wissen weitergeben. Deshalb bilden wir als Meisterbetrieb neue Fachkräfte aus und begleiten sie mit Erfahrung, Praxis und persönlicher Unterstützung. So entsteht ein starkes Team, das unsere hohen Ansprüche an Sauberkeit, Zuverlässigkeit und Service auch in Zukunft erfüllt.',
               }}
             />
             <WidePictureAndText
@@ -54,7 +54,7 @@ export default function UberUns() {
               text={{
                 caption: 'Unsere Erfahrung',
                 heading: 'Über 30 Jahre Erfahrung in der Gebäudereinigung',
-                body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes, stolzes Team.',
+                body: 'Mit über 30 Jahren Erfahrung wissen wir, dass professionelle Gebäudereinigung mehr ist als einzelne Dienstleistungen. Deshalb verbinden wir Innen- und Außenreinigung zu einem abgestimmten Gesamtkonzept mit festen Ansprechpartnern und klaren Abläufen. So erhalten unsere Kunden höchste Qualität bei deutlich geringerem Organisationsaufwand.',
               }}
             />{' '}
           </div>
