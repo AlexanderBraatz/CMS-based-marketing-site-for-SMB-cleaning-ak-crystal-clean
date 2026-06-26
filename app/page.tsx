@@ -60,7 +60,7 @@ export default function Home() {
               }}
             />
             <div className="flex flex-col gap-[180px]">
-              <TestimonialQuotes />
+              {/* <TestimonialQuotes />  client did want reviews for now */}
               <ValuesAndImages />
               <DoubleWidePictureAndText
                 imageLeft={imageLeft}
