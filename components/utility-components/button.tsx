@@ -14,6 +14,8 @@ type BaseButtonProps = {
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   iconClassName?: string;
+  type?: 'button' | 'submit';
+  disabled?: boolean;
   'aria-expanded'?: boolean;
   'aria-controls'?: string;
 };
@@ -55,6 +57,8 @@ export default function Button(props: ButtonProps) {
     iconPosition = 'left',
     iconClassName = '',
     ariaLabel,
+    type = 'button',
+    disabled = false,
     'aria-expanded': ariaExpanded,
     'aria-controls': ariaControls,
   } = props;
@@ -91,7 +95,7 @@ export default function Button(props: ButtonProps) {
   const wrapperClassName =
     size === 'full' ? `${className} relative z-0 block w-full` : `${className} relative z-0 inline-block`;
 
-  const sharedClassName = `${widthClass} border-theme-border font-barlow-semi-condensed ${variant === 'ghost' ? 'bg-white' : 'bg-theme-color-button'} text-theme-text-button hover:bg-theme-text-button hover:text-theme-color-button flex h-10 cursor-pointer items-center justify-center border text-base font-bold tracking-widest transition-all duration-50 ease-in ${dropIsOnLeft ? 'active:-translate-x-1 hover:translate-x-[-2px] hover:translate-y-[-2px]  active:translate-y-1' : 'active:translate-1 hover:translate-[-2px]'}`;
+  const sharedClassName = `${widthClass} border-theme-border font-barlow-semi-condensed ${variant === 'ghost' ? 'bg-white' : 'bg-theme-color-button'} text-theme-text-button hover:bg-theme-text-button hover:text-theme-color-button flex h-10 cursor-pointer items-center justify-center border text-base font-bold tracking-widest transition-all duration-50 ease-in ${dropIsOnLeft ? 'active:-translate-x-1 hover:translate-x-[-2px] hover:translate-y-[-2px]  active:translate-y-1' : 'active:translate-1 hover:translate-[-2px]'} ${disabled ? 'pointer-events-none opacity-60' : ''}`;
 
   const content = (
     <span className={`inline-flex items-center justify-center ${isIconOnly ? '' : 'gap-2'}`}>
@@ -133,7 +137,8 @@ export default function Button(props: ButtonProps) {
   return (
     <span className={wrapperClassName}>
       <button
-        type="button"
+        type={type}
+        disabled={disabled}
         onClick={(props as ActionButtonProps & ContentProps).onClick}
         aria-label={isIconOnly ? ariaLabel : undefined}
         aria-expanded={ariaExpanded}

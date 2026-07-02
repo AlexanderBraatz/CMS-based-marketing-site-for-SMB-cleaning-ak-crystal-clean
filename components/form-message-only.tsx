@@ -2,7 +2,12 @@
 
 import Image, { StaticImageData } from 'next/image';
 import { usePathname } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useActionState, useState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { submitContact } from '@/app/actions/contact';
+import { initialContactActionState } from '@/lib/contact/action-state';
+import { contactFormSchema, parseContactFormData, zodFieldErrors } from '@/lib/contact/schema';
+import { SERVICE_OPTIONS, type ServiceValue } from '@/lib/data';
 import formImageDusting from '@/public/images/form-right-side/team-solo-dusting.jpg';
 import formImageHovering from '@/public/images/form-right-side/team-solo-hovering.jpg';
 import formImageWindowInside from '@/public/images/form-right-side/team-solo-window-inside.jpg';
@@ -10,22 +15,11 @@ import formImageHandsOutside from '@/public/images/form-right-side/team-thre-han
 import formImageThreeMenOutside from '@/public/images/form-right-side/team-three-men-outside.jpg';
 import formImageThreeMopping from '@/public/images/form-right-side/team-three-mopping.jpg';
 import formImageTwoBosses from '@/public/images/form-right-side/team-two-bosses.jpg';
+import womanImage from '@/public/images/form-right-side/team-solo-dusting.jpg';
+import manImage from '@/public/images/form-right-side/team-three-men-outside.jpg';
 import Button from './utility-components/button';
 
 const FORM_SIDE_IMAGE_SIZES = '(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)';
-
-import womanImage from '@/public/images/form-right-side/team-solo-dusting.jpg';
-import manImage from '@/public/images/form-right-side/team-three-men-outside.jpg';
-
-const SERVICE_OPTIONS = [
-  { value: 'glass-und-fassaden', label: 'Glass und Fassaden' },
-  { value: 'unterhaltsreinigung', label: 'Unterhaltsreinigung' },
-  { value: 'hausmeisterdienst', label: 'Hausmeisterdienst' },
-  { value: 'pflasterstein-wege', label: 'Pflasterstein & Wege' },
-  { value: 'entruempelung', label: 'Entrümpelung' },
-  { value: 'solar-und-dach', label: 'Solar und Dach' },
-  { value: 'industrie', label: 'Industrie' },
-] as const;
 
 const SERVICE_OPTIONS_MAN = [
   { value: 'glass-und-fassaden', label: 'Glass und Fassaden' },
@@ -34,8 +28,6 @@ const SERVICE_OPTIONS_MAN = [
   { value: 'solar-und-dach', label: 'Solar und Dach' },
   { value: 'industrie', label: 'Industrie' },
 ] as const;
-
-type ServiceValue = (typeof SERVICE_OPTIONS)[number]['value'];
 
 const SERVICE_VALUES = new Set<string>(SERVICE_OPTIONS.map((option) => option.value));
 const MAN_SERVICE_VALUES = new Set<string>(SERVICE_OPTIONS_MAN.map((option) => option.value));
@@ -46,6 +38,7 @@ function getServiceFromPathname(pathname: string): ServiceValue | undefined {
     return segment as ServiceValue;
   }
 }
+
 const images = [
   formImageDusting,
   formImageHovering,
@@ -55,6 +48,41 @@ const images = [
   formImageThreeMopping,
   formImageTwoBosses,
 ];
+
+function FieldError({ message }: { message?: string }) {
+  if (!message) {
+    return null;
+  }
+
+  return <p className="mt-1 text-sm text-red-300">{message}</p>;
+}
+
+function SubmitButtons() {
+  const { pending } = useFormStatus();
+  const label = pending ? 'WIRD GESENDET...' : 'ABSENDEN';
+
+  return (
+    <>
+      <Button
+        type="submit"
+        disabled={pending}
+        variant="onWhite"
+        size="small"
+        text={label}
+        className="theme-light-background xs:!block !hidden"
+      />
+      <Button
+        type="submit"
+        disabled={pending}
+        variant="onWhite"
+        size="full"
+        text={label}
+        className="theme-light-background xs:!hidden !block"
+      />
+    </>
+  );
+}
+
 export default function FormMessageOnlyOrMultiChoice({
   heading,
   showMulitChoice,
@@ -67,9 +95,13 @@ export default function FormMessageOnlyOrMultiChoice({
   image?: StaticImageData;
 }) {
   const pathname = usePathname();
+  const [submissionId] = useState(() => crypto.randomUUID());
+  const [state, formAction] = useActionState(submitContact, initialContactActionState);
+  const [clientFieldErrors, setClientFieldErrors] = useState<Record<string, string>>({});
   const [currentImage, setCurrentImage] = useState(devImageChoiceIndex);
   const serviceFromPath = getServiceFromPathname(pathname);
   const pathBasedImage = serviceFromPath && MAN_SERVICE_VALUES.has(serviceFromPath) ? manImage : womanImage;
+  const mode = showMulitChoice ? 'services' : 'message';
 
   const flickToNextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1 < images.length ? prevIndex + 1 : 0));
@@ -79,6 +111,9 @@ export default function FormMessageOnlyOrMultiChoice({
     const service = getServiceFromPathname(pathname);
     return service ? new Set([service]) : new Set();
   });
+
+  const serverFieldErrors = state.status === 'validation_error' ? state.fieldErrors : {};
+  const fieldErrors = { ...clientFieldErrors, ...serverFieldErrors };
 
   function toggleService(value: ServiceValue) {
     setSelectedServices((prev) => {
@@ -91,6 +126,20 @@ export default function FormMessageOnlyOrMultiChoice({
       return next;
     });
   }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    const formData = new FormData(event.currentTarget);
+    const parsed = contactFormSchema.safeParse(parseContactFormData(formData));
+
+    if (!parsed.success) {
+      event.preventDefault();
+      setClientFieldErrors(zodFieldErrors(parsed.error));
+      return;
+    }
+
+    setClientFieldErrors({});
+  }
+
   return (
     <div className="mx-auto w-full scroll-mt-15 py-28 lg:w-[1071px]" id="contact-form">
       <div className="px-[5%]">
@@ -100,25 +149,59 @@ export default function FormMessageOnlyOrMultiChoice({
               <h5 className="font-cooper-hewitt text-theme-text mb-6 shrink-0 text-3xl leading-tight font-semibold tracking-tight">
                 {heading}
               </h5>
-              <form className="flex min-h-0 flex-1 flex-col pb-5">
+              <form action={formAction} onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col pb-5">
+                <input type="hidden" name="mode" value={mode} />
+                <input type="hidden" name="pagePathname" value={pathname} />
+                <input type="hidden" name="submissionId" value={submissionId} />
+
                 <div className="xs:grid-cols-2 xs:grid-rows-[auto_auto_1fr] grid min-h-0 flex-1 grid-cols-1 gap-x-5 gap-y-5">
                   <div className="xs:col-span-2 row-start-1 flex w-full flex-col">
-                    <label className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white">
+                    <label
+                      htmlFor="contact-name"
+                      className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
+                    >
                       Name
                     </label>
-                    <input type="text" className="bg-theme-background h-10 border" />
+                    <input
+                      id="contact-name"
+                      name="name"
+                      type="text"
+                      autoComplete="name"
+                      className="bg-theme-background h-10 border"
+                    />
+                    <FieldError message={fieldErrors.name} />
                   </div>
                   <div className="xs:col-span-1 row-start-2 flex w-full flex-col">
-                    <label className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white">
+                    <label
+                      htmlFor="contact-phone"
+                      className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
+                    >
                       Telefone / Handy
                     </label>
-                    <input type="text" className="bg-theme-background h-10 border" />
+                    <input
+                      id="contact-phone"
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      className="bg-theme-background h-10 border"
+                    />
+                    <FieldError message={fieldErrors.phone} />
                   </div>
                   <div className="xs:col-span-1 xs:row-start-2 row-start-3 flex w-full flex-col">
-                    <label className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white">
+                    <label
+                      htmlFor="contact-email"
+                      className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
+                    >
                       E-mail
                     </label>
-                    <input type="text" className="bg-theme-background h-10 border" />
+                    <input
+                      id="contact-email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      className="bg-theme-background h-10 border"
+                    />
+                    <FieldError message={fieldErrors.email} />
                   </div>
                   {showMulitChoice ? (
                     <fieldset className="xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full min-w-0 flex-col border-0 p-0">
@@ -158,13 +241,22 @@ export default function FormMessageOnlyOrMultiChoice({
                           );
                         })}
                       </div>
+                      <FieldError message={fieldErrors.services} />
                     </fieldset>
                   ) : (
                     <div className="xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full flex-col">
-                      <label className="font-instrument-sans shrink-0 leading-tight font-semibold tracking-tighter text-white">
+                      <label
+                        htmlFor="contact-message"
+                        className="font-instrument-sans shrink-0 leading-tight font-semibold tracking-tighter text-white"
+                      >
                         Nachricht
                       </label>
-                      <textarea className="bg-theme-background max-h-25 min-h-25 flex-1 border" />
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        className="bg-theme-background max-h-25 min-h-25 flex-1 border"
+                      />
+                      <FieldError message={fieldErrors.message} />
                     </div>
                   )}
                 </div>
@@ -185,24 +277,24 @@ export default function FormMessageOnlyOrMultiChoice({
                     }`}
                   />
                   <span className="text-theme-text xs:text-base text-xs tracking-normal hover:underline">
-                    {' '}
                     Ich stimme der Datenschutzrichtlinie zu.
                   </span>
                 </label>
-                <Button
-                  onClick={() => {}}
-                  variant="onWhite"
-                  size="small"
-                  text="ABSENDEN"
-                  className="theme-light-background xs:!block !hidden"
-                />
-                <Button
-                  onClick={() => {}}
-                  variant="onWhite"
-                  size="full"
-                  text="ABSENDEN"
-                  className="theme-light-background xs:!hidden !block"
-                />
+                <FieldError message={fieldErrors.dataAgreement} />
+
+                {state.status === 'success' ? (
+                  <p className="text-theme-text mb-3 text-sm" role="status">
+                    Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.
+                  </p>
+                ) : null}
+
+                {state.status === 'send_error' ? (
+                  <p className="mb-3 text-sm text-red-300" role="alert">
+                    {state.formError}
+                  </p>
+                ) : null}
+
+                <SubmitButtons />
               </form>
             </div>
             <div className="relative hidden h-[556px] w-full sm:block">
@@ -210,9 +302,7 @@ export default function FormMessageOnlyOrMultiChoice({
                 <Image
                   src={image}
                   alt="image"
-                  // width={1492} height={2201}
                   fill
-                  // sizes="390px"
                   sizes={FORM_SIDE_IMAGE_SIZES}
                   className="h-full w-full object-cover"
                   placeholder="blur"
@@ -223,10 +313,7 @@ export default function FormMessageOnlyOrMultiChoice({
                   onClick={flickToNextImage}
                   src={pathBasedImage}
                   alt="image"
-                  // width={1492}
-                  // height={2201}
                   className="h-full w-full object-cover"
-                  // sizes="390px"
                   sizes={FORM_SIDE_IMAGE_SIZES}
                   fill
                   quality={20}
