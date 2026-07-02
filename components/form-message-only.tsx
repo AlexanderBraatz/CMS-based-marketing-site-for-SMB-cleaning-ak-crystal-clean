@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import { usePathname } from 'next/navigation';
 import React, { useActionState, useState } from 'react';
 import { useFormStatus } from 'react-dom';
+import { motion } from 'motion/react';
 import { submitContact } from '@/app/actions/contact';
 import { initialContactActionState } from '@/lib/contact/action-state';
 import { contactFormSchema, parseContactFormData, zodFieldErrors } from '@/lib/contact/schema';
@@ -17,6 +18,7 @@ import formImageThreeMopping from '@/public/images/form-right-side/team-three-mo
 import formImageTwoBosses from '@/public/images/form-right-side/team-two-bosses.jpg';
 import womanImage from '@/public/images/form-right-side/team-solo-dusting.jpg';
 import manImage from '@/public/images/form-right-side/team-three-men-outside.jpg';
+import MaterialSymbol from './material-symbol';
 import Button from './utility-components/button';
 
 const FORM_SIDE_IMAGE_SIZES = '(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)';
@@ -49,12 +51,34 @@ const images = [
   formImageTwoBosses,
 ];
 
-function FieldError({ message }: { message?: string }) {
+const INPUT_BASE =
+  'bg-theme-background h-10 w-full border px-3 font-instrument-sans text-sm leading-normal text-black outline-none placeholder:text-black/50';
+
+const TEXTAREA_BASE =
+  'bg-theme-background max-h-25 min-h-25 w-full flex-1 resize-none border px-3 py-2 font-instrument-sans text-sm leading-normal text-black outline-none placeholder:text-black/50';
+
+function getInputClassName(hasError: boolean) {
+  return hasError
+    ? `${INPUT_BASE} border-red-400 ring-1 ring-red-400/30`
+    : `${INPUT_BASE} border-theme-border focus:border-theme-border focus:ring-1 focus:ring-theme-border/40`;
+}
+
+function getTextareaClassName(hasError: boolean) {
+  return hasError
+    ? `${TEXTAREA_BASE} border-red-400 ring-1 ring-red-400/30`
+    : `${TEXTAREA_BASE} border-theme-border focus:border-theme-border focus:ring-1 focus:ring-theme-border/40`;
+}
+
+function FieldError({ id, message }: { id?: string; message?: string }) {
   if (!message) {
     return null;
   }
 
-  return <p className="mt-1 text-sm text-red-300">{message}</p>;
+  return (
+    <p id={id} className="mt-1 text-sm text-red-200" role="alert">
+      {message}
+    </p>
+  );
 }
 
 function SubmitButtons() {
@@ -83,6 +107,29 @@ function SubmitButtons() {
   );
 }
 
+function FormSuccessMessage() {
+  return (
+    <motion.div
+      initial={{ y: 28, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.65, ease: [0.33, 1, 0.68, 1] }}
+      className="flex min-h-[320px] flex-1 flex-col justify-center pb-5"
+      role="status"
+      aria-live="polite"
+    >
+      <div className="bg-theme-background/15 mb-6 flex size-16 items-center justify-center rounded-full">
+        <MaterialSymbol name="mark_email_read" size={36} fill={1} className="text-theme-text" />
+      </div>
+      <p className="font-instrument-sans text-theme-text text-xl leading-snug font-semibold tracking-tight">
+        Vielen Dank!
+      </p>
+      <p className="text-theme-text/90 mt-3 max-w-md text-base leading-relaxed">
+        Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.
+      </p>
+    </motion.div>
+  );
+}
+
 export default function FormMessageOnlyOrMultiChoice({
   heading,
   showMulitChoice,
@@ -98,6 +145,7 @@ export default function FormMessageOnlyOrMultiChoice({
   const [submissionId] = useState(() => crypto.randomUUID());
   const [state, formAction] = useActionState(submitContact, initialContactActionState);
   const [clientFieldErrors, setClientFieldErrors] = useState<Record<string, string>>({});
+  const [dismissedFieldErrors, setDismissedFieldErrors] = useState<Set<string>>(new Set());
   const [currentImage, setCurrentImage] = useState(devImageChoiceIndex);
   const serviceFromPath = getServiceFromPathname(pathname);
   const pathBasedImage = serviceFromPath && MAN_SERVICE_VALUES.has(serviceFromPath) ? manImage : womanImage;
@@ -113,7 +161,24 @@ export default function FormMessageOnlyOrMultiChoice({
   });
 
   const serverFieldErrors = state.status === 'validation_error' ? state.fieldErrors : {};
-  const fieldErrors = { ...clientFieldErrors, ...serverFieldErrors };
+  const rawFieldErrors = { ...clientFieldErrors, ...serverFieldErrors };
+  const fieldErrors = Object.fromEntries(
+    Object.entries(rawFieldErrors).filter(([key]) => !dismissedFieldErrors.has(key)),
+  );
+  const hasFieldErrors = Object.keys(fieldErrors).length > 0;
+  const isSuccess = state.status === 'success';
+
+  function clearFieldError(field: string) {
+    setClientFieldErrors((prev) => {
+      if (!prev[field]) {
+        return prev;
+      }
+      const next = { ...prev };
+      delete next[field];
+      return next;
+    });
+    setDismissedFieldErrors((prev) => new Set(prev).add(field));
+  }
 
   function toggleService(value: ServiceValue) {
     setSelectedServices((prev) => {
@@ -125,6 +190,7 @@ export default function FormMessageOnlyOrMultiChoice({
       }
       return next;
     });
+    clearFieldError('services');
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -133,10 +199,12 @@ export default function FormMessageOnlyOrMultiChoice({
 
     if (!parsed.success) {
       event.preventDefault();
+      setDismissedFieldErrors(new Set());
       setClientFieldErrors(zodFieldErrors(parsed.error));
       return;
     }
 
+    setDismissedFieldErrors(new Set());
     setClientFieldErrors({});
   }
 
@@ -149,6 +217,9 @@ export default function FormMessageOnlyOrMultiChoice({
               <h5 className="font-cooper-hewitt text-theme-text mb-6 shrink-0 text-3xl leading-tight font-semibold tracking-tight">
                 {heading}
               </h5>
+              {isSuccess ? (
+                <FormSuccessMessage />
+              ) : (
               <form action={formAction} onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col pb-5">
                 <input type="hidden" name="mode" value={mode} />
                 <input type="hidden" name="pagePathname" value={pathname} />
@@ -167,9 +238,12 @@ export default function FormMessageOnlyOrMultiChoice({
                       name="name"
                       type="text"
                       autoComplete="name"
-                      className="bg-theme-background h-10 border"
+                      aria-invalid={!!fieldErrors.name}
+                      aria-describedby={fieldErrors.name ? 'contact-name-error' : undefined}
+                      className={getInputClassName(!!fieldErrors.name)}
+                      onChange={() => clearFieldError('name')}
                     />
-                    <FieldError message={fieldErrors.name} />
+                    <FieldError id="contact-name-error" message={fieldErrors.name} />
                   </div>
                   <div className="xs:col-span-1 row-start-2 flex w-full flex-col">
                     <label
@@ -183,9 +257,12 @@ export default function FormMessageOnlyOrMultiChoice({
                       name="phone"
                       type="tel"
                       autoComplete="tel"
-                      className="bg-theme-background h-10 border"
+                      aria-invalid={!!fieldErrors.phone}
+                      aria-describedby={fieldErrors.phone ? 'contact-phone-error' : undefined}
+                      className={getInputClassName(!!fieldErrors.phone)}
+                      onChange={() => clearFieldError('phone')}
                     />
-                    <FieldError message={fieldErrors.phone} />
+                    <FieldError id="contact-phone-error" message={fieldErrors.phone} />
                   </div>
                   <div className="xs:col-span-1 xs:row-start-2 row-start-3 flex w-full flex-col">
                     <label
@@ -199,12 +276,23 @@ export default function FormMessageOnlyOrMultiChoice({
                       name="email"
                       type="email"
                       autoComplete="email"
-                      className="bg-theme-background h-10 border"
+                      aria-invalid={!!fieldErrors.email}
+                      aria-describedby={fieldErrors.email ? 'contact-email-error' : undefined}
+                      className={getInputClassName(!!fieldErrors.email)}
+                      onChange={() => clearFieldError('email')}
                     />
-                    <FieldError message={fieldErrors.email} />
+                    <FieldError id="contact-email-error" message={fieldErrors.email} />
                   </div>
                   {showMulitChoice ? (
-                    <fieldset className="xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full min-w-0 flex-col border-0 p-0">
+                    <fieldset
+                      className={`xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full min-w-0 flex-col p-0 ${
+                        fieldErrors.services
+                          ? 'rounded-sm border border-red-400/50 pl-2'
+                          : 'border-0'
+                      }`}
+                      aria-invalid={!!fieldErrors.services}
+                      aria-describedby={fieldErrors.services ? 'contact-services-error' : undefined}
+                    >
                       <legend className="text-theme-text mb-3 block w-full leading-tight font-semibold tracking-tighter">
                         Wählen sie weitere Leistungen
                       </legend>
@@ -241,7 +329,7 @@ export default function FormMessageOnlyOrMultiChoice({
                           );
                         })}
                       </div>
-                      <FieldError message={fieldErrors.services} />
+                      <FieldError id="contact-services-error" message={fieldErrors.services} />
                     </fieldset>
                   ) : (
                     <div className="xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full flex-col">
@@ -254,37 +342,49 @@ export default function FormMessageOnlyOrMultiChoice({
                       <textarea
                         id="contact-message"
                         name="message"
-                        className="bg-theme-background max-h-25 min-h-25 flex-1 border"
+                        aria-invalid={!!fieldErrors.message}
+                        aria-describedby={fieldErrors.message ? 'contact-message-error' : undefined}
+                        className={getTextareaClassName(!!fieldErrors.message)}
+                        onChange={() => clearFieldError('message')}
                       />
-                      <FieldError message={fieldErrors.message} />
+                      <FieldError id="contact-message-error" message={fieldErrors.message} />
                     </div>
                   )}
                 </div>
                 <div className="h-10"></div>
-                <label className="mb-3 flex cursor-pointer items-center gap-1.5 rounded-sm pl-1 leading-tight">
+                <label
+                  className={`mb-3 flex cursor-pointer items-center gap-1.5 pl-1 leading-tight ${
+                    fieldErrors.dataAgreement ? 'rounded-sm ring-1 ring-red-400/30' : 'rounded-sm'
+                  }`}
+                >
                   <input
                     type="checkbox"
                     name="dataAgreement"
                     value="accepted"
                     checked={dataAgreementAccepted}
-                    onChange={() => setDataAgreementAccepted((prev) => !prev)}
+                    aria-invalid={!!fieldErrors.dataAgreement}
+                    aria-describedby={fieldErrors.dataAgreement ? 'contact-data-agreement-error' : undefined}
+                    onChange={() => {
+                      setDataAgreementAccepted((prev) => !prev);
+                      clearFieldError('dataAgreement');
+                    }}
                     className="sr-only"
                   />
                   <span
                     aria-hidden
-                    className={`size-2 shrink-0 border border-white ${
-                      dataAgreementAccepted ? 'bg-theme-background border-3' : ''
-                    }`}
+                    className={`size-2 shrink-0 border ${
+                      fieldErrors.dataAgreement ? 'border-red-400' : 'border-white'
+                    } ${dataAgreementAccepted ? 'bg-theme-background border-3' : ''}`}
                   />
                   <span className="text-theme-text xs:text-base text-xs tracking-normal hover:underline">
                     Ich stimme der Datenschutzrichtlinie zu.
                   </span>
                 </label>
-                <FieldError message={fieldErrors.dataAgreement} />
+                <FieldError id="contact-data-agreement-error" message={fieldErrors.dataAgreement} />
 
-                {state.status === 'success' ? (
-                  <p className="text-theme-text mb-3 text-sm" role="status">
-                    Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.
+                {hasFieldErrors ? (
+                  <p className="mb-3 text-sm text-red-200" role="alert">
+                    Bitte korrigieren Sie die markierten Felder.
                   </p>
                 ) : null}
 
@@ -296,6 +396,7 @@ export default function FormMessageOnlyOrMultiChoice({
 
                 <SubmitButtons />
               </form>
+              )}
             </div>
             <div className="relative hidden h-[556px] w-full sm:block">
               {image ? (
