@@ -14,8 +14,12 @@ function ownerIdempotencyKey(submissionId: string): string {
   return `contact-enquiry/${submissionId}/owner`;
 }
 
+function secondOwnerIdempotencyKey(submissionId: string): string {
+  return `contact-enquiry/${submissionId}/second-owner`;
+}
+
 function logSendFailure(
-  stage: 'env' | 'customer' | 'owner',
+  stage: 'env' | 'customer' | 'owner' | 'second_owner',
   details: Record<string, unknown>,
 ) {
   console.error('[contact-form] send failed', { stage, ...details });
@@ -38,14 +42,16 @@ export async function submitContact(
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM;
   const ownerEmail = process.env.OWNER_EMAIL;
+  const secondOwnerEmail = process.env.SECOND_OWNER_EMAIL;
 
-  if (!apiKey || !from || !ownerEmail) {
+  if (!apiKey || !from || !ownerEmail || !secondOwnerEmail) {
     logSendFailure('env', {
       submissionId: payload.submissionId,
       missing: {
         RESEND_API_KEY: !apiKey,
         RESEND_FROM: !from,
         OWNER_EMAIL: !ownerEmail,
+        SECOND_OWNER_EMAIL: !secondOwnerEmail,
       },
     });
 
@@ -113,10 +119,41 @@ export async function submitContact(
     };
   }
 
+  const secondOwnerResult = await resend.emails.send(
+    {
+      from,
+      to: secondOwnerEmail,
+      replyTo: payload.email,
+      subject: 'Neue Anfrage über die Website',
+      html: ownerTemplate(payload),
+    },
+    { idempotencyKey: secondOwnerIdempotencyKey(payload.submissionId) },
+  );
+
+  if (secondOwnerResult.error) {
+    logSendFailure('second_owner', {
+      submissionId: payload.submissionId,
+      idempotencyKey: secondOwnerIdempotencyKey(payload.submissionId),
+      to: secondOwnerEmail,
+      replyTo: payload.email,
+      from,
+      error: secondOwnerResult.error,
+      customerEmailId: customerResult.data?.id,
+      ownerEmailId: ownerResult.data?.id,
+    });
+
+    return {
+      status: 'send_error',
+      formError:
+        'Ihre Anfrage konnte nicht vollständig übermittelt werden. Bitte versuchen Sie es in ein paar Minuten erneut.',
+    };
+  }
+
   console.info('[contact-form] send succeeded', {
     submissionId: payload.submissionId,
     customerEmailId: customerResult.data?.id,
     ownerEmailId: ownerResult.data?.id,
+    secondOwnerEmailId: secondOwnerResult.data?.id,
   });
 
   return { status: 'success' };

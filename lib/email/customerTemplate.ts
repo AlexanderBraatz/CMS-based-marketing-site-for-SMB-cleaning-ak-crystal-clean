@@ -26,7 +26,10 @@ export function customerTemplate(data: ContactFormData): string {
       <h1 style="font-size:22px;margin:0 0 16px;">Vielen Dank für Ihre Anfrage</h1>
       <p style="margin:0 0 16px;">Hallo ${name},</p>
       <p style="margin:0 0 16px;">
-        wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.
+        Dies ist eine automatische Bestätigung, dass wir Ihre Nachricht erhalten haben.
+      </p>
+      <p style="margin:0 0 16px;">
+        Ein Mitglied unseres Teams wird sich innerhalb der nächsten 24 Stunden bei Ihnen melden.
       </p>
       <h2 style="font-size:16px;margin:0 0 8px;">Ihre Angaben</h2>
       ${formatEnquiryDetails(data)}
