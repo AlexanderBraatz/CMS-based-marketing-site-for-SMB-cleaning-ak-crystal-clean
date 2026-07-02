@@ -24,7 +24,7 @@ export function customerTemplate(data: ContactFormData): string {
   return `
     <div style="font-family:Arial,sans-serif;line-height:1.6;color:#1a1a1a;max-width:600px;">
       <h1 style="font-size:22px;margin:0 0 16px;">Vielen Dank für Ihre Anfrage</h1>
-      <p style="margin:0 0 16px;">Hallo ${name},</p>
+      <p style="margin:0 0 16px;">Guten Tag ${name},</p>
       <p style="margin:0 0 16px;">
         Dies ist eine automatische Bestätigung, dass wir Ihre Nachricht erhalten haben.
       </p>
