@@ -21,7 +21,7 @@ export default function Map() {
               alt="map"
               // width={2436}
               // height={2030}
-              quality={20}
+              quality={40}
               fill
               // sizes="634px"
               sizes="(min-width: 1140px) 634px, (min-width: 720px) calc(52.75vw + 43px), 90vw"
@@ -37,7 +37,7 @@ export default function Map() {
               alt="picture of town"
               // width={1160}
               // height={773}
-              quality={20}
+              quality={40}
               fill
               // sizes="290px"
               sizes="(min-width: 1140px) 306px, calc(26.25vw + 12px)"

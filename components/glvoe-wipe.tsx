@@ -41,7 +41,7 @@ export default function GloveWipe() {
             className="object-cover"
             fill
             sizes="460px"
-            quality={20}
+            quality={40}
             loading="eager"
           />
         </motion.div>

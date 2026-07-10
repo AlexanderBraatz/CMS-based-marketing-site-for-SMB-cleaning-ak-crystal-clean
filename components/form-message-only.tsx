@@ -194,6 +194,14 @@ export default function FormMessageOnlyOrMultiChoice({
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+
+    if (String(formData.get('website') ?? '').trim()) {
+      startTransition(() => {
+        formAction(formData);
+      });
+      return;
+    }
+
     const parsed = contactFormSchema.safeParse(parseContactFormData(formData));
 
     if (!parsed.success) {
@@ -224,10 +232,22 @@ export default function FormMessageOnlyOrMultiChoice({
               {isSuccess ? (
                 <FormSuccessMessage />
               ) : (
-                <form action={formAction} onSubmit={handleSubmit} className="flex flex-1 flex-col pb-5">
+                <form action={formAction} onSubmit={handleSubmit} className="relative flex flex-1 flex-col pb-5">
                   <input type="hidden" name="mode" value={mode} />
                   <input type="hidden" name="pagePathname" value={pathname} />
                   <input type="hidden" name="submissionId" value={submissionId} />
+                  <div className="hp-field" aria-hidden="true">
+                    <label htmlFor="contact-website">Website</label>
+                    <input
+                      id="contact-website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      // defaultValue="test"
+                      // this field is a honeypot field used to stop simple spam
+                      autoComplete="off"
+                    />
+                  </div>
 
                   <div className="xs:grid-cols-2 xs:grid-rows-[auto_auto_1fr] grid flex-1 grid-cols-1 gap-x-5 gap-y-5">
                     <div className="xs:col-span-2 row-start-1 flex w-full flex-col">

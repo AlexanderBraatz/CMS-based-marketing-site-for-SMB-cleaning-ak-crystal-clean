@@ -13,7 +13,7 @@ export default function ImageWideHome({ image }: { image: StaticImageData }) {
             fill
             // sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 441px"
             sizes="(min-width: 1140px) 463px, (min-width: 720px) calc(36.75vw + 51px), 95.25vw"
-            quality={20}
+            quality={40}
             placeholder="blur"
           />
         </div>

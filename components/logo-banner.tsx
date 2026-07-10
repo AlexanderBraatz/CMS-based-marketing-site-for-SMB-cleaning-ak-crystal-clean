@@ -36,7 +36,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_STANDARD}
-          quality={5}
+          quality={40}
         />
         <Image
           alt="logo"
@@ -44,7 +44,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_NARROW}
-          quality={5}
+          quality={40}
         />
         <Image
           alt="logo"
@@ -52,7 +52,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[50px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_NARROW}
-          quality={5}
+          quality={40}
         />
 
         <Image
@@ -61,7 +61,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_STANDARD}
-          quality={5}
+          quality={40}
         />
 
         <Image
@@ -70,7 +70,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_STANDARD}
-          quality={5}
+          quality={40}
         />
 
         <Image
@@ -79,7 +79,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_MEDIUM}
-          quality={5}
+          quality={40}
         />
 
         <Image
@@ -88,7 +88,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_STANDARD}
-          quality={5}
+          quality={40}
         />
 
         <Image
@@ -97,7 +97,7 @@ export default function LogoBanner() {
           className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
           // sizes="120px"
           sizes={LOGO_SIZES_STANDARD}
-          quality={5}
+          quality={40}
         />
       </div>
     </div>

@@ -23,7 +23,19 @@ function logSendFailure(stage: 'env' | 'customer' | 'owner' | 'second_owner', de
   console.error('[contact-form] send failed', { stage, ...details });
 }
 
+const HONEYPOT_MESSAGE =
+  'Eine Sicherheitsfunktion wurde ausgelöst. Bitte laden Sie die Seite neu und versuchen Sie es erneut.';
+
 export async function submitContact(_prevState: ContactActionState, formData: FormData): Promise<ContactActionState> {
+  const honeypot = String(formData.get('website') ?? '').trim();
+  if (honeypot) {
+    console.info('[contact-form] honeypot triggered');
+    return {
+      status: 'send_error',
+      formError: HONEYPOT_MESSAGE,
+    };
+  }
+
   const token = String(formData.get('captchaToken') ?? '');
   const parsed = contactFormSchema.safeParse(parseContactFormData(formData));
 

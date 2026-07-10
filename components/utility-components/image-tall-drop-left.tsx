@@ -22,7 +22,7 @@ export default function TallImageDrop({
         <Image
           src={src}
           alt="image of video"
-          quality={20}
+          quality={40}
           placeholder="blur"
           className="object-cover"
           // sizes="(max-width: 640px) 55vw, 280px"

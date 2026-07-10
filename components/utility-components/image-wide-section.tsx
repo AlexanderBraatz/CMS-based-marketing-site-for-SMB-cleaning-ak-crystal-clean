@@ -34,7 +34,7 @@ export default function ImageWideSection({
             fill
             // sizes="441px"
             sizes={sizes}
-            quality={20}
+            quality={40}
             placeholder="blur"
           />
         </div>

@@ -117,6 +117,14 @@ export default function FormWhitespace() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+
+    if (String(formData.get('website') ?? '').trim()) {
+      startTransition(() => {
+        formAction(formData);
+      });
+      return;
+    }
+
     const parsed = contactFormSchema.safeParse(parseContactFormData(formData));
 
     if (!parsed.success) {
@@ -146,10 +154,26 @@ export default function FormWhitespace() {
       {isSuccess ? (
         <FormSuccessMessage />
       ) : (
-        <form action={formAction} onSubmit={handleSubmit} className="xs:items-center flex w-full flex-col items-start">
+        <form
+          action={formAction}
+          onSubmit={handleSubmit}
+          className="xs:items-center relative flex w-full flex-col items-start"
+        >
           <input type="hidden" name="mode" value="services" />
           <input type="hidden" name="pagePathname" value={pathname} />
           <input type="hidden" name="submissionId" value={submissionId} />
+          <div className="hp-field" aria-hidden="true">
+            <label htmlFor="whitespace-website">Website</label>
+            <input
+              id="whitespace-website"
+              name="website"
+              type="text"
+              // defaultValue="test"
+              // this field is a honeypot field used to stop simple spam
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
 
           <div className="xs:flex-row xs:gap-0 xs:mb-14 mb-5 flex w-full flex-col gap-5">
             <fieldset
