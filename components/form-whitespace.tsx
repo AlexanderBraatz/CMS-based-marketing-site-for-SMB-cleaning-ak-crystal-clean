@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useActionState, useState } from 'react';
+import React, { startTransition, useActionState, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/animations/motion';
@@ -9,6 +10,7 @@ import { submitContact } from '@/app/actions/contact';
 import { initialContactActionState } from '@/lib/contact/action-state';
 import { contactFormSchema, parseContactFormData, zodFieldErrors } from '@/lib/contact/schema';
 import { SERVICE_OPTIONS, type ServiceValue } from '@/lib/data';
+import { getCaptchaToken } from '@/utils/captcha-client';
 import MaterialSymbol from './material-symbol';
 import Button from './utility-components/button';
 
@@ -111,12 +113,13 @@ export default function FormWhitespace() {
     clearFieldError('services');
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
     const formData = new FormData(event.currentTarget);
     const parsed = contactFormSchema.safeParse(parseContactFormData(formData));
 
     if (!parsed.success) {
-      event.preventDefault();
       setDismissedFieldErrors(new Set());
       setClientFieldErrors(zodFieldErrors(parsed.error));
       return;
@@ -124,6 +127,12 @@ export default function FormWhitespace() {
 
     setDismissedFieldErrors(new Set());
     setClientFieldErrors({});
+
+    const token = await getCaptchaToken();
+    formData.set('captchaToken', token ?? '');
+    startTransition(() => {
+      formAction(formData);
+    });
   }
 
   return (
@@ -232,7 +241,7 @@ export default function FormWhitespace() {
           </div>
 
           <label
-            className={`xs:self-center mb-4 flex cursor-pointer items-center gap-1.5 self-start pl-1 leading-tight ${
+            className={`xs:self-center mb-1 flex cursor-pointer items-center gap-1.5 self-start pl-1 leading-tight ${
               fieldErrors.dataAgreement ? 'rounded-sm ring-1 ring-red-500/30' : 'rounded-sm'
             }`}
           >
@@ -259,6 +268,31 @@ export default function FormWhitespace() {
               Ich stimme der Datenschutzrichtlinie zu.
             </span>
           </label>
+          <p className="text-theme-text/70 xs:text-center mb-4 self-stretch pl-1 text-[10px] leading-snug tracking-normal">
+            Die{' '}
+            <Link href="/datenschutz" className="underline hover:opacity-80">
+              Datenschutzrichtlinie
+            </Link>{' '}
+            finden Sie hier. Diese Website wird durch reCAPTCHA geschützt. Es gelten die{' '}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-80"
+            >
+              Datenschutzbestimmungen
+            </a>{' '}
+            und{' '}
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-80"
+            >
+              Nutzungsbedingungen
+            </a>{' '}
+            von Google.
+          </p>
           <FieldError id="whitespace-data-agreement-error" message={fieldErrors.dataAgreement} />
 
           {hasFieldErrors ? (

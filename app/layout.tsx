@@ -6,6 +6,7 @@ import Footer from '../components/footer';
 import ViewportGate from './viewport-gate';
 import Navbar from '../components/navbar';
 import ChoseComponentDevTools from '@/components/utility-components/chose-component-dev-tools';
+import Script from 'next/script';
 
 const barlowSemiCondensed = Barlow_Semi_Condensed({
   variable: '--font-barlow-semi-condensed',
@@ -134,6 +135,10 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-full flex-col font-sans">
+        <Script
+          strategy="beforeInteractive"
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
+        />
         <ChoseComponentDevTools>
           {/* <ViewportGate> */}
           <Navbar />

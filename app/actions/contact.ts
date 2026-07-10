@@ -5,6 +5,7 @@ import { type ContactActionState } from '@/lib/contact/action-state';
 import { contactFormSchema, parseContactFormData, zodFieldErrors } from '@/lib/contact/schema';
 import { customerTemplate } from '@/lib/email/customerTemplate';
 import { ownerTemplate } from '@/lib/email/ownerTemplate';
+import { verifyCaptchaToken, type CaptchaData } from '@/utils/captcha-server';
 
 function customerIdempotencyKey(submissionId: string): string {
   return `contact-enquiry/${submissionId}/customer`;
@@ -18,19 +19,56 @@ function secondOwnerIdempotencyKey(submissionId: string): string {
   return `contact-enquiry/${submissionId}/second-owner`;
 }
 
-function logSendFailure(
-  stage: 'env' | 'customer' | 'owner' | 'second_owner',
-  details: Record<string, unknown>,
-) {
+function logSendFailure(stage: 'env' | 'customer' | 'owner' | 'second_owner', details: Record<string, unknown>) {
   console.error('[contact-form] send failed', { stage, ...details });
 }
 
-export async function submitContact(
-  _prevState: ContactActionState,
-  formData: FormData,
-): Promise<ContactActionState> {
+export async function submitContact(_prevState: ContactActionState, formData: FormData): Promise<ContactActionState> {
+  const token = String(formData.get('captchaToken') ?? '');
   const parsed = contactFormSchema.safeParse(parseContactFormData(formData));
 
+  if (!token) {
+    return {
+      status: 'send_error',
+      formError: 'Sicherheitsprüfung fehlgeschlagen. Bitte laden Sie die Seite neu und versuchen Sie es erneut.',
+    };
+  }
+  let captchaData: CaptchaData | null;
+  try {
+    captchaData = await verifyCaptchaToken(token);
+  } catch (error) {
+    console.error('[contact-form] captcha verify failed', error);
+    return {
+      status: 'send_error',
+      formError:
+        'Die Sicherheitsprüfung konnte nicht bestätigt werden. Bitte laden Sie die Seite neu und versuchen Sie es erneut.',
+    };
+  }
+
+  if (!captchaData) {
+    return {
+      status: 'send_error',
+      formError:
+        'Die Sicherheitsprüfung konnte nicht bestätigt werden. Bitte laden Sie die Seite neu und versuchen Sie es erneut.',
+    };
+  }
+
+  if (!captchaData.success || captchaData.action !== 'contact' || captchaData.score < 0.5) {
+    if (!captchaData.success) {
+      console.error('[contact-form] captcha rejected', { errorCodes: captchaData['error-codes'] });
+    } else {
+      console.error('[contact-form] captcha rejected', {
+        action: captchaData.action,
+        score: captchaData.score,
+      });
+    }
+
+    return {
+      status: 'send_error',
+      formError:
+        'Die Sicherheitsprüfung konnte nicht bestätigt werden. Bitte laden Sie die Seite neu und versuchen Sie es erneut.',
+    };
+  }
   if (!parsed.success) {
     return {
       status: 'validation_error',
@@ -85,8 +123,7 @@ export async function submitContact(
 
     return {
       status: 'send_error',
-      formError:
-        'Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es in ein paar Minuten erneut.',
+      formError: 'Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es in ein paar Minuten erneut.',
     };
   }
 

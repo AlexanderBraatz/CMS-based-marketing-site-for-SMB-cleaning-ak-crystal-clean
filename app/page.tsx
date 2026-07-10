@@ -89,7 +89,6 @@ export default function Home() {
         </div>
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
-            devImageChoiceIndex={6}
             heading="Was können wir für Sie tun ?"
             showMulitChoice={false}
             image={formImage}

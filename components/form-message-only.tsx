@@ -2,7 +2,8 @@
 
 import Image, { StaticImageData } from 'next/image';
 import { usePathname } from 'next/navigation';
-import React, { useActionState, useState } from 'react';
+import Link from 'next/link';
+import React, { startTransition, useActionState, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { motion } from 'motion/react';
 import { submitContact } from '@/app/actions/contact';
@@ -18,6 +19,7 @@ import formImageThreeMopping from '@/public/images/form-right-side/team-three-mo
 import formImageTwoBosses from '@/public/images/form-right-side/team-two-bosses.jpg';
 import womanImage from '@/public/images/form-right-side/team-solo-dusting.jpg';
 import manImage from '@/public/images/form-right-side/team-three-men-outside.jpg';
+import { getCaptchaToken } from '@/utils/captcha-client';
 import MaterialSymbol from './material-symbol';
 import Button from './utility-components/button';
 
@@ -133,12 +135,10 @@ function FormSuccessMessage() {
 export default function FormMessageOnlyOrMultiChoice({
   heading,
   showMulitChoice,
-  devImageChoiceIndex = 0,
   image,
 }: {
   heading: string;
   showMulitChoice: boolean;
-  devImageChoiceIndex: number;
   image?: StaticImageData;
 }) {
   const pathname = usePathname();
@@ -146,14 +146,11 @@ export default function FormMessageOnlyOrMultiChoice({
   const [state, formAction] = useActionState(submitContact, initialContactActionState);
   const [clientFieldErrors, setClientFieldErrors] = useState<Record<string, string>>({});
   const [dismissedFieldErrors, setDismissedFieldErrors] = useState<Set<string>>(new Set());
-  const [currentImage, setCurrentImage] = useState(devImageChoiceIndex);
+
   const serviceFromPath = getServiceFromPathname(pathname);
   const pathBasedImage = serviceFromPath && MAN_SERVICE_VALUES.has(serviceFromPath) ? manImage : womanImage;
   const mode = showMulitChoice ? 'services' : 'message';
 
-  const flickToNextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1 < images.length ? prevIndex + 1 : 0));
-  };
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
   const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(() => {
     const service = getServiceFromPathname(pathname);
@@ -193,12 +190,13 @@ export default function FormMessageOnlyOrMultiChoice({
     clearFieldError('services');
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
     const formData = new FormData(event.currentTarget);
     const parsed = contactFormSchema.safeParse(parseContactFormData(formData));
 
     if (!parsed.success) {
-      event.preventDefault();
       setDismissedFieldErrors(new Set());
       setClientFieldErrors(zodFieldErrors(parsed.error));
       return;
@@ -206,6 +204,12 @@ export default function FormMessageOnlyOrMultiChoice({
 
     setDismissedFieldErrors(new Set());
     setClientFieldErrors({});
+
+    const token = await getCaptchaToken();
+    formData.set('captchaToken', token ?? '');
+    startTransition(() => {
+      formAction(formData);
+    });
   }
 
   return (
@@ -213,192 +217,215 @@ export default function FormMessageOnlyOrMultiChoice({
       <div className="px-[5%]">
         <div className="px-0 md:px-[82px]">
           <div className="bg-theme-card-background-2 2sm:grid-cols-2 grid w-full grid-cols-1 gap-5 sm:grid-cols-[1fr_300px]">
-            <div className="flex h-full min-h-0 flex-col pt-6 pr-5 pl-5 sm:pr-0">
+            <div className="flex h-full flex-col pt-6 pr-5 pl-5 sm:min-h-[556px] sm:pr-0">
               <h5 className="font-cooper-hewitt text-theme-text mb-6 shrink-0 text-3xl leading-tight font-semibold tracking-tight">
                 {heading}
               </h5>
               {isSuccess ? (
                 <FormSuccessMessage />
               ) : (
-              <form action={formAction} onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col pb-5">
-                <input type="hidden" name="mode" value={mode} />
-                <input type="hidden" name="pagePathname" value={pathname} />
-                <input type="hidden" name="submissionId" value={submissionId} />
+                <form action={formAction} onSubmit={handleSubmit} className="flex flex-1 flex-col pb-5">
+                  <input type="hidden" name="mode" value={mode} />
+                  <input type="hidden" name="pagePathname" value={pathname} />
+                  <input type="hidden" name="submissionId" value={submissionId} />
 
-                <div className="xs:grid-cols-2 xs:grid-rows-[auto_auto_1fr] grid min-h-0 flex-1 grid-cols-1 gap-x-5 gap-y-5">
-                  <div className="xs:col-span-2 row-start-1 flex w-full flex-col">
-                    <label
-                      htmlFor="contact-name"
-                      className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
-                    >
-                      Name
-                    </label>
-                    <input
-                      id="contact-name"
-                      name="name"
-                      type="text"
-                      autoComplete="name"
-                      aria-invalid={!!fieldErrors.name}
-                      aria-describedby={fieldErrors.name ? 'contact-name-error' : undefined}
-                      className={getInputClassName(!!fieldErrors.name)}
-                      onChange={() => clearFieldError('name')}
-                    />
-                    <FieldError id="contact-name-error" message={fieldErrors.name} />
-                  </div>
-                  <div className="xs:col-span-1 row-start-2 flex w-full flex-col">
-                    <label
-                      htmlFor="contact-phone"
-                      className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
-                    >
-                      Telefone / Handy
-                    </label>
-                    <input
-                      id="contact-phone"
-                      name="phone"
-                      type="tel"
-                      autoComplete="tel"
-                      aria-invalid={!!fieldErrors.phone}
-                      aria-describedby={fieldErrors.phone ? 'contact-phone-error' : undefined}
-                      className={getInputClassName(!!fieldErrors.phone)}
-                      onChange={() => clearFieldError('phone')}
-                    />
-                    <FieldError id="contact-phone-error" message={fieldErrors.phone} />
-                  </div>
-                  <div className="xs:col-span-1 xs:row-start-2 row-start-3 flex w-full flex-col">
-                    <label
-                      htmlFor="contact-email"
-                      className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
-                    >
-                      E-mail
-                    </label>
-                    <input
-                      id="contact-email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      aria-invalid={!!fieldErrors.email}
-                      aria-describedby={fieldErrors.email ? 'contact-email-error' : undefined}
-                      className={getInputClassName(!!fieldErrors.email)}
-                      onChange={() => clearFieldError('email')}
-                    />
-                    <FieldError id="contact-email-error" message={fieldErrors.email} />
-                  </div>
-                  {showMulitChoice ? (
-                    <fieldset
-                      className={`xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full min-w-0 flex-col p-0 ${
-                        fieldErrors.services
-                          ? 'rounded-sm border border-red-400/50 pl-2'
-                          : 'border-0'
-                      }`}
-                      aria-invalid={!!fieldErrors.services}
-                      aria-describedby={fieldErrors.services ? 'contact-services-error' : undefined}
-                    >
-                      <legend className="text-theme-text mb-3 block w-full leading-tight font-semibold tracking-tighter">
-                        Wählen sie weitere Leistungen
-                      </legend>
-                      <div
-                        className="xs:grid-cols-2 grid grid-cols-1 content-start gap-x-5 gap-y-2 pl-1"
-                        role="group"
-                        aria-label="Services auswählen"
-                      >
-                        {SERVICE_OPTIONS.map((option) => {
-                          const isSelected = selectedServices.has(option.value);
-
-                          return (
-                            <label
-                              key={option.value}
-                              className="flex min-w-0 cursor-pointer items-center gap-1.5 rounded-sm leading-tight tracking-tight"
-                            >
-                              <input
-                                type="checkbox"
-                                name="service"
-                                value={option.value}
-                                checked={isSelected}
-                                onChange={() => toggleService(option.value)}
-                                className="sr-only"
-                              />
-                              <span
-                                aria-hidden
-                                className={`size-2 shrink-0 border border-white ${
-                                  isSelected ? 'bg-theme-background border-3' : ''
-                                }`}
-                              />
-
-                              <span className="text-theme-text hover:underline">{option.label}</span>
-                            </label>
-                          );
-                        })}
-                      </div>
-                      <FieldError id="contact-services-error" message={fieldErrors.services} />
-                    </fieldset>
-                  ) : (
-                    <div className="xs:col-span-2 xs:row-start-3 row-start-4 flex min-h-0 w-full flex-col">
+                  <div className="xs:grid-cols-2 xs:grid-rows-[auto_auto_1fr] grid flex-1 grid-cols-1 gap-x-5 gap-y-5">
+                    <div className="xs:col-span-2 row-start-1 flex w-full flex-col">
                       <label
-                        htmlFor="contact-message"
-                        className="font-instrument-sans shrink-0 leading-tight font-semibold tracking-tighter text-white"
+                        htmlFor="contact-name"
+                        className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
                       >
-                        Nachricht
+                        Name
                       </label>
-                      <textarea
-                        id="contact-message"
-                        name="message"
-                        aria-invalid={!!fieldErrors.message}
-                        aria-describedby={fieldErrors.message ? 'contact-message-error' : undefined}
-                        className={getTextareaClassName(!!fieldErrors.message)}
-                        onChange={() => clearFieldError('message')}
+                      <input
+                        id="contact-name"
+                        name="name"
+                        type="text"
+                        autoComplete="name"
+                        aria-invalid={!!fieldErrors.name}
+                        aria-describedby={fieldErrors.name ? 'contact-name-error' : undefined}
+                        className={getInputClassName(!!fieldErrors.name)}
+                        onChange={() => clearFieldError('name')}
                       />
-                      <FieldError id="contact-message-error" message={fieldErrors.message} />
+                      <FieldError id="contact-name-error" message={fieldErrors.name} />
                     </div>
-                  )}
-                </div>
-                <div className="h-10"></div>
-                <label
-                  className={`mb-3 flex cursor-pointer items-center gap-1.5 pl-1 leading-tight ${
-                    fieldErrors.dataAgreement ? 'rounded-sm ring-1 ring-red-400/30' : 'rounded-sm'
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    name="dataAgreement"
-                    value="accepted"
-                    checked={dataAgreementAccepted}
-                    aria-invalid={!!fieldErrors.dataAgreement}
-                    aria-describedby={fieldErrors.dataAgreement ? 'contact-data-agreement-error' : undefined}
-                    onChange={() => {
-                      setDataAgreementAccepted((prev) => !prev);
-                      clearFieldError('dataAgreement');
-                    }}
-                    className="sr-only"
-                  />
-                  <span
-                    aria-hidden
-                    className={`size-2 shrink-0 border ${
-                      fieldErrors.dataAgreement ? 'border-red-400' : 'border-white'
-                    } ${dataAgreementAccepted ? 'bg-theme-background border-3' : ''}`}
-                  />
-                  <span className="text-theme-text xs:text-base text-xs tracking-normal hover:underline">
-                    Ich stimme der Datenschutzrichtlinie zu.
-                  </span>
-                </label>
-                <FieldError id="contact-data-agreement-error" message={fieldErrors.dataAgreement} />
+                    <div className="xs:col-span-1 row-start-2 flex w-full flex-col">
+                      <label
+                        htmlFor="contact-phone"
+                        className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
+                      >
+                        Telefone / Handy
+                      </label>
+                      <input
+                        id="contact-phone"
+                        name="phone"
+                        type="tel"
+                        autoComplete="tel"
+                        aria-invalid={!!fieldErrors.phone}
+                        aria-describedby={fieldErrors.phone ? 'contact-phone-error' : undefined}
+                        className={getInputClassName(!!fieldErrors.phone)}
+                        onChange={() => clearFieldError('phone')}
+                      />
+                      <FieldError id="contact-phone-error" message={fieldErrors.phone} />
+                    </div>
+                    <div className="xs:col-span-1 xs:row-start-2 row-start-3 flex w-full flex-col">
+                      <label
+                        htmlFor="contact-email"
+                        className="font-instrument-sans leading-tight font-semibold tracking-tighter text-white"
+                      >
+                        E-mail
+                      </label>
+                      <input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        aria-invalid={!!fieldErrors.email}
+                        aria-describedby={fieldErrors.email ? 'contact-email-error' : undefined}
+                        className={getInputClassName(!!fieldErrors.email)}
+                        onChange={() => clearFieldError('email')}
+                      />
+                      <FieldError id="contact-email-error" message={fieldErrors.email} />
+                    </div>
+                    {showMulitChoice ? (
+                      <fieldset
+                        className={`xs:col-span-2 xs:row-start-3 row-start-4 flex w-full min-w-0 flex-col p-0 ${
+                          fieldErrors.services ? 'rounded-sm border border-red-400/50 pl-2' : 'border-0'
+                        }`}
+                        aria-invalid={!!fieldErrors.services}
+                        aria-describedby={fieldErrors.services ? 'contact-services-error' : undefined}
+                      >
+                        <legend className="text-theme-text mb-3 block w-full leading-tight font-semibold tracking-tighter">
+                          Wählen sie weitere Leistungen
+                        </legend>
+                        <div
+                          className="xs:grid-cols-2 grid grid-cols-1 content-start gap-x-5 gap-y-2 pl-1"
+                          role="group"
+                          aria-label="Services auswählen"
+                        >
+                          {SERVICE_OPTIONS.map((option) => {
+                            const isSelected = selectedServices.has(option.value);
 
-                {hasFieldErrors ? (
-                  <p className="mb-3 text-sm text-red-200" role="alert">
-                    Bitte korrigieren Sie die markierten Felder.
+                            return (
+                              <label
+                                key={option.value}
+                                className="flex min-w-0 cursor-pointer items-center gap-1.5 rounded-sm leading-tight tracking-tight"
+                              >
+                                <input
+                                  type="checkbox"
+                                  name="service"
+                                  value={option.value}
+                                  checked={isSelected}
+                                  onChange={() => toggleService(option.value)}
+                                  className="sr-only"
+                                />
+                                <span
+                                  aria-hidden
+                                  className={`size-2 shrink-0 border border-white ${
+                                    isSelected ? 'bg-theme-background border-3' : ''
+                                  }`}
+                                />
+
+                                <span className="text-theme-text hover:underline">{option.label}</span>
+                              </label>
+                            );
+                          })}
+                        </div>
+                        <FieldError id="contact-services-error" message={fieldErrors.services} />
+                      </fieldset>
+                    ) : (
+                      <div className="xs:col-span-2 xs:row-start-3 row-start-4 flex w-full flex-col">
+                        <label
+                          htmlFor="contact-message"
+                          className="font-instrument-sans shrink-0 leading-tight font-semibold tracking-tighter text-white"
+                        >
+                          Nachricht
+                        </label>
+                        <textarea
+                          id="contact-message"
+                          name="message"
+                          aria-invalid={!!fieldErrors.message}
+                          aria-describedby={fieldErrors.message ? 'contact-message-error' : undefined}
+                          className={getTextareaClassName(!!fieldErrors.message)}
+                          onChange={() => clearFieldError('message')}
+                        />
+                        <FieldError id="contact-message-error" message={fieldErrors.message} />
+                      </div>
+                    )}
+                  </div>
+                  <div className="h-10"></div>
+                  <label
+                    className={`mb-1 flex cursor-pointer items-center gap-1.5 pl-1 leading-tight ${
+                      fieldErrors.dataAgreement ? 'rounded-sm ring-1 ring-red-400/30' : 'rounded-sm'
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      name="dataAgreement"
+                      value="accepted"
+                      checked={dataAgreementAccepted}
+                      aria-invalid={!!fieldErrors.dataAgreement}
+                      aria-describedby={fieldErrors.dataAgreement ? 'contact-data-agreement-error' : undefined}
+                      onChange={() => {
+                        setDataAgreementAccepted((prev) => !prev);
+                        clearFieldError('dataAgreement');
+                      }}
+                      className="sr-only"
+                    />
+                    <span
+                      aria-hidden
+                      className={`size-2 shrink-0 border ${
+                        fieldErrors.dataAgreement ? 'border-red-400' : 'border-white'
+                      } ${dataAgreementAccepted ? 'bg-theme-background border-3' : ''}`}
+                    />
+                    <span className="text-theme-text xs:text-base text-xs tracking-normal hover:underline">
+                      Ich stimme der Datenschutzrichtlinie zu.
+                    </span>
+                  </label>
+                  <p className="text-theme-text/70 mb-3 pl-1 text-[10px] leading-snug tracking-normal">
+                    Die{' '}
+                    <Link href="/datenschutz" className="underline hover:opacity-80">
+                      Datenschutzrichtlinie
+                    </Link>{' '}
+                    finden Sie hier. Diese Website wird durch reCAPTCHA geschützt. Es gelten die{' '}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:opacity-80"
+                    >
+                      Datenschutzbestimmungen
+                    </a>{' '}
+                    und{' '}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:opacity-80"
+                    >
+                      Nutzungsbedingungen
+                    </a>{' '}
+                    von Google.
                   </p>
-                ) : null}
+                  <FieldError id="contact-data-agreement-error" message={fieldErrors.dataAgreement} />
 
-                {state.status === 'send_error' ? (
-                  <p className="mb-3 text-sm text-red-300" role="alert">
-                    {state.formError}
-                  </p>
-                ) : null}
+                  {hasFieldErrors ? (
+                    <p className="mb-3 text-sm text-red-200" role="alert">
+                      Bitte korrigieren Sie die markierten Felder.
+                    </p>
+                  ) : null}
 
-                <SubmitButtons />
-              </form>
+                  {state.status === 'send_error' ? (
+                    <p className="mb-3 text-sm text-red-300" role="alert">
+                      {state.formError}
+                    </p>
+                  ) : null}
+
+                  <SubmitButtons />
+                </form>
               )}
             </div>
-            <div className="relative hidden h-[556px] w-full sm:block">
+            <div className="relative hidden h-full min-h-[556px] w-full sm:block">
               {image ? (
                 <Image
                   src={image}
@@ -407,17 +434,16 @@ export default function FormMessageOnlyOrMultiChoice({
                   sizes={FORM_SIDE_IMAGE_SIZES}
                   className="h-full w-full object-cover"
                   placeholder="blur"
-                  quality={20}
+                  quality={40}
                 />
               ) : (
                 <Image
-                  onClick={flickToNextImage}
                   src={pathBasedImage}
                   alt="image"
                   className="h-full w-full object-cover"
                   sizes={FORM_SIDE_IMAGE_SIZES}
                   fill
-                  quality={20}
+                  quality={40}
                   placeholder="blur"
                 />
               )}

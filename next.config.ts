@@ -4,7 +4,7 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    qualities: [5, 20, 75],
+    qualities: [5, 20, 40, 75],
   },
 };
 

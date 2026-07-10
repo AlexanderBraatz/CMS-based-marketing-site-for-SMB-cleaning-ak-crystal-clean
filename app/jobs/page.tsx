@@ -92,7 +92,6 @@ export default function Jobs() {
           <FormMessageOnlyOrMultiChoice
             heading="Jetzt Unterhaltsreinigung kostenlos anfragen."
             showMulitChoice={false}
-            devImageChoiceIndex={3}
             image={FormImage}
           />
         </div>

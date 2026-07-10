@@ -35,12 +35,7 @@ export default function Leistungen() {
         </div>
       </div>
       <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
-        <FormMessageOnlyOrMultiChoice
-          devImageChoiceIndex={0}
-          heading="Was können wir für Sie tun?"
-          showMulitChoice={false}
-          image={FormImage}
-        />
+        <FormMessageOnlyOrMultiChoice heading="Was können wir für Sie tun?" showMulitChoice={false} image={FormImage} />
       </div>
     </main>
   );
