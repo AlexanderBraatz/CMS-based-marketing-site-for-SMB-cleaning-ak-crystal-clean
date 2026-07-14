@@ -22,10 +22,12 @@ import formImage from '@/public/images/form-right-side/team-two-bosses.jpg';
 
 import FormMessageOnlyOrMultiChoice from '../components/form-message-only';
 import ChoseComponent from '@/components/utility-components/chose-component';
-import HeroVideo from '@/components/hero-video';
-import SomeText from '@/components/some-text';
 
-export default function Home() {
+import SomeText from '@/components/some-text';
+import client from '@/tina/__generated__/client';
+
+export default async function Home() {
+  const res = await client.queries.page({ relativePath: 'homePage.json' });
   return (
     <div className="theme-light-background bg-theme-background w-full">
       <main className="relative w-screen overflow-clip">
@@ -33,10 +35,12 @@ export default function Home() {
         <div className="relative z-10 mx-auto mb-50 md:w-full lg:w-[1071px]">
           <div className="flex flex-col gap-[96px] pb-[96px]">
             <Hero
+              data={res.data}
+              query={res.query}
+              variables={res.variables}
               heading={'Ein Partner Für Alles\nGebäudereinigung'}
               subHeading="Höchste Qualität für Innen und Außen ohne Koordinationsaufwand."
               // image={imageHero}
-              video={HeroVideo}
             />
 
             <LogoBanner />

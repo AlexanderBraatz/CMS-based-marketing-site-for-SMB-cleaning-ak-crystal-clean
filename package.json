@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & npx next-video sync -w",
-    "build": "next build",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev & npx next-video sync -w\"",
+    "build": "tinacms build && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -16,13 +16,15 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "resend": "^6.16.0",
+    "tinacms": "^3.10.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
+    "@tinacms/cli": "^2.5.5",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/grecaptcha": "^3.0.9",
-    "@types/node": "^20",
+    "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

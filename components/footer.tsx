@@ -81,6 +81,9 @@ export default function Footer() {
             <Link href="/datenschutz" className="hover:underline">
               Datenschutz
             </Link>
+            <Link href="/admin/index.html" className="hover:underline">
+              Admin
+            </Link>
           </p>
         </div>
       </div>

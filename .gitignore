@@ -49,3 +49,7 @@ public/_next-video
 
 # Environment variables
 .env.local
+
+node_modules
+.env
+tina/__generated__
