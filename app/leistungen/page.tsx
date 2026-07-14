@@ -11,15 +11,19 @@ import heroImage4 from '@/public/images/team-two-hero-wide-window.jpg';
 import heroImage5 from '@/public/images/team-mopping-hero-wide.jpg';
 
 import FormImage from '@/public/images/form-right-side/team-two-bosses.jpg';
+import client from '@/tina/__generated__/client';
 
-export default function Leistungen() {
+export default async function Leistungen() {
+  const res = await client.queries.page({ relativePath: 'leistungen.json' });
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero
-            heading="Professionelle Gebäudereinigung"
+            data={res.data}
+            query={res.query}
+            variables={res.variables}
             subHeading="Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand."
             image={heroImage5}
             className={'2sm:mb-0 mb-0 sm:mb-20'}

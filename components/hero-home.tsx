@@ -12,7 +12,6 @@ type HeroProps = {
   data: PageQuery;
   query: string;
   variables: PageQueryVariables;
-  heading?: string;
   subHeading?: string;
   image?: StaticImageData;
   video?: React.ComponentType;

@@ -15,16 +15,20 @@ import FormMessageOnlyOrMultiChoice from '@/components/form-message-only';
 import LeftTextAndButton from '@/components/left-text-and-button';
 import Hero from '@/components/hero-home';
 import formImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
+import client from '@/tina/__generated__/client';
 
-export default function UberUns() {
+export default async function UberUns() {
+  const res = await client.queries.page({ relativePath: 'uberUns.json' });
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto mb-20 w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero
+            data={res.data}
+            query={res.query}
+            variables={res.variables}
             image={heroImage3}
-            heading="Ihr Partner in Gründau für Gebeudereinigung"
             subHeading="Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner"
           />
           <SomeText

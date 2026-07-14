@@ -39,9 +39,12 @@ export default defineConfig({
           {
             type: 'string',
             name: 'title',
-            label: 'Title',
+            label: 'Hero Heading',
             isTitle: true,
             required: true,
+            ui: {
+              component: 'textarea',
+            },
           },
         ],
       },

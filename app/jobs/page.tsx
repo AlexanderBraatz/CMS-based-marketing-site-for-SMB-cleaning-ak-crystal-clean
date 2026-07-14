@@ -21,15 +21,19 @@ import heroImage4 from '@/public/images/team-two-hero-wide-window.jpg';
 import heroImage5 from '@/public/images/team-mopping-hero-wide.jpg';
 
 import FormImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
+import client from '@/tina/__generated__/client';
 
-export default function Jobs() {
+export default async function Jobs() {
+  const res = await client.queries.page({ relativePath: 'jobs.json' });
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero
-            heading={'Werde Teil eines \nstarken Teams'}
+            data={res.data}
+            query={res.query}
+            variables={res.variables}
             subHeading="Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz."
             image={heroImage4}
           />

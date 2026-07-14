@@ -5,20 +5,27 @@ import DoubleWidePictureAndText from '../../components/double-wide-picture-and-t
 import WidePictureAndText from '../../components/wide-picture-and-text';
 import BulletPoints from '../../components/bullet-points';
 import KeyPoints from '../../components/key-points';
-import GrayGradientBackground from '../../components/gray-gradient-background';
 import GloveWipe from '../../components/glvoe-wipe';
 import FormMessageOnlyOrMultiChoice from '../../components/form-message-only';
 import GrayGradientBackgroundExtended from '../../components/gray-gradient-background-extended';
 import Hero from '@/components/hero-home';
 import LinksToServices from '@/components/links-to-services';
+import client from '@/tina/__generated__/client';
 
-export default function ServicesPageTemplate({ pageData }: { pageData: TempFullService }) {
+export default async function ServicesPageTemplate({ pageData }: { pageData: TempFullService }) {
+  const res = await client.queries.page({ relativePath: `${pageData.value}.json` });
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
-          <Hero heading={pageData.page.heading} subHeading={pageData.page.subHeading} image={pageData.page.image} />
+          <Hero
+            data={res.data}
+            query={res.query}
+            variables={res.variables}
+            subHeading={pageData.page.subHeading}
+            image={pageData.page.image}
+          />
           <DoubleWidePictureAndText
             text={{
               caption: pageData.page.section1.caption,

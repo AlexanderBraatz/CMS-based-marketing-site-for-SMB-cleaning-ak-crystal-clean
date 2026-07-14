@@ -38,7 +38,6 @@ export default async function Home() {
               data={res.data}
               query={res.query}
               variables={res.variables}
-              heading={'Ein Partner Für Alles\nGebäudereinigung'}
               subHeading="Höchste Qualität für Innen und Außen ohne Koordinationsaufwand."
               // image={imageHero}
             />
