@@ -64,7 +64,7 @@ export default async function Home() {
               }}
             />
             <div className="flex flex-col gap-[180px]">
-              {/* <TestimonialQuotes />  client did want reviews for now. */}
+              {/* <TestimonialQuotes />  client did want reviews for now.. */}
               <ValuesAndImages />
               <DoubleWidePictureAndText
                 imageLeft={imageLeft}
