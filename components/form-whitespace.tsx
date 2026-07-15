@@ -72,7 +72,7 @@ function FormSuccessMessage() {
 }
 
 export default function FormWhitespace() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const [submissionId] = useState(() => crypto.randomUUID());
   const [state, formAction] = useActionState(submitContact, initialContactActionState);
   const [clientFieldErrors, setClientFieldErrors] = useState<Record<string, string>>({});

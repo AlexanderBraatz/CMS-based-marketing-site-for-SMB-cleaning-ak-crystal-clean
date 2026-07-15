@@ -141,7 +141,7 @@ export default function FormMessageOnlyOrMultiChoice({
   showMulitChoice: boolean;
   image?: StaticImageData;
 }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const [submissionId] = useState(() => crypto.randomUUID());
   const [state, formAction] = useActionState(submitContact, initialContactActionState);
   const [clientFieldErrors, setClientFieldErrors] = useState<Record<string, string>>({});

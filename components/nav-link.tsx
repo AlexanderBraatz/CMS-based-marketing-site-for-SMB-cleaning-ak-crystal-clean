@@ -19,7 +19,7 @@ function isNavLinkActive(pathname: string, targetPath: string) {
 }
 
 export default function NavLink({ href, onClick, indicator, className, children, ...props }: NavLinkProps) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const targetPath = typeof href === 'string' ? normalizePath(href) : null;
   const isActive = targetPath ? isNavLinkActive(pathname, targetPath) : false;
 

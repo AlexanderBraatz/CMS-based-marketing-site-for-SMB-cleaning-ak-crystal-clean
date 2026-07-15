@@ -12,7 +12,7 @@ import Button from './utility-components/button';
 import NavLink from './nav-link';
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const [isOpen, setIsOpen] = useState(false);
   const [prevPathname, setPrevPathname] = useState(pathname);
 
