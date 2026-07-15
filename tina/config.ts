@@ -50,23 +50,16 @@ export default defineConfig({
         },
         fields: [
           {
-            type: 'string',
+            type: 'rich-text',
             name: 'title',
             label: 'Hero Heading',
-            isTitle: true,
             required: true,
-            ui: {
-              component: 'textarea',
-            },
           },
           {
-            type: 'string',
+            type: 'rich-text',
             name: 'subHeading',
             label: 'Hero Subheading',
             required: true,
-            ui: {
-              component: 'textarea',
-            },
           },
         ],
       },
