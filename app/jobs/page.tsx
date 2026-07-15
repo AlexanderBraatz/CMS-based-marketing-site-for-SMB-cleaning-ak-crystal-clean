@@ -34,7 +34,6 @@ export default async function Jobs() {
             data={res.data}
             query={res.query}
             variables={res.variables}
-            subHeading="Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz."
             image={heroImage4}
           />
           <DoubleWidePictureAndText

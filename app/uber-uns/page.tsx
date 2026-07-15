@@ -29,7 +29,6 @@ export default async function UberUns() {
             query={res.query}
             variables={res.variables}
             image={heroImage3}
-            subHeading="Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner"
           />
           <SomeText
             text={{

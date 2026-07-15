@@ -23,7 +23,6 @@ export default async function ServicesPageTemplate({ pageData }: { pageData: Tem
             data={res.data}
             query={res.query}
             variables={res.variables}
-            subHeading={pageData.page.subHeading}
             image={pageData.page.image}
           />
           <DoubleWidePictureAndText

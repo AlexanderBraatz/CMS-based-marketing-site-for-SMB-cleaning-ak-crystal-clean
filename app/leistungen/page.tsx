@@ -24,7 +24,6 @@ export default async function Leistungen() {
             data={res.data}
             query={res.query}
             variables={res.variables}
-            subHeading="Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand."
             image={heroImage5}
             className={'2sm:mb-0 mb-0 sm:mb-20'}
           />

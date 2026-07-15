@@ -46,6 +46,15 @@ export default defineConfig({
               component: 'textarea',
             },
           },
+          {
+            type: 'string',
+            name: 'subHeading',
+            label: 'Hero Subheading',
+            required: true,
+            ui: {
+              component: 'textarea',
+            },
+          },
         ],
       },
       {

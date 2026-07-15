@@ -40,7 +40,6 @@ export const SERVICE_OPTIONS = [
     label: 'Glass und Fassaden',
     page: {
       heading: 'Glass und Fassaden Reinigung',
-      subHeading: 'Regelmäßige Reinigung für einen starken ersten Eindruck.',
       image: windowImageHero,
       section1: {
         image1: glassImage1,
@@ -89,7 +88,6 @@ export const SERVICE_OPTIONS = [
     label: 'Unterhaltsreinigung',
     page: {
       heading: 'Unterhaltsreinigung',
-      subHeading: 'Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.',
       image: unterhaltImageHero,
       section1: {
         image1: unterhaltImage1,
@@ -137,7 +135,6 @@ export const SERVICE_OPTIONS = [
     label: 'Hausmeisterdienst',
     page: {
       heading: 'Hausmeisterdienst',
-      subHeading: 'Regelmäßige Reinigung für einen starken ersten Eindruck.',
       image: hausmeisterImageHero,
       section1: {
         image1: hausmeisterImage1,
@@ -185,7 +182,6 @@ export const SERVICE_OPTIONS = [
     label: 'Pflasterstein & Wege',
     page: {
       heading: 'Pflasterstein & Wege',
-      subHeading: 'Gepflegte Wege erhöhen Sicherheit und Werterhalt.',
       image: pflastersteinImageHero,
       section1: {
         image1: pflastersteinImage1,
@@ -233,7 +229,6 @@ export const SERVICE_OPTIONS = [
     label: 'Entrümpelung',
     page: {
       heading: 'Entrümpelung',
-      subHeading: 'Wir schaffen Platz und kümmern uns um den Rest.',
       image: entruempelungImageHero,
       section1: {
         image1: entruempelungImage1,
@@ -281,7 +276,6 @@ export const SERVICE_OPTIONS = [
     label: 'Solar und Dach',
     page: {
       heading: 'Solar und Dachreinigung',
-      subHeading: 'Mehr Leistung durch professionelle Reinigung Ihrer Solaranlagen.',
       image: solarImageHero,
       section1: {
         image1: solarImage1,
@@ -329,7 +323,6 @@ export const SERVICE_OPTIONS = [
     label: 'Industriereinigung',
     page: {
       heading: 'Industriereinigung',
-      subHeading: 'Effizienz beginnt mit professioneller Reinigung.',
       image: industreImageHero,
       section1: {
         image1: industreImage1,

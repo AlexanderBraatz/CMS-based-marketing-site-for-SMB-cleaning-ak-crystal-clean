@@ -38,7 +38,6 @@ export default async function Home() {
               data={res.data}
               query={res.query}
               variables={res.variables}
-              subHeading="Höchste Qualität für Innen und Außen ohne Koordinationsaufwand."
               // image={imageHero}
             />
 

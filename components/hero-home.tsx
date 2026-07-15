@@ -12,7 +12,6 @@ type HeroProps = {
   data: PageQuery;
   query: string;
   variables: PageQueryVariables;
-  subHeading?: string;
   image?: StaticImageData;
   video?: React.ComponentType;
   className?: string;
@@ -24,7 +23,7 @@ export default function Hero(props: HeroProps) {
     query: props.query,
     variables: props.variables,
   });
-  const { subHeading, image, className } = props;
+  const { image, className } = props;
 
   return (
     <div
@@ -37,7 +36,7 @@ export default function Hero(props: HeroProps) {
           </h1>
         </div>
         <p className="font-sabon 2sm:pt-6 xxxs:text-xl max-w-[70vw] pt-2 pr-10 text-base leading-tight tracking-tight lg:text-2xl">
-          {subHeading}
+          {data.page?.subHeading}
         </p>
         <Button size="small" className="2sm:mt-12 mt-8" text="KONTAKT" href="#contact-form" />
       </div>
