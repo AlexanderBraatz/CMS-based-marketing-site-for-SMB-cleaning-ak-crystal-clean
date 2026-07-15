@@ -35,6 +35,19 @@ export default defineConfig({
         label: 'Pages',
         path: 'content/pages',
         format: 'json',
+        ui: {
+          router: ({ document }) => {
+            const path = document._sys.relativePath.replace(/\.json$/, '');
+
+            if (path === 'homePage') {
+              return '/';
+            }
+            if (path === 'uberUns') {
+              return '/uber-uns';
+            }
+            return `/${path}`;
+          },
+        },
         fields: [
           {
             type: 'string',

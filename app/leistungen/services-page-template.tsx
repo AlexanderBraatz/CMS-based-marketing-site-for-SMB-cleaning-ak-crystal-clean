@@ -13,7 +13,7 @@ import LinksToServices from '@/components/links-to-services';
 import client from '@/tina/__generated__/client';
 
 export default async function ServicesPageTemplate({ pageData }: { pageData: TempFullService }) {
-  const res = await client.queries.page({ relativePath: `${pageData.value}.json` });
+  const res = await client.queries.page({ relativePath: `leistungen/${pageData.value}.json` });
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
