@@ -33,11 +33,7 @@ export default function JobsPageContent(props: JobsPageContentProps) {
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero page={data.page} image={heroImage4} />
           <DoubleWidePictureAndText
-            text={{
-              caption: 'Warum AK Crystal Clean',
-              heading: 'Werde Teil Unseres Reinigungsteams',
-              body: 'Bei AK Crystal Clean arbeitest du in einem familiären Team mit starkem Zusammenhalt. Respekt, kurze Kommunikationswege und gegenseitige Unterstützung sorgen für ein Arbeitsumfeld, in dem sich jeder wertgeschätzt fühlt.',
-            }}
+            section={data.page.doubleWidePictureAndText}
             imageLeft={imageLeft}
             imageRight={imageRight}
           />

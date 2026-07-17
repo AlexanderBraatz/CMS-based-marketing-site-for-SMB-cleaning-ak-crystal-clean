@@ -54,13 +54,9 @@ export default function HomePageContent(props: HomePageContentProps) {
             <div className="flex flex-col gap-[180px]">
               <ValuesAndImages page={data.page} />
               <DoubleWidePictureAndText
+                section={data.page.doubleWidePictureAndText}
                 imageLeft={imageLeft}
                 imageRight={imageRight}
-                text={{
-                  caption: 'Unsere Erfahrung',
-                  heading: 'Über 30 Jahre Erfahrung in der Gebäudereinigung',
-                  body: ' Seit über drei Jahrzehnten vertrauen Unternehmen auf unsere Kompetenz. Dieses Know-how ermöglicht es uns, individuelle Reinigungskonzepte zu entwickeln und dauerhaft höchste Qualitätsstandards sicherzustellen, unabhängig von Größe oder Branche.',
-                }}
               />
               <LinksToServices />
               <FormWhitespace />

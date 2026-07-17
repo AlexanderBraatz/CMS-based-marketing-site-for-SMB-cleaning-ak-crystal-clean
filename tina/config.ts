@@ -112,6 +112,34 @@ export default defineConfig({
           },
           {
             type: 'object',
+            name: 'doubleWidePictureAndText',
+            label: 'Double Wide Picture And Text',
+            fields: [
+              {
+                type: 'string',
+                name: 'eyebrow',
+                label: 'Eyebrow / Caption',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'heading',
+                label: 'Heading',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'body',
+                label: 'Body',
+                required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+            ],
+          },
+          {
+            type: 'object',
             name: 'valuesAndImages',
             label: 'Values And Images',
             fields: [
