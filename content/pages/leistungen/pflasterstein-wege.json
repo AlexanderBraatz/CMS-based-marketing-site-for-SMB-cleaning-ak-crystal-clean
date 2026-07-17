@@ -1,4 +1,12 @@
 {
   "title": "Pflasterstein & Wege",
-  "subHeading": "Gepflegte Wege erhöhen Sicherheit und Werterhalt."
+  "subHeading": "Gepflegte Wege erhöhen Sicherheit und Werterhalt.",
+  "widePictureAndTextSections": [
+    {
+      "id": "section-2",
+      "eyebrow": "Unsere Werte",
+      "heading": "Schonende Reinigung für Pflaster und Wege ",
+      "body": "Bei der Reinigung von Pflaster und Wegen achten wir auf eine materialschonende Vorgehensweise. Jede Fläche wird passend zu Zustand, Oberfläche und Verschmutzungsgrad behandelt, damit ein sauberes und gleichmäßiges Ergebnis entsteht.\n\nSo bleiben Wege, Einfahrten und Außenflächen langfristig gepflegt, ohne unnötige Belastung für Stein, Fugen oder Umgebung."
+    }
+  ]
 }

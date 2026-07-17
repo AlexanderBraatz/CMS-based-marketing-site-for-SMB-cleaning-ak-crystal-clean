@@ -1,4 +1,18 @@
 {
   "title": "Ihr Partner in Gründau für Gebeudereinigung!",
-  "subHeading": "Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner"
+  "subHeading": "Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner",
+  "widePictureAndTextSections": [
+    {
+      "id": "future",
+      "eyebrow": "Unsere Zukunft",
+      "heading": "Als Meisterbetrieb,  schulen wir \ndie nächste Generation",
+      "body": "Wer Qualität dauerhaft sichern möchte, muss Wissen weitergeben. Deshalb bilden wir als Meisterbetrieb neue Fachkräfte aus und begleiten sie mit Erfahrung, Praxis und persönlicher Unterstützung. So entsteht ein starkes Team, das unsere hohen Ansprüche an Sauberkeit, Zuverlässigkeit und Service auch in Zukunft erfüllt."
+    },
+    {
+      "id": "experience",
+      "eyebrow": "Unsere Erfahrung",
+      "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
+      "body": "Mit über 30 Jahren Erfahrung wissen wir, dass professionelle Gebäudereinigung mehr ist als einzelne Dienstleistungen. Deshalb verbinden wir Innen- und Außenreinigung zu einem abgestimmten Gesamtkonzept mit festen Ansprechpartnern und klaren Abläufen. So erhalten unsere Kunden höchste Qualität bei deutlich geringerem Organisationsaufwand."
+    }
+  ]
 }

@@ -1,4 +1,12 @@
 {
   "title": "Hausmeisterdienst",
-  "subHeading": "Regelmäßige Reinigung für einen starken ersten Eindruck."
+  "subHeading": "Regelmäßige Reinigung für einen starken ersten Eindruck.",
+  "widePictureAndTextSections": [
+    {
+      "id": "section-2",
+      "eyebrow": "Unsere Werte",
+      "heading": "Professionelle Pflege für Grünflächen, Wege und Treppen",
+      "body": "Ob Grünflächenpflege, Reinigung von Wegen oder die Betreuung von Treppenhäusern – wir übernehmen vielfältige Aufgaben rund um Ihre Immobilie zuverlässig und sorgfältig. Dabei achten wir auf Sauberkeit, Sicherheit und einen ordentlichen Gesamteindruck.\n\nMit regelmäßigen Pflege- und Kontrollmaßnahmen sorgen wir dafür, dass alle Bereiche Ihrer Immobilie funktional, gepflegt und für Bewohner, Mitarbeiter sowie Besucher angenehm nutzbar bleiben."
+    }
+  ]
 }

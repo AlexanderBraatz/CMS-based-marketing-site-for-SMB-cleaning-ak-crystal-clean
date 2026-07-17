@@ -1,4 +1,18 @@
 {
-  "title": "Ein Partner Für Alles\n\nGebäudereinigung!!\n",
-  "subHeading": "Höchste Qualität für Innen und Außen ohne Koordinationsaufwand.\n"
+  "title": "Ein Partner Für Alles\n\nGebäudereinigung\n",
+  "subHeading": "Höchste Qualität für Innen und Außen ohne Koordinationsaufwand.\n",
+  "widePictureAndTextSections": [
+    {
+      "id": "why-ak",
+      "eyebrow": "Warum AK Crystal Clean",
+      "heading": "Ein Ansprechpartner für\neffiziente Betreuung!\n",
+      "body": " Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können."
+    },
+    {
+      "id": "strengths",
+      "eyebrow": "Unsere Stärken",
+      "heading": "Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.!\n",
+      "body": "Wir reinigen nicht nur sichtbar, sondern spürbar. Mit geschultem Personal, klaren Qualitätsstandards und einem hohen Anspruch an Sauberkeit schaffen wir hygienische Arbeitsumgebungen, in denen sich Mitarbeitende und Kunden gleichermaßen wohlfühlen. So bleiben Abläufe störungsfrei und Ihre Arbeitsplätze dauerhaft gepflegt."
+    }
+  ]
 }

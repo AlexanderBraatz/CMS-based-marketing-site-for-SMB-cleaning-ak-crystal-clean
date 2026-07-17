@@ -1,4 +1,12 @@
 {
   "title": "Entrümpelung",
-  "subHeading": "Wir schaffen Platz und kümmern uns um den Rest."
+  "subHeading": "Wir schaffen Platz und kümmern uns um den Rest.",
+  "widePictureAndTextSections": [
+    {
+      "id": "section-2",
+      "eyebrow": "Unsere Werte",
+      "heading": "Nachhaltiges Recycling und fachgerechte Entsorgung",
+      "body": "Bei jeder Entrümpelung achten wir auf eine verantwortungsvolle Trennung der Materialien. Verwertbare Gegenstände, Wertstoffe und Abfälle werden fachgerecht sortiert und entsprechend entsorgt oder dem Recycling zugeführt.\n\nDamit schaffen wir nicht nur Platz, sondern handeln auch nachhaltig und umweltbewusst."
+    }
+  ]
 }

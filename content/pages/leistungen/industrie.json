@@ -1,4 +1,12 @@
 {
   "title": "Industriereinigung",
-  "subHeading": "Effizienz beginnt mit professioneller Reinigung."
+  "subHeading": "Effizienz beginnt mit professioneller Reinigung.",
+  "widePictureAndTextSections": [
+    {
+      "id": "section-2",
+      "eyebrow": "Unsere Werte",
+      "heading": "Flexible Reinigungskonzepte für jeden Betrieb",
+      "body": "Jeder Betrieb hat andere Anforderungen. Deshalb entwickeln wir flexible Reinigungskonzepte, die zu Ihren Arbeitszeiten, Sicherheitsvorgaben und Produktionsabläufen passen.\n\nOb regelmäßige Reinigung, Maschinenpflege oder gezielte Sonderreinigung wir stimmen unsere Leistungen so ab, dass Ihr Betrieb möglichst wenig beeinträchtigt wird."
+    }
+  ]
 }

@@ -61,6 +61,43 @@ export default defineConfig({
             label: 'Hero Subheading',
             required: true,
           },
+          {
+            type: 'object',
+            name: 'widePictureAndTextSections',
+            label: 'Wide Picture And Text Sections',
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item?.id || 'Wide picture and text',
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                name: 'id',
+                label: 'Section ID',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'eyebrow',
+                label: 'Eyebrow / Caption',
+              },
+              {
+                type: 'rich-text',
+                name: 'heading',
+                label: 'Heading',
+              },
+              {
+                type: 'string',
+                name: 'body',
+                label: 'Body',
+                ui: {
+                  component: 'textarea',
+                },
+              },
+            ],
+          },
         ],
       },
       {
