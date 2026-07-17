@@ -39,7 +39,7 @@ export default function ServicesPageContent({ pageData, ...tinaProps }: Services
             imageLeft={pageData.page.section1.image1}
             imageRight={pageData.page.section1.image2}
           />
-          <KeyPoints className="mt-[100px] mb-[54px]" />
+          <KeyPoints section={data.page.keyPoints} className="mt-[100px] mb-[54px]" />
           <WidePictureAndText
             section={data.page.widePictureAndTextSections?.[0]}
             image={pageData.page.section2.image}

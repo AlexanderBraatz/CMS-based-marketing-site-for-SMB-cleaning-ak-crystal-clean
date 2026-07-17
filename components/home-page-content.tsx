@@ -66,7 +66,7 @@ export default function HomePageContent(props: HomePageContentProps) {
         </div>
         <div className="bg-theme-background2">
           <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
-            <KeyPoints />
+            <KeyPoints section={data.page.keyPoints} />
             <GrayGradientBackground />
             <LeftTextAndButton />
             <div className="xs:hidden block h-[356px]"></div>

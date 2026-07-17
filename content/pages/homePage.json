@@ -17,6 +17,11 @@
       "body": "Wir reinigen nicht nur sichtbar, sondern spürbar. Mit geschultem Personal, klaren Qualitätsstandards und einem hohen Anspruch an Sauberkeit schaffen wir hygienische Arbeitsumgebungen, in denen sich Mitarbeitende und Kunden gleichermaßen wohlfühlen. So bleiben Abläufe störungsfrei und Ihre Arbeitsplätze dauerhaft gepflegt."
     }
   ],
+  "doubleWidePictureAndText": {
+    "eyebrow": "Unsere Erfahrung",
+    "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
+    "body": " Seit über drei Jahrzehnten vertrauen Unternehmen auf unsere Kompetenz. Dieses Know-how ermöglicht es uns, individuelle Reinigungskonzepte zu entwickeln und dauerhaft höchste Qualitätsstandards sicherzustellen, unabhängig von Größe oder Branche."
+  },
   "valuesAndImages": {
     "eyebrow": "Unsere Werte",
     "heading": "Die Werte, die uns antreiben",
@@ -29,11 +34,6 @@
     "heading4": "Expertengeführt",
     "paragraph4": "Fokussierte Gebäudereinigung mit maßgeschneiderten Lösungen, die genau Ihren Anforderungen entsprechen."
   },
-  "doubleWidePictureAndText": {
-    "eyebrow": "Unsere Erfahrung",
-    "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
-    "body": " Seit über drei Jahrzehnten vertrauen Unternehmen auf unsere Kompetenz. Dieses Know-how ermöglicht es uns, individuelle Reinigungskonzepte zu entwickeln und dauerhaft höchste Qualitätsstandards sicherzustellen, unabhängig von Größe oder Branche."
-  },
   "linksToServices": {
     "eyebrow": "Ihre Wahl",
     "heading": "Professionelle Gebäudereinigung für ihr Unternehmen"
@@ -44,5 +44,13 @@
   "map": {
     "heading": "Unsere Servicegebiete",
     "address": "Schießbergstraße 9A\n63584\nGründau"
+  },
+  "keyPoints": {
+    "heading1": "30+ Jahre Erfahrung",
+    "subtext1": "Eigentümergeführt",
+    "heading2": "2300 + Objekte",
+    "subtext2": "25% Wachstum in 2025",
+    "heading3": "53 Mitarbeiter",
+    "subtext3": "Experten mit Meisterausbildung"
   }
 }

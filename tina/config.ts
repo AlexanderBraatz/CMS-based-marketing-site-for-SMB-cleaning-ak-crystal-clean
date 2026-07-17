@@ -264,6 +264,43 @@ export default defineConfig({
               },
             ],
           },
+          {
+            type: 'object',
+            name: 'keyPoints',
+            label: 'Key Points',
+            fields: [
+              {
+                type: 'string',
+                name: 'heading1',
+                label: 'Heading 1',
+              },
+              {
+                type: 'string',
+                name: 'subtext1',
+                label: 'Subtext 1',
+              },
+              {
+                type: 'string',
+                name: 'heading2',
+                label: 'Heading 2',
+              },
+              {
+                type: 'string',
+                name: 'subtext2',
+                label: 'Subtext 2',
+              },
+              {
+                type: 'string',
+                name: 'heading3',
+                label: 'Heading 3',
+              },
+              {
+                type: 'string',
+                name: 'subtext3',
+                label: 'Subtext 3',
+              },
+            ],
+          },
         ],
       },
       {
