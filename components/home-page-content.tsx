@@ -58,9 +58,9 @@ export default function HomePageContent(props: HomePageContentProps) {
                 imageLeft={imageLeft}
                 imageRight={imageRight}
               />
-              <LinksToServices />
-              <FormWhitespace />
-              <Map />
+              <LinksToServices section={data.page.linksToServices} />
+              <FormWhitespace section={data.page.formWhitespace} />
+              <Map section={data.page.map} />
             </div>
           </div>
         </div>

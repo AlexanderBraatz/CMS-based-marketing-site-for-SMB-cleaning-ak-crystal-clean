@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { fadeInUp, getFadeInUpAtAmount } from '@/animations/motion';
+import { getFadeInUpAtAmount } from '@/animations/motion';
 import type { StaticImageData } from 'next/image';
 import ServiceLink from './utility-components/service-link';
 import { SERVICE_OPTIONS, type ServiceValue } from '@/lib/data';
@@ -14,6 +14,8 @@ import image5 from '@/public/images/icon-large-entruempelung.svg';
 import image6 from '@/public/images/icon-large-solar-dach.svg';
 import image7 from '@/public/images/icon-large-industrie.svg';
 import image8 from '@/public/images/icon-large-other-servicies.svg';
+import { PageLinksToServices } from '@/tina/__generated__/types';
+import { tinaField } from 'tinacms/dist/react';
 
 // TODO: this is a temp solution , i may later wone to pu this into the main data structure for servecis SERVICE_OPTIONS but i am waiting untill i get to implemnting TINACMS
 const SERVICE_ICONS: Record<ServiceValue, StaticImageData> = {
@@ -26,12 +28,27 @@ const SERVICE_ICONS: Record<ServiceValue, StaticImageData> = {
   industrie: image7,
 };
 
-export default function LinksToServices() {
+type LinksToServicesProps = {
+  section?: PageLinksToServices | null;
+};
+
+export default function LinksToServices({ section }: LinksToServicesProps) {
+  const eyebrow = section?.eyebrow ?? 'Ihre Wahl';
+  const heading = section?.heading ?? 'Professionelle Gebäudereinigung für ihr Unternehmen';
+
   return (
     <motion.div {...getFadeInUpAtAmount(0)} className="px-[5%]">
-      <p className="font-barlow-semi-condensed text-theme-text-highlight pb-5 font-bold">Ihre Wahl</p>
-      <h3 className="font-cooper-hewitt pb-10 text-[32px] leading-tight font-semibold tracking-tighter opacity-80">
-        Professionelle Gebäudereinigung für ihr Unternehmen
+      <p
+        data-tina-field={section ? tinaField(section, 'eyebrow') : undefined}
+        className="font-barlow-semi-condensed text-theme-text-highlight pb-5 font-bold"
+      >
+        {eyebrow}
+      </p>
+      <h3
+        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        className="font-cooper-hewitt pb-10 text-[32px] leading-tight font-semibold tracking-tighter opacity-80"
+      >
+        {heading}
       </h3>
       <div className="flex flex-row flex-wrap justify-center gap-4">
         {SERVICE_OPTIONS.map((option) => (

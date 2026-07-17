@@ -6,12 +6,24 @@ import { fadeInUp } from '@/animations/motion';
 import map from '@/public/images/map-image.jpg';
 import location from '@/public/images/grimmelshausen-twon.jpg';
 import icon from '@/public/images/location-pin.svg';
+import { PageMap } from '@/tina/__generated__/types';
+import { tinaField } from 'tinacms/dist/react';
 
-export default function Map() {
+type MapProps = {
+  section?: PageMap | null;
+};
+
+export default function Map({ section }: MapProps) {
+  const heading = section?.heading ?? 'Unsere Servicegebiete';
+  const address = section?.address ?? 'Schießbergstraße 9A\n63584\nGründau';
+
   return (
     <motion.div {...fadeInUp} className="px-[5%]">
-      <h3 className="font-instrument-sans xxxs:text-center xxxs:pb-10 w-full pb-5 text-[32px] leading-tight font-semibold tracking-tighter">
-        Unsere Servicegebiete
+      <h3
+        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        className="font-instrument-sans xxxs:text-center xxxs:pb-10 w-full pb-5 text-[32px] leading-tight font-semibold tracking-tighter"
+      >
+        {heading}
       </h3>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
         <div className="col-span-2 aspect-[calc(2436/2030)] w-full">
@@ -48,10 +60,11 @@ export default function Map() {
           <div className="flex flex-row items-start gap-2 sm:mt-5">
             <Image src={icon} alt="icon" />
             <div className="font-instrument-sans 2sm:text-xl text-xl leading-tight font-semibold tracking-tighter sm:text-base">
-              <p>
-                Schießbergstraße 9A <br />
-                63584
-                <br /> Gründau
+              <p
+                data-tina-field={section ? tinaField(section, 'address') : undefined}
+                className="whitespace-pre-line"
+              >
+                {address}
               </p>
             </div>
           </div>

@@ -1,4 +1,8 @@
 {
   "title": "Professionelle Gebäudereinigung",
-  "subHeading": "Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand."
+  "subHeading": "Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand.",
+  "linksToServices": {
+    "eyebrow": "Ihre Wahl",
+    "heading": "Professionelle Gebäudereinigung für ihr Unternehmen"
+  }
 }

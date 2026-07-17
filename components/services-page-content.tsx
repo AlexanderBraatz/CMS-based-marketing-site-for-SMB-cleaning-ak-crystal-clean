@@ -70,7 +70,7 @@ export default function ServicesPageContent({ pageData, ...tinaProps }: Services
         </div>
         <div className="relative z-0 mx-auto mt-10 w-full lg:w-[1071px]">
           <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-            <LinksToServices />
+            <LinksToServices section={data.page.linksToServices} />
           </div>
         </div>
       </div>

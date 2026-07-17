@@ -33,5 +33,16 @@
     "eyebrow": "Unsere Erfahrung",
     "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
     "body": " Seit über drei Jahrzehnten vertrauen Unternehmen auf unsere Kompetenz. Dieses Know-how ermöglicht es uns, individuelle Reinigungskonzepte zu entwickeln und dauerhaft höchste Qualitätsstandards sicherzustellen, unabhängig von Größe oder Branche."
+  },
+  "linksToServices": {
+    "eyebrow": "Ihre Wahl",
+    "heading": "Professionelle Gebäudereinigung für ihr Unternehmen"
+  },
+  "formWhitespace": {
+    "heading": "Erhalten Sie ein kostenloses Angebot für Ihren Reinigungsbedarf"
+  },
+  "map": {
+    "heading": "Unsere Servicegebiete",
+    "address": "Schießbergstraße 9A\n63584\nGründau"
   }
 }

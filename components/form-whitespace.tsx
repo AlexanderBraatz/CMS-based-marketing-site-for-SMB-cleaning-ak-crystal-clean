@@ -13,6 +13,8 @@ import { SERVICE_OPTIONS, type ServiceValue } from '@/lib/data';
 import { getCaptchaToken } from '@/utils/captcha-client';
 import MaterialSymbol from './material-symbol';
 import Button from './utility-components/button';
+import { PageFormWhitespace } from '@/tina/__generated__/types';
+import { tinaField } from 'tinacms/dist/react';
 
 const INPUT_BASE =
   'bg-theme-background xs:w-[226px] h-10 w-full border px-3 font-instrument-sans text-sm leading-normal text-black outline-none placeholder:text-black/50';
@@ -71,7 +73,11 @@ function FormSuccessMessage() {
   );
 }
 
-export default function FormWhitespace() {
+type FormWhitespaceProps = {
+  section?: PageFormWhitespace | null;
+};
+
+export default function FormWhitespace({ section }: FormWhitespaceProps) {
   const pathname = usePathname() ?? '';
   const [submissionId] = useState(() => crypto.randomUUID());
   const [state, formAction] = useActionState(submitContact, initialContactActionState);
@@ -79,6 +85,7 @@ export default function FormWhitespace() {
   const [dismissedFieldErrors, setDismissedFieldErrors] = useState<Set<string>>(new Set());
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
   const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(new Set());
+  const heading = section?.heading ?? 'Erhalten Sie ein kostenloses Angebot für Ihren Reinigungsbedarf';
 
   const serverFieldErrors = state.status === 'validation_error' ? state.fieldErrors : {};
   const rawFieldErrors = { ...clientFieldErrors, ...serverFieldErrors };
@@ -148,8 +155,11 @@ export default function FormWhitespace() {
       {...fadeInUp}
       className="2sm:w-[472px] xs:w-[428px] xs:p-0 mx-auto flex w-full flex-col items-center p-[5%]"
     >
-      <h3 className="font-instrument-sans 2xs:w-[520px] xs:text-center w-full pb-10 text-[32px] leading-tight font-semibold tracking-tighter">
-        Erhalten Sie ein kostenloses Angebot für Ihren Reinigungsbedarf
+      <h3
+        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        className="font-instrument-sans 2xs:w-[520px] xs:text-center w-full pb-10 text-[32px] leading-tight font-semibold tracking-tighter"
+      >
+        {heading}
       </h3>
       {isSuccess ? (
         <FormSuccessMessage />

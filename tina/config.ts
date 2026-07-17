@@ -65,13 +65,11 @@ export default defineConfig({
             type: 'string',
             name: 'logoBannerEyebrow',
             label: 'Logo Banner Eyebrow',
-            required: true,
           },
           {
             type: 'rich-text',
             name: 'logoBannerHeading',
             label: 'Logo Banner Heading',
-            required: true,
           },
           {
             type: 'object',
@@ -211,6 +209,55 @@ export default defineConfig({
                 name: 'paragraph4',
                 label: 'Paragraph 4',
                 required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'linksToServices',
+            label: 'Links To Services',
+            fields: [
+              {
+                type: 'string',
+                name: 'eyebrow',
+                label: 'Eyebrow',
+              },
+              {
+                type: 'string',
+                name: 'heading',
+                label: 'Heading',
+              },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'formWhitespace',
+            label: 'Form Whitespace',
+            fields: [
+              {
+                type: 'string',
+                name: 'heading',
+                label: 'Heading',
+              },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'map',
+            label: 'Map',
+            fields: [
+              {
+                type: 'string',
+                name: 'heading',
+                label: 'Heading',
+              },
+              {
+                type: 'string',
+                name: 'address',
+                label: 'Address',
                 ui: {
                   component: 'textarea',
                 },
