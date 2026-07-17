@@ -62,7 +62,7 @@ export default function UberUnsPageContent(props: UberUnsPageContentProps) {
         <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
           <KeyPoints section={data.page.keyPoints} />
           <GrayGradientBackground />
-          <LeftTextAndButton />
+          <LeftTextAndButton section={data.page.leftTextAndButton} />
           <div className="xs:hidden block h-[356px]"></div>
           <GloveWipe />
         </div>

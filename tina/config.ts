@@ -301,6 +301,34 @@ export default defineConfig({
               },
             ],
           },
+          {
+            type: 'object',
+            name: 'leftTextAndButton',
+            label: 'Left Text And Button',
+            fields: [
+              {
+                type: 'string',
+                name: 'eyebrow',
+                label: 'Eyebrow',
+              },
+              {
+                type: 'string',
+                name: 'heading',
+                label: 'Heading',
+                ui: {
+                  component: 'textarea',
+                },
+              },
+              {
+                type: 'string',
+                name: 'body',
+                label: 'Body',
+                ui: {
+                  component: 'textarea',
+                },
+              },
+            ],
+          },
         ],
       },
       {
