@@ -110,6 +110,85 @@ export default defineConfig({
               },
             ],
           },
+          {
+            type: 'object',
+            name: 'valuesAndImages',
+            label: 'Values And Images',
+            fields: [
+              {
+                type: 'string',
+                name: 'eyebrow',
+                label: 'Eyebrow',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'heading',
+                label: 'Heading',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'heading1',
+                label: 'Heading 1',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'paragraph1',
+                label: 'Paragraph 1',
+                required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+              {
+                type: 'string',
+                name: 'heading2',
+                label: 'Heading 2',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'paragraph2',
+                label: 'Paragraph 2',
+                required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+              {
+                type: 'string',
+                name: 'heading3',
+                label: 'Heading 3',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'paragraph3',
+                label: 'Paragraph 3',
+                required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+              {
+                type: 'string',
+                name: 'heading4',
+                label: 'Heading 4',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'paragraph4',
+                label: 'Paragraph 4',
+                required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+            ],
+          },
         ],
       },
       {

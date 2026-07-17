@@ -52,7 +52,7 @@ export default function HomePageContent(props: HomePageContentProps) {
               imageOnLeft={false}
             />
             <div className="flex flex-col gap-[180px]">
-              <ValuesAndImages />
+              <ValuesAndImages page={data.page} />
               <DoubleWidePictureAndText
                 imageLeft={imageLeft}
                 imageRight={imageRight}
