@@ -2,51 +2,87 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { fadeInUp, getFadeInUpAtAmount } from '@/animations/motion';
+import { getFadeInUpAtAmount } from '@/animations/motion';
 import TallImageDrop from './utility-components/image-tall-drop-left';
 import imagge1 from '@/public/images/team-tall-mehmet.jpg';
 import imagge2 from '@/public/images/team-solo-olga-tall-new.jpg';
 import imagge3 from '@/public/images/team-tall-leo-more-recent.jpg';
 import imagge4 from '@/public/images/team-tall-reiner.jpg';
+import { PageAboutManagementGallery } from '@/tina/__generated__/types';
+import { tinaField } from 'tinacms/dist/react';
 
 const MANAGEMENT_GALLERY_IMAGE_SIZES = '225px';
 
-export default function ManagementGallery() {
+type ManagementGalleryProps = {
+  section?: PageAboutManagementGallery | null;
+};
+
+export default function ManagementGallery({ section }: ManagementGalleryProps) {
+  const heading = section?.heading ?? 'Management';
+  const members = [
+    {
+      image: imagge1,
+      name: section?.name1 ?? 'Mehmet Akca',
+      role: section?.role1 ?? 'Geschäftsführer',
+      nameField: 'name1' as const,
+      roleField: 'role1' as const,
+    },
+    {
+      image: imagge2,
+      name: section?.name2 ?? 'Olga Akca-Klug',
+      role: section?.role2 ?? 'Personalmanagement',
+      nameField: 'name2' as const,
+      roleField: 'role2' as const,
+    },
+    {
+      image: imagge3,
+      name: section?.name3 ?? 'Leo Klug',
+      role: section?.role3 ?? 'Bereichsleitung Glasreinigung',
+      nameField: 'name3' as const,
+      roleField: 'role3' as const,
+    },
+    {
+      image: imagge4,
+      name: section?.name4 ?? 'Reiner Klix',
+      role: section?.role4 ?? 'Gebäudereinigungsmeister',
+      nameField: 'name4' as const,
+      roleField: 'role4' as const,
+    },
+  ];
+
   return (
     <motion.div {...getFadeInUpAtAmount(0)} className="px-[5%]">
-      <h3 className="font-cooper-hewitt mb-5 text-[32px] leading-tight font-semibold tracking-tight opacity-80">
-        Management
+      <h3
+        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        className="font-cooper-hewitt mb-5 text-[32px] leading-tight font-semibold tracking-tight opacity-80"
+      >
+        {heading}
       </h3>
 
       <div className="1xs:grid-cols-[repeat(auto-fit,minmax(225px,1fr))] 1xs:gap-5 grid w-full grid-cols-[225px] gap-15">
-        <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge1} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
-          <div className="flex flex-col gap-1">
-            <p className="font-instrument-sans text-xl font-semibold">Mehmet Akca</p>
-            <p className="font-instrument-sans tracking-tight">Geschäftsführer</p>
+        {members.map((member) => (
+          <div key={member.nameField} className="flex flex-col gap-5">
+            <TallImageDrop
+              src={member.image}
+              dropIsOnLeft={true}
+              sizes={MANAGEMENT_GALLERY_IMAGE_SIZES}
+            />
+            <div className="flex flex-col gap-1">
+              <p
+                data-tina-field={section ? tinaField(section, member.nameField) : undefined}
+                className="font-instrument-sans text-xl font-semibold"
+              >
+                {member.name}
+              </p>
+              <p
+                data-tina-field={section ? tinaField(section, member.roleField) : undefined}
+                className="font-instrument-sans tracking-tight"
+              >
+                {member.role}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge2} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
-          <div className="flex flex-col gap-1">
-            <p className="font-instrument-sans text-xl font-semibold">Olga Akca-Klug</p>
-            <p className="font-instrument-sans tracking-tight">Personalmanagement</p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge3} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
-          <div className="flex flex-col gap-1">
-            <p className="font-instrument-sans text-xl font-semibold">Leo Klug</p>
-            <p className="font-instrument-sans tracking-tight">Bereichsleitung Glasreinigung</p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-5">
-          <TallImageDrop src={imagge4} dropIsOnLeft={true} sizes={MANAGEMENT_GALLERY_IMAGE_SIZES} />
-          <div className="flex flex-col gap-1">
-            <p className="font-instrument-sans text-xl font-semibold">Reiner Klix</p>
-            <p className="font-instrument-sans tracking-tight">Gebäudereinigungsmeister</p>
-          </div>
-        </div>
+        ))}
       </div>
     </motion.div>
   );

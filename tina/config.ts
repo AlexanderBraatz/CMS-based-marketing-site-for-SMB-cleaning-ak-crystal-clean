@@ -123,6 +123,101 @@ const leftTextAndButtonField: TinaField = {
   ],
 };
 
+const someTextField: TinaField = {
+  type: 'object',
+  name: 'someText',
+  label: 'Some Text',
+  fields: [
+    {
+      type: 'string',
+      name: 'eyebrow',
+      label: 'Eyebrow',
+    },
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+      ui: {
+        component: 'textarea',
+      },
+    },
+    {
+      type: 'string',
+      name: 'body',
+      label: 'Body',
+      ui: {
+        component: 'textarea',
+      },
+    },
+  ],
+};
+
+const managementGalleryField: TinaField = {
+  type: 'object',
+  name: 'managementGallery',
+  label: 'Management Gallery',
+  fields: [
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+    },
+    {
+      type: 'string',
+      name: 'name1',
+      label: 'Member 1 Name',
+    },
+    {
+      type: 'string',
+      name: 'role1',
+      label: 'Member 1 Role',
+    },
+    {
+      type: 'string',
+      name: 'name2',
+      label: 'Member 2 Name',
+    },
+    {
+      type: 'string',
+      name: 'role2',
+      label: 'Member 2 Role',
+    },
+    {
+      type: 'string',
+      name: 'name3',
+      label: 'Member 3 Name',
+    },
+    {
+      type: 'string',
+      name: 'role3',
+      label: 'Member 3 Role',
+    },
+    {
+      type: 'string',
+      name: 'name4',
+      label: 'Member 4 Name',
+    },
+    {
+      type: 'string',
+      name: 'role4',
+      label: 'Member 4 Role',
+    },
+  ],
+};
+
+const teamGalleryField: TinaField = {
+  type: 'object',
+  name: 'teamGallery',
+  label: 'Team Gallery',
+  fields: [
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+    },
+  ],
+};
+
 const linksToServicesField: TinaField = {
   type: 'object',
   name: 'linksToServices',
@@ -354,6 +449,9 @@ export default defineConfig({
             label: 'Über uns',
             fields: [
               ...heroFields,
+              someTextField,
+              managementGalleryField,
+              teamGalleryField,
               widePictureAndTextSectionsField,
               keyPointsField,
               leftTextAndButtonField,
@@ -365,6 +463,7 @@ export default defineConfig({
             label: 'Default Page',
             fields: [
               ...heroFields,
+              someTextField,
               widePictureAndTextSectionsField,
               doubleWidePictureAndTextField,
               linksToServicesField,

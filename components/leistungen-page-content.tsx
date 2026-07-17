@@ -27,13 +27,7 @@ export default function LeistungenPageContent(props: LeistungenPageContentProps)
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero page={page} image={heroImage5} className={'2sm:mb-0 mb-0 sm:mb-20'} />
           <LinksToServices section={page.linksToServices} />
-          <SomeText
-            text={{
-              body: 'Mit AK Crystal Clean erhalten Sie alle Reinigungsleistungen aus einer Hand. Statt mehrere Dienstleister zu koordinieren, profitieren Sie von festen Ansprechpartnern, klaren Abläufen und einem zuverlässigen Service. So reduzieren Sie Ihren Aufwand und gewinnen Zeit für die wirklich wichtigen Aufgaben in Ihrem Unternehmen.',
-              heading: 'Mehr Leistungen \nohne Aufwand',
-              caption: 'Ihre Vorteile',
-            }}
-          />
+          <SomeText section={page.someText} />
         </div>
       </div>
       <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">

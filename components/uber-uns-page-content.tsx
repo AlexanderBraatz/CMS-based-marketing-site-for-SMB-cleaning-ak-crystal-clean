@@ -34,15 +34,9 @@ export default function UberUnsPageContent(props: UberUnsPageContentProps) {
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero page={page} image={heroImage3} />
-          <SomeText
-            text={{
-              body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes Team, das Ihre Räume und Fassaden so behandelt, als wären es die eigenen.',
-              heading: ' Erstklassige Arbeit Starkes Team',
-              caption: 'Unsere Werte',
-            }}
-          />
-          <ManagementGallery />
-          <TeamGallery />
+          <SomeText section={page.someText} />
+          <ManagementGallery section={page.managementGallery} />
+          <TeamGallery section={page.teamGallery} />
           <div className="flex flex-col gap-40">
             <WidePictureAndText
               section={page.widePictureAndTextSections?.[0]}

@@ -15,12 +15,19 @@ import image10 from '@/public/images/team-headshots/team-solo-headshot-man-3.jpg
 import image11 from '@/public/images/team-headshots/team-solo-headshot-woman-8.jpg';
 import Button from './utility-components/button';
 import { useRef, useEffect, MouseEvent } from 'react';
+import { PageAboutTeamGallery } from '@/tina/__generated__/types';
+import { tinaField } from 'tinacms/dist/react';
 
 const FRICTION = 0.94;
 const MIN_VELOCITY = 0.015;
 const TEAM_GALLERY_IMAGE_SIZES = '226px';
 
-export default function TeamGallery() {
+type TeamGalleryProps = {
+  section?: PageAboutTeamGallery | null;
+};
+
+export default function TeamGallery({ section }: TeamGalleryProps) {
+  const heading = section?.heading ?? 'Unser Team';
   const teamMembers = [
     { src: image11, alt: 'picture of team member' },
     { src: image2, alt: 'picture of team member' },
@@ -141,8 +148,11 @@ export default function TeamGallery() {
 
   return (
     <motion.div {...fadeInUp} className="">
-      <h3 className="font-cooper-hewitt mb-5 px-[5%] text-[32px] leading-tight font-semibold tracking-tight opacity-80">
-        Unser Team
+      <h3
+        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        className="font-cooper-hewitt mb-5 px-[5%] text-[32px] leading-tight font-semibold tracking-tight opacity-80"
+      >
+        {heading}
       </h3>
       <div className="relative z-0 mb-2">
         <div className="image-gallery-gradient-left absolute z-20 h-full w-[5%]"></div>

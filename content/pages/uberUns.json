@@ -2,6 +2,25 @@
   "_template": "about",
   "title": "Ihr Partner in Gründau für Gebeudereinigung!",
   "subHeading": "Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner",
+  "someText": {
+    "eyebrow": "Unsere Werte",
+    "heading": " Erstklassige Arbeit Starkes Team",
+    "body": "Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes Team, das Ihre Räume und Fassaden so behandelt, als wären es die eigenen."
+  },
+  "managementGallery": {
+    "heading": "Management",
+    "name1": "Mehmet Akca",
+    "role1": "Geschäftsführer",
+    "name2": "Olga Akca-Klug",
+    "role2": "Personalmanagement",
+    "name3": "Leo Klug",
+    "role3": "Bereichsleitung Glasreinigung",
+    "name4": "Reiner Klix",
+    "role4": "Gebäudereinigungsmeister"
+  },
+  "teamGallery": {
+    "heading": "Unser Team"
+  },
   "widePictureAndTextSections": [
     {
       "id": "future",
