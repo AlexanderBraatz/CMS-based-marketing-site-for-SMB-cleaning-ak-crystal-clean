@@ -39,7 +39,7 @@ export default function HomePageContent(props: HomePageContentProps) {
           <div className="flex flex-col gap-[96px] pb-[96px]">
             <Hero page={data.page} />
 
-            <LogoBanner />
+            <LogoBanner page={data.page} />
 
             <WidePictureAndText
               section={data.page.widePictureAndTextSections?.[0]}

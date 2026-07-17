@@ -62,6 +62,18 @@ export default defineConfig({
             required: true,
           },
           {
+            type: 'string',
+            name: 'logoBannerEyebrow',
+            label: 'Logo Banner Eyebrow',
+            required: true,
+          },
+          {
+            type: 'rich-text',
+            name: 'logoBannerHeading',
+            label: 'Logo Banner Heading',
+            required: true,
+          },
+          {
             type: 'object',
             name: 'widePictureAndTextSections',
             label: 'Wide Picture And Text Sections',
