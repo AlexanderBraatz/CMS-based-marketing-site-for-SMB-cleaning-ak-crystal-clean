@@ -94,6 +94,79 @@ const keyPointsField: TinaField = {
   ],
 };
 
+const bulletPointsField: TinaField = {
+  type: 'object',
+  name: 'bulletPoints',
+  label: 'Bullet Points',
+  fields: [
+    {
+      type: 'string',
+      name: 'caption',
+      label: 'Caption',
+    },
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+      ui: {
+        component: 'textarea',
+      },
+    },
+    {
+      type: 'string',
+      name: 'point1',
+      label: 'Point 1',
+    },
+    {
+      type: 'string',
+      name: 'body1',
+      label: 'Body 1',
+      ui: {
+        component: 'textarea',
+      },
+    },
+    {
+      type: 'string',
+      name: 'point2',
+      label: 'Point 2',
+    },
+    {
+      type: 'string',
+      name: 'body2',
+      label: 'Body 2',
+      ui: {
+        component: 'textarea',
+      },
+    },
+    {
+      type: 'string',
+      name: 'point3',
+      label: 'Point 3',
+    },
+    {
+      type: 'string',
+      name: 'body3',
+      label: 'Body 3',
+      ui: {
+        component: 'textarea',
+      },
+    },
+    {
+      type: 'string',
+      name: 'point4',
+      label: 'Point 4',
+    },
+    {
+      type: 'string',
+      name: 'body4',
+      label: 'Body 4',
+      ui: {
+        component: 'textarea',
+      },
+    },
+  ],
+};
+
 const leftTextAndButtonField: TinaField = {
   type: 'object',
   name: 'leftTextAndButton',
@@ -466,6 +539,7 @@ export default defineConfig({
               someTextField,
               widePictureAndTextSectionsField,
               doubleWidePictureAndTextField,
+              bulletPointsField,
               linksToServicesField,
               keyPointsField,
               leftTextAndButtonField,
