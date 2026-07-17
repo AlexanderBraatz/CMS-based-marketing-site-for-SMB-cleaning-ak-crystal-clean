@@ -15,7 +15,7 @@ import FormMessageOnlyOrMultiChoice from '@/components/form-message-only';
 import LeftTextAndButton from '@/components/left-text-and-button';
 import Hero from '@/components/hero-home';
 import formImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
-import { PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import { PageAbout, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type UberUnsPageContentProps = {
@@ -26,13 +26,14 @@ type UberUnsPageContentProps = {
 
 export default function UberUnsPageContent(props: UberUnsPageContentProps) {
   const { data } = useTina(props);
+  const page = data.page as PageAbout;
 
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto mb-20 w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-          <Hero page={data.page} image={heroImage3} />
+          <Hero page={page} image={heroImage3} />
           <SomeText
             text={{
               body: 'Wer Freude an der Arbeit hat, macht sie besser. Deshalb investieren wir bei AK Crystal Clean in unser Team: regelmäßige Weiterbildungen, ein wertschätzendes Miteinander und eine Unternehmenskultur, die Menschen langfristig bindet. \n Das Ergebnis ist ein engagiertes Team, das Ihre Räume und Fassaden so behandelt, als wären es die eigenen.',
@@ -44,14 +45,14 @@ export default function UberUnsPageContent(props: UberUnsPageContentProps) {
           <TeamGallery />
           <div className="flex flex-col gap-40">
             <WidePictureAndText
-              section={data.page.widePictureAndTextSections?.[0]}
+              section={page.widePictureAndTextSections?.[0]}
               hasButton={true}
               buttonProps={{ size: 'medium', text: 'JETZT BEWERBEN', href: '/jobs' }}
               image={image1}
               imageOnLeft={false}
             />
             <WidePictureAndText
-              section={data.page.widePictureAndTextSections?.[1]}
+              section={page.widePictureAndTextSections?.[1]}
               image={image2}
               imageOnLeft={true}
             />
@@ -60,9 +61,9 @@ export default function UberUnsPageContent(props: UberUnsPageContentProps) {
       </div>
       <div className="bg-theme-background2">
         <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
-          <KeyPoints section={data.page.keyPoints} />
+          <KeyPoints section={page.keyPoints} />
           <GrayGradientBackground />
-          <LeftTextAndButton section={data.page.leftTextAndButton} />
+          <LeftTextAndButton section={page.leftTextAndButton} />
           <div className="xs:hidden block h-[356px]"></div>
           <GloveWipe />
         </div>

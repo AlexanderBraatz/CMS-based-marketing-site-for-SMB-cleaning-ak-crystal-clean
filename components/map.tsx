@@ -6,11 +6,11 @@ import { fadeInUp } from '@/animations/motion';
 import map from '@/public/images/map-image.jpg';
 import location from '@/public/images/grimmelshausen-twon.jpg';
 import icon from '@/public/images/location-pin.svg';
-import { PageMap } from '@/tina/__generated__/types';
+import { PageHomeMap } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 type MapProps = {
-  section?: PageMap | null;
+  section?: PageHomeMap | null;
 };
 
 export default function Map({ section }: MapProps) {

@@ -11,7 +11,7 @@ import logo6 from '@/public/images/logos/logo-weber.png';
 import logo7 from '@/public/images/logos/logo-senckenberg.png';
 import logo8 from '@/public/images/logos/logo-auto-nix.png';
 import Image from 'next/image';
-import { PageQuery } from '@/tina/__generated__/types';
+import { PageHome } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
@@ -20,7 +20,7 @@ const LOGO_SIZES_NARROW = '(min-width: 760px) 93px, (min-width: 480px) calc(13.8
 const LOGO_SIZES_MEDIUM = '(min-width: 880px) 108px, (min-width: 480px) calc(13.42vw - 7px), 108px';
 
 type LogoBannerProps = {
-  page: PageQuery['page'];
+  page: PageHome;
 };
 
 export default function LogoBanner({ page }: LogoBannerProps) {

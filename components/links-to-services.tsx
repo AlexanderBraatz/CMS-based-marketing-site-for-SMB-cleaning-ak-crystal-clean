@@ -14,7 +14,7 @@ import image5 from '@/public/images/icon-large-entruempelung.svg';
 import image6 from '@/public/images/icon-large-solar-dach.svg';
 import image7 from '@/public/images/icon-large-industrie.svg';
 import image8 from '@/public/images/icon-large-other-servicies.svg';
-import { PageLinksToServices } from '@/tina/__generated__/types';
+import { PageDefaultLinksToServices, PageHomeLinksToServices } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 // TODO: this is a temp solution , i may later wone to pu this into the main data structure for servecis SERVICE_OPTIONS but i am waiting untill i get to implemnting TINACMS
@@ -29,7 +29,7 @@ const SERVICE_ICONS: Record<ServiceValue, StaticImageData> = {
 };
 
 type LinksToServicesProps = {
-  section?: PageLinksToServices | null;
+  section?: PageHomeLinksToServices | PageDefaultLinksToServices | null;
 };
 
 export default function LinksToServices({ section }: LinksToServicesProps) {

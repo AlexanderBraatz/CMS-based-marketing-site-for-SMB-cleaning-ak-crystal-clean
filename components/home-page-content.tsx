@@ -19,7 +19,7 @@ import WaveBackground from './wave-background';
 import WidePictureAndText from './wide-picture-and-text';
 import formImage from '@/public/images/form-right-side/team-two-bosses.jpg';
 import FormMessageOnlyOrMultiChoice from './form-message-only';
-import { PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import { PageHome, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type HomePageContentProps = {
@@ -30,6 +30,7 @@ type HomePageContentProps = {
 
 export default function HomePageContent(props: HomePageContentProps) {
   const { data } = useTina(props);
+  const page = data.page as PageHome;
 
   return (
     <div className="theme-light-background bg-theme-background w-full">
@@ -37,38 +38,38 @@ export default function HomePageContent(props: HomePageContentProps) {
         <WaveBackground />
         <div className="relative z-10 mx-auto mb-50 md:w-full lg:w-[1071px]">
           <div className="flex flex-col gap-[96px] pb-[96px]">
-            <Hero page={data.page} />
+            <Hero page={page} />
 
-            <LogoBanner page={data.page} />
+            <LogoBanner page={page} />
 
             <WidePictureAndText
-              section={data.page.widePictureAndTextSections?.[0]}
+              section={page.widePictureAndTextSections?.[0]}
               image={image3}
               imageOnLeft={true}
             />
             <WidePictureAndText
-              section={data.page.widePictureAndTextSections?.[1]}
+              section={page.widePictureAndTextSections?.[1]}
               image={image4}
               imageOnLeft={false}
             />
             <div className="flex flex-col gap-[180px]">
-              <ValuesAndImages page={data.page} />
+              <ValuesAndImages page={page} />
               <DoubleWidePictureAndText
-                section={data.page.doubleWidePictureAndText}
+                section={page.doubleWidePictureAndText}
                 imageLeft={imageLeft}
                 imageRight={imageRight}
               />
-              <LinksToServices section={data.page.linksToServices} />
-              <FormWhitespace section={data.page.formWhitespace} />
-              <Map section={data.page.map} />
+              <LinksToServices section={page.linksToServices} />
+              <FormWhitespace section={page.formWhitespace} />
+              <Map section={page.map} />
             </div>
           </div>
         </div>
         <div className="bg-theme-background2">
           <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
-            <KeyPoints section={data.page.keyPoints} />
+            <KeyPoints section={page.keyPoints} />
             <GrayGradientBackground />
-            <LeftTextAndButton section={data.page.leftTextAndButton} />
+            <LeftTextAndButton section={page.leftTextAndButton} />
             <div className="xs:hidden block h-[356px]"></div>
             <GloveWipe />
           </div>

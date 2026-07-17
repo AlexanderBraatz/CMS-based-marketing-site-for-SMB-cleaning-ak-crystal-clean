@@ -1,7 +1,174 @@
-import { defineConfig } from 'tinacms';
+import { defineConfig, type TinaField } from 'tinacms';
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || 'main';
+
+const heroFields: TinaField[] = [
+  {
+    type: 'rich-text',
+    name: 'title',
+    label: 'Hero Heading',
+    required: true,
+  },
+  {
+    type: 'rich-text',
+    name: 'subHeading',
+    label: 'Hero Subheading',
+    required: true,
+  },
+];
+
+const widePictureAndTextSectionsField: TinaField = {
+  type: 'object',
+  name: 'widePictureAndTextSections',
+  label: 'Wide Picture And Text Sections',
+  list: true,
+  ui: {
+    itemProps: (item) => ({
+      label: item?.id || 'Wide picture and text',
+    }),
+  },
+  fields: [
+    {
+      type: 'string',
+      name: 'id',
+      label: 'Section ID',
+      required: true,
+    },
+    {
+      type: 'string',
+      name: 'eyebrow',
+      label: 'Eyebrow / Caption',
+    },
+    {
+      type: 'rich-text',
+      name: 'heading',
+      label: 'Heading',
+    },
+    {
+      type: 'string',
+      name: 'body',
+      label: 'Body',
+      ui: {
+        component: 'textarea',
+      },
+    },
+  ],
+};
+
+const keyPointsField: TinaField = {
+  type: 'object',
+  name: 'keyPoints',
+  label: 'Key Points',
+  fields: [
+    {
+      type: 'string',
+      name: 'heading1',
+      label: 'Heading 1',
+    },
+    {
+      type: 'string',
+      name: 'subtext1',
+      label: 'Subtext 1',
+    },
+    {
+      type: 'string',
+      name: 'heading2',
+      label: 'Heading 2',
+    },
+    {
+      type: 'string',
+      name: 'subtext2',
+      label: 'Subtext 2',
+    },
+    {
+      type: 'string',
+      name: 'heading3',
+      label: 'Heading 3',
+    },
+    {
+      type: 'string',
+      name: 'subtext3',
+      label: 'Subtext 3',
+    },
+  ],
+};
+
+const leftTextAndButtonField: TinaField = {
+  type: 'object',
+  name: 'leftTextAndButton',
+  label: 'Left Text And Button',
+  fields: [
+    {
+      type: 'string',
+      name: 'eyebrow',
+      label: 'Eyebrow',
+    },
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+      ui: {
+        component: 'textarea',
+      },
+    },
+    {
+      type: 'string',
+      name: 'body',
+      label: 'Body',
+      ui: {
+        component: 'textarea',
+      },
+    },
+  ],
+};
+
+const linksToServicesField: TinaField = {
+  type: 'object',
+  name: 'linksToServices',
+  label: 'Links To Services',
+  fields: [
+    {
+      type: 'string',
+      name: 'eyebrow',
+      label: 'Eyebrow',
+    },
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+    },
+  ],
+};
+
+const doubleWidePictureAndTextField: TinaField = {
+  type: 'object',
+  name: 'doubleWidePictureAndText',
+  label: 'Double Wide Picture And Text',
+  fields: [
+    {
+      type: 'string',
+      name: 'eyebrow',
+      label: 'Eyebrow / Caption',
+      required: true,
+    },
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+      required: true,
+    },
+    {
+      type: 'string',
+      name: 'body',
+      label: 'Body',
+      required: true,
+      ui: {
+        component: 'textarea',
+      },
+    },
+  ],
+};
 
 export default defineConfig({
   branch,
@@ -48,285 +215,161 @@ export default defineConfig({
             return `/${path}`;
           },
         },
-        fields: [
+        templates: [
           {
-            type: 'rich-text',
-            name: 'title',
-            label: 'Hero Heading',
-            required: true,
-          },
-          {
-            type: 'rich-text',
-            name: 'subHeading',
-            label: 'Hero Subheading',
-            required: true,
-          },
-          {
-            type: 'string',
-            name: 'logoBannerEyebrow',
-            label: 'Logo Banner Eyebrow',
-          },
-          {
-            type: 'rich-text',
-            name: 'logoBannerHeading',
-            label: 'Logo Banner Heading',
-          },
-          {
-            type: 'object',
-            name: 'widePictureAndTextSections',
-            label: 'Wide Picture And Text Sections',
-            list: true,
-            ui: {
-              itemProps: (item) => ({
-                label: item?.id || 'Wide picture and text',
-              }),
-            },
+            name: 'home',
+            label: 'Homepage',
             fields: [
+              ...heroFields,
               {
                 type: 'string',
-                name: 'id',
-                label: 'Section ID',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'eyebrow',
-                label: 'Eyebrow / Caption',
+                name: 'logoBannerEyebrow',
+                label: 'Logo Banner Eyebrow',
               },
               {
                 type: 'rich-text',
-                name: 'heading',
-                label: 'Heading',
+                name: 'logoBannerHeading',
+                label: 'Logo Banner Heading',
+              },
+              widePictureAndTextSectionsField,
+              doubleWidePictureAndTextField,
+              {
+                type: 'object',
+                name: 'valuesAndImages',
+                label: 'Values And Images',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'eyebrow',
+                    label: 'Eyebrow',
+                    required: true,
+                  },
+                  {
+                    type: 'string',
+                    name: 'heading',
+                    label: 'Heading',
+                    required: true,
+                  },
+                  {
+                    type: 'string',
+                    name: 'heading1',
+                    label: 'Heading 1',
+                    required: true,
+                  },
+                  {
+                    type: 'string',
+                    name: 'paragraph1',
+                    label: 'Paragraph 1',
+                    required: true,
+                    ui: {
+                      component: 'textarea',
+                    },
+                  },
+                  {
+                    type: 'string',
+                    name: 'heading2',
+                    label: 'Heading 2',
+                    required: true,
+                  },
+                  {
+                    type: 'string',
+                    name: 'paragraph2',
+                    label: 'Paragraph 2',
+                    required: true,
+                    ui: {
+                      component: 'textarea',
+                    },
+                  },
+                  {
+                    type: 'string',
+                    name: 'heading3',
+                    label: 'Heading 3',
+                    required: true,
+                  },
+                  {
+                    type: 'string',
+                    name: 'paragraph3',
+                    label: 'Paragraph 3',
+                    required: true,
+                    ui: {
+                      component: 'textarea',
+                    },
+                  },
+                  {
+                    type: 'string',
+                    name: 'heading4',
+                    label: 'Heading 4',
+                    required: true,
+                  },
+                  {
+                    type: 'string',
+                    name: 'paragraph4',
+                    label: 'Paragraph 4',
+                    required: true,
+                    ui: {
+                      component: 'textarea',
+                    },
+                  },
+                ],
+              },
+              linksToServicesField,
+              {
+                type: 'object',
+                name: 'formWhitespace',
+                label: 'Form Whitespace',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'heading',
+                    label: 'Heading',
+                  },
+                ],
               },
               {
-                type: 'string',
-                name: 'body',
-                label: 'Body',
-                ui: {
-                  component: 'textarea',
-                },
+                type: 'object',
+                name: 'map',
+                label: 'Map',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'heading',
+                    label: 'Heading',
+                  },
+                  {
+                    type: 'string',
+                    name: 'address',
+                    label: 'Address',
+                    ui: {
+                      component: 'textarea',
+                    },
+                  },
+                ],
               },
+              keyPointsField,
+              leftTextAndButtonField,
             ],
           },
           {
-            type: 'object',
-            name: 'doubleWidePictureAndText',
-            label: 'Double Wide Picture And Text',
+            name: 'about',
+            label: 'Über uns',
             fields: [
-              {
-                type: 'string',
-                name: 'eyebrow',
-                label: 'Eyebrow / Caption',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'heading',
-                label: 'Heading',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'body',
-                label: 'Body',
-                required: true,
-                ui: {
-                  component: 'textarea',
-                },
-              },
+              ...heroFields,
+              widePictureAndTextSectionsField,
+              keyPointsField,
+              leftTextAndButtonField,
             ],
           },
+          // Temporary catch-all for pages not yet given a dedicated template
           {
-            type: 'object',
-            name: 'valuesAndImages',
-            label: 'Values And Images',
+            name: 'default',
+            label: 'Default Page',
             fields: [
-              {
-                type: 'string',
-                name: 'eyebrow',
-                label: 'Eyebrow',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'heading',
-                label: 'Heading',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'heading1',
-                label: 'Heading 1',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'paragraph1',
-                label: 'Paragraph 1',
-                required: true,
-                ui: {
-                  component: 'textarea',
-                },
-              },
-              {
-                type: 'string',
-                name: 'heading2',
-                label: 'Heading 2',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'paragraph2',
-                label: 'Paragraph 2',
-                required: true,
-                ui: {
-                  component: 'textarea',
-                },
-              },
-              {
-                type: 'string',
-                name: 'heading3',
-                label: 'Heading 3',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'paragraph3',
-                label: 'Paragraph 3',
-                required: true,
-                ui: {
-                  component: 'textarea',
-                },
-              },
-              {
-                type: 'string',
-                name: 'heading4',
-                label: 'Heading 4',
-                required: true,
-              },
-              {
-                type: 'string',
-                name: 'paragraph4',
-                label: 'Paragraph 4',
-                required: true,
-                ui: {
-                  component: 'textarea',
-                },
-              },
-            ],
-          },
-          {
-            type: 'object',
-            name: 'linksToServices',
-            label: 'Links To Services',
-            fields: [
-              {
-                type: 'string',
-                name: 'eyebrow',
-                label: 'Eyebrow',
-              },
-              {
-                type: 'string',
-                name: 'heading',
-                label: 'Heading',
-              },
-            ],
-          },
-          {
-            type: 'object',
-            name: 'formWhitespace',
-            label: 'Form Whitespace',
-            fields: [
-              {
-                type: 'string',
-                name: 'heading',
-                label: 'Heading',
-              },
-            ],
-          },
-          {
-            type: 'object',
-            name: 'map',
-            label: 'Map',
-            fields: [
-              {
-                type: 'string',
-                name: 'heading',
-                label: 'Heading',
-              },
-              {
-                type: 'string',
-                name: 'address',
-                label: 'Address',
-                ui: {
-                  component: 'textarea',
-                },
-              },
-            ],
-          },
-          {
-            type: 'object',
-            name: 'keyPoints',
-            label: 'Key Points',
-            fields: [
-              {
-                type: 'string',
-                name: 'heading1',
-                label: 'Heading 1',
-              },
-              {
-                type: 'string',
-                name: 'subtext1',
-                label: 'Subtext 1',
-              },
-              {
-                type: 'string',
-                name: 'heading2',
-                label: 'Heading 2',
-              },
-              {
-                type: 'string',
-                name: 'subtext2',
-                label: 'Subtext 2',
-              },
-              {
-                type: 'string',
-                name: 'heading3',
-                label: 'Heading 3',
-              },
-              {
-                type: 'string',
-                name: 'subtext3',
-                label: 'Subtext 3',
-              },
-            ],
-          },
-          {
-            type: 'object',
-            name: 'leftTextAndButton',
-            label: 'Left Text And Button',
-            fields: [
-              {
-                type: 'string',
-                name: 'eyebrow',
-                label: 'Eyebrow',
-              },
-              {
-                type: 'string',
-                name: 'heading',
-                label: 'Heading',
-                ui: {
-                  component: 'textarea',
-                },
-              },
-              {
-                type: 'string',
-                name: 'body',
-                label: 'Body',
-                ui: {
-                  component: 'textarea',
-                },
-              },
+              ...heroFields,
+              widePictureAndTextSectionsField,
+              doubleWidePictureAndTextField,
+              linksToServicesField,
+              keyPointsField,
+              leftTextAndButtonField,
             ],
           },
         ],

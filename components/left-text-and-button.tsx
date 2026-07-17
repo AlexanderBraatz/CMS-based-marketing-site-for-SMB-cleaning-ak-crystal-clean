@@ -4,11 +4,15 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/animations/motion';
 import Button from './utility-components/button';
-import { PageLeftTextAndButton } from '@/tina/__generated__/types';
+import {
+  PageAboutLeftTextAndButton,
+  PageDefaultLeftTextAndButton,
+  PageHomeLeftTextAndButton,
+} from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 type LeftTextAndButtonProps = {
-  section?: PageLeftTextAndButton | null;
+  section?: PageHomeLeftTextAndButton | PageAboutLeftTextAndButton | PageDefaultLeftTextAndButton | null;
 };
 
 export default function LeftTextAndButton({ section }: LeftTextAndButtonProps) {

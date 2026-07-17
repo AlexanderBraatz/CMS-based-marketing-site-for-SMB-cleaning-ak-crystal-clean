@@ -6,12 +6,20 @@ import ImageWideSection from './utility-components/image-wide-section';
 import { motion } from 'motion/react';
 import { getFadeInUpAtAmount } from '@/animations/motion';
 import Button, { ButtonProps } from './utility-components/button';
-import { PageWidePictureAndTextSections } from '@/tina/__generated__/types';
+import {
+  PageAboutWidePictureAndTextSections,
+  PageDefaultWidePictureAndTextSections,
+  PageHomeWidePictureAndTextSections,
+} from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 type WidePictureAndTextProps = {
-  section?: PageWidePictureAndTextSections | null;
+  section?:
+    | PageHomeWidePictureAndTextSections
+    | PageAboutWidePictureAndTextSections
+    | PageDefaultWidePictureAndTextSections
+    | null;
   image: StaticImageData;
   imageOnLeft?: boolean;
   liftTextForSlantedDesign?: boolean;

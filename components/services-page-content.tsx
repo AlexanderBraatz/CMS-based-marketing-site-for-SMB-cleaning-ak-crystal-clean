@@ -11,7 +11,7 @@ import FormMessageOnlyOrMultiChoice from './form-message-only';
 import GrayGradientBackgroundExtended from './gray-gradient-background-extended';
 import Hero from '@/components/hero-home';
 import LinksToServices from '@/components/links-to-services';
-import { PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import { PageDefault, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type ServicesPageContentProps = {
@@ -23,13 +23,14 @@ type ServicesPageContentProps = {
 
 export default function ServicesPageContent({ pageData, ...tinaProps }: ServicesPageContentProps) {
   const { data } = useTina(tinaProps);
+  const page = data.page as PageDefault;
 
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
-          <Hero page={data.page} image={pageData.page.image} />
+          <Hero page={page} image={pageData.page.image} />
           <DoubleWidePictureAndText
             text={{
               caption: pageData.page.section1.caption,
@@ -39,9 +40,9 @@ export default function ServicesPageContent({ pageData, ...tinaProps }: Services
             imageLeft={pageData.page.section1.image1}
             imageRight={pageData.page.section1.image2}
           />
-          <KeyPoints section={data.page.keyPoints} className="mt-[100px] mb-[54px]" />
+          <KeyPoints section={page.keyPoints} className="mt-[100px] mb-[54px]" />
           <WidePictureAndText
-            section={data.page.widePictureAndTextSections?.[0]}
+            section={page.widePictureAndTextSections?.[0]}
             image={pageData.page.section2.image}
             imageOnLeft={false}
             liftTextForSlantedDesign={true}
@@ -70,7 +71,7 @@ export default function ServicesPageContent({ pageData, ...tinaProps }: Services
         </div>
         <div className="relative z-0 mx-auto mt-10 w-full lg:w-[1071px]">
           <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-            <LinksToServices section={data.page.linksToServices} />
+            <LinksToServices section={page.linksToServices} />
           </div>
         </div>
       </div>

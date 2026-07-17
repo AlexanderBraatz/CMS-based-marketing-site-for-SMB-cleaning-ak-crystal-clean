@@ -4,7 +4,7 @@ import React from 'react';
 import Button from './utility-components/button';
 import { StaticImageData } from 'next/image';
 import ImageWideHome from './utility-components/image-wide-home';
-import { PageQuery } from '@/tina/__generated__/types';
+import { PageAbout, PageDefault, PageHome } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 import { TinaMarkdown, type Components } from 'tinacms/dist/rich-text';
 import HeroVideo from '@/components/hero-video';
@@ -14,7 +14,7 @@ const headingComponents: Components<Record<never, never>> = {
 };
 
 type HeroProps = {
-  page: PageQuery['page'];
+  page: PageHome | PageAbout | PageDefault;
   image?: StaticImageData;
   video?: React.ComponentType;
   className?: string;

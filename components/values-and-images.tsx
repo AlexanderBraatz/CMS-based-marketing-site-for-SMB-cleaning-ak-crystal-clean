@@ -11,13 +11,13 @@ import TallImageDrop from './utility-components/image-tall-drop-left';
 import TallTextBox from './utility-components/tall-text-box';
 import DoubleImageWideSectionOnLeft from './utility-components/double-image-wide-section-on-left';
 import MaterialSymbol from './material-symbol';
-import { PageQuery } from '@/tina/__generated__/types';
+import { PageHome } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 const valuesImageSizes = '(min-width: 1080px) 224px, (min-width: 820px) 30vw, (min-width: 480px) 215px, 90vw';
 
 type ValuesAndImagesProps = {
-  page: PageQuery['page'];
+  page: PageHome;
 };
 
 export default function ValuesAndImages({ page }: ValuesAndImagesProps) {

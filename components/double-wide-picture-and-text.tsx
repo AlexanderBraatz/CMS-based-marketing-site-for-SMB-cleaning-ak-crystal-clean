@@ -6,13 +6,16 @@ import { fadeInUp } from '@/animations/motion';
 import DoubleImageWideSectionOnLeft from './utility-components/double-image-wide-section-on-left';
 
 import { StaticImageData } from 'next/image';
-import { PageDoubleWidePictureAndText } from '@/tina/__generated__/types';
+import {
+  PageDefaultDoubleWidePictureAndText,
+  PageHomeDoubleWidePictureAndText,
+} from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 type DoubleWidePictureAndTextProps = {
   imageLeft: StaticImageData;
   imageRight: StaticImageData;
-  section?: PageDoubleWidePictureAndText | null;
+  section?: PageHomeDoubleWidePictureAndText | PageDefaultDoubleWidePictureAndText | null;
   /** Fallback for pages not yet migrated to Tina */
   text?: { caption: string; heading: string; body: string };
 };

@@ -14,7 +14,7 @@ import FormMessageOnlyOrMultiChoice from './form-message-only';
 import Hero from '@/components/hero-home';
 import heroImage4 from '@/public/images/team-two-hero-wide-window.jpg';
 import FormImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
-import { PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import { PageDefault, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type JobsPageContentProps = {
@@ -25,20 +25,21 @@ type JobsPageContentProps = {
 
 export default function JobsPageContent(props: JobsPageContentProps) {
   const { data } = useTina(props);
+  const page = data.page as PageDefault;
 
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">
       <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-          <Hero page={data.page} image={heroImage4} />
+          <Hero page={page} image={heroImage4} />
           <DoubleWidePictureAndText
-            section={data.page.doubleWidePictureAndText}
+            section={page.doubleWidePictureAndText}
             imageLeft={imageLeft}
             imageRight={imageRight}
           />
           <WidePictureAndText
-            section={data.page.widePictureAndTextSections?.[0]}
+            section={page.widePictureAndTextSections?.[0]}
             image={image3}
             imageOnLeft={false}
           />
@@ -73,7 +74,7 @@ export default function JobsPageContent(props: JobsPageContentProps) {
       </div>
       <div className="bg-theme-background2">
         <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
-          <KeyPoints section={data.page.keyPoints} />
+          <KeyPoints section={page.keyPoints} />
           <GrayGradientBackground />
           <div className="h-[356px]"></div>
           <GloveWipe />

@@ -13,7 +13,7 @@ import { SERVICE_OPTIONS, type ServiceValue } from '@/lib/data';
 import { getCaptchaToken } from '@/utils/captcha-client';
 import MaterialSymbol from './material-symbol';
 import Button from './utility-components/button';
-import { PageFormWhitespace } from '@/tina/__generated__/types';
+import { PageHomeFormWhitespace } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 const INPUT_BASE =
@@ -74,7 +74,7 @@ function FormSuccessMessage() {
 }
 
 type FormWhitespaceProps = {
-  section?: PageFormWhitespace | null;
+  section?: PageHomeFormWhitespace | null;
 };
 
 export default function FormWhitespace({ section }: FormWhitespaceProps) {

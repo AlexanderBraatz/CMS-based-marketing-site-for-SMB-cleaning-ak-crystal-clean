@@ -1,7 +1,11 @@
 'use client';
 
 import React from 'react';
-import { PageKeyPoints } from '@/tina/__generated__/types';
+import {
+  PageAboutKeyPoints,
+  PageDefaultKeyPoints,
+  PageHomeKeyPoints,
+} from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 const DEFAULTS = {
@@ -17,7 +21,7 @@ const ALIGNMENT = ['xs:items-start', 'xs:items-center', 'xs:items-end'] as const
 
 type KeyPointsProps = {
   className?: string;
-  section?: PageKeyPoints | null;
+  section?: PageHomeKeyPoints | PageAboutKeyPoints | PageDefaultKeyPoints | null;
 };
 
 export default function KeyPoints({ className, section }: KeyPointsProps) {
