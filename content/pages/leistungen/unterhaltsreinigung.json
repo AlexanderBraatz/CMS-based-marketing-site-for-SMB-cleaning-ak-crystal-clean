@@ -1,15 +1,35 @@
 {
-  "_template": "default",
-  "title": "Unterhaltsreinigung",
-  "subHeading": "Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.",
+  "title": "Unterhaltsreinigung\n",
+  "subHeading": "Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.\n",
   "widePictureAndTextSections": [
     {
       "id": "section-2",
       "eyebrow": "Unsere Werte",
-      "heading": " Qualität, die täglich überzeugt ganz nach Ihrem Zeitplan",
+      "heading": "Qualität, die täglich überzeugt ganz nach Ihrem Zeitplan\n",
       "body": "Qualität zeigt sich besonders in der täglichen Beständigkeit. Deshalb richten wir unsere Reinigungsleistungen flexibel nach Ihren Betriebszeiten und Abläufen aus, damit der laufende Betrieb nicht gestört wird.\n\nMit zuverlässigen Teams, klaren Prozessen und regelmäßigen Qualitätskontrollen sorgen wir dafür, dass Ihre Räumlichkeiten jeden Tag gepflegt, hygienisch und repräsentativ bleiben."
     }
   ],
+  "doubleWidePictureAndText": {
+    "eyebrow": "Darauf können Sie sich verlassen",
+    "heading": "Hygienische Sauberkeit für jeden Bereich",
+    "body": "Eine regelmäßige Unterhaltsreinigung sorgt für dauerhaft saubere, hygienische und einladende Räume. Ob Büro, Praxis, Treppenhaus oder Gewerbefläche – wir reinigen alle Bereiche gründlich und abgestimmt auf Ihre individuellen Anforderungen.\n\nDurch feste Reinigungspläne und geschulte Fachkräfte gewährleisten wir eine gleichbleibend hohe Qualität. So schaffen wir eine angenehme Umgebung für Mitarbeiter, Kunden und Besucher und tragen gleichzeitig zum Werterhalt Ihrer Räumlichkeiten bei."
+  },
+  "bulletPoints": {
+    "caption": "Ihre Vorteile",
+    "heading": "Ihre Vorteile unserer Unterhaltsreinigung ",
+    "point1": "Zuverlässige Terminplanung",
+    "body1": "Wir planen Ihre Unterhaltsreinigung zuverlässig nach festen Intervallen und abgestimmt auf Ihre Betriebszeiten. So bleiben Arbeitsbereiche, Eingänge, Sanitäranlagen und Gemeinschaftsflächen dauerhaft sauber, ohne den laufenden Alltag zu stören.\n\nDurch klare Abläufe, feste Ansprechpartner und sorgfältige Kontrolle sorgen wir dafür, dass vereinbarte Leistungen pünktlich und gleichbleibend hochwertig ausgeführt werden.",
+    "point2": "Werterhalt Ihrer Immobilie",
+    "body2": "Regelmäßige Reinigung schützt Böden, Oberflächen, Möbel und stark genutzte Bereiche vor vorzeitigem Verschleiß. Mit passenden Reinigungsmethoden tragen wir dazu bei, den gepflegten Zustand Ihrer Immobilie langfristig zu erhalten.\n\nSo bleibt nicht nur der optische Eindruck überzeugend, sondern auch der Wert Ihrer Räume wird nachhaltig unterstützt.",
+    "point3": "Gesundes Arbeitsumfeld ",
+    "body3": "Ein sauberes Arbeitsumfeld trägt spürbar zum Wohlbefinden von Mitarbeitern, Kunden und Besuchern bei. Wir achten besonders auf hygienisch sensible Bereiche und reinigen gründlich dort, wo täglich viele Menschen zusammenkommen.\n\nDurch regelmäßige Pflege reduzieren wir Schmutz, Staub und Belastungen im Alltag und schaffen eine angenehme Atmosphäre.",
+    "point4": "Zuverlässigkeit & Sorgfalt",
+    "body4": "Wir arbeiten zuverlässig, sorgfältig und mit Blick für Details. Jede Fläche wird mit der passenden Methode gereinigt, damit ein gleichmäßig sauberes Ergebnis entsteht.\n\nDabei halten wir Absprachen ein, reagieren flexibel auf besondere Anforderungen und sorgen dafür, dass Ihre Räume jederzeit gepflegt und einladend wirken."
+  },
+  "linksToServices": {
+    "eyebrow": "Ihre Wahl",
+    "heading": "Professionelle Gebäudereinigung für ihr Unternehmen"
+  },
   "keyPoints": {
     "heading1": "30+ Jahre Erfahrung",
     "subtext1": "Eigentümergeführt",
@@ -17,5 +37,6 @@
     "subtext2": "25% Wachstum in 2025",
     "heading3": "53 Mitarbeiter",
     "subtext3": "Experten mit Meisterausbildung"
-  }
+  },
+  "_template": "default"
 }

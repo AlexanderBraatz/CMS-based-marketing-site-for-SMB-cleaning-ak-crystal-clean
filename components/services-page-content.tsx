@@ -32,11 +32,7 @@ export default function ServicesPageContent({ pageData, ...tinaProps }: Services
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
           <Hero page={page} image={pageData.page.image} />
           <DoubleWidePictureAndText
-            text={{
-              caption: pageData.page.section1.caption,
-              heading: pageData.page.section1.heading,
-              body: pageData.page.section1.body,
-            }}
+            section={page.doubleWidePictureAndText}
             imageLeft={pageData.page.section1.image1}
             imageRight={pageData.page.section1.image2}
           />
@@ -49,11 +45,8 @@ export default function ServicesPageContent({ pageData, ...tinaProps }: Services
           />
         </div>
         <BulletPoints
+          section={page.bulletPoints}
           bullets={pageData.page.section3.bullets}
-          caption={pageData.page.section3.caption}
-          text={{
-            heading: pageData.page.section3.heading,
-          }}
         />
       </div>
       <div className="bg-theme-background2">
