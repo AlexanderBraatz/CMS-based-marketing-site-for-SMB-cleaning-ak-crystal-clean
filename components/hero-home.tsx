@@ -16,12 +16,13 @@ import HeroVideo from '@/components/hero-video';
 
 type HeroProps = {
   page: PageHome | PageAbout | PageServicesOverview | PageService | PageJobs;
-  image?: StaticImageData;
+  image?: StaticImageData | string;
+  imageTinaField?: string;
   video?: React.ComponentType;
   className?: string;
 };
 
-export default function Hero({ page, image, className }: HeroProps) {
+export default function Hero({ page, image, imageTinaField, className }: HeroProps) {
   return (
     <div
       className={`${className} theme-dark-purple text-theme-text 1xs:mt-[20px] 1xs:gap-5 xxxs:gap-15 grid grid-cols-1 gap-10 px-[5%] sm:grid-cols-2`}
@@ -43,7 +44,9 @@ export default function Hero({ page, image, className }: HeroProps) {
         </div>
         <Button size="small" className="2sm:mt-12 mt-8" text="KONTAKT" href="#contact-form" />
       </div>
-      <div className="pt-9">{image ? <ImageWideHome image={image} /> : <HeroVideo />}</div>
+      <div className="pt-9">
+        {image ? <ImageWideHome image={image} tinaField={imageTinaField} /> : <HeroVideo />}
+      </div>
     </div>
   );
 }

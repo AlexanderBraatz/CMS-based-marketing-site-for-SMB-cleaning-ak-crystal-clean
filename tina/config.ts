@@ -24,6 +24,13 @@ const heroFields: TinaField[] = [
   },
 ];
 
+const heroImageField: TinaField = {
+  type: 'image',
+  name: 'heroImage',
+  label: 'Hero Image',
+  required: true,
+};
+
 const widePictureAndTextInnerFields: TinaField[] = [
   {
     type: 'image',
@@ -246,6 +253,12 @@ const managementGalleryField: TinaField = {
       label: 'Heading',
     },
     {
+      type: 'image',
+      name: 'image1',
+      label: 'Member 1 Image',
+      required: true,
+    },
+    {
       type: 'string',
       name: 'name1',
       label: 'Member 1 Name',
@@ -254,6 +267,12 @@ const managementGalleryField: TinaField = {
       type: 'string',
       name: 'role1',
       label: 'Member 1 Role',
+    },
+    {
+      type: 'image',
+      name: 'image2',
+      label: 'Member 2 Image',
+      required: true,
     },
     {
       type: 'string',
@@ -266,6 +285,12 @@ const managementGalleryField: TinaField = {
       label: 'Member 2 Role',
     },
     {
+      type: 'image',
+      name: 'image3',
+      label: 'Member 3 Image',
+      required: true,
+    },
+    {
       type: 'string',
       name: 'name3',
       label: 'Member 3 Name',
@@ -274,6 +299,12 @@ const managementGalleryField: TinaField = {
       type: 'string',
       name: 'role3',
       label: 'Member 3 Role',
+    },
+    {
+      type: 'image',
+      name: 'image4',
+      label: 'Member 4 Image',
+      required: true,
     },
     {
       type: 'string',
@@ -297,6 +328,43 @@ const teamGalleryField: TinaField = {
       type: 'string',
       name: 'heading',
       label: 'Heading',
+    },
+    {
+      type: 'object',
+      name: 'images',
+      label: 'Team Images',
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item?.image ? 'Team photo' : 'New team photo',
+        }),
+      },
+      fields: [
+        {
+          type: 'image',
+          name: 'image',
+          label: 'Image',
+          required: true,
+        },
+      ],
+    },
+  ],
+};
+
+const contactFormField: TinaField = {
+  type: 'object',
+  name: 'contactForm',
+  label: 'Contact Form',
+  fields: [
+    {
+      type: 'string',
+      name: 'heading',
+      label: 'Heading',
+    },
+    {
+      type: 'image',
+      name: 'image',
+      label: 'Image',
     },
   ],
 };
@@ -613,23 +681,7 @@ export default defineConfig({
                 ],
               },
               leftTextAndButtonField,
-              {
-                type: 'object',
-                name: 'contactForm',
-                label: 'Contact Form',
-                fields: [
-                  {
-                    type: 'string',
-                    name: 'heading',
-                    label: 'Heading',
-                  },
-                  {
-                    type: 'image',
-                    name: 'image',
-                    label: 'Image',
-                  },
-                ],
-              },
+              contactFormField,
             ],
           },
           {
@@ -637,12 +689,14 @@ export default defineConfig({
             label: 'Über uns',
             fields: [
               ...heroFields,
+              heroImageField,
               someTextField,
               managementGalleryField,
               teamGalleryField,
               widePictureAndTextField,
               widePictureAndTextSecondaryField,
               leftTextAndButtonField,
+              contactFormField,
             ],
           },
           {

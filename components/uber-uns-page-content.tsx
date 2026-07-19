@@ -1,22 +1,18 @@
 'use client';
 
 import WaveBackground from '@/components/wave-background';
-import heroImage3 from '@/public/images/team-man-arms-crossed-hero-format.jpg';
 import SomeText from '@/components/some-text';
 import ManagementGallery from '@/components/management-gallery';
 import TeamGallery from '@/components/team-gallery';
 import WidePictureAndText from '@/components/wide-picture-and-text';
-import image1 from '@/public/images/team-solo-award-outside.jpg';
-import image2 from '@/public/images/team-group-waving-ouside.jpg';
 import KeyPoints from '@/components/key-points';
 import GrayGradientBackground from '@/components/gray-gradient-background';
 import GloveWipe from '@/components/glvoe-wipe';
 import FormMessageOnlyOrMultiChoice from '@/components/form-message-only';
 import LeftTextAndButton from '@/components/left-text-and-button';
 import Hero from '@/components/hero-home';
-import formImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
 import { PageAbout, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
-import { useTina } from 'tinacms/dist/react';
+import { tinaField, useTina } from 'tinacms/dist/react';
 
 type UberUnsPageContentProps = {
   data: PageQuery;
@@ -38,7 +34,11 @@ export default function UberUnsPageContent({ global, ...tinaProps }: UberUnsPage
       <div className="relative z-10 mx-auto mb-20 w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
-          <Hero page={page} image={heroImage3} />
+          <Hero
+            page={page}
+            image={page.heroImage ?? undefined}
+            imageTinaField={tinaField(page, 'heroImage')}
+          />
           <SomeText section={page.someText} />
           <ManagementGallery section={page.managementGallery} />
           <TeamGallery section={page.teamGallery} />
@@ -47,12 +47,10 @@ export default function UberUnsPageContent({ global, ...tinaProps }: UberUnsPage
               section={page.widePictureAndText}
               hasButton={true}
               buttonProps={{ size: 'medium', text: 'JETZT BEWERBEN', href: '/jobs' }}
-              image={image1}
               imageOnLeft={false}
             />
             <WidePictureAndText
               section={page.widePictureAndTextSecondary}
-              image={image2}
               imageOnLeft={true}
             />
           </div>
@@ -69,9 +67,11 @@ export default function UberUnsPageContent({ global, ...tinaProps }: UberUnsPage
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
-            heading="Was können wir für Sie tun ?"
+            heading={page.contactForm?.heading ?? 'Was können wir für Sie tun ?'}
             showMulitChoice={false}
-            image={formImage}
+            image={page.contactForm?.image ?? undefined}
+            headingTinaField={page.contactForm ? tinaField(page.contactForm, 'heading') : undefined}
+            imageTinaField={page.contactForm ? tinaField(page.contactForm, 'image') : undefined}
           />
         </div>
       </div>

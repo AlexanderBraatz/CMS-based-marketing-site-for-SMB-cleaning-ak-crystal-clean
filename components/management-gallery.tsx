@@ -4,10 +4,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { getFadeInUpAtAmount } from '@/animations/motion';
 import TallImageDrop from './utility-components/image-tall-drop-left';
-import imagge1 from '@/public/images/team-tall-mehmet.jpg';
-import imagge2 from '@/public/images/team-solo-olga-tall-new.jpg';
-import imagge3 from '@/public/images/team-tall-leo-more-recent.jpg';
-import imagge4 from '@/public/images/team-tall-reiner.jpg';
 import { PageAboutManagementGallery } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
@@ -21,34 +17,38 @@ export default function ManagementGallery({ section }: ManagementGalleryProps) {
   const heading = section?.heading ?? 'Management';
   const members = [
     {
-      image: imagge1,
+      image: section?.image1,
       name: section?.name1 ?? 'Mehmet Akca',
       role: section?.role1 ?? 'Geschäftsführer',
+      imageField: 'image1' as const,
       nameField: 'name1' as const,
       roleField: 'role1' as const,
     },
     {
-      image: imagge2,
+      image: section?.image2,
       name: section?.name2 ?? 'Olga Akca-Klug',
       role: section?.role2 ?? 'Personalmanagement',
+      imageField: 'image2' as const,
       nameField: 'name2' as const,
       roleField: 'role2' as const,
     },
     {
-      image: imagge3,
+      image: section?.image3,
       name: section?.name3 ?? 'Leo Klug',
       role: section?.role3 ?? 'Bereichsleitung Glasreinigung',
+      imageField: 'image3' as const,
       nameField: 'name3' as const,
       roleField: 'role3' as const,
     },
     {
-      image: imagge4,
+      image: section?.image4,
       name: section?.name4 ?? 'Reiner Klix',
       role: section?.role4 ?? 'Gebäudereinigungsmeister',
+      imageField: 'image4' as const,
       nameField: 'name4' as const,
       roleField: 'role4' as const,
     },
-  ];
+  ].filter((member) => member.image);
 
   return (
     <motion.div {...getFadeInUpAtAmount(0)} className="px-[5%]">
@@ -63,9 +63,10 @@ export default function ManagementGallery({ section }: ManagementGalleryProps) {
         {members.map((member) => (
           <div key={member.nameField} className="flex flex-col gap-5">
             <TallImageDrop
-              src={member.image}
+              src={member.image!}
               dropIsOnLeft={true}
               sizes={MANAGEMENT_GALLERY_IMAGE_SIZES}
+              tinaField={section ? tinaField(section, member.imageField) : undefined}
             />
             <div className="flex flex-col gap-1">
               <p

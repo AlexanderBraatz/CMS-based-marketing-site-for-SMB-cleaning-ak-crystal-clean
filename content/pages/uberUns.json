@@ -1,7 +1,7 @@
 {
-  "_template": "about",
   "title": "Ihr Partner in Gründau für Gebeudereinigung!",
   "subHeading": "Egal ob Fassaden- oder Innenreinigung, Wir sind Ihr zuverlässiger Partner",
+  "heroImage": "/images/team-man-arms-crossed-hero-format.jpg",
   "someText": {
     "eyebrow": "Unsere Werte",
     "heading": " Erstklassige Arbeit Starkes Team",
@@ -9,31 +9,77 @@
   },
   "managementGallery": {
     "heading": "Management",
+    "image1": "/images/team-tall-mehmet.jpg",
     "name1": "Mehmet Akca",
     "role1": "Geschäftsführer",
+    "image2": "/images/team-solo-olga-tall-new.jpg",
     "name2": "Olga Akca-Klug",
     "role2": "Personalmanagement",
+    "image3": "/images/team-tall-leo-more-recent.jpg",
     "name3": "Leo Klug",
     "role3": "Bereichsleitung Glasreinigung",
+    "image4": "/images/team-tall-reiner.jpg",
     "name4": "Reiner Klix",
     "role4": "Gebäudereinigungsmeister"
   },
   "teamGallery": {
-    "heading": "Unser Team"
+    "heading": "Unser Team",
+    "images": [
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-8.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-5.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-man-2.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-7.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-2.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-3.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-1.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-man-1.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-6.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-man-3.jpg"
+      },
+      {
+        "image": "/images/team-headshots/team-solo-headshot-woman-4.jpg"
+      }
+    ]
+  },
+  "widePictureAndText": {
+    "image": "/images/team-solo-award-outside.jpg",
+    "eyebrow": "Unsere Zukunft",
+    "heading": "Als Meisterbetrieb,  schulen wir \ndie nächste Generation",
+    "body": "Wer Qualität dauerhaft sichern möchte, muss Wissen weitergeben. Deshalb bilden wir als Meisterbetrieb neue Fachkräfte aus und begleiten sie mit Erfahrung, Praxis und persönlicher Unterstützung. So entsteht ein starkes Team, das unsere hohen Ansprüche an Sauberkeit, Zuverlässigkeit und Service auch in Zukunft erfüllt."
+  },
+  "widePictureAndTextSecondary": {
+    "image": "/images/team-group-waving-ouside.jpg",
+    "eyebrow": "Unsere Erfahrung",
+    "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
+    "body": "Mit über 30 Jahren Erfahrung wissen wir, dass professionelle Gebäudereinigung mehr ist als einzelne Dienstleistungen. Deshalb verbinden wir Innen- und Außenreinigung zu einem abgestimmten Gesamtkonzept mit festen Ansprechpartnern und klaren Abläufen. So erhalten unsere Kunden höchste Qualität bei deutlich geringerem Organisationsaufwand."
   },
   "leftTextAndButton": {
     "eyebrow": "Unsere Überzeugung",
     "heading": "AK Crystal Clean\nWir machen Alles Klar!",
     "body": "Unser Anspruch ist klar: Reinigungsqualität, auf die Sie sich jederzeit verlassen können. Deshalb setzen wir auf geschulte Mitarbeiter, klare Prozesse und eine enge Zusammenarbeit mit unseren Kunden, um dauerhaft überzeugende Ergebnisse zu liefern."
   },
-  "widePictureAndText": {
-    "eyebrow": "Unsere Zukunft",
-    "heading": "Als Meisterbetrieb,  schulen wir \ndie nächste Generation",
-    "body": "Wer Qualität dauerhaft sichern möchte, muss Wissen weitergeben. Deshalb bilden wir als Meisterbetrieb neue Fachkräfte aus und begleiten sie mit Erfahrung, Praxis und persönlicher Unterstützung. So entsteht ein starkes Team, das unsere hohen Ansprüche an Sauberkeit, Zuverlässigkeit und Service auch in Zukunft erfüllt."
+  "contactForm": {
+    "heading": "Was können wir für Sie tun ?",
+    "image": "/images/form-right-side/team-thre-hands-outside.jpg"
   },
-  "widePictureAndTextSecondary": {
-    "eyebrow": "Unsere Erfahrung",
-    "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
-    "body": "Mit über 30 Jahren Erfahrung wissen wir, dass professionelle Gebäudereinigung mehr ist als einzelne Dienstleistungen. Deshalb verbinden wir Innen- und Außenreinigung zu einem abgestimmten Gesamtkonzept mit festen Ansprechpartnern und klaren Abläufen. So erhalten unsere Kunden höchste Qualität bei deutlich geringerem Organisationsaufwand."
-  }
+  "_template": "about"
 }
