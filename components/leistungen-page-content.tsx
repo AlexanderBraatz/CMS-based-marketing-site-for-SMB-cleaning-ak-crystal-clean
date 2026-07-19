@@ -10,9 +10,9 @@ import FormImage from '@/public/images/form-right-side/team-two-bosses.jpg';
 import {
   GlobalQuery,
   GlobalQueryVariables,
-  PageDefault,
   PageQuery,
   PageQueryVariables,
+  PageServicesOverview,
 } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
@@ -29,7 +29,7 @@ type LeistungenPageContentProps = {
 
 export default function LeistungenPageContent({ global, ...tinaProps }: LeistungenPageContentProps) {
   const { data } = useTina(tinaProps);
-  const page = data.page as PageDefault;
+  const page = data.page as PageServicesOverview;
 
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">

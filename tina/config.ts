@@ -199,7 +199,7 @@ const leftTextAndButtonField: TinaField = {
 const someTextField: TinaField = {
   type: 'object',
   name: 'someText',
-  label: 'Some Text',
+  label: 'Text section',
   fields: [
     {
       type: 'string',
@@ -519,17 +519,29 @@ export default defineConfig({
               leftTextAndButtonField,
             ],
           },
-          // Temporary catch-all for pages not yet given a dedicated template
           {
-            name: 'default',
-            label: 'Default Page',
+            name: 'servicesOverview',
+            label: 'Leistungen Overview',
+            fields: [...heroFields, someTextField],
+          },
+          {
+            name: 'service',
+            label: 'Service Page',
             fields: [
               ...heroFields,
-              someTextField,
               widePictureAndTextSectionsField,
               doubleWidePictureAndTextField,
               bulletPointsField,
-              leftTextAndButtonField,
+            ],
+          },
+          {
+            name: 'jobs',
+            label: 'Jobs Page',
+            fields: [
+              ...heroFields,
+              widePictureAndTextSectionsField,
+              doubleWidePictureAndTextField,
+              bulletPointsField,
             ],
           },
         ],

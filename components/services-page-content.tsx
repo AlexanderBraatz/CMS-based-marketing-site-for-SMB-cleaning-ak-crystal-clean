@@ -11,7 +11,7 @@ import FormMessageOnlyOrMultiChoice from './form-message-only';
 import GrayGradientBackgroundExtended from './gray-gradient-background-extended';
 import Hero from '@/components/hero-home';
 import LinksToServices from '@/components/links-to-services';
-import { PageDefault, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
+import { PageService, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type ServicesPageContentProps = {
@@ -28,7 +28,7 @@ type ServicesPageContentProps = {
 
 export default function ServicesPageContent({ pageData, global, ...tinaProps }: ServicesPageContentProps) {
   const { data } = useTina(tinaProps);
-  const page = data.page as PageDefault;
+  const page = data.page as PageService;
 
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">

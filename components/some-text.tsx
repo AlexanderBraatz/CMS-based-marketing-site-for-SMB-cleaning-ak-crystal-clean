@@ -1,11 +1,14 @@
 'use client';
 
 import React from 'react';
-import { PageAboutSomeText, PageDefaultSomeText } from '@/tina/__generated__/types';
+import {
+  PageAboutSomeText,
+  PageServicesOverviewSomeText,
+} from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 type SomeTextProps = {
-  section?: PageAboutSomeText | PageDefaultSomeText | null;
+  section?: PageAboutSomeText | PageServicesOverviewSomeText | null;
 };
 
 export default function SomeText({ section }: SomeTextProps) {

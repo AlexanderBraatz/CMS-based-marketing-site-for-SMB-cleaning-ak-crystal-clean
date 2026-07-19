@@ -7,15 +7,20 @@ import DoubleImageWideSectionOnLeft from './utility-components/double-image-wide
 
 import { StaticImageData } from 'next/image';
 import {
-  PageDefaultDoubleWidePictureAndText,
   PageHomeDoubleWidePictureAndText,
+  PageJobsDoubleWidePictureAndText,
+  PageServiceDoubleWidePictureAndText,
 } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 type DoubleWidePictureAndTextProps = {
   imageLeft: StaticImageData;
   imageRight: StaticImageData;
-  section?: PageHomeDoubleWidePictureAndText | PageDefaultDoubleWidePictureAndText | null;
+  section?:
+    | PageHomeDoubleWidePictureAndText
+    | PageServiceDoubleWidePictureAndText
+    | PageJobsDoubleWidePictureAndText
+    | null;
   /** Fallback for pages not yet migrated to Tina */
   text?: { caption: string; heading: string; body: string };
 };

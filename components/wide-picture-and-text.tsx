@@ -8,8 +8,9 @@ import { getFadeInUpAtAmount } from '@/animations/motion';
 import Button, { ButtonProps } from './utility-components/button';
 import {
   PageAboutWidePictureAndTextSections,
-  PageDefaultWidePictureAndTextSections,
   PageHomeWidePictureAndTextSections,
+  PageJobsWidePictureAndTextSections,
+  PageServiceWidePictureAndTextSections,
 } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
@@ -18,7 +19,8 @@ type WidePictureAndTextProps = {
   section?:
     | PageHomeWidePictureAndTextSections
     | PageAboutWidePictureAndTextSections
-    | PageDefaultWidePictureAndTextSections
+    | PageServiceWidePictureAndTextSections
+    | PageJobsWidePictureAndTextSections
     | null;
   image: StaticImageData;
   imageOnLeft?: boolean;

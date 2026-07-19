@@ -6,13 +6,12 @@ import { fadeInUp } from '@/animations/motion';
 import Button from './utility-components/button';
 import {
   PageAboutLeftTextAndButton,
-  PageDefaultLeftTextAndButton,
   PageHomeLeftTextAndButton,
 } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 type LeftTextAndButtonProps = {
-  section?: PageHomeLeftTextAndButton | PageAboutLeftTextAndButton | PageDefaultLeftTextAndButton | null;
+  section?: PageHomeLeftTextAndButton | PageAboutLeftTextAndButton | null;
 };
 
 export default function LeftTextAndButton({ section }: LeftTextAndButtonProps) {

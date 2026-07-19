@@ -14,7 +14,7 @@ import FormMessageOnlyOrMultiChoice from './form-message-only';
 import Hero from '@/components/hero-home';
 import heroImage4 from '@/public/images/team-two-hero-wide-window.jpg';
 import FormImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
-import { PageDefault, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
+import { PageJobs, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type JobsPageContentProps = {
@@ -30,7 +30,7 @@ type JobsPageContentProps = {
 
 export default function JobsPageContent({ global, ...tinaProps }: JobsPageContentProps) {
   const { data } = useTina(tinaProps);
-  const page = data.page as PageDefault;
+  const page = data.page as PageJobs;
 
   return (
     <main className="theme-light-background bg-theme-background w-screen overflow-clip">

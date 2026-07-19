@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { getFadeInUpAtAmount } from '@/animations/motion';
 import MaterialSymbol from './material-symbol';
-import { PageDefaultBulletPoints } from '@/tina/__generated__/types';
+import { PageJobsBulletPoints, PageServiceBulletPoints } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
 const DEFAULT_ICONS = ['groups', 'work', 'school', 'location_on'] as const;
@@ -28,7 +28,7 @@ const DEFAULTS = {
 type LegacyBullet = Readonly<{ point: string; icon: string; body: string }>;
 
 type BulletPointsProps = {
-  section?: PageDefaultBulletPoints | null;
+  section?: PageServiceBulletPoints | PageJobsBulletPoints | null;
   /** Fallback for pages not yet migrated to Tina */
   bullets?: readonly LegacyBullet[];
   text?: Readonly<{ heading: string }>;
