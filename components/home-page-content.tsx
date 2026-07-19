@@ -72,7 +72,7 @@ export default function HomePageContent({ global, ...tinaProps }: HomePageConten
         </div>
         <div className="bg-theme-background2">
           <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
-            <KeyPoints section={page.keyPoints} />
+            <KeyPoints {...global} />
             <GrayGradientBackground />
             <LeftTextAndButton section={page.leftTextAndButton} />
             <div className="xs:hidden block h-[356px]"></div>

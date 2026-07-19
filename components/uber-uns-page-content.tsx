@@ -15,17 +15,22 @@ import FormMessageOnlyOrMultiChoice from '@/components/form-message-only';
 import LeftTextAndButton from '@/components/left-text-and-button';
 import Hero from '@/components/hero-home';
 import formImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
-import { PageAbout, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import { PageAbout, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type UberUnsPageContentProps = {
   data: PageQuery;
   query: string;
   variables: PageQueryVariables;
+  global: {
+    data: GlobalQuery;
+    query: string;
+    variables: GlobalQueryVariables;
+  };
 };
 
-export default function UberUnsPageContent(props: UberUnsPageContentProps) {
-  const { data } = useTina(props);
+export default function UberUnsPageContent({ global, ...tinaProps }: UberUnsPageContentProps) {
+  const { data } = useTina(tinaProps);
   const page = data.page as PageAbout;
 
   return (
@@ -55,7 +60,7 @@ export default function UberUnsPageContent(props: UberUnsPageContentProps) {
       </div>
       <div className="bg-theme-background2">
         <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
-          <KeyPoints section={page.keyPoints} />
+          <KeyPoints {...global} />
           <GrayGradientBackground />
           <LeftTextAndButton section={page.leftTextAndButton} />
           <div className="xs:hidden block h-[356px]"></div>

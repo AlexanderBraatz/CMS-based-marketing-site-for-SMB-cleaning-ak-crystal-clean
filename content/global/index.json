@@ -1,3 +1,11 @@
 {
-  "address": "Schießbergstraße 9A\n63584 \nGründau"
+  "address": "Schießbergstraße 9A\n63584 \nGründau",
+  "keyPoints": {
+    "heading1": "30+ Jahre Erfahrung",
+    "subtext1": "Eigentümergeführt",
+    "heading2": "2300 + Objekte",
+    "subtext2": "25% Wachstum in 2025",
+    "heading3": "53 Mitarbeiter",
+    "subtext3": "Experten mit Meisterausbildung"
+  }
 }

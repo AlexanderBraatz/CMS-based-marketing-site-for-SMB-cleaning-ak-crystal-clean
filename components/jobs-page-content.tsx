@@ -14,17 +14,22 @@ import FormMessageOnlyOrMultiChoice from './form-message-only';
 import Hero from '@/components/hero-home';
 import heroImage4 from '@/public/images/team-two-hero-wide-window.jpg';
 import FormImage from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
-import { PageDefault, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import { PageDefault, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type JobsPageContentProps = {
   data: PageQuery;
   query: string;
   variables: PageQueryVariables;
+  global: {
+    data: GlobalQuery;
+    query: string;
+    variables: GlobalQueryVariables;
+  };
 };
 
-export default function JobsPageContent(props: JobsPageContentProps) {
-  const { data } = useTina(props);
+export default function JobsPageContent({ global, ...tinaProps }: JobsPageContentProps) {
+  const { data } = useTina(tinaProps);
   const page = data.page as PageDefault;
 
   return (
@@ -48,7 +53,7 @@ export default function JobsPageContent(props: JobsPageContentProps) {
       </div>
       <div className="bg-theme-background2">
         <div className="relative z-0 mx-auto w-full pb-25 lg:w-[1071px]">
-          <KeyPoints section={page.keyPoints} />
+          <KeyPoints {...global} />
           <GrayGradientBackground />
           <div className="h-[356px]"></div>
           <GloveWipe />

@@ -1,12 +1,8 @@
 'use client';
 
 import React from 'react';
-import {
-  PageAboutKeyPoints,
-  PageDefaultKeyPoints,
-  PageHomeKeyPoints,
-} from '@/tina/__generated__/types';
-import { tinaField } from 'tinacms/dist/react';
+import { GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
+import { tinaField, useTina } from 'tinacms/dist/react';
 
 const DEFAULTS = {
   heading1: '30+ Jahre Erfahrung',
@@ -21,10 +17,15 @@ const ALIGNMENT = ['xs:items-start', 'xs:items-center', 'xs:items-end'] as const
 
 type KeyPointsProps = {
   className?: string;
-  section?: PageHomeKeyPoints | PageAboutKeyPoints | PageDefaultKeyPoints | null;
+  data: GlobalQuery;
+  query: string;
+  variables: GlobalQueryVariables;
 };
 
-export default function KeyPoints({ className, section }: KeyPointsProps) {
+export default function KeyPoints({ className, ...globalProps }: KeyPointsProps) {
+  const { data } = useTina(globalProps);
+  const section = data.global.keyPoints;
+
   const facts = [
     {
       heading: section?.heading1 ?? DEFAULTS.heading1,
