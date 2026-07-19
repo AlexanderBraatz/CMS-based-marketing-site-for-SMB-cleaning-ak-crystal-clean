@@ -1,7 +1,11 @@
 {
-  "_template": "jobs",
-  "title": "Werde Teil eines \n\nstarken Teams",
+  "title": "Werde Teil eines \nstarken Teams",
   "subHeading": "Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.",
+  "widePictureAndText": {
+    "eyebrow": "Darauf können Sie sich verlassen",
+    "heading": "Sichere Arbeit mit Zukunft",
+    "body": "Als etabliertes Familienunternehmen mit über 30 Jahren Erfahrung bieten wir dir einen sicheren Arbeitsplatz und langfristige Perspektiven. Durch unser stetiges Wachstum entstehen regelmäßig neue Entwicklungsmöglichkeiten für engagierte Mitarbeiterinnen und Mitarbeiter."
+  },
   "doubleWidePictureAndText": {
     "eyebrow": "Warum AK Crystal Clean",
     "heading": "Werde Teil Unseres Reinigungsteams",
@@ -19,9 +23,5 @@
     "point4": "Regionale Einsätze",
     "body4": "Unsere Einsätze finden überwiegend in der Region statt, sodass lange Anfahrtswege vermieden werden können. Das sorgt für eine bessere Planbarkeit und mehr Zeit für Familie und Freizeit.\n\nDurch die regionale Betreuung unserer Kunden arbeiten Sie in vertrauten Einsatzgebieten und profitieren von geregelten Arbeitsabläufen. Gleichzeitig lernen Sie unterschiedliche Objekte und Kunden aus der Umgebung kennen.\n\nKurze Wege, feste Einsatzorte und eine zuverlässige Organisation machen den Arbeitsalltag effizienter und angenehmer für unser gesamtes Team."
   },
-  "widePictureAndText": {
-    "eyebrow": "Darauf können Sie sich verlassen",
-    "heading": "Sichere Arbeit mit Zukunft",
-    "body": "Als etabliertes Familienunternehmen mit über 30 Jahren Erfahrung bieten wir dir einen sicheren Arbeitsplatz und langfristige Perspektiven. Durch unser stetiges Wachstum entstehen regelmäßig neue Entwicklungsmöglichkeiten für engagierte Mitarbeiterinnen und Mitarbeiter."
-  }
+  "_template": "jobs"
 }

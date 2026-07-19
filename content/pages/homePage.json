@@ -1,9 +1,18 @@
 {
-  "_template": "home",
-  "title": "Ein Partner Für Alles\n\nGebäudereinigung\n",
+  "title": "Ein Partner Für Alles\nGebäudereinigung\n",
   "subHeading": "Höchste Qualität für Innen und Außen ohne Koordinationsaufwand.\n",
   "logoBannerEyebrow": "Darauf können Sie sich verlassen!",
   "logoBannerHeading": "Kunden die uns bereits vertrauen\n",
+  "widePictureAndText": {
+    "eyebrow": "Warum AK Crystal Clean",
+    "heading": "Ein Ansprechpartner für\neffiziente Betreuung!\n",
+    "body": " Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können."
+  },
+  "widePictureAndTextSecondary": {
+    "eyebrow": "Unsere Stärken",
+    "heading": "Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.!\n",
+    "body": "Wir reinigen nicht nur sichtbar, sondern spürbar. Mit geschultem Personal, klaren Qualitätsstandards und einem hohen Anspruch an Sauberkeit schaffen wir hygienische Arbeitsumgebungen, in denen sich Mitarbeitende und Kunden gleichermaßen wohlfühlen. So bleiben Abläufe störungsfrei und Ihre Arbeitsplätze dauerhaft gepflegt."
+  },
   "doubleWidePictureAndText": {
     "eyebrow": "Unsere Erfahrung",
     "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
@@ -32,14 +41,5 @@
     "heading": "AK Crystal Clean\nWir machen Alles Klar!",
     "body": "Unser Anspruch ist klar: Reinigungsqualität, auf die Sie sich jederzeit verlassen können. Deshalb setzen wir auf geschulte Mitarbeiter, klare Prozesse und eine enge Zusammenarbeit mit unseren Kunden, um dauerhaft überzeugende Ergebnisse zu liefern."
   },
-  "widePictureAndText": {
-    "eyebrow": "Warum AK Crystal Clean",
-    "heading": "Ein Ansprechpartner für\neffiziente Betreuung!\n",
-    "body": " Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können."
-  },
-  "widePictureAndTextSecondary": {
-    "eyebrow": "Unsere Stärken",
-    "heading": "Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.!\n",
-    "body": "Wir reinigen nicht nur sichtbar, sondern spürbar. Mit geschultem Personal, klaren Qualitätsstandards und einem hohen Anspruch an Sauberkeit schaffen wir hygienische Arbeitsumgebungen, in denen sich Mitarbeitende und Kunden gleichermaßen wohlfühlen. So bleiben Abläufe störungsfrei und Ihre Arbeitsplätze dauerhaft gepflegt."
-  }
+  "_template": "home"
 }

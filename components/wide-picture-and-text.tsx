@@ -15,7 +15,6 @@ import {
   PageServiceWidePictureAndText,
 } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 type WidePictureAndTextProps = {
   section?:
@@ -66,7 +65,7 @@ export default function WidePictureAndText({
           data-tina-field={tinaField(section, 'heading')}
           className="font-cooper-hewitt xxxs:text-3xl text-2xl leading-tight font-semibold tracking-tight whitespace-pre-line opacity-80 lg:text-[32px]"
         >
-          {section.heading ? <TinaMarkdown content={section.heading} /> : null}
+          {section.heading}
         </h3>
         <p
           data-tina-field={tinaField(section, 'body')}

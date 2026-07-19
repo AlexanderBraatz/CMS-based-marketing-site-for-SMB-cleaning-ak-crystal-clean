@@ -13,7 +13,6 @@ import logo8 from '@/public/images/logos/logo-auto-nix.png';
 import Image from 'next/image';
 import { PageHome } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 const LOGO_SIZES_STANDARD = '(min-width: 960px) 120px, (min-width: 480px) calc(13.7vw - 9px), 120px';
 const LOGO_SIZES_NARROW = '(min-width: 760px) 93px, (min-width: 480px) calc(13.85vw - 9px), 93px';
@@ -38,7 +37,7 @@ export default function LogoBanner({ page }: LogoBannerProps) {
             data-tina-field={tinaField(page, 'logoBannerHeading')}
             className="font-cooper-hewitt xxxs:text-3xl xs:mx-0 span-2 mx-auto w-full pb-3 text-2xl leading-tight font-semibold tracking-tight whitespace-pre-line opacity-80 lg:pb-0 lg:text-[32px]"
           >
-            {page.logoBannerHeading ? <TinaMarkdown content={page.logoBannerHeading} /> : null}
+            {page.logoBannerHeading}
           </h3>
         </div>
       </div>

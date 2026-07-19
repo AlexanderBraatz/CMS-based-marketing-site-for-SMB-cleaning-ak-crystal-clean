@@ -5,16 +5,22 @@ const branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF ||
 
 const heroFields: TinaField[] = [
   {
-    type: 'rich-text',
+    type: 'string',
     name: 'title',
     label: 'Hero Heading',
     required: true,
+    ui: {
+      component: 'textarea',
+    },
   },
   {
-    type: 'rich-text',
+    type: 'string',
     name: 'subHeading',
     label: 'Hero Subheading',
     required: true,
+    ui: {
+      component: 'textarea',
+    },
   },
 ];
 
@@ -25,9 +31,12 @@ const widePictureAndTextInnerFields: TinaField[] = [
     label: 'Eyebrow / Caption',
   },
   {
-    type: 'rich-text',
+    type: 'string',
     name: 'heading',
     label: 'Heading',
+    ui: {
+      component: 'textarea',
+    },
   },
   {
     type: 'string',
@@ -46,10 +55,7 @@ const makeWidePictureAndTextField = (name: string, label: string): TinaField => 
   fields: widePictureAndTextInnerFields,
 });
 
-const widePictureAndTextField = makeWidePictureAndTextField(
-  'widePictureAndText',
-  'Wide Picture And Text',
-);
+const widePictureAndTextField = makeWidePictureAndTextField('widePictureAndText', 'Wide Picture And Text');
 const widePictureAndTextSecondaryField = makeWidePictureAndTextField(
   'widePictureAndTextSecondary',
   'Wide Picture And Text (Second)',
@@ -394,9 +400,12 @@ export default defineConfig({
                 label: 'Logo Banner Eyebrow',
               },
               {
-                type: 'rich-text',
+                type: 'string',
                 name: 'logoBannerHeading',
                 label: 'Logo Banner Heading',
+                ui: {
+                  component: 'textarea',
+                },
               },
               widePictureAndTextField,
               widePictureAndTextSecondaryField,
@@ -528,49 +537,16 @@ export default defineConfig({
           {
             name: 'service',
             label: 'Service Page',
-            fields: [
-              ...heroFields,
-              widePictureAndTextField,
-              doubleWidePictureAndTextField,
-              bulletPointsField,
-            ],
+            fields: [...heroFields, widePictureAndTextField, doubleWidePictureAndTextField, bulletPointsField],
           },
           {
             name: 'jobs',
             label: 'Jobs Page',
-            fields: [
-              ...heroFields,
-              widePictureAndTextField,
-              doubleWidePictureAndTextField,
-              bulletPointsField,
-            ],
+            fields: [...heroFields, widePictureAndTextField, doubleWidePictureAndTextField, bulletPointsField],
           },
         ],
       },
-      {
-        name: 'post',
-        label: 'Posts',
-        path: 'content/posts',
-        fields: [
-          {
-            type: 'string',
-            name: 'title',
-            label: 'Title',
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Body',
-            isBody: true,
-          },
-        ],
-        ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
-        },
-      },
+
       {
         name: 'global',
         label: 'Site Settings',
