@@ -7,17 +7,28 @@ import Hero from '@/components/hero-home';
 import SomeText from '@/components/some-text';
 import heroImage5 from '@/public/images/team-mopping-hero-wide.jpg';
 import FormImage from '@/public/images/form-right-side/team-two-bosses.jpg';
-import { PageDefault, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import {
+  GlobalQuery,
+  GlobalQueryVariables,
+  PageDefault,
+  PageQuery,
+  PageQueryVariables,
+} from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type LeistungenPageContentProps = {
   data: PageQuery;
   query: string;
   variables: PageQueryVariables;
+  global: {
+    data: GlobalQuery;
+    query: string;
+    variables: GlobalQueryVariables;
+  };
 };
 
-export default function LeistungenPageContent(props: LeistungenPageContentProps) {
-  const { data } = useTina(props);
+export default function LeistungenPageContent({ global, ...tinaProps }: LeistungenPageContentProps) {
+  const { data } = useTina(tinaProps);
   const page = data.page as PageDefault;
 
   return (
@@ -26,7 +37,7 @@ export default function LeistungenPageContent(props: LeistungenPageContentProps)
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[96px]">
           <Hero page={page} image={heroImage5} className={'2sm:mb-0 mb-0 sm:mb-20'} />
-          <LinksToServices section={page.linksToServices} />
+          <LinksToServices {...global} />
           <SomeText section={page.someText} />
         </div>
       </div>

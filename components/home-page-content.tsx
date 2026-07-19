@@ -64,7 +64,7 @@ export default function HomePageContent({ global, ...tinaProps }: HomePageConten
                 imageLeft={imageLeft}
                 imageRight={imageRight}
               />
-              <LinksToServices section={page.linksToServices} />
+              <LinksToServices {...global} />
               <FormWhitespace section={page.formWhitespace} />
               <Map section={page.map} {...global} />
             </div>

@@ -480,7 +480,6 @@ export default defineConfig({
                   },
                 ],
               },
-              linksToServicesField,
               {
                 type: 'object',
                 name: 'formWhitespace',
@@ -530,7 +529,6 @@ export default defineConfig({
               widePictureAndTextSectionsField,
               doubleWidePictureAndTextField,
               bulletPointsField,
-              linksToServicesField,
               leftTextAndButtonField,
             ],
           },
@@ -583,6 +581,7 @@ export default defineConfig({
             },
           },
           keyPointsField,
+          linksToServicesField,
         ],
       },
     ],

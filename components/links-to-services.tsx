@@ -14,8 +14,8 @@ import image5 from '@/public/images/icon-large-entruempelung.svg';
 import image6 from '@/public/images/icon-large-solar-dach.svg';
 import image7 from '@/public/images/icon-large-industrie.svg';
 import image8 from '@/public/images/icon-large-other-servicies.svg';
-import { PageDefaultLinksToServices, PageHomeLinksToServices } from '@/tina/__generated__/types';
-import { tinaField } from 'tinacms/dist/react';
+import { GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
+import { tinaField, useTina } from 'tinacms/dist/react';
 
 // TODO: this is a temp solution , i may later wone to pu this into the main data structure for servecis SERVICE_OPTIONS but i am waiting untill i get to implemnting TINACMS
 const SERVICE_ICONS: Record<ServiceValue, StaticImageData> = {
@@ -29,10 +29,14 @@ const SERVICE_ICONS: Record<ServiceValue, StaticImageData> = {
 };
 
 type LinksToServicesProps = {
-  section?: PageHomeLinksToServices | PageDefaultLinksToServices | null;
+  data: GlobalQuery;
+  query: string;
+  variables: GlobalQueryVariables;
 };
 
-export default function LinksToServices({ section }: LinksToServicesProps) {
+export default function LinksToServices(props: LinksToServicesProps) {
+  const { data } = useTina(props);
+  const section = data.global.linksToServices;
   const eyebrow = section?.eyebrow ?? 'Ihre Wahl';
   const heading = section?.heading ?? 'Professionelle Gebäudereinigung für ihr Unternehmen';
 
