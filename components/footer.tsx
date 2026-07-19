@@ -1,8 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { mainNavLinks, serviceNavLinks } from '@/lib/nav-links';
 import logo from '@/public/images/logo-crystal-white-outline.png';
 import logoText from '@/public/images/logo-text-white2.png';
+import { GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
+import { tinaField, useTina } from 'tinacms/dist/react';
+
+const DEFAULT_ADDRESS = 'Schießbergstraße 9A\n63584 Gründau';
 
 function FooterLogo() {
   return (
@@ -24,7 +30,17 @@ function FooterLogo() {
   );
 }
 
-export default function Footer() {
+type FooterProps = {
+  data: GlobalQuery;
+  query: string;
+  variables: GlobalQueryVariables;
+};
+
+export default function Footer(props: FooterProps) {
+  const { data } = useTina(props);
+  const global = data.global;
+  const address = global.address?.trim() ? global.address : DEFAULT_ADDRESS;
+
   return (
     <footer className="theme-dark-purple border-t-theme-color-image-drop text-theme-text mt-auto border-t bg-black">
       <div className="mx-auto w-full overflow-clip lg:w-[1071px]">
@@ -65,10 +81,11 @@ export default function Footer() {
 
             <div className="2sm:col-span-1 2sm:col-start-2 2sm:row-start-2 col-span-2 lg:col-start-auto lg:row-start-auto">
               <p className="font-barlow-semi-condensed mb-3 text-sm font-bold tracking-wide uppercase">Kontakt</p>
-              <address className="font-instrument-sans text-sm leading-snug not-italic opacity-90">
-                Schießbergstraße 9A
-                <br />
-                63584 Gründau
+              <address
+                data-tina-field={tinaField(global, 'address')}
+                className="font-instrument-sans text-sm leading-snug whitespace-pre-line not-italic opacity-90"
+              >
+                {address}
               </address>
               <Link href="/#contact-form" className="font-instrument-sans mt-3 inline-block text-sm hover:underline">
                 Kontakt aufnehmen

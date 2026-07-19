@@ -503,14 +503,6 @@ export default defineConfig({
                     name: 'heading',
                     label: 'Heading',
                   },
-                  {
-                    type: 'string',
-                    name: 'address',
-                    label: 'Address',
-                    ui: {
-                      component: 'textarea',
-                    },
-                  },
                 ],
               },
               keyPointsField,
@@ -570,6 +562,30 @@ export default defineConfig({
           // This is an DEMO router. You can remove this to fit your site
           router: ({ document }) => `/demo/blog/${document._sys.filename}`,
         },
+      },
+      {
+        name: 'global',
+        label: 'Site Settings',
+        path: 'content/global',
+        format: 'json',
+        ui: {
+          global: true,
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: 'string',
+            name: 'address',
+            label: 'Address',
+            required: true,
+            ui: {
+              component: 'textarea',
+            },
+          },
+        ],
       },
     ],
   },

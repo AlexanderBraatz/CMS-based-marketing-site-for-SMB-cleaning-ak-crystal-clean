@@ -6,16 +6,27 @@ import { fadeInUp } from '@/animations/motion';
 import map from '@/public/images/map-image.jpg';
 import location from '@/public/images/grimmelshausen-twon.jpg';
 import icon from '@/public/images/location-pin.svg';
-import { PageHomeMap } from '@/tina/__generated__/types';
-import { tinaField } from 'tinacms/dist/react';
+import {
+  GlobalQuery,
+  GlobalQueryVariables,
+  PageHomeMap,
+} from '@/tina/__generated__/types';
+import { tinaField, useTina } from 'tinacms/dist/react';
+
+const DEFAULT_ADDRESS = 'Schießbergstraße 9A\n63584 Gründau';
 
 type MapProps = {
   section?: PageHomeMap | null;
+  data: GlobalQuery;
+  query: string;
+  variables: GlobalQueryVariables;
 };
 
-export default function Map({ section }: MapProps) {
+export default function Map({ section, ...globalProps }: MapProps) {
+  const { data } = useTina(globalProps);
+  const global = data.global;
   const heading = section?.heading ?? 'Unsere Servicegebiete';
-  const address = section?.address ?? 'Schießbergstraße 9A\n63584\nGründau';
+  const address = global.address?.trim() ? global.address : DEFAULT_ADDRESS;
 
   return (
     <motion.div {...fadeInUp} className="px-[5%]">
@@ -60,10 +71,7 @@ export default function Map({ section }: MapProps) {
           <div className="flex flex-row items-start gap-2 sm:mt-5">
             <Image src={icon} alt="icon" />
             <div className="font-instrument-sans 2sm:text-xl text-xl leading-tight font-semibold tracking-tighter sm:text-base">
-              <p
-                data-tina-field={section ? tinaField(section, 'address') : undefined}
-                className="whitespace-pre-line"
-              >
+              <p data-tina-field={tinaField(global, 'address')} className="whitespace-pre-line">
                 {address}
               </p>
             </div>

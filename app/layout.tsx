@@ -7,6 +7,7 @@ import ViewportGate from './viewport-gate';
 import Navbar from '../components/navbar';
 import ChoseComponentDevTools from '@/components/utility-components/chose-component-dev-tools';
 import Script from 'next/script';
+import client from '@/tina/__generated__/client';
 
 const barlowSemiCondensed = Barlow_Semi_Condensed({
   variable: '--font-barlow-semi-condensed',
@@ -118,11 +119,13 @@ export const metadata: Metadata = {
   description: 'Ihr Partner in Gründau für Gebeudereinigung',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const globalRes = await client.queries.global({ relativePath: 'index.json' });
+
   return (
     <html
       lang="en"
@@ -144,7 +147,7 @@ export default function RootLayout({
           <Navbar />
           <div className="h-[60px] w-full"></div>
           {children}
-          <Footer />
+          <Footer data={globalRes.data} query={globalRes.query} variables={globalRes.variables} />
           {/* </ViewportGate> */}
         </ChoseComponentDevTools>
       </body>

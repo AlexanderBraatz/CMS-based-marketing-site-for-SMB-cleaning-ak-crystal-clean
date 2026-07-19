@@ -19,17 +19,22 @@ import WaveBackground from './wave-background';
 import WidePictureAndText from './wide-picture-and-text';
 import formImage from '@/public/images/form-right-side/team-two-bosses.jpg';
 import FormMessageOnlyOrMultiChoice from './form-message-only';
-import { PageHome, PageQuery, PageQueryVariables } from '@/tina/__generated__/types';
+import { PageHome, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 type HomePageContentProps = {
   data: PageQuery;
   query: string;
   variables: PageQueryVariables;
+  global: {
+    data: GlobalQuery;
+    query: string;
+    variables: GlobalQueryVariables;
+  };
 };
 
-export default function HomePageContent(props: HomePageContentProps) {
-  const { data } = useTina(props);
+export default function HomePageContent({ global, ...tinaProps }: HomePageContentProps) {
+  const { data } = useTina(tinaProps);
   const page = data.page as PageHome;
 
   return (
@@ -61,7 +66,7 @@ export default function HomePageContent(props: HomePageContentProps) {
               />
               <LinksToServices section={page.linksToServices} />
               <FormWhitespace section={page.formWhitespace} />
-              <Map section={page.map} />
+              <Map section={page.map} {...global} />
             </div>
           </div>
         </div>
