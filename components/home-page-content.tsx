@@ -10,17 +10,12 @@ import LeftTextAndButton from './left-text-and-button';
 import LinksToServices from './links-to-services';
 import LogoBanner from './logo-banner';
 import Map from './map';
-import imageLeft from '@/public/images/team-solo-man1.jpg';
-import imageRight from '@/public/images/team-headshots/team-solo-headshot-woman-2.jpg';
-import image3 from '@/public/images/team-man-arms-crossed-hero-format.jpg';
-import image4 from '@/public/images/team-two-happy-green3.jpg';
 import ValuesAndImages from './values-and-images';
 import WaveBackground from './wave-background';
 import WidePictureAndText from './wide-picture-and-text';
-import formImage from '@/public/images/form-right-side/team-two-bosses.jpg';
 import FormMessageOnlyOrMultiChoice from './form-message-only';
 import { PageHome, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
-import { useTina } from 'tinacms/dist/react';
+import { tinaField, useTina } from 'tinacms/dist/react';
 
 type HomePageContentProps = {
   data: PageQuery;
@@ -49,21 +44,15 @@ export default function HomePageContent({ global, ...tinaProps }: HomePageConten
 
             <WidePictureAndText
               section={page.widePictureAndText}
-              image={image3}
               imageOnLeft={true}
             />
             <WidePictureAndText
               section={page.widePictureAndTextSecondary}
-              image={image4}
               imageOnLeft={false}
             />
             <div className="flex flex-col gap-[180px]">
               <ValuesAndImages page={page} />
-              <DoubleWidePictureAndText
-                section={page.doubleWidePictureAndText}
-                imageLeft={imageLeft}
-                imageRight={imageRight}
-              />
+              <DoubleWidePictureAndText section={page.doubleWidePictureAndText} />
               <LinksToServices {...global} />
               <FormWhitespace section={page.formWhitespace} />
               <Map section={page.map} {...global} />
@@ -81,9 +70,11 @@ export default function HomePageContent({ global, ...tinaProps }: HomePageConten
         </div>
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
-            heading="Was können wir für Sie tun ?"
+            heading={page.contactForm?.heading ?? 'Was können wir für Sie tun ?'}
             showMulitChoice={false}
-            image={formImage}
+            image={page.contactForm?.image ?? undefined}
+            headingTinaField={page.contactForm ? tinaField(page.contactForm, 'heading') : undefined}
+            imageTinaField={page.contactForm ? tinaField(page.contactForm, 'image') : undefined}
           />
         </div>
       </main>

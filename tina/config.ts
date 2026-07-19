@@ -26,6 +26,11 @@ const heroFields: TinaField[] = [
 
 const widePictureAndTextInnerFields: TinaField[] = [
   {
+    type: 'image',
+    name: 'image',
+    label: 'Image',
+  },
+  {
     type: 'string',
     name: 'eyebrow',
     label: 'Eyebrow / Caption',
@@ -320,6 +325,16 @@ const doubleWidePictureAndTextField: TinaField = {
   label: 'Double Wide Picture And Text',
   fields: [
     {
+      type: 'image',
+      name: 'imageLeft',
+      label: 'Image Left',
+    },
+    {
+      type: 'image',
+      name: 'imageRight',
+      label: 'Image Right',
+    },
+    {
       type: 'string',
       name: 'eyebrow',
       label: 'Eyebrow / Caption',
@@ -361,9 +376,11 @@ export default defineConfig({
   // server: {
   //   allowedOrigins: ['https://your-codespace.github.dev'],
   // },
+  // Repo-based media: uploads land in public/images (no Cloudinary/S3).
+  // Tina stores paths like "/images/foo.jpg" which next/image can use directly.
   media: {
     tina: {
-      mediaRoot: '',
+      mediaRoot: 'images',
       publicFolder: 'public',
     },
   },
@@ -407,6 +424,54 @@ export default defineConfig({
                   component: 'textarea',
                 },
               },
+              {
+                type: 'image',
+                name: 'logoBannerImage1',
+                label: 'Logo Banner Image 1',
+                required: true,
+              },
+              {
+                type: 'image',
+                name: 'logoBannerImage2',
+                label: 'Logo Banner Image 2',
+                required: true,
+              },
+              {
+                type: 'image',
+                name: 'logoBannerImage3',
+                label: 'Logo Banner Image 3',
+                required: true,
+              },
+              {
+                type: 'image',
+                name: 'logoBannerImage4',
+                label: 'Logo Banner Image 4',
+                required: true,
+              },
+              {
+                type: 'image',
+                name: 'logoBannerImage5',
+                label: 'Logo Banner Image 5',
+                required: true,
+              },
+              {
+                type: 'image',
+                name: 'logoBannerImage6',
+                label: 'Logo Banner Image 6',
+                required: true,
+              },
+              {
+                type: 'image',
+                name: 'logoBannerImage7',
+                label: 'Logo Banner Image 7',
+                required: true,
+              },
+              {
+                type: 'image',
+                name: 'logoBannerImage8',
+                label: 'Logo Banner Image 8',
+                required: true,
+              },
               widePictureAndTextField,
               widePictureAndTextSecondaryField,
               doubleWidePictureAndTextField,
@@ -415,6 +480,30 @@ export default defineConfig({
                 name: 'valuesAndImages',
                 label: 'Values And Images',
                 fields: [
+                  {
+                    type: 'image',
+                    name: 'image1',
+                    label: 'Image 1',
+                    required: true,
+                  },
+                  {
+                    type: 'image',
+                    name: 'image2',
+                    label: 'Image 2',
+                    required: true,
+                  },
+                  {
+                    type: 'image',
+                    name: 'image3',
+                    label: 'Image 3',
+                    required: true,
+                  },
+                  {
+                    type: 'image',
+                    name: 'image4',
+                    label: 'Image 4',
+                    required: true,
+                  },
                   {
                     type: 'string',
                     name: 'eyebrow',
@@ -507,6 +596,16 @@ export default defineConfig({
                 label: 'Map',
                 fields: [
                   {
+                    type: 'image',
+                    name: 'mapImage',
+                    label: 'Map Image',
+                  },
+                  {
+                    type: 'image',
+                    name: 'locationImage',
+                    label: 'Location Image',
+                  },
+                  {
                     type: 'string',
                     name: 'heading',
                     label: 'Heading',
@@ -514,6 +613,23 @@ export default defineConfig({
                 ],
               },
               leftTextAndButtonField,
+              {
+                type: 'object',
+                name: 'contactForm',
+                label: 'Contact Form',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'heading',
+                    label: 'Heading',
+                  },
+                  {
+                    type: 'image',
+                    name: 'image',
+                    label: 'Image',
+                  },
+                ],
+              },
             ],
           },
           {

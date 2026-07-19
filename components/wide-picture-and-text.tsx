@@ -16,16 +16,18 @@ import {
 } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 
+type WidePictureSection =
+  | PageHomeWidePictureAndText
+  | PageHomeWidePictureAndTextSecondary
+  | PageAboutWidePictureAndText
+  | PageAboutWidePictureAndTextSecondary
+  | PageServiceWidePictureAndText
+  | PageJobsWidePictureAndText;
+
 type WidePictureAndTextProps = {
-  section?:
-    | PageHomeWidePictureAndText
-    | PageHomeWidePictureAndTextSecondary
-    | PageAboutWidePictureAndText
-    | PageAboutWidePictureAndTextSecondary
-    | PageServiceWidePictureAndText
-    | PageJobsWidePictureAndText
-    | null;
-  image: StaticImageData;
+  section?: WidePictureSection | null;
+  /** Fallback when the Tina image field is empty (other pages still use static imports). */
+  image?: StaticImageData | string;
   imageOnLeft?: boolean;
   liftTextForSlantedDesign?: boolean;
   hasButton?: boolean;
@@ -42,15 +44,19 @@ export default function WidePictureAndText({
 }: WidePictureAndTextProps) {
   if (!section) return null;
 
+  const resolvedImage = section.image || image;
+  if (!resolvedImage) return null;
+
   return (
     <motion.div
       {...getFadeInUpAtAmount(0)}
       className="2sm:gap-0 theme-light-background text-theme-text 2sm:grid-cols-2 2sm:w-full xs:w-[70vw] mx-auto grid w-full grid-cols-1 gap-10 px-[5%]"
     >
       <ImageWideSection
-        image={image}
+        image={resolvedImage}
         isOnLeft={imageOnLeft}
         className={`order-1 ${imageOnLeft ? '2sm:order-1' : '2sm:order-2'}`}
+        tinaField={tinaField(section, 'image')}
       />
       <div
         className={`relative order-2 flex flex-col gap-5 lg:gap-8 ${imageOnLeft ? '2sm:order-2' : '2sm:order-1'} ${liftTextForSlantedDesign ? '2sm:top-[-100px]' : ''} ${imageOnLeft ? '2sm:pl-[20px] pl-0 lg:pl-[41px]' : '2sm:pr-[20px] pr-0 lg:pr-[41px]'}`}

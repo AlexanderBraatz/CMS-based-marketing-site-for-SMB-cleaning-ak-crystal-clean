@@ -136,10 +136,14 @@ export default function FormMessageOnlyOrMultiChoice({
   heading,
   showMulitChoice,
   image,
+  headingTinaField,
+  imageTinaField,
 }: {
   heading: string;
   showMulitChoice: boolean;
-  image?: StaticImageData;
+  image?: StaticImageData | string;
+  headingTinaField?: string;
+  imageTinaField?: string;
 }) {
   const pathname = usePathname() ?? '';
   const [submissionId] = useState(() => crypto.randomUUID());
@@ -149,6 +153,8 @@ export default function FormMessageOnlyOrMultiChoice({
 
   const serviceFromPath = getServiceFromPathname(pathname);
   const pathBasedImage = serviceFromPath && MAN_SERVICE_VALUES.has(serviceFromPath) ? manImage : womanImage;
+  const resolvedImage = image ?? pathBasedImage;
+  const isStaticImport = typeof resolvedImage !== 'string';
   const mode = showMulitChoice ? 'services' : 'message';
 
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
@@ -226,7 +232,10 @@ export default function FormMessageOnlyOrMultiChoice({
         <div className="px-0 md:px-[82px]">
           <div className="bg-theme-card-background-2 2sm:grid-cols-2 grid w-full grid-cols-1 gap-5 sm:grid-cols-[1fr_300px]">
             <div className="flex h-full flex-col pt-6 pr-5 pl-5 sm:min-h-[556px] sm:pr-0">
-              <h5 className="font-cooper-hewitt text-theme-text mb-6 shrink-0 text-3xl leading-tight font-semibold tracking-tight">
+              <h5
+                data-tina-field={headingTinaField}
+                className="font-cooper-hewitt text-theme-text mb-6 shrink-0 text-3xl leading-tight font-semibold tracking-tight"
+              >
                 {heading}
               </h5>
               {isSuccess ? (
@@ -445,28 +454,19 @@ export default function FormMessageOnlyOrMultiChoice({
                 </form>
               )}
             </div>
-            <div className="relative hidden h-full min-h-[556px] w-full sm:block">
-              {image ? (
-                <Image
-                  src={image}
-                  alt="image"
-                  fill
-                  sizes={FORM_SIDE_IMAGE_SIZES}
-                  className="h-full w-full object-cover"
-                  placeholder="blur"
-                  quality={40}
-                />
-              ) : (
-                <Image
-                  src={pathBasedImage}
-                  alt="image"
-                  className="h-full w-full object-cover"
-                  sizes={FORM_SIDE_IMAGE_SIZES}
-                  fill
-                  quality={40}
-                  placeholder="blur"
-                />
-              )}
+            <div
+              data-tina-field={imageTinaField}
+              className="relative hidden h-full min-h-[556px] w-full sm:block"
+            >
+              <Image
+                src={resolvedImage}
+                alt=""
+                fill
+                sizes={FORM_SIDE_IMAGE_SIZES}
+                className="h-full w-full object-cover"
+                quality={40}
+                {...(isStaticImport ? { placeholder: 'blur' as const } : {})}
+              />
             </div>
           </div>
         </div>

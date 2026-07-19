@@ -10,12 +10,17 @@ export default function ImageWideSection({
   image,
   isOnLeft,
   className = '',
+  tinaField,
 }: {
-  image: StaticImageData;
+  /** Static import or a public path from Tina (e.g. "/images/foo.jpg") */
+  image: StaticImageData | string;
   isOnLeft: boolean;
   className?: string;
+  /** Optional Tina visual-editing attribute for the image field */
+  tinaField?: string;
 }) {
   const sizes = isOnLeft ? WIDE_IMAGE_SIZES_LEFT : WIDE_IMAGE_SIZES_RIGHT;
+  const isStaticImport = typeof image !== 'string';
 
   return (
     <div
@@ -25,17 +30,18 @@ export default function ImageWideSection({
         className={`after:bg-theme-color-image-drop relative aspect-[calc(441/354)] h-auto w-full after:absolute after:top-1 after:-z-10 after:h-full after:w-full after:content-[''] ${isOnLeft ? 'col-start-1 after:right-1 after:rounded-tr-[80px] after:rounded-bl-[80px]' : 'col-start-2 after:left-1 after:rounded-tl-[80px] after:rounded-br-[80px]'}`}
       >
         <div
+          data-tina-field={tinaField}
           className={`border-theme-color-image-border relative z-20 h-full w-full overflow-clip border ${isOnLeft ? 'rounded-tr-[80px] rounded-bl-[80px]' : 'bg-theme-color-image-drop rounded-tl-[80px] rounded-br-[80px]'}`}
         >
           <Image
             src={image}
-            alt="image"
+            alt=""
             className="bg-theme-color-image-drop h-full w-full object-cover"
             fill
-            // sizes="441px"
             sizes={sizes}
             quality={40}
-            placeholder="blur"
+            // Blur placeholders only work with static imports; CMS paths are plain strings.
+            {...(isStaticImport ? { placeholder: 'blur' as const } : {})}
           />
         </div>
       </div>

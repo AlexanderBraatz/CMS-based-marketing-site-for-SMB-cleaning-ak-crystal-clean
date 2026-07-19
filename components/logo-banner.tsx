@@ -2,14 +2,6 @@
 
 import React from 'react';
 
-import logo1 from '@/public/images/logos/logo-gruendau.png';
-import logo2 from '@/public/images/logos/logo-hoeffner.png';
-import logo3 from '@/public/images/logos/logo-josgrund.png';
-import logo4 from '@/public/images/logos/logo-paradieschen.png';
-import logo5 from '@/public/images/logos/main-koerper-360.png';
-import logo6 from '@/public/images/logos/logo-weber.png';
-import logo7 from '@/public/images/logos/logo-senckenberg.png';
-import logo8 from '@/public/images/logos/logo-auto-nix.png';
 import Image from 'next/image';
 import { PageHome } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
@@ -45,62 +37,86 @@ export default function LogoBanner({ page }: LogoBannerProps) {
       <div className="xs:grid-cols-8 col-span-8 grid grid-cols-4 items-center gap-5">
         <Image
           alt="logo"
-          src={logo1}
-          className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
+          src={page.logoBannerImage1}
+          data-tina-field={tinaField(page, 'logoBannerImage1')}
+          width={560}
+          height={205}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[45px] w-[120px] object-contain"
           sizes={LOGO_SIZES_STANDARD}
           quality={40}
         />
         <Image
           alt="logo"
-          src={logo4}
-          className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
+          src={page.logoBannerImage2}
+          data-tina-field={tinaField(page, 'logoBannerImage2')}
+          width={420}
+          height={204}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[45px] w-[120px] object-contain"
           sizes={LOGO_SIZES_NARROW}
           quality={40}
         />
         <Image
           alt="logo"
-          src={logo3}
-          className="xs:justify-self-end col-span-2 max-h-[50px] w-[120px] object-contain"
+          src={page.logoBannerImage3}
+          data-tina-field={tinaField(page, 'logoBannerImage3')}
+          width={456}
+          height={248}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[50px] w-[120px] object-contain"
           sizes={LOGO_SIZES_NARROW}
           quality={40}
         />
 
         <Image
           alt="logo"
-          src={logo2}
-          className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
+          src={page.logoBannerImage4}
+          data-tina-field={tinaField(page, 'logoBannerImage4')}
+          width={560}
+          height={168}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[45px] w-[120px] object-contain"
           sizes={LOGO_SIZES_STANDARD}
           quality={40}
         />
 
         <Image
           alt="logo"
-          src={logo5}
-          className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
+          src={page.logoBannerImage5}
+          data-tina-field={tinaField(page, 'logoBannerImage5')}
+          width={560}
+          height={100}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[45px] w-[120px] object-contain"
           sizes={LOGO_SIZES_STANDARD}
           quality={40}
         />
 
         <Image
           alt="logo"
-          src={logo6}
-          className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
+          src={page.logoBannerImage6}
+          data-tina-field={tinaField(page, 'logoBannerImage6')}
+          width={452}
+          height={188}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[45px] w-[120px] object-contain"
           sizes={LOGO_SIZES_MEDIUM}
           quality={40}
         />
 
         <Image
           alt="logo"
-          src={logo7}
-          className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
+          src={page.logoBannerImage7}
+          data-tina-field={tinaField(page, 'logoBannerImage7')}
+          width={560}
+          height={60}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[45px] w-[120px] object-contain"
           sizes={LOGO_SIZES_STANDARD}
           quality={40}
         />
 
         <Image
           alt="logo"
-          src={logo8}
-          className="xs:justify-self-end col-span-2 max-h-[45px] w-[120px] object-contain"
+          src={page.logoBannerImage8}
+          data-tina-field={tinaField(page, 'logoBannerImage8')}
+          width={560}
+          height={204}
+          className="xs:justify-self-end col-span-2 h-auto max-h-[45px] w-[120px] object-contain"
           sizes={LOGO_SIZES_STANDARD}
           quality={40}
         />

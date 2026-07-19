@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/animations/motion';
-import map from '@/public/images/map-image.jpg';
-import location from '@/public/images/grimmelshausen-twon.jpg';
 import icon from '@/public/images/location-pin.svg';
 import {
   GlobalQuery,
@@ -27,6 +25,8 @@ export default function Map({ section, ...globalProps }: MapProps) {
   const global = data.global;
   const heading = section?.heading ?? 'Unsere Servicegebiete';
   const address = global.address?.trim() ? global.address : DEFAULT_ADDRESS;
+  const mapImage = section?.mapImage;
+  const locationImage = section?.locationImage;
 
   return (
     <motion.div {...fadeInUp} className="px-[5%]">
@@ -38,35 +38,37 @@ export default function Map({ section, ...globalProps }: MapProps) {
       </h3>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
         <div className="col-span-2 aspect-[calc(2436/2030)] w-full">
-          <div className="border-theme-color-image-border //h-[528px] relative h-full w-full overflow-clip rounded-tl-[80px] rounded-br-[80px] border">
-            <Image
-              src={map}
-              alt="map"
-              // width={2436}
-              // height={2030}
-              quality={40}
-              fill
-              // sizes="634px"
-              sizes="(min-width: 1140px) 634px, (min-width: 720px) calc(52.75vw + 43px), 90vw"
-              placeholder="blur"
-              className="object-cover"
-            />
+          <div
+            data-tina-field={section ? tinaField(section, 'mapImage') : undefined}
+            className="border-theme-color-image-border //h-[528px] relative h-full w-full overflow-clip rounded-tl-[80px] rounded-br-[80px] border"
+          >
+            {mapImage ? (
+              <Image
+                src={mapImage}
+                alt="map"
+                quality={40}
+                fill
+                sizes="(min-width: 1140px) 634px, (min-width: 720px) calc(52.75vw + 43px), 90vw"
+                className="object-cover"
+              />
+            ) : null}
           </div>
         </div>
         <div>
-          <div className="border-theme-color-image-border //h-[193px] relative hidden aspect-[calc(1160/773)] w-full border sm:block">
-            <Image
-              src={location}
-              alt="picture of town"
-              // width={1160}
-              // height={773}
-              quality={40}
-              fill
-              // sizes="290px"
-              sizes="(min-width: 1140px) 306px, calc(26.25vw + 12px)"
-              placeholder="blur"
-              className="object-cover"
-            />
+          <div
+            data-tina-field={section ? tinaField(section, 'locationImage') : undefined}
+            className="border-theme-color-image-border //h-[193px] relative hidden aspect-[calc(1160/773)] w-full border sm:block"
+          >
+            {locationImage ? (
+              <Image
+                src={locationImage}
+                alt="picture of town"
+                quality={40}
+                fill
+                sizes="(min-width: 1140px) 306px, calc(26.25vw + 12px)"
+                className="object-cover"
+              />
+            ) : null}
           </div>
           <div className="flex flex-row items-start gap-2 sm:mt-5">
             <Image src={icon} alt="icon" />

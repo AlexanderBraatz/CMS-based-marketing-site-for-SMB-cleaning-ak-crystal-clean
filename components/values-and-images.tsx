@@ -3,10 +3,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { getFadeInUpAtAmount } from '@/animations/motion';
-import image1 from '@/public/images/team-solo-dusting-tall.jpg';
-import image2 from '@/public/images/team-solo-window-cleaning-tall.jpg';
-import image3 from '@/public/images/team-solo-outside-house-cleaning.jpg';
-import image4 from '@/public/images/team-solo-outside-window-cleaning.jpg';
 import TallImageDrop from './utility-components/image-tall-drop-left';
 import TallTextBox from './utility-components/tall-text-box';
 import DoubleImageWideSectionOnLeft from './utility-components/double-image-wide-section-on-left';
@@ -22,6 +18,7 @@ type ValuesAndImagesProps = {
 
 export default function ValuesAndImages({ page }: ValuesAndImagesProps) {
   const values = page.valuesAndImages;
+  if (!values) return null;
 
   return (
     <motion.div {...getFadeInUpAtAmount(0)} className="px-[5%]">
@@ -40,8 +37,9 @@ export default function ValuesAndImages({ page }: ValuesAndImagesProps) {
       <div className="xs:grid-cols-[1fr_2fr] xs:grid hidden gap-5 lg:grid-cols-4">
         <TallImageDrop
           className="xs:justify-self-end order-1 justify-self-center lg:order-0"
-          src={image1}
+          src={values.image1}
           sizes={valuesImageSizes}
+          tinaField={tinaField(values, 'image1')}
         />
         <TallTextBox
           className="xs:[&>p]:block order-2 justify-self-center lg:-top-8 lg:order-0"
@@ -62,13 +60,15 @@ export default function ValuesAndImages({ page }: ValuesAndImagesProps) {
         />
         <TallImageDrop
           className="xs:justify-self-end order-3 justify-self-center lg:order-0"
-          src={image3}
+          src={values.image3}
           sizes={valuesImageSizes}
+          tinaField={tinaField(values, 'image3')}
         />
         <TallImageDrop
           className="xs:justify-self-end order-5 justify-self-center lg:order-0"
-          src={image2}
+          src={values.image2}
           sizes={valuesImageSizes}
+          tinaField={tinaField(values, 'image2')}
         />
         <TallTextBox
           className="xs:[&>p]:block order-6 justify-self-center lg:-top-8 lg:order-0"
@@ -89,12 +89,18 @@ export default function ValuesAndImages({ page }: ValuesAndImagesProps) {
         />
         <TallImageDrop
           className="xs:justify-self-end order-7 justify-self-center lg:order-0"
-          src={image4}
+          src={values.image4}
           sizes={valuesImageSizes}
+          tinaField={tinaField(values, 'image4')}
         />
       </div>
       <div className="grid-col-1 xs:hidden grid">
-        <DoubleImageWideSectionOnLeft image1={image1} image2={image2} />
+        <DoubleImageWideSectionOnLeft
+          image1={values.image1}
+          image2={values.image2}
+          image1TinaField={tinaField(values, 'image1')}
+          image2TinaField={tinaField(values, 'image2')}
+        />
         <div className="2sm:pl-[20px] flex flex-col gap-4 pb-10 pl-0 lg:pl-[41px]">
           <MaterialSymbol name="handshake" size={24} />
           <h3
@@ -125,7 +131,12 @@ export default function ValuesAndImages({ page }: ValuesAndImagesProps) {
             {values?.paragraph2}
           </p>
         </div>
-        <DoubleImageWideSectionOnLeft image1={image3} image2={image4} />
+        <DoubleImageWideSectionOnLeft
+          image1={values.image3}
+          image2={values.image4}
+          image1TinaField={tinaField(values, 'image3')}
+          image2TinaField={tinaField(values, 'image4')}
+        />
         <div className="2sm:pl-[20px] flex flex-col gap-4 pb-10 pl-0 lg:pl-[41px]">
           <MaterialSymbol name="lightbulb" size={24} />
           <h3

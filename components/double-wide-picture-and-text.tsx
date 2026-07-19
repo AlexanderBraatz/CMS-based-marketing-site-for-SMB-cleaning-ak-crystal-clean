@@ -14,8 +14,9 @@ import {
 import { tinaField } from 'tinacms/dist/react';
 
 type DoubleWidePictureAndTextProps = {
-  imageLeft: StaticImageData;
-  imageRight: StaticImageData;
+  /** Fallback when the Tina image fields are empty (other pages still use static imports). */
+  imageLeft?: StaticImageData | string;
+  imageRight?: StaticImageData | string;
   section?:
     | PageHomeDoubleWidePictureAndText
     | PageServiceDoubleWidePictureAndText
@@ -34,15 +35,23 @@ export default function DoubleWidePictureAndText({
   const eyebrow = section?.eyebrow ?? text?.caption;
   const heading = section?.heading ?? text?.heading;
   const body = section?.body ?? text?.body;
+  const resolvedImageLeft = section?.imageLeft || imageLeft;
+  const resolvedImageRight = section?.imageRight || imageRight;
 
   if (!eyebrow && !heading && !body) return null;
+  if (!resolvedImageLeft || !resolvedImageRight) return null;
 
   return (
     <motion.div
       {...fadeInUp}
       className="2sm:gap-0 theme-light-background text-theme-text 2sm:grid-cols-2 2sm:w-full xs:w-[70vw] mx-auto grid w-full grid-cols-1 gap-15 px-[5%]"
     >
-      <DoubleImageWideSectionOnLeft image1={imageLeft} image2={imageRight} />
+      <DoubleImageWideSectionOnLeft
+        image1={resolvedImageLeft}
+        image2={resolvedImageRight}
+        image1TinaField={section ? tinaField(section, 'imageLeft') : undefined}
+        image2TinaField={section ? tinaField(section, 'imageRight') : undefined}
+      />
       <div className="2sm:pl-[20px] flex flex-col gap-5 pl-0 lg:pl-[41px]">
         <p
           data-tina-field={section ? tinaField(section, 'eyebrow') : undefined}
