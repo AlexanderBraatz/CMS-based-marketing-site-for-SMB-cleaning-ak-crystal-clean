@@ -5,7 +5,9 @@
   "doubleWidePictureAndText": {
     "eyebrow": "Unsere Stärken",
     "heading": "Schonend Angewandt ganz ohne Chemikalien",
-    "body": "Saubere Glasflächen und gepflegte Fassaden sind die Visitenkarte jeder Immobilie. Mit professionellen Reinigungsverfahren entfernen wir Schmutz, Witterungsrückstände und Ablagerungen gründlich und streifenfrei von Fenstern, Glasfronten und Fassadenflächen.\n\nDabei arbeiten wir materialschonend und setzen moderne Techniken ein, um auch schwer zugängliche Bereiche sicher und effizient zu reinigen. So sorgen wir dauerhaft für einen gepflegten ersten Eindruck und den langfristigen Werterhalt Ihrer Immobilie."
+    "body": "Saubere Glasflächen und gepflegte Fassaden sind die Visitenkarte jeder Immobilie. Mit professionellen Reinigungsverfahren entfernen wir Schmutz, Witterungsrückstände und Ablagerungen gründlich und streifenfrei von Fenstern, Glasfronten und Fassadenflächen.\n\nDabei arbeiten wir materialschonend und setzen moderne Techniken ein, um auch schwer zugängliche Bereiche sicher und effizient zu reinigen. So sorgen wir dauerhaft für einen gepflegten ersten Eindruck und den langfristigen Werterhalt Ihrer Immobilie.",
+    "imageLeft": "/images/glassImage1.jpg",
+    "imageRight": "/images/glassImage2.jpg"
   },
   "bulletPoints": {
     "caption": "Ihre Vorteile",
@@ -22,6 +24,12 @@
   "widePictureAndText": {
     "eyebrow": "Unsere Werte",
     "heading": "Regelmäßige Betreuung durch Beständige Partner",
-    "body": "Saubere Glasflächen und gepflegte Fassaden sind die Visitenkarte jeder Immobilie. Mit professionellen Reinigungsverfahren entfernen wir Schmutz, Witterungsrückstände und Ablagerungen gründlich und streifenfrei von Fenstern, Glasfronten und Fassadenflächen.\n\nDabei arbeiten wir materialschonend und setzen moderne Techniken ein, um auch schwer zugängliche Bereiche sicher und effizient zu reinigen. So sorgen wir dauerhaft für einen gepflegten ersten Eindruck und den langfristigen Werterhalt Ihrer Immobilie."
+    "body": "Saubere Glasflächen und gepflegte Fassaden sind die Visitenkarte jeder Immobilie. Mit professionellen Reinigungsverfahren entfernen wir Schmutz, Witterungsrückstände und Ablagerungen gründlich und streifenfrei von Fenstern, Glasfronten und Fassadenflächen.\n\nDabei arbeiten wir materialschonend und setzen moderne Techniken ein, um auch schwer zugängliche Bereiche sicher und effizient zu reinigen. So sorgen wir dauerhaft für einen gepflegten ersten Eindruck und den langfristigen Werterhalt Ihrer Immobilie.",
+    "image": "/images/glassImage3.jpg"
+  },
+  "heroImage": "/images/team-solo-window-cleaning-outside.jpg",
+  "contactForm": {
+    "heading": "Jetzt Glass und Fassaden kostenlos anfragen.",
+    "image": "/images/form-right-side/team-three-men-outside.jpg"
   }
 }

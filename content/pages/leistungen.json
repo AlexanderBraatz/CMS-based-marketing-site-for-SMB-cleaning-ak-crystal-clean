@@ -2,9 +2,14 @@
   "_template": "servicesOverview",
   "title": "Professionelle Gebäudereinigung",
   "subHeading": "Für ihr Unternehmen, Innen- bis Außenreinigung aus einer Hand.",
+  "heroImage": "/images/team-mopping-hero-wide.jpg",
   "someText": {
     "eyebrow": "Ihre Vorteile",
     "heading": "Mehr Leistungen \nohne Aufwand",
     "body": "Mit AK Crystal Clean erhalten Sie alle Reinigungsleistungen aus einer Hand. Statt mehrere Dienstleister zu koordinieren, profitieren Sie von festen Ansprechpartnern, klaren Abläufen und einem zuverlässigen Service. So reduzieren Sie Ihren Aufwand und gewinnen Zeit für die wirklich wichtigen Aufgaben in Ihrem Unternehmen."
+  },
+  "contactForm": {
+    "heading": "Was können wir für Sie tun?",
+    "image": "/images/form-right-side/team-two-bosses.jpg"
   }
 }

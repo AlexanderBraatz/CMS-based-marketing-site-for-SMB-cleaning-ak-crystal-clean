@@ -12,7 +12,7 @@ import GrayGradientBackgroundExtended from './gray-gradient-background-extended'
 import Hero from '@/components/hero-home';
 import LinksToServices from '@/components/links-to-services';
 import { PageService, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
-import { useTina } from 'tinacms/dist/react';
+import { tinaField, useTina } from 'tinacms/dist/react';
 
 type ServicesPageContentProps = {
   data: PageQuery;
@@ -35,16 +35,15 @@ export default function ServicesPageContent({ pageData, global, ...tinaProps }: 
       <div className="relative z-10 mx-auto w-full lg:w-[1071px]">
         <WaveBackground />
         <div className="relative z-10 flex flex-col gap-[96px] pb-[180px]">
-          <Hero page={page} image={pageData.page.image} />
-          <DoubleWidePictureAndText
-            section={page.doubleWidePictureAndText}
-            imageLeft={pageData.page.section1.image1}
-            imageRight={pageData.page.section1.image2}
+          <Hero
+            page={page}
+            image={page.heroImage ?? undefined}
+            imageTinaField={tinaField(page, 'heroImage')}
           />
+          <DoubleWidePictureAndText section={page.doubleWidePictureAndText} />
           <KeyPoints {...global} className="mt-[100px] mb-[54px]" />
           <WidePictureAndText
             section={page.widePictureAndText}
-            image={pageData.page.section2.image}
             imageOnLeft={false}
             liftTextForSlantedDesign={true}
           />
@@ -63,8 +62,11 @@ export default function ServicesPageContent({ pageData, global, ...tinaProps }: 
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-10 w-full">
           <FormMessageOnlyOrMultiChoice
-            heading={`Jetzt ${pageData.label} kostenlos anfragen.`}
+            heading={page.contactForm?.heading ?? `Jetzt ${pageData.label} kostenlos anfragen.`}
             showMulitChoice={true}
+            image={page.contactForm?.image ?? undefined}
+            headingTinaField={page.contactForm ? tinaField(page.contactForm, 'heading') : undefined}
+            imageTinaField={page.contactForm ? tinaField(page.contactForm, 'image') : undefined}
           />
         </div>
         <div className="relative z-0 mx-auto mt-10 w-full lg:w-[1071px]">
