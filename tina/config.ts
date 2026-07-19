@@ -18,43 +18,42 @@ const heroFields: TinaField[] = [
   },
 ];
 
-const widePictureAndTextSectionsField: TinaField = {
-  type: 'object',
-  name: 'widePictureAndTextSections',
-  label: 'Wide Picture And Text Sections',
-  list: true,
-  ui: {
-    itemProps: (item) => ({
-      label: item?.id || 'Wide picture and text',
-    }),
+const widePictureAndTextInnerFields: TinaField[] = [
+  {
+    type: 'string',
+    name: 'eyebrow',
+    label: 'Eyebrow / Caption',
   },
-  fields: [
-    {
-      type: 'string',
-      name: 'id',
-      label: 'Section ID',
-      required: true,
+  {
+    type: 'rich-text',
+    name: 'heading',
+    label: 'Heading',
+  },
+  {
+    type: 'string',
+    name: 'body',
+    label: 'Body',
+    ui: {
+      component: 'textarea',
     },
-    {
-      type: 'string',
-      name: 'eyebrow',
-      label: 'Eyebrow / Caption',
-    },
-    {
-      type: 'rich-text',
-      name: 'heading',
-      label: 'Heading',
-    },
-    {
-      type: 'string',
-      name: 'body',
-      label: 'Body',
-      ui: {
-        component: 'textarea',
-      },
-    },
-  ],
-};
+  },
+];
+
+const makeWidePictureAndTextField = (name: string, label: string): TinaField => ({
+  type: 'object',
+  name,
+  label,
+  fields: widePictureAndTextInnerFields,
+});
+
+const widePictureAndTextField = makeWidePictureAndTextField(
+  'widePictureAndText',
+  'Wide Picture And Text',
+);
+const widePictureAndTextSecondaryField = makeWidePictureAndTextField(
+  'widePictureAndTextSecondary',
+  'Wide Picture And Text (Second)',
+);
 
 const keyPointsField: TinaField = {
   type: 'object',
@@ -399,7 +398,8 @@ export default defineConfig({
                 name: 'logoBannerHeading',
                 label: 'Logo Banner Heading',
               },
-              widePictureAndTextSectionsField,
+              widePictureAndTextField,
+              widePictureAndTextSecondaryField,
               doubleWidePictureAndTextField,
               {
                 type: 'object',
@@ -515,7 +515,8 @@ export default defineConfig({
               someTextField,
               managementGalleryField,
               teamGalleryField,
-              widePictureAndTextSectionsField,
+              widePictureAndTextField,
+              widePictureAndTextSecondaryField,
               leftTextAndButtonField,
             ],
           },
@@ -529,7 +530,7 @@ export default defineConfig({
             label: 'Service Page',
             fields: [
               ...heroFields,
-              widePictureAndTextSectionsField,
+              widePictureAndTextField,
               doubleWidePictureAndTextField,
               bulletPointsField,
             ],
@@ -539,7 +540,7 @@ export default defineConfig({
             label: 'Jobs Page',
             fields: [
               ...heroFields,
-              widePictureAndTextSectionsField,
+              widePictureAndTextField,
               doubleWidePictureAndTextField,
               bulletPointsField,
             ],

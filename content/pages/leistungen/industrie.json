@@ -2,14 +2,6 @@
   "_template": "service",
   "title": "Industriereinigung",
   "subHeading": "Effizienz beginnt mit professioneller Reinigung.",
-  "widePictureAndTextSections": [
-    {
-      "id": "section-2",
-      "eyebrow": "Unsere Werte",
-      "heading": "Flexible Reinigungskonzepte für jeden Betrieb",
-      "body": "Jeder Betrieb hat andere Anforderungen. Deshalb entwickeln wir flexible Reinigungskonzepte, die zu Ihren Arbeitszeiten, Sicherheitsvorgaben und Produktionsabläufen passen.\n\nOb regelmäßige Reinigung, Maschinenpflege oder gezielte Sonderreinigung wir stimmen unsere Leistungen so ab, dass Ihr Betrieb möglichst wenig beeinträchtigt wird."
-    }
-  ],
   "doubleWidePictureAndText": {
     "eyebrow": "Warum AK Crystal Clean",
     "heading": "Erfahrene Fachkräfte für anspruchsvolle Aufgaben",
@@ -26,5 +18,10 @@
     "body3": "In Produktionsbereichen ist Hygiene ein wichtiger Bestandteil sicherer und effizienter Abläufe. Wir reinigen gründlich und achten besonders auf Bereiche, in denen Sauberkeit für Qualität und Arbeitssicherheit entscheidend ist.\n\nSo entsteht ein gepflegtes Umfeld für Mitarbeiter, Prozesse und Produkte.",
     "point4": "Maschinenreinigung",
     "body4": "Maschinen und technische Anlagen benötigen eine sorgfältige und passende Reinigung. Wir entfernen Staub, Rückstände und produktionsbedingte Verschmutzungen mit geeigneten Methoden und professioneller Ausrüstung.\n\nDadurch bleiben Anlagen gepflegt, funktionsfähig und besser vor langfristiger Belastung geschützt."
+  },
+  "widePictureAndText": {
+    "eyebrow": "Unsere Werte",
+    "heading": "Flexible Reinigungskonzepte für jeden Betrieb",
+    "body": "Jeder Betrieb hat andere Anforderungen. Deshalb entwickeln wir flexible Reinigungskonzepte, die zu Ihren Arbeitszeiten, Sicherheitsvorgaben und Produktionsabläufen passen.\n\nOb regelmäßige Reinigung, Maschinenpflege oder gezielte Sonderreinigung wir stimmen unsere Leistungen so ab, dass Ihr Betrieb möglichst wenig beeinträchtigt wird."
   }
 }

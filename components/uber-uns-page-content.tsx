@@ -44,14 +44,14 @@ export default function UberUnsPageContent({ global, ...tinaProps }: UberUnsPage
           <TeamGallery section={page.teamGallery} />
           <div className="flex flex-col gap-40">
             <WidePictureAndText
-              section={page.widePictureAndTextSections?.[0]}
+              section={page.widePictureAndText}
               hasButton={true}
               buttonProps={{ size: 'medium', text: 'JETZT BEWERBEN', href: '/jobs' }}
               image={image1}
               imageOnLeft={false}
             />
             <WidePictureAndText
-              section={page.widePictureAndTextSections?.[1]}
+              section={page.widePictureAndTextSecondary}
               image={image2}
               imageOnLeft={true}
             />

@@ -2,14 +2,6 @@
   "_template": "service",
   "title": "Hausmeisterdienst",
   "subHeading": "Regelmäßige Reinigung für einen starken ersten Eindruck.",
-  "widePictureAndTextSections": [
-    {
-      "id": "section-2",
-      "eyebrow": "Unsere Werte",
-      "heading": "Professionelle Pflege für Grünflächen, Wege und Treppen",
-      "body": "Ob Grünflächenpflege, Reinigung von Wegen oder die Betreuung von Treppenhäusern – wir übernehmen vielfältige Aufgaben rund um Ihre Immobilie zuverlässig und sorgfältig. Dabei achten wir auf Sauberkeit, Sicherheit und einen ordentlichen Gesamteindruck.\n\nMit regelmäßigen Pflege- und Kontrollmaßnahmen sorgen wir dafür, dass alle Bereiche Ihrer Immobilie funktional, gepflegt und für Bewohner, Mitarbeiter sowie Besucher angenehm nutzbar bleiben."
-    }
-  ],
   "doubleWidePictureAndText": {
     "eyebrow": "Unsere Stärken",
     "heading": "Gepflegte Außenbereiche für einen starken Eindruck",
@@ -26,5 +18,10 @@
     "body3": "Sichere Wege, saubere Eingänge und gepflegte Treppenbereiche sind wichtig für Besucher, Bewohner und Mitarbeiter. Wir achten darauf, dass Stolperstellen, Verschmutzungen und wetterbedingte Risiken schnell beseitigt werden.\n\nDamit schaffen wir ein ordentliches Umfeld und erhöhen die Sicherheit rund um Ihre Immobilie.",
     "point4": "Schneller Service je Wetterlage",
     "body4": "Je nach Wetterlage reagieren wir flexibel und zuverlässig. Ob Laub, Verschmutzungen, Regenrückstände oder winterliche Bedingungen wir sorgen dafür, dass Außenflächen schnell wieder nutzbar und gepflegt sind.\n\nDurch kurze Reaktionszeiten und strukturierte Abläufe bleibt Ihre Immobilie auch bei wechselnden Bedingungen in gutem Zustand."
+  },
+  "widePictureAndText": {
+    "eyebrow": "Unsere Werte",
+    "heading": "Professionelle Pflege für Grünflächen, Wege und Treppen",
+    "body": "Ob Grünflächenpflege, Reinigung von Wegen oder die Betreuung von Treppenhäusern – wir übernehmen vielfältige Aufgaben rund um Ihre Immobilie zuverlässig und sorgfältig. Dabei achten wir auf Sauberkeit, Sicherheit und einen ordentlichen Gesamteindruck.\n\nMit regelmäßigen Pflege- und Kontrollmaßnahmen sorgen wir dafür, dass alle Bereiche Ihrer Immobilie funktional, gepflegt und für Bewohner, Mitarbeiter sowie Besucher angenehm nutzbar bleiben."
   }
 }

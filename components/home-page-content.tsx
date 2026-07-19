@@ -48,12 +48,12 @@ export default function HomePageContent({ global, ...tinaProps }: HomePageConten
             <LogoBanner page={page} />
 
             <WidePictureAndText
-              section={page.widePictureAndTextSections?.[0]}
+              section={page.widePictureAndText}
               image={image3}
               imageOnLeft={true}
             />
             <WidePictureAndText
-              section={page.widePictureAndTextSections?.[1]}
+              section={page.widePictureAndTextSecondary}
               image={image4}
               imageOnLeft={false}
             />

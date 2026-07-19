@@ -43,7 +43,7 @@ export default function ServicesPageContent({ pageData, global, ...tinaProps }: 
           />
           <KeyPoints {...global} className="mt-[100px] mb-[54px]" />
           <WidePictureAndText
-            section={page.widePictureAndTextSections?.[0]}
+            section={page.widePictureAndText}
             image={pageData.page.section2.image}
             imageOnLeft={false}
             liftTextForSlantedDesign={true}

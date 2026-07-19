@@ -7,20 +7,24 @@ import { motion } from 'motion/react';
 import { getFadeInUpAtAmount } from '@/animations/motion';
 import Button, { ButtonProps } from './utility-components/button';
 import {
-  PageAboutWidePictureAndTextSections,
-  PageHomeWidePictureAndTextSections,
-  PageJobsWidePictureAndTextSections,
-  PageServiceWidePictureAndTextSections,
+  PageAboutWidePictureAndText,
+  PageAboutWidePictureAndTextSecondary,
+  PageHomeWidePictureAndText,
+  PageHomeWidePictureAndTextSecondary,
+  PageJobsWidePictureAndText,
+  PageServiceWidePictureAndText,
 } from '@/tina/__generated__/types';
 import { tinaField } from 'tinacms/dist/react';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 type WidePictureAndTextProps = {
   section?:
-    | PageHomeWidePictureAndTextSections
-    | PageAboutWidePictureAndTextSections
-    | PageServiceWidePictureAndTextSections
-    | PageJobsWidePictureAndTextSections
+    | PageHomeWidePictureAndText
+    | PageHomeWidePictureAndTextSecondary
+    | PageAboutWidePictureAndText
+    | PageAboutWidePictureAndTextSecondary
+    | PageServiceWidePictureAndText
+    | PageJobsWidePictureAndText
     | null;
   image: StaticImageData;
   imageOnLeft?: boolean;

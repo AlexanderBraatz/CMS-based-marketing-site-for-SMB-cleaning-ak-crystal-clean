@@ -44,7 +44,7 @@ export default function JobsPageContent({ global, ...tinaProps }: JobsPageConten
             imageRight={imageRight}
           />
           <WidePictureAndText
-            section={page.widePictureAndTextSections?.[0]}
+            section={page.widePictureAndText}
             image={image3}
             imageOnLeft={false}
           />

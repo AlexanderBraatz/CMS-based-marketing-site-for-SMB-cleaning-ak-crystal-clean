@@ -2,14 +2,6 @@
   "_template": "jobs",
   "title": "Werde Teil eines \n\nstarken Teams",
   "subHeading": "Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.",
-  "widePictureAndTextSections": [
-    {
-      "id": "secure-future",
-      "eyebrow": "Darauf können Sie sich verlassen",
-      "heading": "Sichere Arbeit mit Zukunft",
-      "body": "Als etabliertes Familienunternehmen mit über 30 Jahren Erfahrung bieten wir dir einen sicheren Arbeitsplatz und langfristige Perspektiven. Durch unser stetiges Wachstum entstehen regelmäßig neue Entwicklungsmöglichkeiten für engagierte Mitarbeiterinnen und Mitarbeiter."
-    }
-  ],
   "doubleWidePictureAndText": {
     "eyebrow": "Warum AK Crystal Clean",
     "heading": "Werde Teil Unseres Reinigungsteams",
@@ -26,5 +18,10 @@
     "body3": "Wir legen großen Wert auf die persönliche und berufliche Weiterentwicklung unserer Mitarbeiter. Deshalb unterstützen wir Sie mit regelmäßigen Schulungen und praxisnahen Weiterbildungsmöglichkeiten.\n\nDurch gezielte Einarbeitung und moderne Arbeitsmethoden können Sie Ihre Kenntnisse kontinuierlich ausbauen. So bleiben Sie fachlich immer auf dem neuesten Stand und entwickeln sich Schritt für Schritt weiter.\n\nUnser Ziel ist es, langfristige Perspektiven zu schaffen und engagierten Mitarbeitern echte Entwicklungsmöglichkeiten innerhalb des Unternehmens zu bieten.",
     "point4": "Regionale Einsätze",
     "body4": "Unsere Einsätze finden überwiegend in der Region statt, sodass lange Anfahrtswege vermieden werden können. Das sorgt für eine bessere Planbarkeit und mehr Zeit für Familie und Freizeit.\n\nDurch die regionale Betreuung unserer Kunden arbeiten Sie in vertrauten Einsatzgebieten und profitieren von geregelten Arbeitsabläufen. Gleichzeitig lernen Sie unterschiedliche Objekte und Kunden aus der Umgebung kennen.\n\nKurze Wege, feste Einsatzorte und eine zuverlässige Organisation machen den Arbeitsalltag effizienter und angenehmer für unser gesamtes Team."
+  },
+  "widePictureAndText": {
+    "eyebrow": "Darauf können Sie sich verlassen",
+    "heading": "Sichere Arbeit mit Zukunft",
+    "body": "Als etabliertes Familienunternehmen mit über 30 Jahren Erfahrung bieten wir dir einen sicheren Arbeitsplatz und langfristige Perspektiven. Durch unser stetiges Wachstum entstehen regelmäßig neue Entwicklungsmöglichkeiten für engagierte Mitarbeiterinnen und Mitarbeiter."
   }
 }

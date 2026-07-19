@@ -21,23 +21,19 @@
   "teamGallery": {
     "heading": "Unser Team"
   },
-  "widePictureAndTextSections": [
-    {
-      "id": "future",
-      "eyebrow": "Unsere Zukunft",
-      "heading": "Als Meisterbetrieb,  schulen wir \ndie nächste Generation",
-      "body": "Wer Qualität dauerhaft sichern möchte, muss Wissen weitergeben. Deshalb bilden wir als Meisterbetrieb neue Fachkräfte aus und begleiten sie mit Erfahrung, Praxis und persönlicher Unterstützung. So entsteht ein starkes Team, das unsere hohen Ansprüche an Sauberkeit, Zuverlässigkeit und Service auch in Zukunft erfüllt."
-    },
-    {
-      "id": "experience",
-      "eyebrow": "Unsere Erfahrung",
-      "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
-      "body": "Mit über 30 Jahren Erfahrung wissen wir, dass professionelle Gebäudereinigung mehr ist als einzelne Dienstleistungen. Deshalb verbinden wir Innen- und Außenreinigung zu einem abgestimmten Gesamtkonzept mit festen Ansprechpartnern und klaren Abläufen. So erhalten unsere Kunden höchste Qualität bei deutlich geringerem Organisationsaufwand."
-    }
-  ],
   "leftTextAndButton": {
     "eyebrow": "Unsere Überzeugung",
     "heading": "AK Crystal Clean\nWir machen Alles Klar!",
     "body": "Unser Anspruch ist klar: Reinigungsqualität, auf die Sie sich jederzeit verlassen können. Deshalb setzen wir auf geschulte Mitarbeiter, klare Prozesse und eine enge Zusammenarbeit mit unseren Kunden, um dauerhaft überzeugende Ergebnisse zu liefern."
+  },
+  "widePictureAndText": {
+    "eyebrow": "Unsere Zukunft",
+    "heading": "Als Meisterbetrieb,  schulen wir \ndie nächste Generation",
+    "body": "Wer Qualität dauerhaft sichern möchte, muss Wissen weitergeben. Deshalb bilden wir als Meisterbetrieb neue Fachkräfte aus und begleiten sie mit Erfahrung, Praxis und persönlicher Unterstützung. So entsteht ein starkes Team, das unsere hohen Ansprüche an Sauberkeit, Zuverlässigkeit und Service auch in Zukunft erfüllt."
+  },
+  "widePictureAndTextSecondary": {
+    "eyebrow": "Unsere Erfahrung",
+    "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
+    "body": "Mit über 30 Jahren Erfahrung wissen wir, dass professionelle Gebäudereinigung mehr ist als einzelne Dienstleistungen. Deshalb verbinden wir Innen- und Außenreinigung zu einem abgestimmten Gesamtkonzept mit festen Ansprechpartnern und klaren Abläufen. So erhalten unsere Kunden höchste Qualität bei deutlich geringerem Organisationsaufwand."
   }
 }

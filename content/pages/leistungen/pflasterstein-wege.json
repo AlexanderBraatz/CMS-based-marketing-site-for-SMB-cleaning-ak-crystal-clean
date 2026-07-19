@@ -2,14 +2,6 @@
   "_template": "service",
   "title": "Pflasterstein & Wege",
   "subHeading": "Gepflegte Wege erhöhen Sicherheit und Werterhalt.",
-  "widePictureAndTextSections": [
-    {
-      "id": "section-2",
-      "eyebrow": "Unsere Werte",
-      "heading": "Schonende Reinigung für Pflaster und Wege ",
-      "body": "Bei der Reinigung von Pflaster und Wegen achten wir auf eine materialschonende Vorgehensweise. Jede Fläche wird passend zu Zustand, Oberfläche und Verschmutzungsgrad behandelt, damit ein sauberes und gleichmäßiges Ergebnis entsteht.\n\nSo bleiben Wege, Einfahrten und Außenflächen langfristig gepflegt, ohne unnötige Belastung für Stein, Fugen oder Umgebung."
-    }
-  ],
   "doubleWidePictureAndText": {
     "eyebrow": "Warum AK Crystal Clean",
     "heading": "Gründlichkeit bis in jede Fuge",
@@ -26,5 +18,10 @@
     "body3": "Saubere Einfahrten prägen den ersten Eindruck Ihrer Immobilie. Wir entfernen Schmutz, Verfärbungen und Ablagerungen gründlich, damit Ihre Außenbereiche wieder gepflegt und einladend wirken.\n\nDabei achten wir auf gleichmäßige Ergebnisse und eine sorgfältige Behandlung der gesamten Fläche.",
     "point4": "Reinigung großer Flächen",
     "body4": "Auch große Pflasterflächen, Wege und Außenanlagen reinigen wir zuverlässig und effizient. Mit geeigneter Technik und klaren Abläufen bearbeiten wir umfangreiche Bereiche gründlich und zeitsparend.\n\nSo erhalten auch stark genutzte Flächen wieder ein gepflegtes Erscheinungsbild."
+  },
+  "widePictureAndText": {
+    "eyebrow": "Unsere Werte",
+    "heading": "Schonende Reinigung für Pflaster und Wege ",
+    "body": "Bei der Reinigung von Pflaster und Wegen achten wir auf eine materialschonende Vorgehensweise. Jede Fläche wird passend zu Zustand, Oberfläche und Verschmutzungsgrad behandelt, damit ein sauberes und gleichmäßiges Ergebnis entsteht.\n\nSo bleiben Wege, Einfahrten und Außenflächen langfristig gepflegt, ohne unnötige Belastung für Stein, Fugen oder Umgebung."
   }
 }

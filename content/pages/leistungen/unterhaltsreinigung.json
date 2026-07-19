@@ -1,14 +1,6 @@
 {
   "title": "Unterhaltsreinigung\n",
   "subHeading": "Wir Putzen nicht nur wir reinigen, für ihr Wohlbefinden am Arbeitsplatz.\n",
-  "widePictureAndTextSections": [
-    {
-      "id": "section-2",
-      "eyebrow": "Unsere Werte",
-      "heading": "Qualität, die täglich überzeugt ganz nach Ihrem Zeitplan\n",
-      "body": "Qualität zeigt sich besonders in der täglichen Beständigkeit. Deshalb richten wir unsere Reinigungsleistungen flexibel nach Ihren Betriebszeiten und Abläufen aus, damit der laufende Betrieb nicht gestört wird.\n\nMit zuverlässigen Teams, klaren Prozessen und regelmäßigen Qualitätskontrollen sorgen wir dafür, dass Ihre Räumlichkeiten jeden Tag gepflegt, hygienisch und repräsentativ bleiben."
-    }
-  ],
   "doubleWidePictureAndText": {
     "eyebrow": "Darauf können Sie sich verlassen",
     "heading": "Hygienische Sauberkeit für jeden Bereich",
@@ -26,5 +18,10 @@
     "point4": "Zuverlässigkeit & Sorgfalt",
     "body4": "Wir arbeiten zuverlässig, sorgfältig und mit Blick für Details. Jede Fläche wird mit der passenden Methode gereinigt, damit ein gleichmäßig sauberes Ergebnis entsteht.\n\nDabei halten wir Absprachen ein, reagieren flexibel auf besondere Anforderungen und sorgen dafür, dass Ihre Räume jederzeit gepflegt und einladend wirken."
   },
-  "_template": "service"
+  "_template": "service",
+  "widePictureAndText": {
+    "eyebrow": "Unsere Werte",
+    "heading": "Qualität, die täglich überzeugt ganz nach Ihrem Zeitplan\n",
+    "body": "Qualität zeigt sich besonders in der täglichen Beständigkeit. Deshalb richten wir unsere Reinigungsleistungen flexibel nach Ihren Betriebszeiten und Abläufen aus, damit der laufende Betrieb nicht gestört wird.\n\nMit zuverlässigen Teams, klaren Prozessen und regelmäßigen Qualitätskontrollen sorgen wir dafür, dass Ihre Räumlichkeiten jeden Tag gepflegt, hygienisch und repräsentativ bleiben."
+  }
 }

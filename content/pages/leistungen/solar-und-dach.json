@@ -2,14 +2,6 @@
   "_template": "service",
   "title": "Solar und Dachreinigung",
   "subHeading": "Mehr Leistung durch professionelle Reinigung Ihrer Solaranlagen.",
-  "widePictureAndTextSections": [
-    {
-      "id": "section-2",
-      "eyebrow": "Unsere Werte",
-      "heading": "Zuverlässiger Service für Privat und Gewerbe",
-      "body": "Ob private Dachanlage oder gewerbliches Objekt wir bieten zuverlässige Reinigungslösungen passend zu Ihrer Immobilie. Dabei achten wir auf Sicherheit, Materialschutz und eine sorgfältige Durchführung aller Arbeiten.\n\nDurch transparente Abläufe und feste Ansprechpartner erhalten Sie einen Service, auf den Sie sich langfristig verlassen können."
-    }
-  ],
   "doubleWidePictureAndText": {
     "eyebrow": "Unsere Stärken",
     "heading": "Mehr Energieeffizienz durch saubere Solarmodule",
@@ -26,5 +18,10 @@
     "body3": "Arbeiten auf Dächern erfordern Erfahrung, Sorgfalt und klare Sicherheitsstandards. Unsere Teams arbeiten mit geeigneter Ausrüstung und achten auf sichere Abläufe bei jedem Einsatz.\n\nSo können Reinigungsarbeiten zuverlässig durchgeführt werden, ohne Risiken für Personen, Anlage oder Gebäude einzugehen.",
     "point4": "Höhere Energieeffizienz",
     "body4": "Saubere Solarmodule können mehr Sonnenlicht aufnehmen und dadurch effizienter arbeiten. Durch die Entfernung von Schmutz, Staub und Ablagerungen unterstützen wir die Leistungsfähigkeit Ihrer Anlage.\n\nRegelmäßige Reinigung hilft, Ertragseinbußen zu reduzieren und Ihre Investition langfristig zu schützen."
+  },
+  "widePictureAndText": {
+    "eyebrow": "Unsere Werte",
+    "heading": "Zuverlässiger Service für Privat und Gewerbe",
+    "body": "Ob private Dachanlage oder gewerbliches Objekt wir bieten zuverlässige Reinigungslösungen passend zu Ihrer Immobilie. Dabei achten wir auf Sicherheit, Materialschutz und eine sorgfältige Durchführung aller Arbeiten.\n\nDurch transparente Abläufe und feste Ansprechpartner erhalten Sie einen Service, auf den Sie sich langfristig verlassen können."
   }
 }
