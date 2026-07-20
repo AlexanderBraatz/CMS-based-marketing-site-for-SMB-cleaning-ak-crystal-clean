@@ -62,7 +62,7 @@ export default function ServicesPageContent({ pageData, global, ...tinaProps }: 
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-10 w-full">
           <FormMessageOnlyOrMultiChoice
-            heading={page.contactForm?.heading ?? `Jetzt ${pageData.label} kostenlos anfragen.`}
+            heading={page.contactForm?.heading ?? ''}
             showMulitChoice={true}
             image={page.contactForm?.image ?? undefined}
             headingTinaField={page.contactForm ? tinaField(page.contactForm, 'heading') : undefined}

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { StaticImageData } from 'next/image';
 import ImageWideSection from './utility-components/image-wide-section';
 import { motion } from 'motion/react';
 import { getFadeInUpAtAmount } from '@/animations/motion';
@@ -26,8 +25,6 @@ type WidePictureSection =
 
 type WidePictureAndTextProps = {
   section?: WidePictureSection | null;
-  /** Fallback when the Tina image field is empty (other pages still use static imports). */
-  image?: StaticImageData | string;
   imageOnLeft?: boolean;
   liftTextForSlantedDesign?: boolean;
   hasButton?: boolean;
@@ -36,16 +33,12 @@ type WidePictureAndTextProps = {
 
 export default function WidePictureAndText({
   section,
-  image,
   imageOnLeft = true,
   liftTextForSlantedDesign,
   hasButton,
   buttonProps,
 }: WidePictureAndTextProps) {
-  if (!section) return null;
-
-  const resolvedImage = section.image || image;
-  if (!resolvedImage) return null;
+  if (!section?.image) return null;
 
   return (
     <motion.div
@@ -53,7 +46,7 @@ export default function WidePictureAndText({
       className="2sm:gap-0 theme-light-background text-theme-text 2sm:grid-cols-2 2sm:w-full xs:w-[70vw] mx-auto grid w-full grid-cols-1 gap-10 px-[5%]"
     >
       <ImageWideSection
-        image={resolvedImage}
+        image={section.image}
         isOnLeft={imageOnLeft}
         className={`order-1 ${imageOnLeft ? '2sm:order-1' : '2sm:order-2'}`}
         tinaField={tinaField(section, 'image')}

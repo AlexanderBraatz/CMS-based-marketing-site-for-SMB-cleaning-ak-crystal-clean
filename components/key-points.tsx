@@ -4,15 +4,6 @@ import React from 'react';
 import { GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { tinaField, useTina } from 'tinacms/dist/react';
 
-const DEFAULTS = {
-  heading1: '30+ Jahre Erfahrung',
-  subtext1: 'Eigentümergeführt',
-  heading2: '2300 + Objekte',
-  subtext2: '25% Wachstum in 2025',
-  heading3: '53 Mitarbeiter',
-  subtext3: 'Experten mit Meisterausbildung',
-} as const;
-
 const ALIGNMENT = ['xs:items-start', 'xs:items-center', 'xs:items-end'] as const;
 
 type KeyPointsProps = {
@@ -26,22 +17,24 @@ export default function KeyPoints({ className, ...globalProps }: KeyPointsProps)
   const { data } = useTina(globalProps);
   const section = data.global.keyPoints;
 
+  if (!section) return null;
+
   const facts = [
     {
-      heading: section?.heading1 ?? DEFAULTS.heading1,
-      subtext: section?.subtext1 ?? DEFAULTS.subtext1,
+      heading: section.heading1,
+      subtext: section.subtext1,
       headingField: 'heading1' as const,
       subtextField: 'subtext1' as const,
     },
     {
-      heading: section?.heading2 ?? DEFAULTS.heading2,
-      subtext: section?.subtext2 ?? DEFAULTS.subtext2,
+      heading: section.heading2,
+      subtext: section.subtext2,
       headingField: 'heading2' as const,
       subtextField: 'subtext2' as const,
     },
     {
-      heading: section?.heading3 ?? DEFAULTS.heading3,
-      subtext: section?.subtext3 ?? DEFAULTS.subtext3,
+      heading: section.heading3,
+      subtext: section.subtext3,
       headingField: 'heading3' as const,
       subtextField: 'subtext3' as const,
     },
@@ -55,13 +48,13 @@ export default function KeyPoints({ className, ...globalProps }: KeyPointsProps)
           <div key={fact.headingField} className={` ${ALIGNMENT[index]} flex w-full flex-col items-center`}>
             <div className="flex flex-col items-center justify-center">
               <h5
-                data-tina-field={section ? tinaField(section, fact.headingField) : undefined}
+                data-tina-field={tinaField(section, fact.headingField)}
                 className="text-theme-text-highlight-2 font-instrument-sans text-xl leading-tight font-semibold tracking-tighter"
               >
                 {fact.heading}
               </h5>
               <p
-                data-tina-field={section ? tinaField(section, fact.subtextField) : undefined}
+                data-tina-field={tinaField(section, fact.subtextField)}
                 className="font-instrument-sans leading-tight tracking-tighter"
               >
                 {fact.subtext}

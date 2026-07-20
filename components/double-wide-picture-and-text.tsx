@@ -4,8 +4,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/animations/motion';
 import DoubleImageWideSectionOnLeft from './utility-components/double-image-wide-section-on-left';
-
-import { StaticImageData } from 'next/image';
 import {
   PageHomeDoubleWidePictureAndText,
   PageJobsDoubleWidePictureAndText,
@@ -14,32 +12,16 @@ import {
 import { tinaField } from 'tinacms/dist/react';
 
 type DoubleWidePictureAndTextProps = {
-  /** Fallback when the Tina image fields are empty (other pages still use static imports). */
-  imageLeft?: StaticImageData | string;
-  imageRight?: StaticImageData | string;
   section?:
     | PageHomeDoubleWidePictureAndText
     | PageServiceDoubleWidePictureAndText
     | PageJobsDoubleWidePictureAndText
     | null;
-  /** Fallback for pages not yet migrated to Tina */
-  text?: { caption: string; heading: string; body: string };
 };
 
-export default function DoubleWidePictureAndText({
-  imageLeft,
-  imageRight,
-  section,
-  text,
-}: DoubleWidePictureAndTextProps) {
-  const eyebrow = section?.eyebrow ?? text?.caption;
-  const heading = section?.heading ?? text?.heading;
-  const body = section?.body ?? text?.body;
-  const resolvedImageLeft = section?.imageLeft || imageLeft;
-  const resolvedImageRight = section?.imageRight || imageRight;
-
-  if (!eyebrow && !heading && !body) return null;
-  if (!resolvedImageLeft || !resolvedImageRight) return null;
+export default function DoubleWidePictureAndText({ section }: DoubleWidePictureAndTextProps) {
+  if (!section?.imageLeft || !section.imageRight) return null;
+  if (!section.eyebrow && !section.heading && !section.body) return null;
 
   return (
     <motion.div
@@ -47,29 +29,29 @@ export default function DoubleWidePictureAndText({
       className="2sm:gap-0 theme-light-background text-theme-text 2sm:grid-cols-2 2sm:w-full xs:w-[70vw] mx-auto grid w-full grid-cols-1 gap-15 px-[5%]"
     >
       <DoubleImageWideSectionOnLeft
-        image1={resolvedImageLeft}
-        image2={resolvedImageRight}
-        image1TinaField={section ? tinaField(section, 'imageLeft') : undefined}
-        image2TinaField={section ? tinaField(section, 'imageRight') : undefined}
+        image1={section.imageLeft}
+        image2={section.imageRight}
+        image1TinaField={tinaField(section, 'imageLeft')}
+        image2TinaField={tinaField(section, 'imageRight')}
       />
       <div className="2sm:pl-[20px] flex flex-col gap-5 pl-0 lg:pl-[41px]">
         <p
-          data-tina-field={section ? tinaField(section, 'eyebrow') : undefined}
+          data-tina-field={tinaField(section, 'eyebrow')}
           className="font-barlow-semi-condensed text-theme-text-highlight font-bold"
         >
-          {eyebrow}
+          {section.eyebrow}
         </p>
         <h3
-          data-tina-field={section ? tinaField(section, 'heading') : undefined}
+          data-tina-field={tinaField(section, 'heading')}
           className="font-cooper-hewitt xxxs:text-3xl text-2xl leading-tight font-semibold tracking-tight whitespace-pre-line opacity-80 lg:text-[32px]"
         >
-          {heading}
+          {section.heading}
         </h3>
         <p
-          data-tina-field={section ? tinaField(section, 'body') : undefined}
+          data-tina-field={tinaField(section, 'body')}
           className="font-instrument-sans grow leading-7 tracking-normal"
         >
-          {body}
+          {section.body}
         </p>
       </div>
     </motion.div>

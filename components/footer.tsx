@@ -8,8 +8,6 @@ import logoText from '@/public/images/logo-text-white2.png';
 import { GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { tinaField, useTina } from 'tinacms/dist/react';
 
-const DEFAULT_ADDRESS = 'Schießbergstraße 9A\n63584 Gründau';
-
 function FooterLogo() {
   return (
     <div className="mb-4 flex items-baseline gap-2">
@@ -39,7 +37,6 @@ type FooterProps = {
 export default function Footer(props: FooterProps) {
   const { data } = useTina(props);
   const global = data.global;
-  const address = global.address?.trim() ? global.address : DEFAULT_ADDRESS;
 
   return (
     <footer className="theme-dark-purple border-t-theme-color-image-drop text-theme-text mt-auto border-t bg-black">
@@ -85,7 +82,7 @@ export default function Footer(props: FooterProps) {
                 data-tina-field={tinaField(global, 'address')}
                 className="font-instrument-sans text-sm leading-snug whitespace-pre-line not-italic opacity-90"
               >
-                {address}
+                {global.address}
               </address>
               <Link href="/#contact-form" className="font-instrument-sans mt-3 inline-block text-sm hover:underline">
                 Kontakt aufnehmen

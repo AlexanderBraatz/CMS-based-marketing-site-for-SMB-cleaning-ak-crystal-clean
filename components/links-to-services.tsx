@@ -17,7 +17,7 @@ import image8 from '@/public/images/icon-large-other-servicies.svg';
 import { GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { tinaField, useTina } from 'tinacms/dist/react';
 
-// TODO: this is a temp solution , i may later wone to pu this into the main data structure for servecis SERVICE_OPTIONS but i am waiting untill i get to implemnting TINACMS
+// Service icons are not yet modeled in Tina.
 const SERVICE_ICONS: Record<ServiceValue, StaticImageData> = {
   'glass-und-fassaden': image1,
   unterhaltsreinigung: image2,
@@ -37,22 +37,22 @@ type LinksToServicesProps = {
 export default function LinksToServices(props: LinksToServicesProps) {
   const { data } = useTina(props);
   const section = data.global.linksToServices;
-  const eyebrow = section?.eyebrow ?? 'Ihre Wahl';
-  const heading = section?.heading ?? 'Professionelle Gebäudereinigung für ihr Unternehmen';
+
+  if (!section) return null;
 
   return (
     <motion.div {...getFadeInUpAtAmount(0)} className="px-[5%]">
       <p
-        data-tina-field={section ? tinaField(section, 'eyebrow') : undefined}
+        data-tina-field={tinaField(section, 'eyebrow')}
         className="font-barlow-semi-condensed text-theme-text-highlight pb-5 font-bold"
       >
-        {eyebrow}
+        {section.eyebrow}
       </p>
       <h3
-        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        data-tina-field={tinaField(section, 'heading')}
         className="font-cooper-hewitt pb-10 text-[32px] leading-tight font-semibold tracking-tighter opacity-80"
       >
-        {heading}
+        {section.heading}
       </h3>
       <div className="flex flex-row flex-wrap justify-center gap-4">
         {SERVICE_OPTIONS.map((option) => (

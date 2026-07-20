@@ -12,6 +12,13 @@ import Hero from '@/components/hero-home';
 import { PageJobs, PageQuery, PageQueryVariables, GlobalQuery, GlobalQueryVariables } from '@/tina/__generated__/types';
 import { tinaField, useTina } from 'tinacms/dist/react';
 
+const JOBS_BULLET_ICONS = [
+  { point: '', icon: 'groups', body: '' },
+  { point: '', icon: 'work', body: '' },
+  { point: '', icon: 'school', body: '' },
+  { point: '', icon: 'location_on', body: '' },
+] as const;
+
 type JobsPageContentProps = {
   data: PageQuery;
   query: string;
@@ -42,7 +49,7 @@ export default function JobsPageContent({ global, ...tinaProps }: JobsPageConten
             section={page.widePictureAndText}
             imageOnLeft={false}
           />
-          <BulletPoints section={page.bulletPoints} />
+          <BulletPoints section={page.bulletPoints} bullets={JOBS_BULLET_ICONS} />
         </div>
       </div>
       <div className="bg-theme-background2">
@@ -55,7 +62,7 @@ export default function JobsPageContent({ global, ...tinaProps }: JobsPageConten
 
         <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
           <FormMessageOnlyOrMultiChoice
-            heading={page.contactForm?.heading ?? 'Jetzt Unterhaltsreinigung kostenlos anfragen.'}
+            heading={page.contactForm?.heading ?? ''}
             showMulitChoice={false}
             image={page.contactForm?.image ?? undefined}
             headingTinaField={page.contactForm ? tinaField(page.contactForm, 'heading') : undefined}

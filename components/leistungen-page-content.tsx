@@ -46,7 +46,7 @@ export default function LeistungenPageContent({ global, ...tinaProps }: Leistung
       </div>
       <div className="theme-dark-purple bg-theme-background-dark relative z-0 w-full">
         <FormMessageOnlyOrMultiChoice
-          heading={page.contactForm?.heading ?? 'Was können wir für Sie tun?'}
+          heading={page.contactForm?.heading ?? ''}
           showMulitChoice={false}
           image={page.contactForm?.image ?? undefined}
           headingTinaField={page.contactForm ? tinaField(page.contactForm, 'heading') : undefined}

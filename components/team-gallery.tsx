@@ -16,8 +16,9 @@ type TeamGalleryProps = {
 };
 
 export default function TeamGallery({ section }: TeamGalleryProps) {
-  const heading = section?.heading ?? 'Unser Team';
-  const teamMembers = (section?.images ?? []).filter(
+  if (!section) return null;
+
+  const teamMembers = (section.images ?? []).filter(
     (member): member is NonNullable<typeof member> & { image: string } => Boolean(member?.image),
   );
 
@@ -128,10 +129,10 @@ export default function TeamGallery({ section }: TeamGalleryProps) {
   return (
     <motion.div {...fadeInUp} className="">
       <h3
-        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        data-tina-field={tinaField(section, 'heading')}
         className="font-cooper-hewitt mb-5 px-[5%] text-[32px] leading-tight font-semibold tracking-tight opacity-80"
       >
-        {heading}
+        {section.heading}
       </h3>
       <div className="relative z-0 mb-2">
         <div className="image-gallery-gradient-left absolute z-20 h-full w-[5%]"></div>

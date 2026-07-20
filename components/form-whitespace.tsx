@@ -85,7 +85,10 @@ export default function FormWhitespace({ section }: FormWhitespaceProps) {
   const [dismissedFieldErrors, setDismissedFieldErrors] = useState<Set<string>>(new Set());
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
   const [selectedServices, setSelectedServices] = useState<Set<ServiceValue>>(new Set());
-  const heading = section?.heading ?? 'Erhalten Sie ein kostenloses Angebot für Ihren Reinigungsbedarf';
+
+  if (!section) return null;
+
+  const heading = section.heading;
 
   const serverFieldErrors = state.status === 'validation_error' ? state.fieldErrors : {};
   const rawFieldErrors = { ...clientFieldErrors, ...serverFieldErrors };
@@ -156,7 +159,7 @@ export default function FormWhitespace({ section }: FormWhitespaceProps) {
       className="2sm:w-[472px] xs:w-[428px] xs:p-0 mx-auto flex w-full flex-col items-center p-[5%]"
     >
       <h3
-        data-tina-field={section ? tinaField(section, 'heading') : undefined}
+        data-tina-field={tinaField(section, 'heading')}
         className="font-instrument-sans 2xs:w-[520px] xs:text-center w-full pb-10 text-[32px] leading-tight font-semibold tracking-tighter"
       >
         {heading}

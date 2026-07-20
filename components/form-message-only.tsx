@@ -10,31 +10,13 @@ import { submitContact } from '@/app/actions/contact';
 import { initialContactActionState } from '@/lib/contact/action-state';
 import { contactFormSchema, parseContactFormData, zodFieldErrors } from '@/lib/contact/schema';
 import { SERVICE_OPTIONS, type ServiceValue } from '@/lib/data';
-import formImageDusting from '@/public/images/form-right-side/team-solo-dusting.jpg';
-import formImageHovering from '@/public/images/form-right-side/team-solo-hovering.jpg';
-import formImageWindowInside from '@/public/images/form-right-side/team-solo-window-inside.jpg';
-import formImageHandsOutside from '@/public/images/form-right-side/team-thre-hands-outside.jpg';
-import formImageThreeMenOutside from '@/public/images/form-right-side/team-three-men-outside.jpg';
-import formImageThreeMopping from '@/public/images/form-right-side/team-three-mopping.jpg';
-import formImageTwoBosses from '@/public/images/form-right-side/team-two-bosses.jpg';
-import womanImage from '@/public/images/form-right-side/team-solo-dusting.jpg';
-import manImage from '@/public/images/form-right-side/team-three-men-outside.jpg';
 import { getCaptchaToken } from '@/utils/captcha-client';
 import MaterialSymbol from './material-symbol';
 import Button from './utility-components/button';
 
 const FORM_SIDE_IMAGE_SIZES = '(min-width: 1020px) 390px, (min-width: 960px) 45vw, calc(10.45vw + 315px)';
 
-const SERVICE_OPTIONS_MAN = [
-  { value: 'glass-und-fassaden', label: 'Glass und Fassaden' },
-  { value: 'hausmeisterdienst', label: 'Hausmeisterdienst' },
-  { value: 'pflasterstein-wege', label: 'Pflasterstein & Wege' },
-  { value: 'solar-und-dach', label: 'Solar und Dach' },
-  { value: 'industrie', label: 'Industrie' },
-] as const;
-
 const SERVICE_VALUES = new Set<string>(SERVICE_OPTIONS.map((option) => option.value));
-const MAN_SERVICE_VALUES = new Set<string>(SERVICE_OPTIONS_MAN.map((option) => option.value));
 
 function getServiceFromPathname(pathname: string): ServiceValue | undefined {
   const segment = pathname.split('/').filter(Boolean).at(-1);
@@ -42,16 +24,6 @@ function getServiceFromPathname(pathname: string): ServiceValue | undefined {
     return segment as ServiceValue;
   }
 }
-
-const images = [
-  formImageDusting,
-  formImageHovering,
-  formImageWindowInside,
-  formImageHandsOutside,
-  formImageThreeMenOutside,
-  formImageThreeMopping,
-  formImageTwoBosses,
-];
 
 const INPUT_BASE =
   'bg-theme-background h-10 w-full border px-3 font-instrument-sans text-sm leading-normal text-black outline-none placeholder:text-black/50';
@@ -151,10 +123,7 @@ export default function FormMessageOnlyOrMultiChoice({
   const [clientFieldErrors, setClientFieldErrors] = useState<Record<string, string>>({});
   const [dismissedFieldErrors, setDismissedFieldErrors] = useState<Set<string>>(new Set());
 
-  const serviceFromPath = getServiceFromPathname(pathname);
-  const pathBasedImage = serviceFromPath && MAN_SERVICE_VALUES.has(serviceFromPath) ? manImage : womanImage;
-  const resolvedImage = image ?? pathBasedImage;
-  const isStaticImport = typeof resolvedImage !== 'string';
+  const isStaticImport = typeof image === 'string' ? false : Boolean(image);
   const mode = showMulitChoice ? 'services' : 'message';
 
   const [dataAgreementAccepted, setDataAgreementAccepted] = useState(false);
@@ -454,20 +423,22 @@ export default function FormMessageOnlyOrMultiChoice({
                 </form>
               )}
             </div>
-            <div
-              data-tina-field={imageTinaField}
-              className="relative hidden h-full min-h-[556px] w-full sm:block"
-            >
-              <Image
-                src={resolvedImage}
-                alt=""
-                fill
-                sizes={FORM_SIDE_IMAGE_SIZES}
-                className="h-full w-full object-cover"
-                quality={40}
-                {...(isStaticImport ? { placeholder: 'blur' as const } : {})}
-              />
-            </div>
+            {image ? (
+              <div
+                data-tina-field={imageTinaField}
+                className="relative hidden h-full min-h-[556px] w-full sm:block"
+              >
+                <Image
+                  src={image}
+                  alt=""
+                  fill
+                  sizes={FORM_SIDE_IMAGE_SIZES}
+                  className="h-full w-full object-cover"
+                  quality={40}
+                  {...(isStaticImport ? { placeholder: 'blur' as const } : {})}
+                />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

@@ -11,8 +11,6 @@ import {
 } from '@/tina/__generated__/types';
 import { tinaField, useTina } from 'tinacms/dist/react';
 
-const DEFAULT_ADDRESS = 'Schießbergstraße 9A\n63584 Gründau';
-
 type MapProps = {
   section?: PageHomeMap | null;
   data: GlobalQuery;
@@ -23,8 +21,6 @@ type MapProps = {
 export default function Map({ section, ...globalProps }: MapProps) {
   const { data } = useTina(globalProps);
   const global = data.global;
-  const heading = section?.heading ?? 'Unsere Servicegebiete';
-  const address = global.address?.trim() ? global.address : DEFAULT_ADDRESS;
   const mapImage = section?.mapImage;
   const locationImage = section?.locationImage;
 
@@ -34,7 +30,7 @@ export default function Map({ section, ...globalProps }: MapProps) {
         data-tina-field={section ? tinaField(section, 'heading') : undefined}
         className="font-instrument-sans xxxs:text-center xxxs:pb-10 w-full pb-5 text-[32px] leading-tight font-semibold tracking-tighter"
       >
-        {heading}
+        {section?.heading}
       </h3>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
         <div className="col-span-2 aspect-[calc(2436/2030)] w-full">
@@ -74,7 +70,7 @@ export default function Map({ section, ...globalProps }: MapProps) {
             <Image src={icon} alt="icon" />
             <div className="font-instrument-sans 2sm:text-xl text-xl leading-tight font-semibold tracking-tighter sm:text-base">
               <p data-tina-field={tinaField(global, 'address')} className="whitespace-pre-line">
-                {address}
+                {global.address}
               </p>
             </div>
           </div>
