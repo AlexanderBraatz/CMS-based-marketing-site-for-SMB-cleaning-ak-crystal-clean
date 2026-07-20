@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     qualities: [5, 20, 40, 75],
+    remotePatterns: [
+      {
+        protocol: 'https',
+
+        hostname: 'assets.tina.io',
+
+        pathname: '/**',
+      },
+    ],
   },
 };
 
