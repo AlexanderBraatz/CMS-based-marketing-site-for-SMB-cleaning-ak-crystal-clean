@@ -6,8 +6,8 @@
     "eyebrow": "Darauf können Sie sich verlassen",
     "heading": "Stressfreie Räumungen für Privat und Gewerbe",
     "body": "Ob Keller, Wohnung, Büro oder Gewerbefläche wir übernehmen Entrümpelungen zuverlässig, diskret und gut organisiert. Von der Planung bis zur besenreinen Übergabe kümmern wir uns um alle notwendigen Schritte.\n\nSo sparen Sie Zeit, Aufwand und Stress, während wir für eine schnelle und ordentliche Räumung sorgen.",
-    "imageLeft": "/images/entruempelungImage1.jpg",
-    "imageRight": "/images/entruempelungImage2.jpg"
+    "imageLeft": "/images/double-wide-picture-and-text/entruempelungImage1.jpg",
+    "imageRight": "/images/double-wide-picture-and-text/entruempelungImage2.jpg"
   },
   "bulletPoints": {
     "caption": "Ihre Vorteile",
@@ -25,9 +25,9 @@
     "eyebrow": "Unsere Werte",
     "heading": "Nachhaltiges Recycling und fachgerechte Entsorgung",
     "body": "Bei jeder Entrümpelung achten wir auf eine verantwortungsvolle Trennung der Materialien. Verwertbare Gegenstände, Wertstoffe und Abfälle werden fachgerecht sortiert und entsprechend entsorgt oder dem Recycling zugeführt.\n\nDamit schaffen wir nicht nur Platz, sondern handeln auch nachhaltig und umweltbewusst.",
-    "image": "/images/unterhaltImage3.jpg"
+    "image": "/images/wide-picture-and-text/unterhaltImage3.jpg"
   },
-  "heroImage": "/images/cars-outside.jpg",
+  "heroImage": "/images/wide-picture-and-text/cars-outside.jpg",
   "contactForm": {
     "heading": "Jetzt Entrümpelung kostenlos anfragen.",
     "image": "/images/form-right-side/team-solo-dusting.jpg"

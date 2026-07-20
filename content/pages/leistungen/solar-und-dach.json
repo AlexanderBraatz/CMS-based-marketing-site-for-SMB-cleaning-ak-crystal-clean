@@ -6,8 +6,8 @@
     "eyebrow": "Unsere Stärken",
     "heading": "Mehr Energieeffizienz durch saubere Solarmodule",
     "body": "Verschmutzte Solarmodule können die Leistung Ihrer Anlage spürbar beeinträchtigen. Wir entfernen Staub, Pollen, Vogelkot und andere Ablagerungen schonend, damit Ihre Module wieder effizient arbeiten können.\n\nMit professioneller Ausrüstung und sicherer Arbeitsweise sorgen wir für saubere Oberflächen und unterstützen den langfristigen Ertrag Ihrer Solaranlage.",
-    "imageLeft": "/images/solarImage1.jpg",
-    "imageRight": "/images/solarImage2.jpg"
+    "imageLeft": "/images/double-wide-picture-and-text/solarImage1.jpg",
+    "imageRight": "/images/double-wide-picture-and-text/solarImage2.jpg"
   },
   "bulletPoints": {
     "caption": "Ihre Vorteile",
@@ -25,9 +25,9 @@
     "eyebrow": "Unsere Werte",
     "heading": "Zuverlässiger Service für Privat und Gewerbe",
     "body": "Ob private Dachanlage oder gewerbliches Objekt wir bieten zuverlässige Reinigungslösungen passend zu Ihrer Immobilie. Dabei achten wir auf Sicherheit, Materialschutz und eine sorgfältige Durchführung aller Arbeiten.\n\nDurch transparente Abläufe und feste Ansprechpartner erhalten Sie einen Service, auf den Sie sich langfristig verlassen können.",
-    "image": "/images/unterhaltImage3.jpg"
+    "image": "/images/wide-picture-and-text/unterhaltImage3.jpg"
   },
-  "heroImage": "/images/mashine-solar-cleaning.jpg",
+  "heroImage": "/images/wide-picture-and-text/mashine-solar-cleaning.jpg",
   "contactForm": {
     "heading": "Jetzt Solar und Dach kostenlos anfragen.",
     "image": "/images/form-right-side/team-three-men-outside.jpg"

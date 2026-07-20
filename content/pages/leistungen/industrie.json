@@ -6,8 +6,8 @@
     "eyebrow": "Warum AK Crystal Clean",
     "heading": "Erfahrene Fachkräfte für anspruchsvolle Aufgaben",
     "body": "Industrielle Bereiche stellen besondere Anforderungen an Reinigung, Sicherheit und Organisation. Unsere erfahrenen Fachkräfte kennen die Abläufe in Produktions-, Lager- und Betriebsflächen und arbeiten sorgfältig nach abgestimmten Konzepten.\n\nSo sorgen wir für Sauberkeit, Werterhalt und reibungslose Abläufe auch bei anspruchsvollen Reinigungsaufgaben.",
-    "imageLeft": "/images/industreImage1.jpg",
-    "imageRight": "/images/industreImage2.jpg"
+    "imageLeft": "/images/double-wide-picture-and-text/industreImage1.jpg",
+    "imageRight": "/images/double-wide-picture-and-text/industreImage2.jpg"
   },
   "bulletPoints": {
     "caption": "Ihre Vorteile",
@@ -25,9 +25,9 @@
     "eyebrow": "Unsere Werte",
     "heading": "Flexible Reinigungskonzepte für jeden Betrieb",
     "body": "Jeder Betrieb hat andere Anforderungen. Deshalb entwickeln wir flexible Reinigungskonzepte, die zu Ihren Arbeitszeiten, Sicherheitsvorgaben und Produktionsabläufen passen.\n\nOb regelmäßige Reinigung, Maschinenpflege oder gezielte Sonderreinigung wir stimmen unsere Leistungen so ab, dass Ihr Betrieb möglichst wenig beeinträchtigt wird.",
-    "image": "/images/unterhaltImage3.jpg"
+    "image": "/images/wide-picture-and-text/unterhaltImage3.jpg"
   },
-  "heroImage": "/images/mashines-industry.jpg",
+  "heroImage": "/images/wide-picture-and-text/mashines-industry.jpg",
   "contactForm": {
     "heading": "Jetzt Industrie kostenlos anfragen.",
     "image": "/images/form-right-side/team-three-men-outside.jpg"

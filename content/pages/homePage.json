@@ -12,29 +12,29 @@
   "logoBannerImage7": "/images/logos/logo-senckenberg.png",
   "logoBannerImage8": "/images/logos/logo-auto-nix.png",
   "widePictureAndText": {
-    "image": "/images/team-man-arms-crossed-hero-format.jpg",
+    "image": "/images/wide-picture-and-text/team-man-arms-crossed-hero-format.jpg",
     "eyebrow": "Warum AK Crystal Clean",
     "heading": "Ein Ansprechpartner für\neffiziente Betreuung!\n",
     "body": " Von der Innen bis zur Außenreinigung koordinieren wir alle Leistungen zuverlässig aus einer Hand für weniger Aufwand und mehr Zeit für Ihr Kerngeschäft. Dabei setzen wir auf effiziente Abläufe, feste Ansprechpartner und höchste Qualitätsstandards, damit Sie sich jederzeit auf einen reibungslosen Service verlassen können."
   },
   "widePictureAndTextSecondary": {
-    "image": "/images/team-two-happy-green3.jpg",
+    "image": "/images/wide-picture-and-text/team-two-happy-green3.jpg",
     "eyebrow": "Unsere Stärken",
     "heading": "Mit Herz und Qualität sorgen wir für gesunde Arbeitsplätze.!\n",
     "body": "Wir reinigen nicht nur sichtbar, sondern spürbar. Mit geschultem Personal, klaren Qualitätsstandards und einem hohen Anspruch an Sauberkeit schaffen wir hygienische Arbeitsumgebungen, in denen sich Mitarbeitende und Kunden gleichermaßen wohlfühlen. So bleiben Abläufe störungsfrei und Ihre Arbeitsplätze dauerhaft gepflegt."
   },
   "doubleWidePictureAndText": {
-    "imageLeft": "/images/team-solo-man1.jpg",
+    "imageLeft": "/images/double-wide-picture-and-text/team-solo-man1.jpg",
     "imageRight": "/images/team-headshots/team-solo-headshot-woman-2.jpg",
     "eyebrow": "Unsere Erfahrung",
     "heading": "Über 30 Jahre Erfahrung in der Gebäudereinigung",
     "body": " Seit über drei Jahrzehnten vertrauen Unternehmen auf unsere Kompetenz. Dieses Know-how ermöglicht es uns, individuelle Reinigungskonzepte zu entwickeln und dauerhaft höchste Qualitätsstandards sicherzustellen, unabhängig von Größe oder Branche."
   },
   "valuesAndImages": {
-    "image1": "/images/team-solo-dusting-tall.jpg",
-    "image2": "/images/team-solo-window-cleaning-tall.jpg",
-    "image3": "/images/team-solo-outside-house-cleaning.jpg",
-    "image4": "/images/team-solo-outside-window-cleaning.jpg",
+    "image1": "/images/double-wide-picture-and-text/team-solo-dusting-tall.jpg",
+    "image2": "/images/double-wide-picture-and-text/team-solo-window-cleaning-tall.jpg",
+    "image3": "/images/double-wide-picture-and-text/team-solo-outside-house-cleaning.jpg",
+    "image4": "/images/double-wide-picture-and-text/team-solo-outside-window-cleaning.jpg",
     "eyebrow": "Unsere Werte",
     "heading": "Die Werte, die uns antreiben",
     "heading1": "Partnerschaft",
@@ -50,8 +50,8 @@
     "heading": "Erhalten Sie ein kostenloses Angebot für Ihren Reinigungsbedarf"
   },
   "map": {
-    "mapImage": "/images/map-image.jpg",
-    "locationImage": "/images/grimmelshausen-twon.jpg",
+    "mapImage": "/images/wide-picture-and-text/map-image.jpg",
+    "locationImage": "/images/wide-picture-and-text/grimmelshausen-twon.jpg",
     "heading": "Unsere Servicegebiete"
   },
   "leftTextAndButton": {

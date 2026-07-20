@@ -6,8 +6,8 @@
     "eyebrow": "Unsere Stärken",
     "heading": "Gepflegte Außenbereiche für einen starken Eindruck",
     "body": "Ein gepflegtes Gebäude beginnt mit einem professionellen Hausmeisterservice. Wir kümmern uns um die regelmäßige Kontrolle und Pflege von Außenanlagen, Wegen, Eingangsbereichen und gemeinschaftlich genutzten Flächen.\n\nDurch unsere kontinuierliche Betreuung erkennen wir kleinere Mängel frühzeitig und tragen dazu bei, den gepflegten Zustand Ihrer Immobilie langfristig zu erhalten. So hinterlassen Ihre Außenbereiche jederzeit einen positiven und professionellen Eindruck.",
-    "imageLeft": "/images/hausmeisterImage1.jpg",
-    "imageRight": "/images/hausmeisterImage2.jpg"
+    "imageLeft": "/images/double-wide-picture-and-text/hausmeisterImage1.jpg",
+    "imageRight": "/images/double-wide-picture-and-text/hausmeisterImage2.jpg"
   },
   "bulletPoints": {
     "caption": "Ihre Vorteile",
@@ -25,9 +25,9 @@
     "eyebrow": "Unsere Werte",
     "heading": "Professionelle Pflege für Grünflächen, Wege und Treppen",
     "body": "Ob Grünflächenpflege, Reinigung von Wegen oder die Betreuung von Treppenhäusern – wir übernehmen vielfältige Aufgaben rund um Ihre Immobilie zuverlässig und sorgfältig. Dabei achten wir auf Sauberkeit, Sicherheit und einen ordentlichen Gesamteindruck.\n\nMit regelmäßigen Pflege- und Kontrollmaßnahmen sorgen wir dafür, dass alle Bereiche Ihrer Immobilie funktional, gepflegt und für Bewohner, Mitarbeiter sowie Besucher angenehm nutzbar bleiben.",
-    "image": "/images/hausmeisterImage3.jpg"
+    "image": "/images/wide-picture-and-text/hausmeisterImage3.jpg"
   },
-  "heroImage": "/images/team-men-four.jpg",
+  "heroImage": "/images/wide-picture-and-text/team-men-four.jpg",
   "contactForm": {
     "heading": "Jetzt Hausmeisterdienst kostenlos anfragen.",
     "image": "/images/form-right-side/team-three-men-outside.jpg"

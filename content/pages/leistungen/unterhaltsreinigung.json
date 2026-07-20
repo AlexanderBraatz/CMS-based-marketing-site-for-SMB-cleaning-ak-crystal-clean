@@ -5,8 +5,8 @@
     "eyebrow": "Darauf können Sie sich verlassen",
     "heading": "Hygienische Sauberkeit für jeden Bereich",
     "body": "Eine regelmäßige Unterhaltsreinigung sorgt für dauerhaft saubere, hygienische und einladende Räume. Ob Büro, Praxis, Treppenhaus oder Gewerbefläche – wir reinigen alle Bereiche gründlich und abgestimmt auf Ihre individuellen Anforderungen.\n\nDurch feste Reinigungspläne und geschulte Fachkräfte gewährleisten wir eine gleichbleibend hohe Qualität. So schaffen wir eine angenehme Umgebung für Mitarbeiter, Kunden und Besucher und tragen gleichzeitig zum Werterhalt Ihrer Räumlichkeiten bei.",
-    "imageLeft": "/images/unterhaltImage1.jpg",
-    "imageRight": "/images/unterhaltImage2.jpg"
+    "imageLeft": "/images/double-wide-picture-and-text/unterhaltImage1.jpg",
+    "imageRight": "/images/double-wide-picture-and-text/unterhaltImage2.jpg"
   },
   "bulletPoints": {
     "caption": "Ihre Vorteile",
@@ -25,9 +25,9 @@
     "eyebrow": "Unsere Werte",
     "heading": "Qualität, die täglich überzeugt ganz nach Ihrem Zeitplan\n",
     "body": "Qualität zeigt sich besonders in der täglichen Beständigkeit. Deshalb richten wir unsere Reinigungsleistungen flexibel nach Ihren Betriebszeiten und Abläufen aus, damit der laufende Betrieb nicht gestört wird.\n\nMit zuverlässigen Teams, klaren Prozessen und regelmäßigen Qualitätskontrollen sorgen wir dafür, dass Ihre Räumlichkeiten jeden Tag gepflegt, hygienisch und repräsentativ bleiben.",
-    "image": "/images/unterhaltImage3.jpg"
+    "image": "/images/wide-picture-and-text/unterhaltImage3.jpg"
   },
-  "heroImage": "/images/team-men-and-women-cleaning-staged.jpg",
+  "heroImage": "/images/wide-picture-and-text/team-men-and-women-cleaning-staged.jpg",
   "contactForm": {
     "heading": "Jetzt Unterhaltsreinigung kostenlos anfragen.",
     "image": "/images/form-right-side/team-solo-dusting.jpg"

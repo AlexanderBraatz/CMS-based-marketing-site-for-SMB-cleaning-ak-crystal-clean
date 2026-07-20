@@ -446,6 +446,8 @@ export default defineConfig({
   // },
   // Repo-based media: uploads land in public/images (no Cloudinary/S3).
   // Tina stores paths like "/images/foo.jpg" which next/image can use directly.
+  // Organized folders: links-to-services, wide-picture-and-text,
+  // double-wide-picture-and-text, management-headshots (each with unusedImages/).
   media: {
     tina: {
       mediaRoot: 'images',
