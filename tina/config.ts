@@ -748,6 +748,12 @@ export default defineConfig({
         fields: [
           {
             type: 'string',
+            name: 'footerTagline',
+            label: 'Footer Tagline',
+            required: true,
+          },
+          {
+            type: 'string',
             name: 'address',
             label: 'Address',
             required: true,

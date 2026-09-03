@@ -45,8 +45,11 @@ export default function Footer(props: FooterProps) {
           <div className="2sm:gap-y-8 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4 lg:gap-5">
             <div className="2sm:col-span-1 col-span-2 lg:col-span-1">
               <FooterLogo />
-              <p className="font-instrument-sans max-w-xs text-sm leading-snug opacity-80">
-                Professionelle Gebäudereinigung für Unternehmen in der Region.
+              <p
+                data-tina-field={tinaField(global, 'footerTagline')}
+                className="font-instrument-sans max-w-xs text-sm leading-snug opacity-80"
+              >
+                {global.footerTagline}
               </p>
             </div>
 
