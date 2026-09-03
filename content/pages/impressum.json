@@ -1,0 +1,15 @@
+{
+  "title": "Impressum",
+  "intro": "Angaben gemäß § 5 DDG",
+  "companyName": "AK Crystal Clean GMBH",
+  "companyAddress": "Schießbergstraße 9A\n63584 Gründau\nDeutschland",
+  "managingDirector": "Mehmet Akca",
+  "phone": "xxx",
+  "email": "xxx",
+  "registerCourt": "Amtsgericht xxx",
+  "registerNumber": "HRB xxx",
+  "vatId": "xxx",
+  "responsibleName": "Mehmet Akca",
+  "responsibleAddress": "Schießbergstraße 9A\n63584 Gründau",
+  "_template": "impressum"
+}

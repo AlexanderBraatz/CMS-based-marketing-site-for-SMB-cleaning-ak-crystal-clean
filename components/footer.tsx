@@ -95,6 +95,9 @@ export default function Footer(props: FooterProps) {
 
           <p className="font-instrument-sans border-t-theme-color-image-drop mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 border-t pt-6 text-center text-xs opacity-70">
             <span>© {new Date().getFullYear()} AK Crystal Clean GMBH. Alle Rechte vorbehalten.</span>
+            <Link href="/impressum" className="hover:underline">
+              Impressum
+            </Link>
             <Link href="/datenschutz" className="hover:underline">
               Datenschutz
             </Link>

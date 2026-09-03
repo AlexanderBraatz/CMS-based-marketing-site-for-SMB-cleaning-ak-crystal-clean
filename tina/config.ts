@@ -730,6 +730,90 @@ export default defineConfig({
               contactFormField,
             ],
           },
+          {
+            name: 'impressum',
+            label: 'Impressum',
+            fields: [
+              {
+                type: 'string',
+                name: 'title',
+                label: 'Title',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'intro',
+                label: 'Intro',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'companyName',
+                label: 'Company Name',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'companyAddress',
+                label: 'Company Address',
+                required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+              {
+                type: 'string',
+                name: 'managingDirector',
+                label: 'Managing Director (Geschäftsführer)',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'phone',
+                label: 'Phone',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'email',
+                label: 'Email',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'registerCourt',
+                label: 'Register Court (Amtsgericht)',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'registerNumber',
+                label: 'Register Number (HRB)',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'vatId',
+                label: 'VAT ID (USt-IdNr.)',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'responsibleName',
+                label: 'Content Responsible Name (§ 18 Abs. 2 MStV)',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'responsibleAddress',
+                label: 'Content Responsible Address',
+                required: true,
+                ui: {
+                  component: 'textarea',
+                },
+              },
+            ],
+          },
         ],
       },
 
